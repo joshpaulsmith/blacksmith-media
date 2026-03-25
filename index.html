@@ -4,45 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blacksmith Media</title>
-  <meta name="description" content="Blacksmith Media creates refined brand identity systems and high-performance websites with a bold forged aesthetic.">
+  <meta name="description" content="Blacksmith Media builds sharp brand identities and high-impact websites with a bold, forged aesthetic.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg:#050505;
-      --bg-2:#0b0b0b;
-      --panel:#101010;
-      --panel-2:#171717;
-      --text:#f5f1e8;
-      --muted:#b8b0a3;
-      --line:rgba(255,255,255,.1);
-      --accent:#d6a72c;
-      --accent-soft:rgba(214,167,44,.16);
-      --accent-glow:rgba(214,167,44,.28);
-      --white-soft:rgba(255,255,255,.08);
-      --shadow:0 28px 80px rgba(0,0,0,.5);
+      --bg-2:#0a0a0a;
+      --text:#f5f5f5;
+      --muted:#b7b7b7;
+      --line:rgba(255,255,255,.08);
+      --accent:#f3e64d;
+      --accent-soft:rgba(243,230,77,.22);
+      --accent-2:#ffffff;
       --max:1180px;
+      --shadow:0 30px 80px rgba(0,0,0,.45);
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
     body{
       margin:0;
-      font-family:'Inter', sans-serif;
+      font-family:'Roboto',sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 20% 10%, rgba(214,167,44,.06), transparent 20%),
-        radial-gradient(circle at 80% 22%, rgba(214,167,44,.05), transparent 18%),
-        radial-gradient(circle at 50% 120%, rgba(214,167,44,.08), transparent 35%),
-        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 48%, #020202 100%);
-      line-height:1.6;
+        radial-gradient(circle at 15% 20%, rgba(243,230,77,.08), transparent 20%),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,.05), transparent 16%),
+        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+      overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
-      overflow-x:hidden;
     }
 
     body::before{
@@ -51,13 +45,16 @@
       inset:0;
       pointer-events:none;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.02), transparent 12%, transparent 88%, rgba(0,0,0,.35)),
-        radial-gradient(circle at center, transparent 45%, rgba(0,0,0,.22) 100%);
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size:32px 32px;
+      mask-image:radial-gradient(circle at center, black 45%, transparent 90%);
+      opacity:.25;
       z-index:0;
     }
 
-    a{ color:inherit; text-decoration:none; }
-    img{ display:block; max-width:100%; }
+    a{color:inherit;text-decoration:none;}
+    img{display:block;max-width:100%;}
 
     .wrap{
       width:min(var(--max), calc(100% - 32px));
@@ -70,17 +67,17 @@
       position:sticky;
       top:0;
       z-index:100;
-      backdrop-filter:blur(12px);
-      background:rgba(5,5,5,.84);
+      backdrop-filter:blur(14px);
+      background:rgba(5,5,5,.76);
       border-bottom:1px solid var(--line);
     }
 
     .nav-inner{
-      min-height:82px;
+      min-height:76px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
+      gap:24px;
     }
 
     .brand-lockup{
@@ -91,140 +88,168 @@
     }
 
     .brand-mark{
-      width:54px;
-      height:54px;
+      width:52px;
+      height:52px;
       object-fit:contain;
       filter:drop-shadow(0 0 18px rgba(255,255,255,.08));
     }
 
-    .brand-text{
-      min-width:0;
-    }
-
-    .brand-name,
-    h1,h2,h3,.btn,.stat-number,.card-kicker{
-      font-family:'Cinzel', serif;
-      letter-spacing:.04em;
-    }
-
     .brand-name{
+      font-family:'Roboto Mono',monospace;
       font-size:20px;
-      line-height:1;
+      font-weight:700;
+      letter-spacing:.03em;
       text-transform:uppercase;
       white-space:nowrap;
     }
 
     .brand-sub{
       color:var(--muted);
+      font-family:'Roboto Mono',monospace;
       font-size:11px;
-      letter-spacing:.24em;
+      letter-spacing:.18em;
       text-transform:uppercase;
       margin-top:4px;
-      white-space:nowrap;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-      gap:24px;
-      color:var(--muted);
-      font-size:14px;
+      gap:22px;
+      font-family:'Roboto Mono',monospace;
+      font-size:13px;
       text-transform:uppercase;
-      letter-spacing:.14em;
+      letter-spacing:.1em;
+      color:var(--muted);
     }
 
-    .nav-links a{
-      transition:color .2s ease, transform .2s ease;
-    }
-
-    .nav-links a:hover{
-      color:var(--text);
-      transform:translateY(-1px);
-    }
+    .nav-links a:hover{color:var(--text);}
 
     .hero{
       min-height:100vh;
       display:flex;
       align-items:center;
-      border-bottom:1px solid var(--line);
       position:relative;
       overflow:hidden;
     }
 
-    .hero::after{
-      content:"";
+    .orb{
       position:absolute;
-      right:-80px;
-      top:80px;
-      width:320px;
-      height:320px;
       border-radius:50%;
-      background:radial-gradient(circle, var(--accent-soft), transparent 68%);
-      filter:blur(10px);
+      filter:blur(18px);
       pointer-events:none;
-      opacity:.8;
+      opacity:.65;
+      animation:float 9s ease-in-out infinite;
+    }
+
+    .orb.one{
+      width:280px;height:280px;
+      right:-80px;top:120px;
+      background:radial-gradient(circle, rgba(243,230,77,.22), transparent 68%);
+    }
+
+    .orb.two{
+      width:220px;height:220px;
+      left:-60px;bottom:120px;
+      background:radial-gradient(circle, rgba(255,255,255,.1), transparent 70%);
+      animation-delay:-3s;
     }
 
     .hero-inner{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
+      grid-template-columns:1.1fr .9fr;
       gap:54px;
       align-items:center;
-      padding:90px 0 80px;
+      padding:72px 0 56px;
+    }
+
+    .eyebrow,
+    .mono{
+      font-family:'Roboto Mono',monospace;
+      text-transform:uppercase;
+      letter-spacing:.14em;
     }
 
     .eyebrow{
-      color:var(--accent);
-      text-transform:uppercase;
-      letter-spacing:.24em;
+      color:var(--muted);
       font-size:12px;
       margin-bottom:18px;
     }
 
     h1{
       margin:0 0 18px;
-      font-size:clamp(52px, 8vw, 98px);
-      line-height:.96;
+      font-size:clamp(52px, 8vw, 104px);
+      line-height:.92;
+      font-weight:900;
+      letter-spacing:-.04em;
       text-transform:uppercase;
     }
 
-    .hero-copy{
-      font-size:20px;
+    .lead{
+      font-size:21px;
+      line-height:1.55;
       color:var(--muted);
-      max-width:650px;
-      margin:0 0 28px;
+      max-width:690px;
+      margin:0 0 30px;
     }
+
+    .highlight{
+      position:relative;
+      color:var(--text);
+      display:inline-block;
+      z-index:1;
+    }
+
+    .highlight::before{
+      content:"";
+      position:absolute;
+      left:-4px;
+      right:-4px;
+      bottom:.08em;
+      height:.62em;
+      background:var(--accent);
+      opacity:.95;
+      z-index:-1;
+      transform:rotate(-1.4deg) scaleX(0);
+      transform-origin:left center;
+      animation:swipe 1.05s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+
+    .highlight.delay-1::before{animation-delay:.25s;}
+    .highlight.delay-2::before{animation-delay:.5s;}
 
     .cta-row{
       display:flex;
       flex-wrap:wrap;
       gap:14px;
-      margin-bottom:24px;
+      margin-bottom:22px;
     }
 
     .btn{
-      min-height:56px;
-      padding:0 24px;
+      min-height:54px;
+      padding:0 22px;
       border-radius:999px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      font-family:'Roboto Mono',monospace;
       text-transform:uppercase;
-      font-size:15px;
+      font-size:14px;
+      letter-spacing:.08em;
       border:1px solid var(--line);
-      transition:transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+      transition:transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
     }
 
     .btn.primary{
       background:var(--accent);
-      color:#0d0d0d;
+      color:#060606;
       border-color:var(--accent);
-      box-shadow:0 10px 30px rgba(214,167,44,.18);
+      box-shadow:0 12px 34px rgba(243,230,77,.16);
     }
 
-    .btn.primary:hover{
+    .btn.primary:hover,
+    .btn.secondary:hover{
       transform:translateY(-2px);
-      box-shadow:0 16px 34px rgba(214,167,44,.24);
     }
 
     .btn.secondary{
@@ -232,262 +257,197 @@
       color:var(--text);
     }
 
-    .btn.secondary:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.05);
-      border-color:rgba(255,255,255,.2);
-    }
-
-    .hero-meta{
+    .mini-meta{
       display:flex;
+      gap:18px;
       flex-wrap:wrap;
-      gap:12px;
-    }
-
-    .meta-pill{
-      min-height:40px;
-      padding:0 14px;
-      border-radius:999px;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.02);
       color:var(--muted);
+      font-family:'Roboto Mono',monospace;
       font-size:12px;
-      letter-spacing:.12em;
       text-transform:uppercase;
+      letter-spacing:.08em;
     }
 
-    .hero-panel{
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
-        linear-gradient(180deg, var(--panel-2), var(--panel));
-      border:1px solid var(--line);
-      border-radius:34px;
-      padding:34px;
+    .mini-meta span::before{
+      content:"// ";
+      color:var(--accent);
+    }
+
+    .hero-visual{
+      position:relative;
       min-height:620px;
-      position:relative;
-      overflow:hidden;
-      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    .hero-panel::before{
+    .logo-stage{
+      position:relative;
+      width:min(100%, 520px);
+      animation:rise .9s ease both;
+    }
+
+    .logo-stage::before{
       content:"";
       position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 75% 22%, rgba(214,167,44,.08), transparent 16%),
-        radial-gradient(circle at 24% 78%, rgba(255,255,255,.04), transparent 22%);
-      pointer-events:none;
+      inset:10% -10%;
+      background:radial-gradient(circle, rgba(243,230,77,.14), transparent 58%);
+      filter:blur(14px);
+      animation:pulse 4s ease-in-out infinite;
     }
 
-    .hero-logo-card{
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      background:#030303;
-      padding:26px;
-      position:relative;
-      overflow:hidden;
-      margin-bottom:22px;
-    }
-
-    .hero-logo-card::after{
-      content:"";
-      position:absolute;
-      inset:auto -10% -20% auto;
-      width:220px;
-      height:220px;
-      background:radial-gradient(circle, rgba(214,167,44,.14), transparent 70%);
-      filter:blur(10px);
-      pointer-events:none;
-    }
-
-    .hero-logo{
-      width:min(100%, 420px);
-      margin:0 auto;
+    .logo-stage img{
       position:relative;
       z-index:2;
+      filter:drop-shadow(0 0 40px rgba(255,255,255,.08));
     }
 
-    .panel-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
+    .slash{
+      position:absolute;
+      height:2px;
+      background:linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity:.7;
+      transform-origin:left center;
+      animation:scan 3.2s linear infinite;
     }
 
-    .mini-card{
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:18px;
-      background:rgba(255,255,255,.02);
-    }
+    .slash.one{width:180px; top:16%; left:8%;}
+    .slash.two{width:120px; bottom:18%; right:4%; animation-delay:-1.2s;}
+    .slash.three{width:150px; top:52%; right:10%; animation-delay:-2.1s;}
 
-    .card-kicker{
-      color:var(--accent);
-      font-size:13px;
-      text-transform:uppercase;
-      margin-bottom:8px;
-    }
-
-    .mini-card p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    section{
-      padding:88px 0;
-      border-bottom:1px solid var(--line);
+    .section{
+      padding:64px 0;
       position:relative;
       z-index:1;
     }
 
-    .section-kicker{
-      color:var(--accent);
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.24em;
-      margin-bottom:10px;
-      text-align:center;
+    .divider{
+      width:100%;
+      height:1px;
+      background:linear-gradient(90deg, transparent, var(--line), transparent);
+      margin:0 auto;
+    }
+
+    .section-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px 56px;
+      align-items:start;
     }
 
     h2{
-      margin:0;
+      margin:0 0 14px;
       font-size:clamp(34px, 5vw, 54px);
+      line-height:.95;
+      font-weight:900;
       text-transform:uppercase;
-      line-height:1;
-      text-align:center;
+      letter-spacing:-.03em;
     }
 
     .section-copy{
-      max-width:760px;
-      margin:18px auto 0;
-      text-align:center;
       color:var(--muted);
       font-size:18px;
+      line-height:1.65;
+      margin:0;
+      max-width:620px;
     }
 
-    .services-grid,
-    .stats-grid,
-    .process-grid{
+    .list{
       display:grid;
       gap:18px;
-      margin-top:34px;
+      margin-top:8px;
     }
 
-    .services-grid{
-      grid-template-columns:repeat(3, 1fr);
-    }
-
-    .stats-grid{
-      grid-template-columns:repeat(4, 1fr);
-    }
-
-    .process-grid{
-      grid-template-columns:repeat(4, 1fr);
-    }
-
-    .card{
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
-        var(--panel);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:26px;
-      box-shadow:0 18px 40px rgba(0,0,0,.18);
-    }
-
-    .card h3{
-      margin:0 0 10px;
-      font-size:24px;
-      text-transform:uppercase;
-    }
-
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:16px;
-    }
-
-    .stat-number{
-      font-size:42px;
-      margin-bottom:6px;
-      color:var(--text);
-      text-transform:uppercase;
-    }
-
-    .stat-label{
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      font-size:12px;
-    }
-
-    .timeline-card{
-      max-width:860px;
-      margin:34px auto 0;
-      text-align:left;
-    }
-
-    .timeline-row{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      padding:16px 0;
+    .list-item{
+      padding:0 0 18px;
       border-bottom:1px solid var(--line);
     }
 
-    .timeline-row:last-child{
-      border-bottom:none;
-      padding-bottom:0;
-    }
+    .list-item:last-child{border-bottom:none;padding-bottom:0;}
 
-    .timeline-row strong{
-      font-weight:600;
-      font-size:17px;
-    }
-
-    .timeline-row span{
-      color:var(--muted);
-      text-align:right;
-    }
-
-    .contact-panel{
-      max-width:900px;
-      margin:34px auto 0;
-      text-align:center;
-    }
-
-    .contact-logo{
-      width:min(100%, 360px);
-      margin:0 auto 22px;
-    }
-
-    .contact-line{
-      font-size:clamp(22px, 4vw, 38px);
-      margin-bottom:14px;
-      word-break:break-word;
-    }
-
-    .contact-copy{
-      color:var(--muted);
+    .list-item h3{
+      margin:0 0 8px;
+      font-family:'Roboto Mono',monospace;
+      text-transform:uppercase;
       font-size:18px;
-      max-width:620px;
-      margin:0 auto 24px;
+      letter-spacing:.05em;
+    }
+
+    .list-item p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+    }
+
+    .process-line{
+      display:grid;
+      gap:18px;
+    }
+
+    .process-step{
+      display:grid;
+      grid-template-columns:72px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .step-no{
+      font-family:'Roboto Mono',monospace;
+      color:var(--accent);
+      font-size:14px;
+      padding-top:4px;
+    }
+
+    .process-step h3{
+      margin:0 0 8px;
+      font-size:22px;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+
+    .process-step p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+    }
+
+    .contact-band{
+      margin-top:26px;
+      padding:26px 0 0;
+      border-top:1px solid var(--line);
+    }
+
+    .contact-email{
+      font-size:clamp(22px, 4vw, 40px);
+      font-weight:900;
+      letter-spacing:-.03em;
+      word-break:break-word;
+      margin:0 0 14px;
+    }
+
+    .contact-note{
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.6;
+      margin:0 0 22px;
+      max-width:680px;
     }
 
     .footer{
-      padding:28px 0 40px;
-      text-align:center;
+      padding:26px 0 38px;
       color:var(--muted);
-      font-size:14px;
+      font-family:'Roboto Mono',monospace;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
     }
 
     .reveal{
       opacity:0;
-      transform:translateY(32px);
-      transition:opacity .9s ease, transform .9s ease;
+      transform:translateY(22px);
+      transition:opacity .8s ease, transform .8s ease;
     }
 
     .reveal.visible{
@@ -495,17 +455,39 @@
       transform:translateY(0);
     }
 
+    @keyframes swipe{
+      to{transform:rotate(-1.4deg) scaleX(1);}
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0px);}
+      50%{transform:translateY(-18px);}
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1);opacity:.8;}
+      50%{transform:scale(1.06);opacity:1;}
+    }
+
+    @keyframes rise{
+      from{opacity:0;transform:translateY(28px) scale(.98);}
+      to{opacity:1;transform:translateY(0) scale(1);}
+    }
+
+    @keyframes scan{
+      0%{transform:translateX(-18px) scaleX(.72);opacity:0;}
+      18%{opacity:.8;}
+      50%{opacity:.55;}
+      100%{transform:translateX(28px) scaleX(1);opacity:0;}
+    }
+
     @media (max-width: 980px){
       .hero-inner,
-      .services-grid,
-      .stats-grid,
-      .process-grid{
-        grid-template-columns:1fr 1fr;
+      .section-grid{
+        grid-template-columns:1fr;
       }
 
-      .hero-panel{
-        min-height:auto;
-      }
+      .hero-visual{min-height:auto;}
     }
 
     @media (max-width: 760px){
@@ -515,65 +497,22 @@
         flex-direction:column;
       }
 
-      .brand-lockup{
-        width:100%;
-        justify-content:center;
-      }
+      .brand-lockup{width:100%;justify-content:center;}
 
       .nav-links{
-        justify-content:center;
         flex-wrap:wrap;
-        gap:16px;
+        justify-content:center;
+        gap:14px;
         font-size:12px;
       }
 
-      .hero{
-        min-height:auto;
-      }
-
-      .hero-inner,
-      .services-grid,
-      .stats-grid,
-      .process-grid,
-      .panel-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-inner{
-        gap:28px;
-        padding:46px 0 56px;
-      }
-
-      h1{
-        font-size:clamp(42px, 15vw, 72px);
-      }
-
-      .hero-copy,
-      .section-copy,
-      .contact-copy{
-        font-size:17px;
-      }
-
-      .btn{
-        width:100%;
-      }
-
-      .hero-panel{
-        border-radius:24px;
-        padding:22px;
-      }
-
-      section{
-        padding:68px 0;
-      }
-
-      .timeline-row{
-        flex-direction:column;
-      }
-
-      .timeline-row span{
-        text-align:left;
-      }
+      .hero{min-height:auto;}
+      .hero-inner{padding:48px 0 38px;gap:26px;}
+      .lead,.section-copy,.contact-note{font-size:17px;}
+      .btn{width:100%;}
+      .process-step{grid-template-columns:58px 1fr;}
+      .section{padding:52px 0;}
+      .slash{display:none;}
     }
   </style>
 </head>
@@ -581,17 +520,17 @@
   <nav class="nav">
     <div class="wrap nav-inner">
       <a href="#top" class="brand-lockup" aria-label="Blacksmith Media home">
-        <img class="brand-mark" src="blacksmith-logo.png" alt="Blacksmith Media logo">
-        <div class="brand-text">
+        <img class="brand-mark" src="./blacksmith-logo.png" alt="Blacksmith Media logo">
+        <div>
           <div class="brand-name">Blacksmith Media</div>
-          <div class="brand-sub">Brand + Web Design</div>
+          <div class="brand-sub">Brand + Web</div>
         </div>
       </a>
 
       <div class="nav-links">
+        <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#process">Process</a>
-        <a href="#timeline">Timeline</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -599,169 +538,162 @@
 
   <main id="top">
     <section class="hero">
+      <div class="orb one"></div>
+      <div class="orb two"></div>
+
       <div class="wrap hero-inner">
         <div class="reveal visible">
-          <div class="eyebrow">Forged Brand Identity + Website Design</div>
-          <h1>Built with precision. Designed to last.</h1>
-          <p class="hero-copy">
-            Blacksmith Media creates bold brand systems and high-performance websites for businesses that want a sharper identity, a stronger presence, and a cleaner digital experience.
+          <div class="eyebrow">One-page brand + website landing page</div>
+          <h1>
+            Forging <span class="highlight">brands</span><br>
+            that look <span class="highlight delay-1">sharp</span><br>
+            and hit <span class="highlight delay-2">hard</span>
+          </h1>
+          <p class="lead">
+            Blacksmith Media builds <span class="highlight">brand identity</span>, <span class="highlight delay-1">websites</span>, and <span class="highlight delay-2">digital presence</span> for businesses that want a cleaner look, stronger positioning, and a site that actually feels modern.
           </p>
 
           <div class="cta-row">
-            <a class="btn primary" href="#contact">Start a Project</a>
-            <a class="btn secondary" href="#services">View Services</a>
+            <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Start a Project</a>
+            <a class="btn secondary" href="#services">See Services</a>
           </div>
 
-          <div class="hero-meta">
-            <div class="meta-pill">Brand Identity</div>
-            <div class="meta-pill">Website Design</div>
-            <div class="meta-pill">SEO Setup</div>
-            <div class="meta-pill">Maintenance</div>
+          <div class="mini-meta mono">
+            <span>Brand identity</span>
+            <span>Web design</span>
+            <span>Landing pages</span>
+            <span>Ongoing support</span>
           </div>
         </div>
 
-        <div class="hero-panel reveal visible">
-          <div class="hero-logo-card">
-            <img class="hero-logo" src="blacksmith-logo-full.png" alt="Blacksmith Media forged logo">
-          </div>
-
-          <div class="panel-grid">
-            <div class="mini-card">
-              <div class="card-kicker">Brand</div>
-              <p>Logo refinement, color palette, typography direction, and a visual identity system that stays consistent across every touchpoint.</p>
-            </div>
-            <div class="mini-card">
-              <div class="card-kicker">Web</div>
-              <p>Custom layout, mobile optimization, contact forms, SEO foundations, performance tuning, and a polished launch experience.</p>
-            </div>
-            <div class="mini-card">
-              <div class="card-kicker">Support</div>
-              <p>Hosting, updates, security monitoring, backups, and minor content changes to keep the site running clean after launch.</p>
-            </div>
-            <div class="mini-card">
-              <div class="card-kicker">Approach</div>
-              <p>Minimal, premium, and intentionally built around the Blacksmith Media look: dark, forged, sharp, and memorable.</p>
-            </div>
+        <div class="hero-visual reveal visible">
+          <div class="slash one"></div>
+          <div class="slash two"></div>
+          <div class="slash three"></div>
+          <div class="logo-stage">
+            <img src="./blacksmith-logo-full.png" alt="Blacksmith Media full logo">
           </div>
         </div>
       </div>
     </section>
 
-    <section id="services">
-      <div class="wrap">
-        <div class="section-kicker reveal">Services</div>
-        <h2 class="reveal">What Blacksmith Media offers</h2>
-        <p class="section-copy reveal">
-          This layout is tailored around the same core service structure shown in your proposal: brand identity, website design and development, and ongoing maintenance support.
-        </p>
+    <div class="wrap"><div class="divider"></div></div>
 
-        <div class="services-grid">
-          <div class="card reveal">
-            <h3>Brand Identity</h3>
-            <p>Logo refinement or creation, brand color direction, font selection, and cohesive visual guidelines designed to make the brand look established and professional.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Web Design + Development</h3>
-            <p>Full website layout, responsive design, page creation, content structure, contact forms, SEO basics, and performance-focused buildout for desktop and mobile.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Maintenance + Hosting</h3>
-            <p>Ongoing hosting, routine updates, security monitoring, backups, performance checks, and minor content changes after the site goes live.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="section-kicker reveal">Why this works</div>
-        <h2 class="reveal">Clear positioning. Strong presentation.</h2>
-
-        <div class="stats-grid">
-          <div class="card reveal">
-            <div class="stat-number">01</div>
-            <div class="stat-label">Premium first impression</div>
-          </div>
-          <div class="card reveal">
-            <div class="stat-number">02</div>
-            <div class="stat-label">Mobile responsive layout</div>
-          </div>
-          <div class="card reveal">
-            <div class="stat-number">03</div>
-            <div class="stat-label">Performance-minded build</div>
-          </div>
-          <div class="card reveal">
-            <div class="stat-number">04</div>
-            <div class="stat-label">Easy to expand later</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="wrap">
-        <div class="section-kicker reveal">Process</div>
-        <h2 class="reveal">From concept to launch</h2>
-        <p class="section-copy reveal">
-          The structure below keeps the site simple, strategic, and aligned with the way Blacksmith Media already presents projects and proposals.
-        </p>
-
-        <div class="process-grid">
-          <div class="card reveal">
-            <h3>Discovery</h3>
-            <p>Define the client, offer, audience, tone, content needs, and visual direction before design starts.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Design</h3>
-            <p>Shape the visual language, page hierarchy, and branded look so the site feels cohesive and high-end.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Build</h3>
-            <p>Develop responsive pages, optimize layout and performance, and prepare the site for launch.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Refine</h3>
-            <p>Apply revisions, finalize content, connect forms or integrations, and move into launch and maintenance.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="timeline">
-      <div class="wrap">
-        <div class="section-kicker reveal">Timeline</div>
-        <h2 class="reveal">Typical project cadence</h2>
-
-        <div class="card timeline-card reveal">
-          <div class="timeline-row">
-            <strong>Brand Identity</strong>
-            <span>2 to 3 weeks</span>
-          </div>
-          <div class="timeline-row">
-            <strong>Website Design + Development</strong>
-            <span>4 to 6 weeks</span>
-          </div>
-          <div class="timeline-row">
-            <strong>Total Estimated Timeline</strong>
-            <span>Roughly 6 weeks from start to launch, depending on content, revisions, and approvals</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="section-kicker reveal">Contact</div>
-        <h2 class="reveal">Let’s build something sharper</h2>
-
-        <div class="card contact-panel reveal">
-          <img class="contact-logo" src="blacksmith-logo-full.png" alt="Blacksmith Media full logo">
-          <div class="contact-line">hello@blacksmithmedia.ca</div>
-          <p class="contact-copy">
-            Replace this with your real email, booking link, and social handles. This section is set up to work well as a clean lead capture point for inquiries and proposals.
+    <section class="section" id="about">
+      <div class="wrap section-grid">
+        <div class="reveal">
+          <div class="eyebrow">About</div>
+          <h2>Less filler. More impact.</h2>
+          <p class="section-copy">
+            This version is built as a cleaner <span class="highlight">one-page lander</span> with fewer cards, more open space, stronger typography, and motion that feels more intentional. The goal is a site that reads fast, looks premium, and keeps attention where it matters.
           </p>
-          <div class="cta-row" style="justify-content:center; margin-bottom:0;">
-            <a class="btn primary" href="mailto:hello@blacksmithmedia.ca">Email Blacksmith Media</a>
+        </div>
+        <div class="list reveal">
+          <div class="list-item">
+            <h3>Minimal structure</h3>
+            <p>Less clutter, fewer boxes, and more focus on the message, the branding, and the call to action.</p>
+          </div>
+          <div class="list-item">
+            <h3>Sharper aesthetic</h3>
+            <p>Roboto and Roboto Mono give it that cleaner, slightly technical feel without looking generic.</p>
+          </div>
+          <div class="list-item">
+            <h3>Highlight animation</h3>
+            <p>The bright marker-style highlight pulls attention to the parts you want people to remember.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap"><div class="divider"></div></div>
+
+    <section class="section" id="services">
+      <div class="wrap section-grid">
+        <div class="reveal">
+          <div class="eyebrow">Services</div>
+          <h2>What Blacksmith Media does</h2>
+          <p class="section-copy">
+            Built around the core offer: <span class="highlight">branding</span>, <span class="highlight delay-1">web design</span>, and <span class="highlight delay-2">digital polish</span> for businesses that need a stronger front-end presence.
+          </p>
+        </div>
+        <div class="list reveal">
+          <div class="list-item">
+            <h3>Brand Identity</h3>
+            <p>Logo direction, typography, color palette, and visual consistency that makes a business look established.</p>
+          </div>
+          <div class="list-item">
+            <h3>Website Design</h3>
+            <p>Clean layouts, responsive pages, conversion-focused structure, and a modern visual experience across devices.</p>
+          </div>
+          <div class="list-item">
+            <h3>Launch + Maintenance</h3>
+            <p>Publishing, updates, minor revisions, and ongoing support so the site keeps looking sharp after launch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap"><div class="divider"></div></div>
+
+    <section class="section" id="process">
+      <div class="wrap section-grid">
+        <div class="reveal">
+          <div class="eyebrow">Process</div>
+          <h2>Fast, clear, and built to move</h2>
+          <p class="section-copy">
+            The process stays lean: define the direction, build the look, tighten the details, and launch without overcomplicating it.
+          </p>
+        </div>
+        <div class="process-line reveal">
+          <div class="process-step">
+            <div class="step-no">01</div>
+            <div>
+              <h3>Define</h3>
+              <p>Clarify the offer, tone, audience, and overall style before the design starts.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-no">02</div>
+            <div>
+              <h3>Design</h3>
+              <p>Shape the visual direction, messaging hierarchy, and layout around what matters most.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-no">03</div>
+            <div>
+              <h3>Build</h3>
+              <p>Develop the site, optimize the experience, and make sure it works cleanly on desktop and mobile.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-no">04</div>
+            <div>
+              <h3>Launch</h3>
+              <p>Publish, refine, and support the finished product so it holds up beyond day one.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap"><div class="divider"></div></div>
+
+    <section class="section" id="contact">
+      <div class="wrap reveal">
+        <div class="eyebrow">Contact</div>
+        <h2>Ready to build something better?</h2>
+        <p class="section-copy">
+          Blacksmith Media helps businesses look more established online with branding and websites that feel sharper, cleaner, and more intentional.
+        </p>
+
+        <div class="contact-band">
+          <div class="contact-email">blacksmithmedia@protonmail.com</div>
+          <p class="contact-note">
+            Use this section as the main conversion point. You can also add Instagram, a booking link, or a short form later without changing the overall feel of the page.
+          </p>
+          <div class="cta-row" style="margin-bottom:0;">
+            <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Email Blacksmith Media</a>
             <a class="btn secondary" href="#top">Back to Top</a>
           </div>
         </div>
@@ -779,7 +711,7 @@
     const revealOnScroll = () => {
       revealItems.forEach(item => {
         const top = item.getBoundingClientRect().top;
-        if (top < window.innerHeight - 90) {
+        if (top < window.innerHeight - 80) {
           item.classList.add('visible');
         }
       });
@@ -790,4 +722,3 @@
   </script>
 </body>
 </html>
-
