@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blacksmith Media</title>
-  <meta name="description" content="Blacksmith Media builds sharp brand identities and high-impact websites with a bold, forged aesthetic.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,30 +12,35 @@
   <style>
     :root{
       --bg:#050505;
-      --bg-2:#0a0a0a;
+      --bg-soft:#090909;
       --text:#f5f5f5;
-      --muted:#b7b7b7;
+      --muted:#a8a8a8;
       --line:rgba(255,255,255,.08);
       --accent:#f3e64d;
-      --accent-soft:rgba(243,230,77,.22);
-      --accent-2:#ffffff;
+      --accent-soft:rgba(243,230,77,.12);
       --max:1180px;
-      --shadow:0 30px 80px rgba(0,0,0,.45);
+      --nav-h:92px;
+      --cursor-x:50vw;
+      --cursor-y:50vh;
     }
 
     *{box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
+    html{scroll-behavior:auto;}
+
     body{
       margin:0;
       font-family:'Roboto',sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(circle at 15% 20%, rgba(243,230,77,.08), transparent 20%),
-        radial-gradient(circle at 85% 15%, rgba(255,255,255,.05), transparent 16%),
-        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+      background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
       overflow-x:hidden;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
+      cursor:none;
+      opacity:0;
+      animation:pageFade .9s ease forwards;
+    }
+
+    @keyframes pageFade{
+      from{opacity:0; transform:translateY(8px);}
+      to{opacity:1; transform:translateY(0);}
     }
 
     body::before{
@@ -45,159 +49,263 @@
       inset:0;
       pointer-events:none;
       background:
-        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
-      background-size:32px 32px;
-      mask-image:radial-gradient(circle at center, black 45%, transparent 90%);
-      opacity:.25;
-      z-index:0;
+        linear-gradient(rgba(255,255,255,.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.026) 1px, transparent 1px);
+      background-size:40px 40px;
+      opacity:.14;
+      z-index:1;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:-20%;
+      pointer-events:none;
+      background:
+        radial-gradient(500px circle at var(--cursor-x) var(--cursor-y), rgba(243,230,77,.09), transparent 45%),
+        radial-gradient(900px circle at calc(var(--cursor-x) * 1.02) calc(var(--cursor-y) * .98), rgba(255,255,255,.035), transparent 40%);
+      z-index:1;
+      transition:background .08s linear;
+    }
+
+    .grain{
+      position:fixed;
+      inset:-50%;
+      pointer-events:none;
+      z-index:2;
+      opacity:.08;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      animation:grainMove 9s steps(8) infinite;
+      mix-blend-mode:soft-light;
+    }
+
+    @keyframes grainMove{
+      0%{transform:translate(0,0)}
+      10%{transform:translate(-4%,-6%)}
+      20%{transform:translate(3%,-2%)}
+      30%{transform:translate(-6%,4%)}
+      40%{transform:translate(5%,1%)}
+      50%{transform:translate(-2%,6%)}
+      60%{transform:translate(6%,-4%)}
+      70%{transform:translate(-5%,3%)}
+      80%{transform:translate(3%,-5%)}
+      90%{transform:translate(-2%,2%)}
+      100%{transform:translate(0,0)}
     }
 
     a{color:inherit;text-decoration:none;}
     img{display:block;max-width:100%;}
 
+    .cursor-dot,
+    .cursor-ring{
+      position:fixed;
+      top:0;
+      left:0;
+      pointer-events:none;
+      z-index:9999;
+      mix-blend-mode:normal;
+      transform:translate(-50%, -50%);
+    }
+
+    .cursor-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 24px rgba(243,230,77,.35);
+    }
+
+    .cursor-ring{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      border:1px solid rgba(243,230,77,.55);
+      transition:width .2s ease, height .2s ease, border-color .2s ease, background .2s ease;
+      background:rgba(243,230,77,.03);
+      backdrop-filter:blur(1px);
+    }
+
+    .cursor-ring.active{
+      width:52px;
+      height:52px;
+      border-color:rgba(243,230,77,.9);
+      background:rgba(243,230,77,.06);
+    }
+
     .wrap{
       width:min(var(--max), calc(100% - 32px));
       margin:0 auto;
       position:relative;
-      z-index:1;
+      z-index:3;
     }
 
     .nav{
       position:sticky;
       top:0;
-      z-index:100;
       backdrop-filter:blur(14px);
-      background:rgba(5,5,5,.76);
+      background:rgba(5,5,5,.78);
       border-bottom:1px solid var(--line);
+      z-index:50;
     }
 
     .nav-inner{
-      min-height:76px;
+      min-height:var(--nav-h);
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:24px;
+      gap:20px;
     }
 
     .brand-lockup{
       display:flex;
       align-items:center;
-      gap:14px;
-      min-width:0;
+      gap:18px;
     }
 
     .brand-mark{
-      width:52px;
-      height:52px;
+      width:88px;
+      height:88px;
       object-fit:contain;
-      filter:drop-shadow(0 0 18px rgba(255,255,255,.08));
+      filter:drop-shadow(0 0 24px rgba(255,255,255,.05));
     }
 
     .brand-name{
       font-family:'Roboto Mono',monospace;
-      font-size:20px;
-      font-weight:700;
-      letter-spacing:.03em;
+      font-size:22px;
+      letter-spacing:.08em;
       text-transform:uppercase;
-      white-space:nowrap;
+      font-weight:700;
+      line-height:1;
     }
 
     .brand-sub{
-      color:var(--muted);
       font-family:'Roboto Mono',monospace;
       font-size:11px;
-      letter-spacing:.18em;
+      letter-spacing:.22em;
+      color:var(--muted);
+      margin-top:7px;
       text-transform:uppercase;
-      margin-top:4px;
     }
 
     .nav-links{
       display:flex;
-      align-items:center;
-      gap:22px;
+      gap:24px;
       font-family:'Roboto Mono',monospace;
       font-size:13px;
+      letter-spacing:.12em;
       text-transform:uppercase;
-      letter-spacing:.1em;
       color:var(--muted);
     }
 
+    .nav-links a{
+      position:relative;
+      transition:color .2s ease;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:100%;
+      height:1px;
+      background:var(--accent);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .25s ease;
+    }
+
     .nav-links a:hover{color:var(--text);}
+    .nav-links a:hover::after{transform:scaleX(1);}
 
     .hero{
-      min-height:100vh;
+      min-height:calc(100vh - var(--nav-h));
       display:flex;
       align-items:center;
       position:relative;
       overflow:hidden;
     }
 
-    .orb{
+    .hero-glow{
       position:absolute;
-      border-radius:50%;
-      filter:blur(18px);
+      inset:0;
       pointer-events:none;
-      opacity:.65;
-      animation:float 9s ease-in-out infinite;
+      z-index:2;
+      background:
+        radial-gradient(circle at 78% 42%, rgba(243,230,77,.11), transparent 24%),
+        radial-gradient(circle at 18% 72%, rgba(243,230,77,.05), transparent 30%);
+      filter:blur(8px);
     }
 
-    .orb.one{
-      width:280px;height:280px;
-      right:-80px;top:120px;
-      background:radial-gradient(circle, rgba(243,230,77,.22), transparent 68%);
-    }
-
-    .orb.two{
-      width:220px;height:220px;
-      left:-60px;bottom:120px;
-      background:radial-gradient(circle, rgba(255,255,255,.1), transparent 70%);
-      animation-delay:-3s;
+    .parallax-sheen{
+      position:absolute;
+      inset:auto -10% 8% auto;
+      width:42vw;
+      height:42vw;
+      max-width:520px;
+      max-height:520px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(243,230,77,.14), transparent 65%);
+      filter:blur(30px);
+      pointer-events:none;
+      z-index:2;
+      transform:translate3d(0,0,0);
+      will-change:transform;
     }
 
     .hero-inner{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:54px;
-      align-items:center;
-      padding:72px 0 56px;
-    }
-
-    .eyebrow,
-    .mono{
-      font-family:'Roboto Mono',monospace;
-      text-transform:uppercase;
-      letter-spacing:.14em;
+      padding:72px 0 64px;
+      position:relative;
+      z-index:3;
     }
 
     .eyebrow{
-      color:var(--muted);
+      font-family:'Roboto Mono',monospace;
       font-size:12px;
-      margin-bottom:18px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:22px;
     }
 
     h1{
-      margin:0 0 18px;
-      font-size:clamp(52px, 8vw, 104px);
-      line-height:.92;
+      font-size:clamp(54px, 9vw, 112px);
+      line-height:.9;
       font-weight:900;
-      letter-spacing:-.04em;
+      margin:0 0 22px;
+      letter-spacing:-.05em;
       text-transform:uppercase;
+      max-width:980px;
+    }
+
+    .type-line{
+      display:block;
+      overflow:hidden;
+      white-space:nowrap;
+      width:0;
+      animation:typing 1.2s steps(14, end) forwards;
+    }
+
+    .type-line.delay-1{animation-delay:.95s;}
+    .type-line.delay-2{animation-delay:1.95s;}
+
+    @keyframes typing{
+      from{width:0;}
+      to{width:100%;}
     }
 
     .lead{
       font-size:21px;
-      line-height:1.55;
       color:var(--muted);
-      max-width:690px;
-      margin:0 0 30px;
+      max-width:760px;
+      margin-bottom:32px;
+      line-height:1.65;
     }
 
     .highlight{
       position:relative;
-      color:var(--text);
-      display:inline-block;
       z-index:1;
+      color:var(--text);
     }
 
     .highlight::before{
@@ -205,249 +313,165 @@
       position:absolute;
       left:-4px;
       right:-4px;
-      bottom:.08em;
-      height:.62em;
+      bottom:.1em;
+      height:56%;
       background:var(--accent);
       opacity:.95;
       z-index:-1;
-      transform:rotate(-1.4deg) scaleX(0);
+      transform:scaleX(0);
       transform-origin:left center;
-      animation:swipe 1.05s cubic-bezier(.2,.8,.2,1) forwards;
+      animation:highlight 1s cubic-bezier(.22,.8,.22,1) forwards;
+      border-radius:2px;
     }
 
-    .highlight.delay-1::before{animation-delay:.25s;}
-    .highlight.delay-2::before{animation-delay:.5s;}
+    .highlight.delay-1::before{animation-delay:1.15s;}
+    .highlight.delay-2::before{animation-delay:2.15s;}
+    .highlight.delay-3::before{animation-delay:2.45s;}
 
-    .cta-row{
+    @keyframes highlight{
+      to{transform:scaleX(1);}
+    }
+
+    .btn-row{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
-      margin-bottom:22px;
+      gap:12px;
+      margin-bottom:18px;
     }
 
     .btn{
-      min-height:54px;
-      padding:0 22px;
-      border-radius:999px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      font-family:'Roboto Mono',monospace;
-      text-transform:uppercase;
-      font-size:14px;
-      letter-spacing:.08em;
+      padding:18px 28px;
+      border-radius:40px;
       border:1px solid var(--line);
-      transition:transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+      font-family:'Roboto Mono',monospace;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      transition:transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      border-color:rgba(255,255,255,.18);
     }
 
     .btn.primary{
       background:var(--accent);
-      color:#060606;
+      color:#000;
       border-color:var(--accent);
-      box-shadow:0 12px 34px rgba(243,230,77,.16);
-    }
-
-    .btn.primary:hover,
-    .btn.secondary:hover{
-      transform:translateY(-2px);
+      box-shadow:0 14px 40px rgba(243,230,77,.12);
     }
 
     .btn.secondary{
-      background:rgba(255,255,255,.02);
-      color:var(--text);
+      background:rgba(255,255,255,.015);
     }
 
-    .mini-meta{
+    .micro-list{
       display:flex;
-      gap:18px;
       flex-wrap:wrap;
-      color:var(--muted);
+      gap:22px;
       font-family:'Roboto Mono',monospace;
       font-size:12px;
+      letter-spacing:.1em;
       text-transform:uppercase;
-      letter-spacing:.08em;
+      color:var(--muted);
     }
 
-    .mini-meta span::before{
+    .micro-list span::before{
       content:"// ";
       color:var(--accent);
     }
 
-    .hero-visual{
-      position:relative;
-      min-height:620px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .logo-stage{
-      position:relative;
-      width:min(100%, 520px);
-      animation:rise .9s ease both;
-    }
-
-    .logo-stage::before{
-      content:"";
-      position:absolute;
-      inset:10% -10%;
-      background:radial-gradient(circle, rgba(243,230,77,.14), transparent 58%);
-      filter:blur(14px);
-      animation:pulse 4s ease-in-out infinite;
-    }
-
-    .logo-stage img{
-      position:relative;
-      z-index:2;
-      filter:drop-shadow(0 0 40px rgba(255,255,255,.08));
-    }
-
-    .slash{
-      position:absolute;
-      height:2px;
-      background:linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity:.7;
-      transform-origin:left center;
-      animation:scan 3.2s linear infinite;
-    }
-
-    .slash.one{width:180px; top:16%; left:8%;}
-    .slash.two{width:120px; bottom:18%; right:4%; animation-delay:-1.2s;}
-    .slash.three{width:150px; top:52%; right:10%; animation-delay:-2.1s;}
-
     .section{
-      padding:64px 0;
+      padding:84px 0;
+      border-top:1px solid var(--line);
       position:relative;
-      z-index:1;
-    }
-
-    .divider{
-      width:100%;
-      height:1px;
-      background:linear-gradient(90deg, transparent, var(--line), transparent);
-      margin:0 auto;
-    }
-
-    .section-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px 56px;
-      align-items:start;
+      z-index:3;
     }
 
     h2{
-      margin:0 0 14px;
-      font-size:clamp(34px, 5vw, 54px);
-      line-height:.95;
-      font-weight:900;
+      font-size:clamp(38px,5vw,64px);
+      margin:0 0 16px;
       text-transform:uppercase;
-      letter-spacing:-.03em;
+      font-weight:900;
+      line-height:.96;
+      letter-spacing:-.04em;
+      max-width:900px;
     }
 
     .section-copy{
+      font-size:19px;
       color:var(--muted);
-      font-size:18px;
-      line-height:1.65;
-      margin:0;
-      max-width:620px;
+      max-width:760px;
+      line-height:1.72;
     }
 
-    .list{
-      display:grid;
-      gap:18px;
-      margin-top:8px;
+    .stack{
+      margin-top:34px;
+      max-width:900px;
     }
 
     .list-item{
-      padding:0 0 18px;
+      padding:26px 0;
       border-bottom:1px solid var(--line);
+      transform:translate3d(0,0,0);
+      will-change:transform;
     }
 
-    .list-item:last-child{border-bottom:none;padding-bottom:0;}
-
     .list-item h3{
-      margin:0 0 8px;
+      margin:0 0 12px;
       font-family:'Roboto Mono',monospace;
+      letter-spacing:.1em;
       text-transform:uppercase;
       font-size:18px;
-      letter-spacing:.05em;
     }
 
     .list-item p{
       margin:0;
       color:var(--muted);
-      font-size:16px;
-      line-height:1.65;
+      font-size:18px;
+      line-height:1.7;
+      max-width:760px;
     }
 
-    .process-line{
+    .step-row{
       display:grid;
-      gap:18px;
-    }
-
-    .process-step{
-      display:grid;
-      grid-template-columns:72px 1fr;
-      gap:18px;
+      grid-template-columns:80px 1fr;
+      gap:20px;
       align-items:start;
     }
 
     .step-no{
       font-family:'Roboto Mono',monospace;
       color:var(--accent);
-      font-size:14px;
-      padding-top:4px;
-    }
-
-    .process-step h3{
-      margin:0 0 8px;
-      font-size:22px;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-
-    .process-step p{
-      margin:0;
-      color:var(--muted);
       font-size:16px;
-      line-height:1.65;
-    }
-
-    .contact-band{
-      margin-top:26px;
-      padding:26px 0 0;
-      border-top:1px solid var(--line);
+      padding-top:2px;
     }
 
     .contact-email{
-      font-size:clamp(22px, 4vw, 40px);
+      font-size:clamp(34px, 6vw, 54px);
       font-weight:900;
-      letter-spacing:-.03em;
+      margin:26px 0 18px;
+      letter-spacing:-.04em;
       word-break:break-word;
-      margin:0 0 14px;
-    }
-
-    .contact-note{
-      color:var(--muted);
-      font-size:17px;
-      line-height:1.6;
-      margin:0 0 22px;
-      max-width:680px;
     }
 
     .footer{
-      padding:26px 0 38px;
-      color:var(--muted);
+      padding:38px 0 50px;
+      border-top:1px solid var(--line);
       font-family:'Roboto Mono',monospace;
       font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.08em;
+      color:var(--muted);
+      position:relative;
+      z-index:3;
     }
 
     .reveal{
       opacity:0;
-      transform:translateY(22px);
-      transition:opacity .8s ease, transform .8s ease;
+      transform:translateY(38px);
+      transition:opacity .8s cubic-bezier(.22,.8,.22,1), transform .8s cubic-bezier(.22,.8,.22,1);
     }
 
     .reveal.visible{
@@ -455,77 +479,54 @@
       transform:translateY(0);
     }
 
-    @keyframes swipe{
-      to{transform:rotate(-1.4deg) scaleX(1);}
+    [data-parallax]{
+      transform:translate3d(0,0,0);
+      transition:transform .08s linear;
+      will-change:transform;
     }
 
-    @keyframes float{
-      0%,100%{transform:translateY(0px);}
-      50%{transform:translateY(-18px);}
+    @media (max-width: 900px){
+      body{cursor:auto;}
+      .cursor-dot,.cursor-ring{display:none;}
+      .brand-mark{width:76px;height:76px;}
+      .type-line{white-space:normal;width:auto;animation:none;}
+      .highlight::before{transform:scaleX(1);animation:none;}
     }
 
-    @keyframes pulse{
-      0%,100%{transform:scale(1);opacity:.8;}
-      50%{transform:scale(1.06);opacity:1;}
-    }
-
-    @keyframes rise{
-      from{opacity:0;transform:translateY(28px) scale(.98);}
-      to{opacity:1;transform:translateY(0) scale(1);}
-    }
-
-    @keyframes scan{
-      0%{transform:translateX(-18px) scaleX(.72);opacity:0;}
-      18%{opacity:.8;}
-      50%{opacity:.55;}
-      100%{transform:translateX(28px) scaleX(1);opacity:0;}
-    }
-
-    @media (max-width: 980px){
-      .hero-inner,
-      .section-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-visual{min-height:auto;}
-    }
-
-    @media (max-width: 760px){
-      .nav-inner{
-        min-height:auto;
-        padding:14px 0;
-        flex-direction:column;
-      }
-
-      .brand-lockup{width:100%;justify-content:center;}
-
-      .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:14px;
-        font-size:12px;
-      }
-
+    @media (max-width: 768px){
+      :root{--nav-h:120px;}
+      .nav-inner{flex-direction:column; justify-content:center; padding:14px 0;}
+      .brand-lockup{gap:14px;}
+      .brand-mark{width:84px;height:84px;}
+      .brand-name{font-size:20px;}
+      .nav-links{gap:18px; flex-wrap:wrap; justify-content:center; font-size:12px;}
       .hero{min-height:auto;}
-      .hero-inner{padding:48px 0 38px;gap:26px;}
-      .lead,.section-copy,.contact-note{font-size:17px;}
+      .hero-inner{padding:54px 0 48px;}
+      h1{font-size:56px;}
+      .lead,.section-copy,.list-item p{font-size:17px;}
       .btn{width:100%;}
-      .process-step{grid-template-columns:58px 1fr;}
-      .section{padding:52px 0;}
-      .slash{display:none;}
+      .btn-row{display:grid; grid-template-columns:1fr;}
+      .micro-list{gap:14px 20px;}
+      .section{padding:64px 0;}
+      .step-row{grid-template-columns:60px 1fr;}
+      .parallax-sheen{width:70vw;height:70vw;right:-10vw;bottom:6%;}
     }
   </style>
 </head>
 <body>
+  <div class="grain"></div>
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+
   <nav class="nav">
     <div class="wrap nav-inner">
-      <a href="#top" class="brand-lockup" aria-label="Blacksmith Media home">
+      <div class="brand-lockup" data-parallax data-speed="0.04">
         <img class="brand-mark" src="./blacksmith-logo.png" alt="Blacksmith Media logo">
         <div>
           <div class="brand-name">Blacksmith Media</div>
           <div class="brand-sub">Brand + Web</div>
         </div>
-      </a>
+      </div>
 
       <div class="nav-links">
         <a href="#about">About</a>
@@ -536,166 +537,140 @@
     </div>
   </nav>
 
-  <main id="top">
+  <main>
     <section class="hero">
-      <div class="orb one"></div>
-      <div class="orb two"></div>
-
+      <div class="hero-glow"></div>
+      <div class="parallax-sheen" data-parallax data-speed="0.08"></div>
       <div class="wrap hero-inner">
-        <div class="reveal visible">
-          <div class="eyebrow">One-page brand + website landing page</div>
-          <h1>
-            Forging <span class="highlight">brands</span><br>
-            that look <span class="highlight delay-1">sharp</span><br>
-            and hit <span class="highlight delay-2">hard</span>
-          </h1>
-          <p class="lead">
-            Blacksmith Media builds <span class="highlight">brand identity</span>, <span class="highlight delay-1">websites</span>, and <span class="highlight delay-2">digital presence</span> for businesses that want a cleaner look, stronger positioning, and a site that actually feels modern.
-          </p>
+        <div class="eyebrow reveal">One-page brand + website landing page</div>
+        <h1>
+          <span class="type-line">Forging <span class="highlight">brands</span></span>
+          <span class="type-line delay-1">that look <span class="highlight delay-1">sharp</span></span>
+          <span class="type-line delay-2">and hit <span class="highlight delay-2">hard</span></span>
+        </h1>
 
-          <div class="cta-row">
-            <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Start a Project</a>
-            <a class="btn secondary" href="#services">See Services</a>
-          </div>
+        <p class="lead reveal">
+          Blacksmith Media builds <span class="highlight delay-1">brand identity</span>, <span class="highlight delay-2">websites</span>, and <span class="highlight delay-3">digital presence</span> for businesses that want a cleaner look and stronger positioning.
+        </p>
 
-          <div class="mini-meta mono">
-            <span>Brand identity</span>
-            <span>Web design</span>
-            <span>Landing pages</span>
-            <span>Ongoing support</span>
-          </div>
+        <div class="btn-row reveal">
+          <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Start a Project</a>
+          <a class="btn secondary" href="#services">See Services</a>
         </div>
 
-        <div class="hero-visual reveal visible">
-          <div class="slash one"></div>
-          <div class="slash two"></div>
-          <div class="slash three"></div>
-          <div class="logo-stage">
-            <img src="./blacksmith-logo-full.png" alt="Blacksmith Media full logo">
+        <div class="micro-list reveal">
+          <span>Brand Identity</span>
+          <span>Web Design</span>
+          <span>Landing Pages</span>
+          <span>Ongoing Support</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="about">
+      <div class="wrap">
+        <h2>Less filler. More impact.</h2>
+        <p class="section-copy">
+          This site is built as a <span class="highlight">one-page lander</span> designed to be clean, fast, and focused on converting visitors into clients.
+        </p>
+
+        <div class="stack">
+          <div class="list-item" data-parallax data-speed="0.03">
+            <h3>Minimal Structure</h3>
+            <p>Less clutter, fewer boxes, and more focus on the message and call to action.</p>
+          </div>
+
+          <div class="list-item" data-parallax data-speed="0.04">
+            <h3>Sharper Aesthetic</h3>
+            <p>Roboto and Roboto Mono give it a cleaner, more technical feel.</p>
+          </div>
+
+          <div class="list-item" data-parallax data-speed="0.05">
+            <h3>Highlight Animation</h3>
+            <p>The marker-style highlight pulls attention to key parts without making the page feel noisy.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="wrap"><div class="divider"></div></div>
+    <section class="section reveal" id="services">
+      <div class="wrap">
+        <h2>What Blacksmith Media does</h2>
+        <p class="section-copy">
+          Built around the core offer: <span class="highlight">branding</span>, <span class="highlight delay-1">web design</span>, and <span class="highlight delay-2">digital polish</span>.
+        </p>
 
-    <section class="section" id="about">
-      <div class="wrap section-grid">
-        <div class="reveal">
-          <div class="eyebrow">About</div>
-          <h2>Less filler. More impact.</h2>
-          <p class="section-copy">
-            This version is built as a cleaner <span class="highlight">one-page lander</span> with fewer cards, more open space, stronger typography, and motion that feels more intentional. The goal is a site that reads fast, looks premium, and keeps attention where it matters.
-          </p>
-        </div>
-        <div class="list reveal">
-          <div class="list-item">
-            <h3>Minimal structure</h3>
-            <p>Less clutter, fewer boxes, and more focus on the message, the branding, and the call to action.</p>
-          </div>
-          <div class="list-item">
-            <h3>Sharper aesthetic</h3>
-            <p>Roboto and Roboto Mono give it that cleaner, slightly technical feel without looking generic.</p>
-          </div>
-          <div class="list-item">
-            <h3>Highlight animation</h3>
-            <p>The bright marker-style highlight pulls attention to the parts you want people to remember.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="wrap"><div class="divider"></div></div>
-
-    <section class="section" id="services">
-      <div class="wrap section-grid">
-        <div class="reveal">
-          <div class="eyebrow">Services</div>
-          <h2>What Blacksmith Media does</h2>
-          <p class="section-copy">
-            Built around the core offer: <span class="highlight">branding</span>, <span class="highlight delay-1">web design</span>, and <span class="highlight delay-2">digital polish</span> for businesses that need a stronger front-end presence.
-          </p>
-        </div>
-        <div class="list reveal">
-          <div class="list-item">
+        <div class="stack">
+          <div class="list-item" data-parallax data-speed="0.03">
             <h3>Brand Identity</h3>
-            <p>Logo direction, typography, color palette, and visual consistency that makes a business look established.</p>
+            <p>Logo direction, typography, and visual identity that makes a business feel established.</p>
           </div>
-          <div class="list-item">
+
+          <div class="list-item" data-parallax data-speed="0.045">
             <h3>Website Design</h3>
-            <p>Clean layouts, responsive pages, conversion-focused structure, and a modern visual experience across devices.</p>
+            <p>Clean layouts, responsive pages, and conversion-focused structure that feels modern across devices.</p>
           </div>
-          <div class="list-item">
+
+          <div class="list-item" data-parallax data-speed="0.06">
             <h3>Launch + Maintenance</h3>
-            <p>Publishing, updates, minor revisions, and ongoing support so the site keeps looking sharp after launch.</p>
+            <p>Publishing, updates, and ongoing support so the site keeps looking sharp after launch.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="wrap"><div class="divider"></div></div>
+    <section class="section reveal" id="process">
+      <div class="wrap">
+        <h2>Fast, clear, and built to move</h2>
+        <p class="section-copy">
+          Define the direction, build the look, tighten the details, and launch.
+        </p>
 
-    <section class="section" id="process">
-      <div class="wrap section-grid">
-        <div class="reveal">
-          <div class="eyebrow">Process</div>
-          <h2>Fast, clear, and built to move</h2>
-          <p class="section-copy">
-            The process stays lean: define the direction, build the look, tighten the details, and launch without overcomplicating it.
-          </p>
-        </div>
-        <div class="process-line reveal">
-          <div class="process-step">
+        <div class="stack">
+          <div class="list-item step-row" data-parallax data-speed="0.03">
             <div class="step-no">01</div>
             <div>
               <h3>Define</h3>
-              <p>Clarify the offer, tone, audience, and overall style before the design starts.</p>
+              <p>Clarify the offer, tone, audience, and style before the design starts.</p>
             </div>
           </div>
-          <div class="process-step">
+
+          <div class="list-item step-row" data-parallax data-speed="0.04">
             <div class="step-no">02</div>
             <div>
               <h3>Design</h3>
-              <p>Shape the visual direction, messaging hierarchy, and layout around what matters most.</p>
+              <p>Shape the visual direction, messaging hierarchy, and layout.</p>
             </div>
           </div>
-          <div class="process-step">
+
+          <div class="list-item step-row" data-parallax data-speed="0.05">
             <div class="step-no">03</div>
             <div>
               <h3>Build</h3>
-              <p>Develop the site, optimize the experience, and make sure it works cleanly on desktop and mobile.</p>
+              <p>Develop and optimize the site so it works cleanly on desktop and mobile.</p>
             </div>
           </div>
-          <div class="process-step">
+
+          <div class="list-item step-row" data-parallax data-speed="0.06">
             <div class="step-no">04</div>
             <div>
               <h3>Launch</h3>
-              <p>Publish, refine, and support the finished product so it holds up beyond day one.</p>
+              <p>Publish, refine, and support the finished product.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="wrap"><div class="divider"></div></div>
-
-    <section class="section" id="contact">
-      <div class="wrap reveal">
-        <div class="eyebrow">Contact</div>
+    <section class="section reveal" id="contact">
+      <div class="wrap">
         <h2>Ready to build something better?</h2>
-        <p class="section-copy">
-          Blacksmith Media helps businesses look more established online with branding and websites that feel sharper, cleaner, and more intentional.
-        </p>
+        <p class="section-copy">Branding and websites that feel sharper, cleaner, and more intentional.</p>
 
-        <div class="contact-band">
-          <div class="contact-email">blacksmithmedia@protonmail.com</div>
-          <p class="contact-note">
-            Use this section as the main conversion point. You can also add Instagram, a booking link, or a short form later without changing the overall feel of the page.
-          </p>
-          <div class="cta-row" style="margin-bottom:0;">
-            <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Email Blacksmith Media</a>
-            <a class="btn secondary" href="#top">Back to Top</a>
-          </div>
+        <div class="contact-email">blacksmithmedia@protonmail.com</div>
+        <div class="btn-row">
+          <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Email Blacksmith Media</a>
+          <a class="btn secondary" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Back to Top</a>
         </div>
       </div>
     </section>
@@ -705,20 +680,72 @@
     <div class="wrap">© 2026 Blacksmith Media</div>
   </footer>
 
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
   <script>
-    const revealItems = document.querySelectorAll('.reveal');
+    const lenis = new Lenis({
+      duration: 1.1,
+      smoothWheel: true,
+      smoothTouch: false,
+      wheelMultiplier: 0.9
+    });
 
-    const revealOnScroll = () => {
-      revealItems.forEach(item => {
-        const top = item.getBoundingClientRect().top;
-        if (top < window.innerHeight - 80) {
-          item.classList.add('visible');
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
       });
-    };
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
+    const root = document.documentElement;
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      root.style.setProperty('--cursor-x', `${mouseX}px`);
+      root.style.setProperty('--cursor-y', `${mouseY}px`);
+      dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    });
+
+    const animateCursor = () => {
+      ringX += (mouseX - ringX) * 0.16;
+      ringY += (mouseY - ringY) * 0.16;
+      ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+      requestAnimationFrame(animateCursor);
+    };
+    animateCursor();
+
+    document.querySelectorAll('a, button, .btn').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('active'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('active'));
+    });
+
+    const parallaxEls = document.querySelectorAll('[data-parallax]');
+    const updateParallax = () => {
+      const scrollY = window.scrollY;
+      parallaxEls.forEach(el => {
+        const speed = parseFloat(el.dataset.speed || 0.03);
+        const offset = scrollY * speed;
+        el.style.transform = `translate3d(0, ${offset}px, 0)`;
+      });
+      requestAnimationFrame(updateParallax);
+    };
+    updateParallax();
   </script>
 </body>
 </html>
