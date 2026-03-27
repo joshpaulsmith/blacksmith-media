@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Web Design Sault Ste. Marie | Blacksmith Media</title>
+  <meta name="description" content="Blacksmith Media provides web design in Sault Ste. Marie and Northern Ontario. We build clean, modern websites for small businesses, contractors, and service companies." />
+  <meta name="keywords" content="Web Design Sault Ste. Marie, Sault Ste. Marie web designer, Northern Ontario web design, small business website design, contractor website design" />
+  <meta name="author" content="Blacksmith Media" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://blacksmithmedia.ca/web-design-sault-ste-marie.html" />
+
+  <meta property="og:title" content="Web Design Sault Ste. Marie | Blacksmith Media" />
+  <meta property="og:description" content="Modern web design for businesses in Sault Ste. Marie and Northern Ontario." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blacksmithmedia.ca/web-design-sault-ste-marie.html" />
+  <meta property="og:image" content="https://blacksmithmedia.ca/blacksmith-logo-full.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Web Design Sault Ste. Marie | Blacksmith Media" />
+  <meta name="twitter:description" content="Modern web design for businesses in Sault Ste. Marie and Northern Ontario." />
+  <meta name="twitter:image" content="https://blacksmithmedia.ca/blacksmith-logo-full.png" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6DTSDS8MV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P6DTSDS8MV');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web Design Sault Ste. Marie",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Blacksmith Media",
+      "url": "https://blacksmithmedia.ca",
+      "email": "blacksmithmedia@protonmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sault Ste. Marie",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      }
+    },
+    "areaServed": [
+      "Sault Ste. Marie",
+      "Algoma District",
+      "Northern Ontario"
+    ],
+    "serviceType": "Web Design",
+    "description": "Blacksmith Media provides web design services in Sault Ste. Marie and across Northern Ontario for small businesses, contractors, and service companies."
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#060606;
+      --bg-soft:#0d0d0d;
+      --panel:#111111;
+      --text:#f3f3f3;
+      --muted:#b8b8b8;
+      --line:rgba(255,255,255,.08);
+      --accent:#e7d94f;
+      --max:1160px;
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:'Roboto',sans-serif;
+      background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{text-decoration:none;color:inherit;}
+    img{display:block;max-width:100%;}
+
+    .wrap{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(6,6,6,.9);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      min-height:88px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      min-width:0;
+    }
+
+    .brand img{
+      width:72px;
+      height:72px;
+      object-fit:contain;
+    }
+
+    .brand-title{
+      font-family:'Roboto Mono',monospace;
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      line-height:1.05;
+    }
+
+    .brand-sub{
+      margin-top:6px;
+      font-family:'Roboto Mono',monospace;
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:26px;
+    }
+
+    .nav-links a{
+      font-family:'Roboto Mono',monospace;
+      font-size:13px;
+      font-weight:500;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      transition:color .2s ease;
+    }
+
+    .nav-links a:hover{color:var(--text);}
+
+    .hero{
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero-inner{
+      padding:92px 0 72px;
+    }
+
+    .eyebrow{
+      margin-bottom:20px;
+      font-family:'Roboto Mono',monospace;
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    h1{
+      margin:0 0 20px;
+      font-family:'Roboto Mono',monospace;
+      font-size:clamp(42px, 7vw, 82px);
+      font-weight:500;
+      line-height:.98;
+      max-width:980px;
+    }
+
+    .highlight{
+      background:var(--accent);
+      color:#000;
+      padding:.02em .14em .06em .14em;
+      display:inline;
+      box-decoration-break:clone;
+      -webkit-box-decoration-break:clone;
+    }
+
+    .lead{
+      max-width:760px;
+      margin:0 0 28px;
+      font-size:20px;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-family:'Roboto Mono',monospace;
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      transition:transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      border-color:rgba(255,255,255,.16);
+    }
+
+    .btn.primary{
+      background:var(--accent);
+      color:#000;
+      border-color:var(--accent);
+    }
+
+    .btn.secondary{
+      background:rgba(255,255,255,.02);
+      color:var(--text);
+    }
+
+    .section{
+      padding:78px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-kicker{
+      margin-bottom:12px;
+      font-family:'Roboto Mono',monospace;
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    h2{
+      margin:0 0 14px;
+      font-family:'Roboto Mono',monospace;
+      font-size:clamp(30px, 5vw, 58px);
+      font-weight:500;
+      line-height:1;
+      max-width:900px;
+    }
+
+    .section-copy{
+      max-width:800px;
+      margin:0;
+      color:var(--muted);
+      font-size:19px;
+      line-height:1.75;
+    }
+
+    .stack{
+      display:grid;
+      gap:0;
+      margin-top:28px;
+    }
+
+    .item{
+      padding:24px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .item:last-child{border-bottom:none;}
+
+    .item h3{
+      margin:0 0 10px;
+      font-family:'Roboto Mono',monospace;
+      font-size:20px;
+      font-weight:500;
+      text-transform:uppercase;
+    }
+
+    .item p{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.75;
+      max-width:860px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .card{
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.02);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-family:'Roboto Mono',monospace;
+      font-size:18px;
+      font-weight:500;
+      text-transform:uppercase;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .contact-box{
+      margin-top:26px;
+      padding:28px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.02);
+    }
+
+    .contact-email{
+      margin:0 0 14px;
+      font-family:'Roboto Mono',monospace;
+      font-size:clamp(28px, 5vw, 42px);
+      font-weight:500;
+      word-break:break-word;
+    }
+
+    .contact-note{
+      margin:0 0 20px;
+      max-width:760px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    .footer{
+      padding:30px 0 46px;
+      color:var(--muted);
+      font-family:'Roboto Mono',monospace;
+      font-size:13px;
+      font-weight:500;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    @media (max-width: 980px){
+      .cards{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 768px){
+      .nav-inner{
+        min-height:auto;
+        padding:14px 0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .brand img{
+        width:62px;
+        height:62px;
+      }
+
+      .brand-title{
+        font-size:16px;
+      }
+
+      .brand-sub{
+        font-size:11px;
+      }
+
+      .nav-links{
+        width:100%;
+        gap:16px;
+      }
+
+      .hero-inner{
+        padding:56px 0 54px;
+      }
+
+      h1{
+        font-size:42px;
+        line-height:1.05;
+      }
+
+      .lead,
+      .section-copy,
+      .item p,
+      .contact-note{
+        font-size:16px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .btn-row{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .section{
+        padding:56px 0;
+      }
+    }
+
+    @media (max-width: 600px){
+      h1{
+        font-size:36px;
+        line-height:1.08;
+      }
+
+      .highlight{
+        padding:0.02em 0.10em 0.05em 0.10em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Blacksmith Media home">
+        <img src="./blacksmith-logo.png" alt="Blacksmith Media logo" />
+        <div>
+          <div class="brand-title">Blacksmith Media</div>
+          <div class="brand-sub">Branding + Web Design</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="web-design-sault-ste-marie.html">Web Design</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="eyebrow">Web Design Sault Ste. Marie</div>
+
+        <h1>
+          Web design for
+          <span class="highlight">Sault Ste. Marie</span>
+          businesses
+        </h1>
+
+        <p class="lead">
+          Blacksmith Media provides web design in Sault Ste. Marie and across Northern Ontario.
+          We build clean, modern websites for small businesses, contractors, trades, and service companies
+          that need a professional online presence that actually helps bring in work.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn primary" href="index.html#contact">Start a Project</a>
+          <a class="btn secondary" href="index.html">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">Overview</div>
+        <h2>Web design built for clarity, trust, and conversions.</h2>
+        <p class="section-copy">
+          A good business website should do more than look nice. It should clearly explain what you do,
+          make your business look established, and make it easy for someone to contact you. That is the goal
+          behind every website we build.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">Services</div>
+        <h2>What’s included in our web design service</h2>
+
+        <div class="stack">
+          <div class="item">
+            <h3>Business Website Design</h3>
+            <p>Modern, professional websites built for small businesses, contractors, and local service companies that need a stronger online presence.</p>
+          </div>
+          <div class="item">
+            <h3>Mobile-Friendly Layouts</h3>
+            <p>Your site is built to look clean and work properly across phones, tablets, and desktop devices.</p>
+          </div>
+          <div class="item">
+            <h3>SEO Structure</h3>
+            <p>We set up headings, metadata, schema, and page structure so your site has a better foundation for Google indexing and local search visibility.</p>
+          </div>
+          <div class="item">
+            <h3>Fast, Simple Pages</h3>
+            <p>We focus on speed, clarity, and clean layout rather than bloated pages that are hard to manage and slow to load.</p>
+          </div>
+          <div class="item">
+            <h3>Contact & Lead Capture</h3>
+            <p>Your site should make it easy for visitors to take action, whether that means starting a project, sending a message, or requesting a quote.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">Process</div>
+        <h2>Our web design process</h2>
+
+        <div class="stack">
+          <div class="item">
+            <h3>1. Discovery</h3>
+            <p>We learn about your business, your services, your target audience, and what your website needs to accomplish.</p>
+          </div>
+          <div class="item">
+            <h3>2. Planning</h3>
+            <p>We map out the page structure, messaging, call-to-actions, and overall layout so the site has a clear direction before the build begins.</p>
+          </div>
+          <div class="item">
+            <h3>3. Design</h3>
+            <p>We create a clean, modern visual direction that fits your brand and makes your business look professional online.</p>
+          </div>
+          <div class="item">
+            <h3>4. Build</h3>
+            <p>The website is built to be responsive, fast, and easy to use, with a focus on clean code and a strong mobile experience.</p>
+          </div>
+          <div class="item">
+            <h3>5. Launch</h3>
+            <p>Once approved, the site goes live and can be submitted to Google with the right supporting setup in place.</p>
+          </div>
+          <div class="item">
+            <h3>6. Ongoing Support</h3>
+            <p>After launch, we can continue to help with edits, updates, future improvements, and general website support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">Who We Work With</div>
+        <h2>Built for small businesses and service companies</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Contractors</h3>
+            <p>Websites for electricians, HVAC companies, roofers, landscapers, and other trades that need to look credible and easy to contact.</p>
+          </div>
+
+          <div class="card">
+            <h3>Local Businesses</h3>
+            <p>Professional websites for businesses that want a stronger presence in Sault Ste. Marie and across Northern Ontario.</p>
+          </div>
+
+          <div class="card">
+            <h3>Startups & Growing Brands</h3>
+            <p>Clean website design for newer businesses that need a polished look, clear messaging, and a strong first impression.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">Why Blacksmith Media</div>
+        <h2>Why businesses choose us</h2>
+
+        <div class="stack">
+          <div class="item">
+            <h3>Clear Messaging</h3>
+            <p>We focus on websites that communicate clearly instead of confusing visitors with too much clutter or weak positioning.</p>
+          </div>
+          <div class="item">
+            <h3>Modern Design</h3>
+            <p>Clean, current design helps your business look more established, more trustworthy, and more professional.</p>
+          </div>
+          <div class="item">
+            <h3>Built for Real Businesses</h3>
+            <p>We build for contractors, service companies, and local businesses that need a website that supports real sales and inquiries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">Contact</div>
+        <h2>Start your web design project</h2>
+        <p class="section-copy">
+          If you need web design in Sault Ste. Marie or Northern Ontario, reach out with a short description of your business and what you are looking to build.
+        </p>
+
+        <div class="contact-box">
+          <div class="contact-email">blacksmithmedia@protonmail.com</div>
+          <p class="contact-note">
+            Based in Sault Ste. Marie, Ontario — serving businesses across Northern Ontario.
+          </p>
+          <div class="btn-row">
+            <a class="btn primary" href="index.html#contact">Start a Project</a>
+            <a class="btn secondary" href="index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
+  </footer>
+</body>
+</html>
