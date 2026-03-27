@@ -3,278 +3,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blacksmith Media</title>
+
+  <title>Blacksmith Media | Web Design Sault Ste. Marie | Northern Ontario Branding & Websites</title>
+  <meta name="description" content="Blacksmith Media is a Sault Ste. Marie web design and branding studio serving Northern Ontario. We build clean, modern websites and brand identities for small businesses, contractors, and startups." />
+  <meta name="keywords" content="Sault Ste. Marie web design, Northern Ontario web design, branding Sault Ste. Marie, website design Northern Ontario, one page website, small business website Ontario" />
+  <meta name="author" content="Blacksmith Media" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://blacksmithmedia.ca/" />
+
+  <meta property="og:title" content="Blacksmith Media | Web Design Sault Ste. Marie" />
+  <meta property="og:description" content="Web design and branding studio based in Sault Ste. Marie, serving businesses across Northern Ontario." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blacksmithmedia.ca/" />
+  <meta property="og:image" content="https://blacksmithmedia.ca/blacksmith-logo-full.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blacksmith Media | Web Design Sault Ste. Marie" />
+  <meta name="twitter:description" content="Web design and branding for businesses in Sault Ste. Marie and Northern Ontario." />
+  <meta name="twitter:image" content="https://blacksmithmedia.ca/blacksmith-logo-full.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#050505;
-      --bg-soft:#090909;
-      --text:#f5f5f5;
-      --muted:#a8a8a8;
+      --bg:#070707;
+      --bg-soft:#0e0e0e;
+      --panel:#111111;
+      --text:#f4f4f4;
+      --muted:#b6b6b6;
       --line:rgba(255,255,255,.08);
-      --accent:#f3e64d;
-      --accent-soft:rgba(243,230,77,.12);
-      --max:1180px;
-      --nav-h:92px;
-      --cursor-x:50vw;
-      --cursor-y:50vh;
+      --accent:#f1e14f;
+      --max:1160px;
+      --radius:22px;
+      --shadow:0 20px 60px rgba(0,0,0,.28);
     }
 
     *{box-sizing:border-box;}
-    html{scroll-behavior:auto;}
-
+    html{scroll-behavior:smooth;}
     body{
       margin:0;
       font-family:'Roboto',sans-serif;
-      color:var(--text);
       background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
-      overflow-x:hidden;
-      cursor:auto;
-      opacity:0;
-      animation:pageFade .9s ease forwards;
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
-    @keyframes pageFade{
-      from{opacity:0; transform:translateY(8px);}
-      to{opacity:1; transform:translateY(0);}
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background:
-        linear-gradient(rgba(255,255,255,.026) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.026) 1px, transparent 1px);
-      background-size:40px 40px;
-      opacity:.14;
-      z-index:1;
-    }
-
-    body::after{
-      content:"";
-      position:fixed;
-      inset:-20%;
-      pointer-events:none;
-      background:
-        radial-gradient(500px circle at var(--cursor-x) var(--cursor-y), rgba(243,230,77,.05), transparent 45%),
-        radial-gradient(900px circle at calc(var(--cursor-x) * 1.02) calc(var(--cursor-y) * .98), rgba(255,255,255,.02), transparent 40%);
-      z-index:1;
-      transition:background .08s linear;
-    }
-
-    .grain{
-      position:fixed;
-      inset:-50%;
-      pointer-events:none;
-      z-index:2;
-      opacity:.08;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      animation:grainMove 9s steps(8) infinite;
-      mix-blend-mode:soft-light;
-    }
-
-    @keyframes grainMove{
-      0%{transform:translate(0,0)}
-      10%{transform:translate(-4%,-6%)}
-      20%{transform:translate(3%,-2%)}
-      30%{transform:translate(-6%,4%)}
-      40%{transform:translate(5%,1%)}
-      50%{transform:translate(-2%,6%)}
-      60%{transform:translate(6%,-4%)}
-      70%{transform:translate(-5%,3%)}
-      80%{transform:translate(3%,-5%)}
-      90%{transform:translate(-2%,2%)}
-      100%{transform:translate(0,0)}
-    }
-
-    a{color:inherit;text-decoration:none;}
-    img{display:block;max-width:100%;}
-
-    
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
 
     .wrap{
       width:min(var(--max), calc(100% - 32px));
       margin:0 auto;
-      position:relative;
-      z-index:6;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
     }
 
     .nav{
       position:sticky;
       top:0;
-      backdrop-filter:blur(14px);
-      background:rgba(5,5,5,.78);
+      z-index:100;
+      background:rgba(7,7,7,.88);
+      backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line);
-      z-index:50;
     }
 
     .nav-inner{
-      min-height:var(--nav-h);
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
+      gap:24px;
+      min-height:88px;
     }
 
-    .brand-lockup{
+    .brand{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:16px;
+      min-width:0;
     }
 
-    .brand-mark{
-      width:88px;
-      height:88px;
+    .brand img{
+      width:74px;
+      height:74px;
       object-fit:contain;
-      filter:drop-shadow(0 0 24px rgba(255,255,255,.05));
     }
 
-    .brand-name{
-      font-family:'Roboto Mono',monospace;
-      font-size:22px;
-      letter-spacing:.08em;
+    .brand-title{
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:.14em;
       text-transform:uppercase;
-      font-weight:700;
-      line-height:1;
+      line-height:1.05;
     }
 
     .brand-sub{
-      font-family:'Roboto Mono',monospace;
-      font-size:11px;
-      letter-spacing:.22em;
+      margin-top:6px;
       color:var(--muted);
-      margin-top:7px;
+      font-size:12px;
+      letter-spacing:.2em;
       text-transform:uppercase;
     }
 
     .nav-links{
       display:flex;
-      gap:24px;
-      font-family:'Roboto Mono',monospace;
-      font-size:13px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--muted);
+      flex-wrap:wrap;
+      gap:26px;
     }
 
     .nav-links a{
-      position:relative;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
       transition:color .2s ease;
     }
 
-    .nav-links a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-8px;
-      width:100%;
-      height:1px;
-      background:var(--accent);
-      transform:scaleX(0);
-      transform-origin:left;
-      transition:transform .25s ease;
-    }
-
     .nav-links a:hover{color:var(--text);}
-    .nav-links a:hover::after{transform:scaleX(1);}
 
     .hero{
-      min-height:calc(100vh - var(--nav-h));
-      display:flex;
-      align-items:center;
       position:relative;
       overflow:hidden;
+      border-bottom:1px solid var(--line);
     }
 
-    .hero-glow{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      z-index:2;
-      background:
-        radial-gradient(circle at 78% 42%, rgba(243,230,77,.11), transparent 24%),
-        radial-gradient(circle at 18% 72%, rgba(243,230,77,.05), transparent 30%);
-      filter:blur(8px);
-    }
-
-    .parallax-sheen{
+    .hero::before{
+      content:"";
       position:absolute;
       inset:auto -10% 8% auto;
-      width:42vw;
-      height:42vw;
-      max-width:520px;
-      max-height:520px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(243,230,77,.14), transparent 65%);
-      filter:blur(30px);
+      width:520px;
+      height:520px;
+      background:radial-gradient(circle, rgba(241,225,79,.12), transparent 65%);
+      filter:blur(18px);
       pointer-events:none;
-      z-index:2;
-      transform:translate3d(0,0,0);
-      will-change:transform;
     }
 
     .hero-inner{
-      padding:72px 0 64px;
-      position:relative;
-      z-index:3;
+      padding:92px 0 84px;
     }
 
     .eyebrow{
-      font-family:'Roboto Mono',monospace;
-      font-size:12px;
-      letter-spacing:.2em;
-      text-transform:uppercase;
       color:var(--muted);
-      margin-bottom:22px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:18px;
     }
 
     h1{
-      font-size:clamp(54px, 9vw, 112px);
-      line-height:.9;
+      margin:0 0 18px;
+      font-size:clamp(46px, 8vw, 96px);
+      line-height:.94;
       font-weight:900;
-      margin:0 0 22px;
       letter-spacing:-.05em;
       text-transform:uppercase;
       max-width:980px;
     }
 
-    .type-line{
-      display:block;
-      overflow:hidden;
-      white-space:nowrap;
-      width:0;
-      animation:typing 1.2s steps(14, end) forwards;
-    }
-
-    .type-line.delay-1{animation-delay:.95s;}
-    .type-line.delay-2{animation-delay:1.95s;}
-
-    @keyframes typing{
-      from{width:0;}
-      to{width:100%;}
-    }
-
-    .lead{
-      font-size:21px;
-      color:rgba(245,245,245,.82);
-      max-width:760px;
-      margin-bottom:32px;
-      line-height:1.65;
-      position:relative;
-      z-index:7;
-    }
-
     .highlight{
       position:relative;
-      z-index:1;
-      color:#ffffff;
       display:inline-block;
+      z-index:1;
+      color:#fff;
     }
 
     .highlight::before{
@@ -282,23 +185,18 @@
       position:absolute;
       left:-4px;
       right:-4px;
-      bottom:.1em;
-      height:56%;
+      bottom:.08em;
+      height:.48em;
       background:var(--accent);
-      opacity:.95;
       z-index:-1;
-      transform:scaleX(0);
-      transform-origin:left center;
-      animation:highlight 1s cubic-bezier(.22,.8,.22,1) forwards;
-      border-radius:2px;
     }
 
-    .highlight.delay-1::before{animation-delay:1.15s;}
-    .highlight.delay-2::before{animation-delay:2.15s;}
-    .highlight.delay-3::before{animation-delay:2.45s;}
-
-    @keyframes highlight{
-      to{transform:scaleX(1);}
+    .lead{
+      max-width:820px;
+      color:var(--muted);
+      font-size:20px;
+      line-height:1.7;
+      margin:0 0 28px;
     }
 
     .btn-row{
@@ -312,13 +210,15 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:18px 28px;
-      border-radius:40px;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
       border:1px solid var(--line);
-      font-family:'Roboto Mono',monospace;
-      letter-spacing:.1em;
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:.12em;
       text-transform:uppercase;
-      transition:transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+      transition:transform .2s ease, border-color .2s ease, background .2s ease;
     }
 
     .btn:hover{
@@ -328,351 +228,534 @@
 
     .btn.primary{
       background:var(--accent);
-      color:#000;
+      color:#111;
       border-color:var(--accent);
-      box-shadow:0 14px 40px rgba(243,230,77,.12);
     }
 
     .btn.secondary{
-      background:rgba(255,255,255,.015);
+      background:rgba(255,255,255,.02);
+      color:var(--text);
     }
 
-    .micro-list{
+    .micro{
       display:flex;
       flex-wrap:wrap;
-      gap:22px;
-      font-family:'Roboto Mono',monospace;
-      font-size:12px;
-      letter-spacing:.1em;
-      text-transform:uppercase;
+      gap:18px;
       color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
 
-    .micro-list span::before{
+    .micro span::before{
       content:"// ";
       color:var(--accent);
     }
 
     .section{
-      padding:84px 0;
-      border-top:1px solid var(--line);
-      position:relative;
-      z-index:3;
+      padding:78px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-kicker{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:12px;
     }
 
     h2{
-      font-size:clamp(38px,5vw,64px);
-      margin:0 0 16px;
-      text-transform:uppercase;
-      font-weight:900;
+      margin:0 0 14px;
+      font-size:clamp(34px, 5vw, 62px);
       line-height:.96;
+      font-weight:900;
       letter-spacing:-.04em;
+      text-transform:uppercase;
       max-width:900px;
     }
 
     .section-copy{
+      max-width:820px;
+      color:var(--muted);
       font-size:19px;
-      color:rgba(245,245,245,.8);
-      max-width:760px;
-      line-height:1.72;
-      position:relative;
-      z-index:7;
+      line-height:1.75;
+      margin:0;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:40px;
+      align-items:start;
+      margin-top:28px;
     }
 
     .stack{
-      margin-top:34px;
-      max-width:900px;
-    }
-
-    .list-item{
-      padding:26px 0;
-      border-bottom:1px solid var(--line);
-      transform:translate3d(0,0,0);
-      will-change:transform;
-    }
-
-    .list-item h3{
-      margin:0 0 12px;
-      font-family:'Roboto Mono',monospace;
-      letter-spacing:.1em;
-      text-transform:uppercase;
-      font-size:18px;
-    }
-
-    .list-item p{
-      margin:0;
-      color:rgba(245,245,245,.76);
-      font-size:18px;
-      line-height:1.7;
-      max-width:760px;
-      position:relative;
-      z-index:7;
-    }
-
-    .step-row{
       display:grid;
-      grid-template-columns:80px 1fr;
-      gap:20px;
-      align-items:start;
+      gap:0;
     }
+
+    .item{
+      padding:24px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .item:last-child{border-bottom:none;}
+
+    .item h3{
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .item p{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.02);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:16px;
+    }
+
+    .process{
+      display:grid;
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .step{
+      display:grid;
+      grid-template-columns:70px 1fr;
+      gap:18px;
+      padding:22px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .step:last-child{border-bottom:none;}
 
     .step-no{
-      font-family:'Roboto Mono',monospace;
       color:var(--accent);
       font-size:16px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
       padding-top:2px;
     }
 
-    .contact-email{
-      font-size:clamp(34px, 6vw, 54px);
+    .step h3{
+      margin:0 0 8px;
+      font-size:24px;
       font-weight:900;
-      margin:26px 0 18px;
+      text-transform:uppercase;
+      letter-spacing:-.02em;
+    }
+
+    .step p{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    .contact-box{
+      margin-top:26px;
+      padding:28px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.02);
+      box-shadow:var(--shadow);
+    }
+
+    .contact-email{
+      margin:0 0 14px;
+      font-size:clamp(28px, 5vw, 46px);
+      font-weight:900;
       letter-spacing:-.04em;
       word-break:break-word;
     }
 
-    .footer{
-      padding:38px 0 50px;
-      border-top:1px solid var(--line);
-      font-family:'Roboto Mono',monospace;
-      font-size:12px;
+    .contact-note{
       color:var(--muted);
-      position:relative;
-      z-index:3;
+      font-size:17px;
+      line-height:1.75;
+      max-width:760px;
+      margin:0 0 20px;
     }
 
-    .reveal{
-      opacity:0;
-      transform:translateY(38px);
-      transition:opacity .8s cubic-bezier(.22,.8,.22,1), transform .8s cubic-bezier(.22,.8,.22,1);
+    .seo-block{
+      margin-top:28px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.8;
+      max-width:860px;
     }
 
-    .reveal.visible{
-      opacity:1;
-      transform:translateY(0);
+    .footer{
+      padding:30px 0 46px;
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
-    [data-parallax]{
-      transform:translate3d(0,0,0);
-      transition:transform .08s linear;
-      will-change:transform;
-    }
-
-    @media (max-width: 900px){
-      .brand-mark{width:76px;height:76px;}
-      .type-line{white-space:normal;width:auto;animation:none;}
-      .highlight::before{transform:scaleX(1);animation:none;}
+    @media (max-width: 980px){
+      .grid-2,
+      .cards{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width: 768px){
-      :root{--nav-h:120px;}
-      .nav-inner{flex-direction:column; justify-content:center; padding:14px 0;}
-      .brand-lockup{gap:14px;}
-      .brand-mark{width:84px;height:84px;}
-      .brand-name{font-size:20px;}
-      .nav-links{gap:18px; flex-wrap:wrap; justify-content:center; font-size:12px;}
-      .hero{min-height:auto;}
-      .hero-inner{padding:54px 0 48px;}
-      h1{font-size:56px;}
-      .lead,.section-copy,.list-item p{font-size:17px;}
-      .btn{width:100%;}
-      .btn-row{display:grid; grid-template-columns:1fr;}
-      .micro-list{gap:14px 20px;}
-      .section{padding:64px 0;}
-      .step-row{grid-template-columns:60px 1fr;}
-      .parallax-sheen{width:70vw;height:70vw;right:-10vw;bottom:6%;}
+      .nav-inner{
+        min-height:auto;
+        padding:14px 0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .brand img{
+        width:62px;
+        height:62px;
+      }
+
+      .brand-title{
+        font-size:16px;
+      }
+
+      .brand-sub{
+        font-size:11px;
+      }
+
+      .nav-links{
+        width:100%;
+        gap:16px;
+      }
+
+      .hero-inner{
+        padding:56px 0 54px;
+      }
+
+      h1{
+        font-size:44px;
+        line-height:1;
+      }
+
+      .lead,
+      .section-copy,
+      .item p,
+      .step p,
+      .contact-note{
+        font-size:16px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .btn-row{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .section{
+        padding:56px 0;
+      }
+
+      .step{
+        grid-template-columns:56px 1fr;
+      }
+
+      .contact-box{
+        padding:22px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="grain"></div>
-  
-
   <nav class="nav">
     <div class="wrap nav-inner">
-      <div class="brand-lockup" data-parallax data-speed="0.04">
-        <img class="brand-mark" src="./blacksmith-logo.png" alt="Blacksmith Media logo">
+      <a class="brand" href="#top" aria-label="Blacksmith Media home">
+        <img src="./blacksmith-logo.png" alt="Blacksmith Media logo" />
         <div>
-          <div class="brand-name">Blacksmith Media</div>
-          <div class="brand-sub">Brand + Web</div>
+          <div class="brand-title">Blacksmith Media</div>
+          <div class="brand-sub">Branding + Web Design</div>
         </div>
-      </div>
+      </a>
 
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#local">Local</a>
         <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div class="hero-glow"></div>
-      <div class="parallax-sheen" data-parallax data-speed="0.08"></div>
       <div class="wrap hero-inner">
-        <div class="eyebrow reveal">One-page brand + website landing page</div>
-        <h1>
-          <span class="type-line">Forging <span class="highlight">brands</span></span>
-          <span class="type-line delay-1">that look <span class="highlight delay-1">sharp</span></span>
-          <span class="type-line delay-2">and hit <span class="highlight delay-2">hard</span></span>
+        <div class="eyebrow reveal">Sault Ste. Marie Web Design + Northern Ontario Branding</div>
+
+        <h1 class="reveal">
+          Web Design & Branding for
+          <span class="highlight">Sault Ste. Marie</span>
+          Businesses
         </h1>
 
         <p class="lead reveal">
-          Blacksmith Media builds <span class="highlight delay-1">brand identity</span>, <span class="highlight delay-2">websites</span>, and <span class="highlight delay-3">digital presence</span> for businesses that want a cleaner look and stronger positioning.
+          Blacksmith Media is a web design and branding studio based in
+          <span class="highlight">Sault Ste. Marie</span>, serving
+          <span class="highlight">Northern Ontario</span> businesses.
+          We design clean, modern websites and brand identities for small businesses,
+          contractors, and startups that need a professional online presence that actually brings in work.
         </p>
 
         <div class="btn-row reveal">
           <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Start a Project</a>
-          <a class="btn secondary" href="#services">See Services</a>
+          <a class="btn secondary" href="#services">View Services</a>
         </div>
 
-        <div class="micro-list reveal">
-          <span>Brand Identity</span>
+        <div class="micro reveal">
+          <span>Branding</span>
           <span>Web Design</span>
-          <span>Landing Pages</span>
+          <span>One-Page Websites</span>
           <span>Ongoing Support</span>
         </div>
       </div>
     </section>
 
-    <section class="section reveal" id="about">
+    <section class="section" id="about">
       <div class="wrap">
-        <h2>Less filler. More impact.</h2>
-        <p class="section-copy">
-          This site is built as a <span class="highlight">one-page lander</span> designed to be clean, fast, and focused on converting visitors into clients.
+        <div class="section-kicker reveal">About</div>
+        <h2 class="reveal">Built for small business, not big agencies.</h2>
+        <p class="section-copy reveal">
+          Blacksmith Media focuses on branding and web design for small businesses in Sault Ste. Marie and Northern Ontario.
+          The goal is simple: make your business look professional online, explain clearly what you do,
+          and make it easy for customers to contact you.
         </p>
 
-        <div class="stack">
-          <div class="list-item" data-parallax data-speed="0.03">
-            <h3>Minimal Structure</h3>
-            <p>Less clutter, fewer boxes, and more focus on the message and call to action.</p>
+        <div class="grid-2">
+          <div class="stack reveal">
+            <div class="item">
+              <h3>Clear Positioning</h3>
+              <p>Your website should make it obvious what you do, who you serve, and why someone should contact you.</p>
+            </div>
+            <div class="item">
+              <h3>Professional Presentation</h3>
+              <p>Clean branding and a modern website help your business look established, trustworthy, and easy to work with.</p>
+            </div>
+            <div class="item">
+              <h3>Built to Be Useful</h3>
+              <p>No bloated agency process, no unnecessary fluff — just solid branding and a website that works properly on every device.</p>
+            </div>
           </div>
 
-          <div class="list-item" data-parallax data-speed="0.04">
-            <h3>Sharper Aesthetic</h3>
-            <p>Roboto and Roboto Mono give it a cleaner, more technical feel.</p>
-          </div>
-
-          <div class="list-item" data-parallax data-speed="0.05">
-            <h3>Highlight Animation</h3>
-            <p>The marker-style highlight pulls attention to key parts without making the page feel noisy.</p>
+          <div class="card reveal">
+            <h3>Who We Work With</h3>
+            <p>
+              Small businesses, contractors, trades, startups, and local service companies in Sault Ste. Marie and across Northern Ontario
+              that need a better online presence without overcomplicating the process.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section reveal" id="services">
+    <section class="section" id="services">
       <div class="wrap">
-        <h2>What Blacksmith Media does</h2>
-        <p class="section-copy">
-          Built around the core offer: <span class="highlight">branding</span>, <span class="highlight delay-1">web design</span>, and <span class="highlight delay-2">digital polish</span>.
+        <div class="section-kicker reveal">Services</div>
+        <h2 class="reveal">What Blacksmith Media Does</h2>
+        <p class="section-copy reveal">
+          We focus on the essentials: branding, websites, and ongoing website support for businesses that need a clean,
+          professional presence online.
         </p>
 
-        <div class="stack">
-          <div class="list-item" data-parallax data-speed="0.03">
+        <div class="cards">
+          <div class="card reveal">
             <h3>Brand Identity</h3>
-            <p>Logo direction, typography, and visual identity that makes a business feel established.</p>
+            <p>
+              Logo design, typography, and visual identity that makes your business look established, consistent,
+              and professional across web and social media.
+            </p>
           </div>
 
-          <div class="list-item" data-parallax data-speed="0.045">
+          <div class="card reveal">
             <h3>Website Design</h3>
-            <p>Clean layouts, responsive pages, and conversion-focused structure that feels modern across devices.</p>
+            <p>
+              Clean, modern websites that are mobile-friendly, fast, and structured to clearly explain what you do
+              and bring in new customers.
+            </p>
           </div>
 
-          <div class="list-item" data-parallax data-speed="0.06">
-            <h3>Launch + Maintenance</h3>
-            <p>Publishing, updates, and ongoing support so the site keeps looking sharp after launch.</p>
+          <div class="card reveal">
+            <h3>One-Page Websites</h3>
+            <p>
+              Simple, high-impact websites that include everything a small business needs — services, about, contact,
+              and call-to-action — all on one fast page.
+            </p>
+          </div>
+        </div>
+
+        <div class="stack reveal" style="margin-top:24px;">
+          <div class="item">
+            <h3>Website Updates & Support</h3>
+            <p>
+              Ongoing updates, edits, and improvements so your website stays current and continues to work properly after launch.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section reveal" id="process">
+    <section class="section" id="local">
       <div class="wrap">
-        <h2>Fast, clear, and built to move</h2>
-        <p class="section-copy">
-          Define the direction, build the look, tighten the details, and launch.
+        <div class="section-kicker reveal">Local SEO</div>
+        <h2 class="reveal">Web Design in Sault Ste. Marie & Northern Ontario</h2>
+        <p class="section-copy reveal">
+          Blacksmith Media provides web design and branding services in Sault Ste. Marie and across Northern Ontario.
+          We work with local small businesses, contractors, and startups that need professional branding and a website
+          that clearly shows what they do and helps customers get in touch.
         </p>
 
-        <div class="stack">
-          <div class="list-item step-row" data-parallax data-speed="0.03">
+        <div class="stack reveal">
+          <div class="item">
+            <h3>Sault Ste. Marie Web Design</h3>
+            <p>Modern, mobile-friendly websites designed for local businesses that need to look professional online.</p>
+          </div>
+          <div class="item">
+            <h3>Northern Ontario Branding</h3>
+            <p>Logo and brand identity design for new and growing businesses across Northern Ontario.</p>
+          </div>
+          <div class="item">
+            <h3>Small Business Websites</h3>
+            <p>Simple, fast websites that clearly explain what you do and make it easier for customers to contact you.</p>
+          </div>
+        </div>
+
+        <p class="seo-block reveal">
+          Blacksmith Media is a Sault Ste. Marie web design and branding studio serving Northern Ontario.
+          We specialize in small business websites, one-page websites, branding, and website redesign.
+          If you are a business in Sault Ste. Marie or Northern Ontario looking for web design, branding,
+          or a new website, Blacksmith Media provides clean, modern websites built to help your business
+          look professional and bring in new customers.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-kicker reveal">Process</div>
+        <h2 class="reveal">Simple Process. Clear Timeline.</h2>
+        <p class="section-copy reveal">
+          Every project follows a simple process so you always know what’s happening and what comes next.
+        </p>
+
+        <div class="process">
+          <div class="step reveal">
             <div class="step-no">01</div>
             <div>
               <h3>Define</h3>
-              <p>Clarify the offer, tone, audience, and style before the design starts.</p>
+              <p>We figure out what you do, who you serve, and what your website needs to accomplish.</p>
             </div>
           </div>
 
-          <div class="list-item step-row" data-parallax data-speed="0.04">
+          <div class="step reveal">
             <div class="step-no">02</div>
             <div>
               <h3>Design</h3>
-              <p>Shape the visual direction, messaging hierarchy, and layout.</p>
+              <p>We design the layout, structure, and visual direction so the site looks clean and professional.</p>
             </div>
           </div>
 
-          <div class="list-item step-row" data-parallax data-speed="0.05">
+          <div class="step reveal">
             <div class="step-no">03</div>
             <div>
               <h3>Build</h3>
-              <p>Develop and optimize the site so it works cleanly on desktop and mobile.</p>
+              <p>The site is built to be fast, mobile-friendly, and easy to use.</p>
             </div>
           </div>
 
-          <div class="list-item step-row" data-parallax data-speed="0.06">
+          <div class="step reveal">
             <div class="step-no">04</div>
             <div>
               <h3>Launch</h3>
-              <p>Publish, refine, and support the finished product.</p>
+              <p>The site goes live, and we can continue to help with updates and improvements if needed.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section reveal" id="contact">
+    <section class="section" id="contact">
       <div class="wrap">
-        <h2>Ready to build something better?</h2>
-        <p class="section-copy">Branding and websites that feel sharper, cleaner, and more intentional.</p>
+        <div class="section-kicker reveal">Contact</div>
+        <h2 class="reveal">Start a Project</h2>
+        <p class="section-copy reveal">
+          If you need branding, a website, or want to improve your current site, send an email with a short description
+          of your business and what you’re looking to build.
+        </p>
 
-        <div class="contact-email">blacksmithmedia@protonmail.com</div>
-        <div class="btn-row">
-          <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Email Blacksmith Media</a>
-          <a class="btn secondary" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Back to Top</a>
+        <div class="contact-box reveal">
+          <div class="contact-email">blacksmithmedia@protonmail.com</div>
+          <p class="contact-note">
+            Based in Sault Ste. Marie, Ontario — working with businesses across Northern Ontario.
+          </p>
+          <div class="btn-row">
+            <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Email Blacksmith Media</a>
+            <a class="btn secondary" href="#top">Back to Top</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="wrap">© 2026 Blacksmith Media</div>
+    <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
   </footer>
 
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
   <script>
-    const revealEls = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
-    revealEls.forEach(el => observer.observe(el));
 
-    const parallaxEls = document.querySelectorAll('[data-parallax]');
-    const updateParallax = () => {
-      const scrollY = window.scrollY;
-      parallaxEls.forEach(el => {
-        const speed = parseFloat(el.dataset.speed || 0.03);
-        const offset = scrollY * speed;
-        el.style.transform = `translate3d(0, ${offset}px, 0)`;
-      });
-      requestAnimationFrame(updateParallax);
-    };
-    updateParallax();
+    reveals.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
