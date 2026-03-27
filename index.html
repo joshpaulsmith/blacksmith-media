@@ -48,7 +48,7 @@
       "Timmins",
       "Northern Ontario"
     ],
-    "description": "Blacksmith Media is a web design and branding studio based in Sault Ste. Marie, serving businesses in Canada."
+    "description": "Blacksmith Media is a web design and branding studio based in Sault Ste. Marie, serving businesses across Northern Ontario."
   }
   </script>
 
@@ -473,6 +473,185 @@
       text-transform:uppercase;
     }
 
+    /* PROJECT MODAL */
+    body.modal-open{
+      overflow:hidden;
+    }
+
+    .project-modal{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      z-index:9999;
+    }
+
+    .project-modal.active{
+      display:flex;
+    }
+
+    .project-modal-overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.72);
+      backdrop-filter:blur(8px);
+    }
+
+    .project-modal-panel{
+      position:relative;
+      z-index:2;
+      width:min(760px, 100%);
+      max-height:90vh;
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(17,17,17,.98) 0%, rgba(8,8,8,.98) 100%);
+      box-shadow:0 30px 90px rgba(0,0,0,.45);
+      padding:30px;
+    }
+
+    .project-modal-panel::before{
+      content:"";
+      position:absolute;
+      top:-80px;
+      right:-80px;
+      width:240px;
+      height:240px;
+      background:radial-gradient(circle, rgba(231,217,79,.14), transparent 68%);
+      filter:blur(12px);
+      pointer-events:none;
+    }
+
+    .project-close{
+      position:absolute;
+      top:16px;
+      right:16px;
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-size:22px;
+      cursor:pointer;
+      transition:transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .project-close:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+    }
+
+    .project-modal-kicker{
+      margin:0 0 10px;
+      font-family:'Roboto Mono',monospace;
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .project-modal-title{
+      margin:0 0 12px;
+      font-family:'Roboto Mono',monospace;
+      font-size:clamp(28px, 5vw, 44px);
+      font-weight:500;
+      line-height:1;
+    }
+
+    .project-modal-copy{
+      margin:0 0 24px;
+      max-width:680px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.75;
+    }
+
+    .project-form{
+      display:grid;
+      gap:14px;
+    }
+
+    .project-form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .form-field{
+      display:grid;
+      gap:8px;
+    }
+
+    .form-field label{
+      font-family:'Roboto Mono',monospace;
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      padding:15px 16px;
+      font:inherit;
+      outline:none;
+      transition:border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus{
+      border-color:rgba(231,217,79,.55);
+      background:rgba(255,255,255,.05);
+      box-shadow:0 0 0 3px rgba(231,217,79,.10);
+    }
+
+    .form-field textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+
+    .form-help{
+      margin-top:4px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .form-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:8px;
+    }
+
+    .form-status{
+      margin-top:8px;
+      min-height:24px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .form-status.success{
+      color:var(--accent);
+    }
+
+    .form-status.error{
+      color:#ff8f8f;
+    }
+
     @media (max-width: 980px){
       .grid-2,
       .cards{
@@ -543,6 +722,24 @@
       .contact-box{
         padding:22px;
       }
+
+      .project-modal{
+        padding:16px;
+      }
+
+      .project-modal-panel{
+        padding:22px;
+        border-radius:22px;
+      }
+
+      .project-form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .project-close{
+        top:12px;
+        right:12px;
+      }
     }
   </style>
 </head>
@@ -590,7 +787,7 @@
         </p>
 
         <div class="btn-row reveal">
-          <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Start a Project</a>
+          <a class="btn primary open-project-form" href="#">Start a Project</a>
           <a class="btn secondary" href="#services">View Services</a>
         </div>
 
@@ -849,13 +1046,105 @@
             Based in Sault Ste. Marie, Ontario — working with businesses across Northern Ontario.
           </p>
           <div class="btn-row">
-            <a class="btn primary" href="mailto:blacksmithmedia@protonmail.com">Email Blacksmith Media</a>
+            <a class="btn primary open-project-form" href="#">Start a Project</a>
             <a class="btn secondary" href="#top">Back to Top</a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="project-modal-overlay" id="projectModalOverlay"></div>
+
+    <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+      <button class="project-close" id="closeProjectForm" aria-label="Close form">&times;</button>
+
+      <div class="project-modal-kicker">Blacksmith Media</div>
+      <h2 class="project-modal-title" id="projectModalTitle">Start a Project</h2>
+      <p class="project-modal-copy">
+        Tell us a bit about your business, the type of project you need, and the overall scope of work.
+        We’ll review it and get back to you directly.
+      </p>
+
+      <form
+        class="project-form"
+        id="projectForm"
+        action="https://formsubmit.co/ajax/blacksmithmedia@protonmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="New Blacksmith Media Project Inquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="project-form-grid">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+        </div>
+
+        <div class="project-form-grid">
+          <div class="form-field">
+            <label for="business">Business / Company</label>
+            <input id="business" name="business" type="text">
+          </div>
+
+          <div class="form-field">
+            <label for="projectType">Project Type</label>
+            <select id="projectType" name="project_type" required>
+              <option value="">Select one</option>
+              <option value="Website Design">Website Design</option>
+              <option value="Website Redesign">Website Redesign</option>
+              <option value="Branding">Branding</option>
+              <option value="SEO">SEO</option>
+              <option value="Content / Copy">Content / Copy</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="projectSummary">What is the project?</label>
+          <textarea id="projectSummary" name="project_summary" placeholder="Tell us what you're looking to build or improve." required></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="scopeOfWork">Scope of Work</label>
+          <textarea id="scopeOfWork" name="scope_of_work" placeholder="What pages, services, features, branding work, or deliverables do you think are needed?" required></textarea>
+        </div>
+
+        <div class="project-form-grid">
+          <div class="form-field">
+            <label for="timeline">Preferred Timeline</label>
+            <input id="timeline" name="timeline" type="text" placeholder="e.g. ASAP, 2 weeks, next month">
+          </div>
+
+          <div class="form-field">
+            <label for="website">Current Website</label>
+            <input id="website" name="current_website" type="text" placeholder="Website URL if you have one">
+          </div>
+        </div>
+
+        <div class="form-help">
+          This inquiry form sends directly to Blacksmith Media.
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send Inquiry</button>
+          <button type="button" class="btn secondary" id="cancelProjectForm">Cancel</button>
+        </div>
+
+        <div class="form-status" id="formStatus" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
 
   <footer class="footer">
     <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
@@ -870,6 +1159,79 @@
     }, { threshold: 0.12 });
 
     reveals.forEach(el => observer.observe(el));
+
+    const openProjectButtons = document.querySelectorAll('.open-project-form');
+    const projectModal = document.getElementById('projectModal');
+    const projectModalOverlay = document.getElementById('projectModalOverlay');
+    const closeProjectForm = document.getElementById('closeProjectForm');
+    const cancelProjectForm = document.getElementById('cancelProjectForm');
+    const projectForm = document.getElementById('projectForm');
+    const formStatus = document.getElementById('formStatus');
+
+    function openModal() {
+      projectModal.classList.add('active');
+      projectModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+      projectModal.classList.remove('active');
+      projectModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
+
+    openProjectButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    projectModalOverlay.addEventListener('click', closeModal);
+    closeProjectForm.addEventListener('click', closeModal);
+    cancelProjectForm.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    projectForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      formStatus.className = 'form-status';
+      formStatus.textContent = 'Sending inquiry...';
+
+      const formData = new FormData(projectForm);
+
+      try {
+        const response = await fetch(projectForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          projectForm.reset();
+          formStatus.className = 'form-status success';
+          formStatus.textContent = 'Thanks — your inquiry was sent successfully.';
+          setTimeout(() => {
+            closeModal();
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
+          }, 1600);
+        } else {
+          formStatus.className = 'form-status error';
+          formStatus.textContent = 'Something went wrong. Please try again.';
+        }
+      } catch (error) {
+        formStatus.className = 'form-status error';
+        formStatus.textContent = 'Connection error. Please try again.';
+      }
+    });
   </script>
 </body>
 </html>
