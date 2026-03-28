@@ -7,16 +7,13 @@
   <title>Blacksmith Media | Web Design Sault Ste. Marie | Northern Ontario Branding & Websites</title>
   <meta name="description" content="Blacksmith Media is a Sault Ste. Marie web design and branding studio serving Northern Ontario. We build clean, modern websites and brand identities for small businesses, contractors, and startups." />
   <meta name="keywords" content="Sault Ste. Marie web design, Northern Ontario web design, branding Sault Ste. Marie, website design Northern Ontario" />
-  <meta name="author" content="Blacksmith Media" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://blacksmithmedia.ca/" />
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -170,7 +167,7 @@
 
       <h2>Start a Project</h2>
 
-      <form class="project-form" action="https://formspree.io/f/mnqegjpd" method="POST">
+      <form id="projectForm">
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="text" name="business" placeholder="Business Name">
@@ -178,7 +175,7 @@
         <button type="submit" class="btn primary">Send</button>
       </form>
 
-      <div class="form-success" style="display:none; font-family:Roboto Mono; text-transform:uppercase;">
+      <div id="formSuccess" style="display:none; font-family:Roboto Mono; text-transform:uppercase;">
         Project request sent. We'll be in touch.
       </div>
     </div>
@@ -189,14 +186,12 @@
     <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
   </footer>
 
-  <!-- POPUP SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
   const openBtns = document.querySelectorAll('.open-project-form');
   const modal = document.getElementById('projectModal');
   const overlay = document.getElementById('projectModalOverlay');
   const closeBtn = document.getElementById('closeProjectForm');
-  const form = document.querySelector('.project-form');
-  const successMsg = document.querySelector('.form-success');
 
   openBtns.forEach(btn => {
     btn.addEventListener('click', e => {
@@ -209,22 +204,21 @@
     modal.classList.remove('active');
   };
 
+  const form = document.getElementById("projectForm");
+  const successMsg = document.getElementById("formSuccess");
+
   form.addEventListener("submit", async function(e) {
     e.preventDefault();
+
     const data = new FormData(form);
 
-    const response = await fetch(form.action, {
+    await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
       method: "POST",
-      body: data,
-      headers: { 'Accept': 'application/json' }
+      body: data
     });
 
-    if (response.ok) {
-      form.style.display = "none";
-      successMsg.style.display = "block";
-    } else {
-      alert("Something went wrong. Please email blacksmithmedia@protonmail.com");
-    }
+    form.style.display = "none";
+    successMsg.style.display = "block";
   });
   </script>
 
