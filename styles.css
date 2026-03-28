@@ -573,4 +573,30 @@ html, body{
     padding: 0.05em 0.22em;
     line-height: 0.85;
   }
+}/* =========================
+   LOGO SIZE
+   ========================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  height: 52px;   /* desktop logo size */
+  width: auto;
+  display: block;
+}
+
+/* Mobile logo size */
+@media (max-width: 600px) {
+  .brand img {
+    height: 40px;
+  }
+}
+
+/* Make nav a bit taller so logo fits nicely */
+.nav {
+  padding: 18px 0;
 }
