@@ -951,5 +951,38 @@ body.seo-page .nav-links a:nth-child(4){
 
   .brand-sub{
     font-size: 11px;
+  }/* =========================
+   MOBILE FIX — REMOVE BLACK STRIP
+   ========================= */
+
+@media (max-width: 768px){
+  body.brand-page::before,
+  body.web-page::before,
+  body.seo-page::before{
+    display: none !important;
   }
+
+  body.brand-page{
+    background: #2d1a47 !important;
+  }
+
+  body.web-page{
+    background: #0a3a2f !important;
+  }
+
+  body.seo-page{
+    background: #162a52 !important;
+  }
+
+  body.brand-page main,
+  body.web-page main,
+  body.seo-page main{
+    background: transparent !important;
+  }
+
+  .page-wipe{
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
 }
