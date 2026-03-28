@@ -7,11 +7,7 @@
   <title>Blacksmith Media | Branding & Web Design Sault Ste. Marie</title>
   <meta name="description" content="Blacksmith Media builds brands and websites for businesses in Sault Ste. Marie and Northern Ontario. Brand identity, website design, and SEO for small businesses and contractors." />
   <meta name="keywords" content="Branding Sault Ste. Marie, Web Design Sault Ste. Marie, Northern Ontario web design, logo design, SEO Sault Ste. Marie" />
-  <meta name="author" content="Blacksmith Media" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://blacksmithmedia.ca/" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -20,6 +16,7 @@
 </head>
 
 <body>
+
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="index.html">
@@ -39,67 +36,226 @@
     </div>
   </nav>
 
-  <main>
+  <main id="top">
     <section class="hero">
       <div class="wrap hero-inner">
-        <div class="eyebrow">Sault Ste. Marie Branding & Web Design</div>
+        <div class="eyebrow">Sault Ste. Marie Branding + Northern Ontario Web Design</div>
 
         <h1>
-          We build brands and websites
-          <span class="highlight">that look established</span>
+          Web design &<br>
+          branding for<br>
+          <span class="highlight">Sault Ste. Marie</span><br>
+          businesses
         </h1>
 
         <p class="lead">
-          Blacksmith Media helps businesses in Sault Ste. Marie and Northern Ontario
-          build professional brands, modern websites, and a strong online presence.
-          We work with small businesses, contractors, and service companies that need
-          their business to look as professional online as it is in real life.
+          Blacksmith Media is a web design and branding studio based in
+          <span class="highlight">Sault Ste. Marie</span>, serving
+          <span class="highlight">Northern Ontario</span> businesses.
+          We design clean, modern websites and brand identities for small businesses,
+          contractors, and startups that need a professional online presence that actually brings in work.
         </p>
 
         <div class="btn-row">
-          <a class="btn primary" href="#contact">Start a Project</a>
+          <a class="btn primary open-project-form" href="#">Start a Project</a>
+          <a class="btn secondary" href="#services">View Services</a>
+        </div>
+
+        <div class="micro">
+          <span>Branding</span>
+          <span>Web Design</span>
+          <span>SEO & Site Maintenance</span>
+          <span>Ongoing Support</span>
         </div>
       </div>
     </section>
 
-    <section id="services" class="section">
+    <section class="section" id="services">
       <div class="wrap">
         <div class="section-kicker">Services</div>
-        <h2>Branding, websites, and ongoing support.</h2>
+        <h2>What Blacksmith Media Does</h2>
 
         <div class="cards">
           <div class="card">
             <h3>Brand Identity</h3>
-            <p>Logo design, typography, colours, and visual identity systems that define your business.</p>
+            <p>Logo design, typography, and visual identity for your business.</p>
           </div>
 
           <div class="card">
             <h3>Website Design</h3>
-            <p>Clean, modern websites built to make your business look professional and generate leads.</p>
+            <p>Clean, modern websites that are mobile-friendly and fast.</p>
           </div>
 
           <div class="card">
             <h3>SEO & Site Maintenance</h3>
-            <p>Search visibility, updates, and ongoing improvements to keep your site performing.</p>
+            <p>SEO and site maintenance to keep your website fast, secure, and visible on Google.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-kicker">Process</div>
+        <h2>Simple Process. Clear Timeline.</h2>
+
+        <div class="process">
+          <div class="step">
+            <div class="step-no">01</div>
+            <div>
+              <h3>Define</h3>
+              <p>We figure out what you do and what your website needs to accomplish.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-no">02</div>
+            <div>
+              <h3>Design</h3>
+              <p>We design the layout and structure so the site looks clean and professional.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-no">03</div>
+            <div>
+              <h3>Build</h3>
+              <p>The site is built to be fast, mobile-friendly, and easy to use.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-no">04</div>
+            <div>
+              <h3>Launch</h3>
+              <p>The site goes live and we can continue to help with updates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
       <div class="wrap">
         <div class="section-kicker">Contact</div>
-        <h2>Start your project</h2>
+        <h2>Start a Project</h2>
 
         <div class="contact-box">
           <div class="contact-email">blacksmithmedia@protonmail.com</div>
+          <div class="btn-row">
+            <a class="btn primary open-project-form" href="#">Start a Project</a>
+            <a class="btn secondary" href="#top">Back to Top</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- POPUP -->
+  <div
+    id="projectModal"
+    aria-hidden="true"
+    style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:20px;"
+  >
+    <div
+      id="projectModalOverlay"
+      style="position:absolute; inset:0; background:rgba(0,0,0,.72); backdrop-filter:blur(6px);"
+    ></div>
+
+    <div
+      style="position:relative; z-index:2; width:min(720px, 100%); background:#0b0b0b; border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:30px; box-shadow:0 24px 70px rgba(0,0,0,.55);"
+    >
+      <button
+        id="closeProjectForm"
+        aria-label="Close"
+        style="position:absolute; top:14px; right:16px; width:40px; height:40px; border:none; background:transparent; color:#fff; font-size:30px; line-height:1; cursor:pointer;"
+      >&times;</button>
+
+      <h2 style="margin:0 0 18px; font-family:'Roboto Mono', monospace; font-size:42px;">Start a Project</h2>
+
+      <form id="projectForm" class="project-form">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="business" placeholder="Business Name">
+        </div>
+
+        <div class="form-row">
+          <textarea name="message" placeholder="Tell us about the project"></textarea>
+          <button type="submit">SEND</button>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          Thanks — we’ll be in touch.
+        </div>
+      </form>
+    </div>
+  </div>
+
   <footer class="footer">
-    <div class="wrap">© 2026 Blacksmith Media — Branding & Web Design in Sault Ste. Marie, Ontario</div>
+    <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
   </footer>
+
+  <script>
+    const modal = document.getElementById("projectModal");
+    const overlay = document.getElementById("projectModalOverlay");
+    const closeBtn = document.getElementById("closeProjectForm");
+    const openBtns = document.querySelectorAll(".open-project-form");
+    const form = document.getElementById("projectForm");
+    const successMsg = document.getElementById("formSuccess");
+
+    function openModal() {
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+      modal.setAttribute("aria-hidden", "true");
+      successMsg.style.display = "none";
+    }
+
+    openBtns.forEach(btn => {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape" && modal.style.display === "flex") {
+        closeModal();
+      }
+    });
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
+          method: "POST",
+          body: data,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMsg.style.display = "block";
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch (err) {
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  </script>
+
 </body>
 </html>
