@@ -800,7 +800,6 @@ body.seo-page .highlight{
       #1c3d7a 45%,
       #162a52 100%
     ) !important;
-  }@media (max-width: 768px){
-  body.brand-page h1{ color: red !important; }
+  }
 }
 }
