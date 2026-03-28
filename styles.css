@@ -66,12 +66,6 @@ img{display:block;max-width:100%;}
   gap:16px;
 }
 
-.brand img{
-  width:100px;
-  height:100px;
-  object-fit:contain;
-}
-
 .brand-title{
   font-family:'Roboto Mono',monospace;
   font-size:18px;
@@ -720,5 +714,29 @@ html, body{
   .cards .card.card-seo{
     border:1px solid rgba(122,162,255,.8) !important;
     box-shadow:0 0 20px rgba(122,162,255,.18) !important;
+  }
+}/* =========================
+   LOGO SIZE
+   ========================= */
+
+.brand img{
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Make navbar taller so logo fits */
+.nav-inner{
+  min-height: 120px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .brand img{
+    height: 70px;
+  }
+
+  .nav-inner{
+    min-height: auto;
   }
 }
