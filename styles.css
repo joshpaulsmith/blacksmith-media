@@ -601,42 +601,126 @@ h2{
 }/* =========================
    PAGE WIPE TRANSITION
    ========================= */
+/* =========================
+   PAGE TRANSITION — RIGHT WIPE + CONTENT MOTION
+   ========================= */
 
-body{
-  opacity: 1;
+/* make sure main sits below the wipe cleanly */
+main{
+  position: relative;
+  z-index: 1;
+  transition: transform .42s ease, opacity .42s ease;
+  will-change: transform, opacity;
 }
 
+/* entering animation for content */
+body.is-entering main{
+  opacity: 0;
+  transform: translateX(26px);
+  animation: pageContentIn .42s ease forwards;
+}
+
+/* leaving animation for content */
+body.is-leaving main{
+  opacity: 0;
+  transform: translateX(-26px);
+}
+
+/* the wipe itself */
 .page-wipe{
   position: fixed;
-  inset: 0;
-  background: #000;
+  top: 90px; /* keeps nav visible */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.97);
+  backdrop-filter: blur(6px);
   z-index: 99999;
   pointer-events: none;
-  transform: translateY(100%);
+  transform: translateX(100%);
+  will-change: transform;
 }
 
+/* page entering: wipe slides across and off to the left */
 body.is-entering .page-wipe{
-  animation: wipeInReveal .55s cubic-bezier(.77,0,.18,1) forwards;
+  animation: wipeRevealRight .55s cubic-bezier(.77,0,.18,1) forwards;
 }
 
+/* page leaving: wipe comes in from the right and covers content */
 body.is-leaving .page-wipe{
-  animation: wipeOutCover .55s cubic-bezier(.77,0,.18,1) forwards;
+  animation: wipeCoverRight .55s cubic-bezier(.77,0,.18,1) forwards;
 }
 
-@keyframes wipeOutCover{
+@keyframes wipeCoverRight{
   from{
-    transform: translateY(100%);
+    transform: translateX(100%);
   }
   to{
-    transform: translateY(0%);
+    transform: translateX(0%);
   }
 }
 
-@keyframes wipeInReveal{
+@keyframes wipeRevealRight{
   from{
-    transform: translateY(0%);
+    transform: translateX(0%);
   }
   to{
-    transform: translateY(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes pageContentIn{
+  from{
+    opacity: 0;
+    transform: translateX(26px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* mobile nav is taller, so start wipe lower */
+@media (max-width: 768px){
+  .page-wipe{
+    top: 120px;
+  }
+
+  body.is-entering main{
+    transform: translateX(18px);
+  }
+
+  body.is-leaving main{
+    transform: translateX(-18px);
+  }
+
+  @keyframes pageContentIn{
+    from{
+      opacity: 0;
+      transform: translateX(18px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  main,
+  .page-wipe{
+    transition: none !important;
+    animation: none !important;
+  }
+
+  body.is-entering main,
+  body.is-leaving main{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .page-wipe{
+    transform: translateX(100%) !important;
   }
 }
