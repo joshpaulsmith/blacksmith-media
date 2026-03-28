@@ -23,19 +23,32 @@ body.web-page{ --accent:var(--web); }
 body.seo-page{ --accent:var(--seo); }
 
 /* ===== GLOBAL ===== */
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+*{ box-sizing:border-box; }
+
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+}
+
 body{
   margin:0;
-  font-family:'Roboto',sans-serif;
+  font-family:'Roboto', sans-serif;
   background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
+  overflow-x:hidden;
 }
 
-a{text-decoration:none;color:inherit;}
-img{display:block;max-width:100%;}
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
 
 .wrap{
   width:min(var(--max), calc(100% - 32px));
@@ -53,7 +66,7 @@ img{display:block;max-width:100%;}
 }
 
 .nav-inner{
-  min-height:88px;
+  min-height:90px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -66,8 +79,20 @@ img{display:block;max-width:100%;}
   gap:16px;
 }
 
+/* Default logo size for service pages */
+.brand img{
+  height:70px;
+  width:auto;
+  object-fit:contain;
+}
+
+/* Bigger homepage logo */
+.home-page .brand img{
+  height:110px;
+}
+
 .brand-title{
-  font-family:'Roboto Mono',monospace;
+  font-family:'Roboto Mono', monospace;
   font-size:18px;
   font-weight:700;
   letter-spacing:.08em;
@@ -76,7 +101,7 @@ img{display:block;max-width:100%;}
 
 .brand-sub{
   margin-top:4px;
-  font-family:'Roboto Mono',monospace;
+  font-family:'Roboto Mono', monospace;
   font-size:12px;
   letter-spacing:.12em;
   text-transform:uppercase;
@@ -89,7 +114,7 @@ img{display:block;max-width:100%;}
 }
 
 .nav-links a{
-  font-family:'Roboto Mono',monospace;
+  font-family:'Roboto Mono', monospace;
   font-size:13px;
   letter-spacing:.08em;
   text-transform:uppercase;
@@ -134,7 +159,7 @@ body.seo-page .nav-links a:nth-child(4){
 
 .eyebrow{
   margin-bottom:20px;
-  font-family:'Roboto Mono',monospace;
+  font-family:'Roboto Mono', monospace;
   font-size:12px;
   letter-spacing:.14em;
   text-transform:uppercase;
@@ -143,19 +168,24 @@ body.seo-page .nav-links a:nth-child(4){
 
 h1{
   margin:0 0 20px;
-  font-family:'Roboto Mono',monospace;
-  font-size:clamp(42px,7vw,82px);
+  font-family:'Roboto Mono', monospace;
+  font-size:clamp(42px, 7vw, 82px);
   font-weight:500;
-  line-height:.98;
+  line-height:1.02;
 }
 
 .highlight{
+  display:inline;
   background:var(--accent);
   color:#000;
-  padding:.02em .14em .06em .14em;
-  display:inline;
+  padding:.06em .22em .08em .22em;
+  border-radius:2px;
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
+}
+
+.hero h1 .highlight{
+  line-height:.92;
 }
 
 .lead{
@@ -181,11 +211,11 @@ h1{
   padding:0 24px;
   border-radius:999px;
   border:1px solid var(--line);
-  font-family:'Roboto Mono',monospace;
+  font-family:'Roboto Mono', monospace;
   font-size:14px;
   letter-spacing:.08em;
   text-transform:uppercase;
-  transition:.2s;
+  transition:.2s ease;
 }
 
 .btn:hover{
@@ -229,7 +259,7 @@ h1{
 
 .section-kicker{
   margin-bottom:12px;
-  font-family:'Roboto Mono',monospace;
+  font-family:'Roboto Mono', monospace;
   font-size:12px;
   letter-spacing:.14em;
   text-transform:uppercase;
@@ -238,8 +268,8 @@ h1{
 
 h2{
   margin:0 0 14px;
-  font-family:'Roboto Mono',monospace;
-  font-size:clamp(30px,5vw,58px);
+  font-family:'Roboto Mono', monospace;
+  font-size:clamp(30px, 5vw, 58px);
   font-weight:500;
 }
 
@@ -253,7 +283,7 @@ h2{
 /* ===== CARDS ===== */
 .cards{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3, 1fr);
   gap:18px;
   margin-top:28px;
 }
@@ -263,11 +293,16 @@ h2{
   border:1px solid var(--line);
   border-radius:var(--radius);
   background:rgba(255,255,255,.02);
+  transition:.2s ease;
+}
+
+.card:hover{
+  transform:translateY(-2px);
 }
 
 .card h3{
   margin:0 0 10px;
-  font-family:'Roboto Mono',monospace;
+  font-family:'Roboto Mono', monospace;
   font-size:18px;
   text-transform:uppercase;
 }
@@ -277,6 +312,49 @@ h2{
   color:var(--muted);
   font-size:16px;
   line-height:1.75;
+}
+
+/* ===== SERVICE CARD COLORS ===== */
+.cards .card.card-brand{
+  border:1px solid rgba(181,124,255,.7) !important;
+  box-shadow:0 0 18px rgba(181,124,255,.16) !important;
+}
+
+.cards .card.card-web{
+  border:1px solid rgba(0,230,168,.7) !important;
+  box-shadow:0 0 18px rgba(0,230,168,.16) !important;
+}
+
+.cards .card.card-seo{
+  border:1px solid rgba(122,162,255,.7) !important;
+  box-shadow:0 0 18px rgba(122,162,255,.16) !important;
+}
+
+.cards .card.card-brand h3{
+  color:#b57cff !important;
+}
+
+.cards .card.card-web h3{
+  color:#00e6a8 !important;
+}
+
+.cards .card.card-seo h3{
+  color:#7aa2ff !important;
+}
+
+.cards .card.card-brand:hover{
+  box-shadow:0 0 24px rgba(181,124,255,.28) !important;
+  border-color:rgba(181,124,255,.95) !important;
+}
+
+.cards .card.card-web:hover{
+  box-shadow:0 0 24px rgba(0,230,168,.28) !important;
+  border-color:rgba(0,230,168,.95) !important;
+}
+
+.cards .card.card-seo:hover{
+  box-shadow:0 0 24px rgba(122,162,255,.28) !important;
+  border-color:rgba(122,162,255,.95) !important;
 }
 
 /* ===== PROCESS ===== */
@@ -308,6 +386,7 @@ h2{
 .step p{
   margin:0;
   color:var(--muted);
+  line-height:1.7;
 }
 
 /* ===== CONTACT ===== */
@@ -317,12 +396,21 @@ h2{
   border:1px solid var(--line);
   border-radius:var(--radius);
   background:rgba(255,255,255,.02);
+  width:100%;
+  max-width:100%;
+  overflow:hidden;
 }
 
 .contact-email{
+  display:block;
+  width:100%;
+  max-width:100%;
   margin:0 0 14px;
   font-family:'Roboto Mono', monospace;
-  font-size:clamp(28px,5vw,42px);
+  font-size:clamp(18px, 4.8vw, 42px);
+  line-height:1.12;
+  word-break:break-word;
+  overflow-wrap:anywhere;
 }
 
 /* ===== FOOTER ===== */
@@ -386,25 +474,37 @@ h2{
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 768px){
+@media (max-width:768px){
+
+  .wrap{
+    width:calc(100% - 24px);
+    max-width:none;
+    overflow:hidden;
+  }
 
   .nav-inner{
     padding:14px 0 16px;
     flex-direction:column;
     align-items:flex-start;
     gap:14px;
+    min-height:auto;
   }
 
   .brand{
     width:100%;
     display:grid;
-    grid-template-columns:52px 1fr;
+    grid-template-columns:70px 1fr;
     gap:12px;
+    align-items:center;
   }
 
   .brand img{
-    width:52px;
-    height:52px;
+    height:70px;
+    width:auto;
+  }
+
+  .home-page .brand img{
+    height:90px;
   }
 
   .nav-links{
@@ -429,6 +529,12 @@ h2{
 
   h1{
     font-size:30px;
+    line-height:1.08;
+  }
+
+  .hero h1 .highlight{
+    padding:.05em .18em;
+    line-height:.88;
   }
 
   .lead{
@@ -447,10 +553,12 @@ h2{
     display:grid;
     grid-template-columns:1fr;
     gap:10px;
+    width:100%;
   }
 
   .btn{
     width:100%;
+    max-width:100%;
   }
 
   .form-row{
@@ -466,241 +574,16 @@ h2{
   .project-form textarea{
     min-height:110px;
   }
-}/* ===== CONTACT EMAIL MOBILE FIX ===== */
-.contact-box{
-  overflow:hidden;
-}
-
-.contact-email{
-  max-width:100%;
-  word-break:break-word;
-  overflow-wrap:anywhere;
-  line-height:1.15;
-}
-
-@media (max-width: 768px){
-  .contact-email{
-    font-size:18px;
-  }
-}/* ===== MOBILE OVERFLOW FIX ===== */
-html, body{
-  overflow-x:hidden;
-}
-
-.contact-box{
-  width:100%;
-  max-width:100%;
-  overflow:hidden;
-}
-
-.contact-email{
-  display:block;
-  width:100%;
-  max-width:100%;
-  font-size:clamp(18px, 4.8vw, 42px);
-  line-height:1.12;
-  word-break:break-word;
-  overflow-wrap:anywhere;
-}
-
-@media (max-width: 768px){
-  .wrap{
-    width:calc(100% - 24px);
-    max-width:none;
-    overflow:hidden;
-  }
 
   .contact-box{
     padding:18px;
-    width:100%;
-    max-width:100%;
-    overflow:hidden;
   }
 
   .contact-email{
-    display:block;
-    width:100%;
-    max-width:100%;
     font-size:16px;
     line-height:1.15;
-    word-break:break-word;
-    overflow-wrap:anywhere;
   }
 
-  .btn-row{
-    width:100%;
-  }
-
-  .btn{
-    width:100%;
-    max-width:100%;
-  }
-}/* Highlight text */
-/* =========================
-   HERO HIGHLIGHT FIX
-   ========================= */
-
-.highlight {
-  display: inline;
-  padding: 0.08em 0.28em;
-  line-height: 0.95;
-  border-radius: 2px;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
-.hero h1 {
-  line-height: 1.05;
-}
-
-.hero h1 .highlight {
-  line-height: 0.9;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .hero h1 {
-    line-height: 1.1;
-  }
-
-  .hero h1 .highlight {
-    padding: 0.05em 0.22em;
-    line-height: 0.85;
-  }
-}/* =========================
-}
-}/* =========================
-   SERVICE CARD COLORS
-   ========================= */
-
-.card-brand {
-  border: 1px solid rgba(181, 124, 255, 0.4);
-}
-
-.card-web {
-  border: 1px solid rgba(0, 230, 168, 0.4);
-}
-
-.card-seo {
-  border: 1px solid rgba(122, 162, 255, 0.4);
-}
-
-/* Glow effect on hover */
-.card-brand:hover {
-  box-shadow: 0 0 20px rgba(181, 124, 255, 0.25);
-  border: 1px solid rgba(181, 124, 255, 0.8);
-}
-
-.card-web:hover {
-  box-shadow: 0 0 20px rgba(0, 230, 168, 0.25);
-  border: 1px solid rgba(0, 230, 168, 0.8);
-}
-
-.card-seo:hover {
-  box-shadow: 0 0 20px rgba(122, 162, 255, 0.25);
-  border: 1px solid rgba(122, 162, 255, 0.8);
-}.card-brand h3 {
-  color: #b57cff;
-}
-
-.card-web h3 {
-  color: #00e6a8;
-}
-
-.card-seo h3 {
-  color: #7aa2ff;
-}/* =========================
-   SERVICE CARD COLORS
-   ========================= */
-
-.card-brand{
-  border:1px solid rgba(181,124,255,.55) !important;
-  box-shadow:0 0 18px rgba(181,124,255,.14);
-}
-
-.card-web{
-  border:1px solid rgba(0,230,168,.55) !important;
-  box-shadow:0 0 18px rgba(0,230,168,.14);
-}
-
-.card-seo{
-  border:1px solid rgba(122,162,255,.55) !important;
-  box-shadow:0 0 18px rgba(122,162,255,.14);
-}
-
-.card-brand h3{
-  color:#b57cff !important;
-}
-
-.card-web h3{
-  color:#00e6a8 !important;
-}
-
-.card-seo h3{
-  color:#7aa2ff !important;
-}
-
-/* stronger hover on desktop */
-.card-brand:hover{
-  box-shadow:0 0 24px rgba(181,124,255,.28);
-  border-color:rgba(181,124,255,.95) !important;
-}
-
-.card-web:hover{
-  box-shadow:0 0 24px rgba(0,230,168,.28);
-  border-color:rgba(0,230,168,.95) !important;
-}
-
-.card-seo:hover{
-  box-shadow:0 0 24px rgba(122,162,255,.28);
-  border-color:rgba(122,162,255,.95) !important;
-}
-
-/* mobile: keep glow visible without hover */
-@media (max-width: 768px){
-  .card-brand{
-    box-shadow:0 0 20px rgba(181,124,255,.18) !important;
-  }
-
-  .card-web{
-    box-shadow:0 0 20px rgba(0,230,168,.18) !important;
-  }
-
-  .card-seo{
-    box-shadow:0 0 20px rgba(122,162,255,.18) !important;
-  }
-}/* =========================
-   FORCE SERVICE CARD COLORS
-   ========================= */
-
-.cards .card.card-brand{
-  border:1px solid rgba(181,124,255,.7) !important;
-  box-shadow:0 0 18px rgba(181,124,255,.16) !important;
-}
-
-.cards .card.card-web{
-  border:1px solid rgba(0,230,168,.7) !important;
-  box-shadow:0 0 18px rgba(0,230,168,.16) !important;
-}
-
-.cards .card.card-seo{
-  border:1px solid rgba(122,162,255,.7) !important;
-  box-shadow:0 0 18px rgba(122,162,255,.16) !important;
-}
-
-.cards .card.card-brand h3{
-  color:#b57cff !important;
-}
-
-.cards .card.card-web h3{
-  color:#00e6a8 !important;
-}
-
-.cards .card.card-seo h3{
-  color:#7aa2ff !important;
-}
-
-@media (max-width: 768px){
   .cards .card.card-brand{
     border:1px solid rgba(181,124,255,.8) !important;
     box-shadow:0 0 20px rgba(181,124,255,.18) !important;
@@ -714,58 +597,5 @@ html, body{
   .cards .card.card-seo{
     border:1px solid rgba(122,162,255,.8) !important;
     box-shadow:0 0 20px rgba(122,162,255,.18) !important;
-  }
-}/* =========================
-   LOGO SIZE
-   ========================= */
-
-.brand img{
-  height: 200px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* Make navbar taller so logo fits */
-.nav-inner{
-  min-height: 120px;
-}
-
-/* Mobile */
-@media (max-width: 768px){
-
-  .nav-inner{
-    padding:14px 0 16px;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:14px;
-  }
-
-  .brand{
-    width:100%;
-    display:grid;
-    grid-template-columns:90px 1fr; /* THIS CONTROLS LOGO SPACE */
-    gap:12px;
-    align-items:center;
-  }
-
-  .brand img{
-    height:90px;
-    width:auto;
-  }
-
-  .nav-links{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:8px;
-  }
-
-  .nav-links a{
-    display:block;
-    text-align:center;
-    font-size:11px;
-    line-height:1.2;
-    white-space:nowrap;
-    padding:8px 6px;
   }
 }
