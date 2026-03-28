@@ -633,4 +633,64 @@ html, body{
 
 .card-seo h3 {
   color: #7aa2ff;
+}/* =========================
+   SERVICE CARD COLORS
+   ========================= */
+
+.card-brand{
+  border:1px solid rgba(181,124,255,.55) !important;
+  box-shadow:0 0 18px rgba(181,124,255,.14);
+}
+
+.card-web{
+  border:1px solid rgba(0,230,168,.55) !important;
+  box-shadow:0 0 18px rgba(0,230,168,.14);
+}
+
+.card-seo{
+  border:1px solid rgba(122,162,255,.55) !important;
+  box-shadow:0 0 18px rgba(122,162,255,.14);
+}
+
+.card-brand h3{
+  color:#b57cff !important;
+}
+
+.card-web h3{
+  color:#00e6a8 !important;
+}
+
+.card-seo h3{
+  color:#7aa2ff !important;
+}
+
+/* stronger hover on desktop */
+.card-brand:hover{
+  box-shadow:0 0 24px rgba(181,124,255,.28);
+  border-color:rgba(181,124,255,.95) !important;
+}
+
+.card-web:hover{
+  box-shadow:0 0 24px rgba(0,230,168,.28);
+  border-color:rgba(0,230,168,.95) !important;
+}
+
+.card-seo:hover{
+  box-shadow:0 0 24px rgba(122,162,255,.28);
+  border-color:rgba(122,162,255,.95) !important;
+}
+
+/* mobile: keep glow visible without hover */
+@media (max-width: 768px){
+  .card-brand{
+    box-shadow:0 0 20px rgba(181,124,255,.18) !important;
+  }
+
+  .card-web{
+    box-shadow:0 0 20px rgba(0,230,168,.18) !important;
+  }
+
+  .card-seo{
+    box-shadow:0 0 20px rgba(122,162,255,.18) !important;
+  }
 }
