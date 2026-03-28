@@ -602,56 +602,40 @@ h2{
    PAGE WIPE TRANSITION
    ========================= */
 /* =========================
-   PAGE TRANSITION — RIGHT WIPE + CONTENT MOTION
+   PAGE TRANSITION — RIGHT WIPE
    ========================= */
 
-/* make sure main sits below the wipe cleanly */
 main{
   position: relative;
   z-index: 1;
-  transition: transform .42s ease, opacity .42s ease;
-  will-change: transform, opacity;
 }
 
-/* entering animation for content */
-body.is-entering main{
-  opacity: 0;
-  transform: translateX(26px);
-  animation: pageContentIn .42s ease forwards;
-}
-
-/* leaving animation for content */
-body.is-leaving main{
-  opacity: 0;
-  transform: translateX(-26px);
-}
-
-/* the wipe itself */
+/* wipe layer */
 .page-wipe{
   position: fixed;
-  top: 90px; /* keeps nav visible */
+  top: 90px;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.97);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.98);
+  backdrop-filter: blur(4px);
   z-index: 99999;
   pointer-events: none;
   transform: translateX(100%);
   will-change: transform;
 }
 
-/* page entering: wipe slides across and off to the left */
-body.is-entering .page-wipe{
-  animation: wipeRevealRight .55s cubic-bezier(.77,0,.18,1) forwards;
-}
-
-/* page leaving: wipe comes in from the right and covers content */
+/* leaving page: wipe comes in from right */
 body.is-leaving .page-wipe{
-  animation: wipeCoverRight .55s cubic-bezier(.77,0,.18,1) forwards;
+  animation: wipeFromRightIn .6s cubic-bezier(.77,0,.18,1) forwards;
 }
 
-@keyframes wipeCoverRight{
+/* entering page: wipe exits to left */
+body.is-entering .page-wipe{
+  animation: wipeToLeftOut .6s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+@keyframes wipeFromRightIn{
   from{
     transform: translateX(100%);
   }
@@ -660,7 +644,7 @@ body.is-leaving .page-wipe{
   }
 }
 
-@keyframes wipeRevealRight{
+@keyframes wipeToLeftOut{
   from{
     transform: translateX(0%);
   }
@@ -669,58 +653,31 @@ body.is-leaving .page-wipe{
   }
 }
 
-@keyframes pageContentIn{
-  from{
-    opacity: 0;
-    transform: translateX(26px);
-  }
-  to{
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* subtle content fade only */
+body.is-leaving main{
+  opacity: .92;
+  transition: opacity .2s ease;
 }
 
-/* mobile nav is taller, so start wipe lower */
+body.is-entering main{
+  animation: contentFadeIn .35s ease forwards;
+}
+
+@keyframes contentFadeIn{
+  from{ opacity: .88; }
+  to{ opacity: 1; }
+}
+
 @media (max-width: 768px){
   .page-wipe{
     top: 120px;
   }
-
-  body.is-entering main{
-    transform: translateX(18px);
-  }
-
-  body.is-leaving main{
-    transform: translateX(-18px);
-  }
-
-  @keyframes pageContentIn{
-    from{
-      opacity: 0;
-      transform: translateX(18px);
-    }
-    to{
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
 }
 
-/* accessibility */
 @media (prefers-reduced-motion: reduce){
-  main,
-  .page-wipe{
-    transition: none !important;
+  .page-wipe,
+  main{
     animation: none !important;
-  }
-
-  body.is-entering main,
-  body.is-leaving main{
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .page-wipe{
-    transform: translateX(100%) !important;
+    transition: none !important;
   }
 }
