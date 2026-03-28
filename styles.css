@@ -542,10 +542,35 @@ html, body{
     max-width:100%;
   }
 }/* Highlight text */
+/* =========================
+   HERO HIGHLIGHT FIX
+   ========================= */
+
 .highlight {
   display: inline;
-  padding: 0.05em 0.15em;
-  line-height: 1.1;
+  padding: 0.08em 0.28em;
+  line-height: 0.95;
+  border-radius: 2px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+}
+
+.hero h1 {
+  line-height: 1.05;
+}
+
+.hero h1 .highlight {
+  line-height: 0.9;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero h1 {
+    line-height: 1.1;
+  }
+
+  .hero h1 .highlight {
+    padding: 0.05em 0.22em;
+    line-height: 0.85;
+  }
 }
