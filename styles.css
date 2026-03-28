@@ -16,11 +16,11 @@
   --seo:#7aa2ff;
 }
 
-/* ===== PAGE COLORS ===== */
-.home-page{ --accent:var(--home); }
-.brand-page{ --accent:var(--brand); }
-.web-page{ --accent:var(--web); }
-.seo-page{ --accent:var(--seo); }
+/* ===== PAGE ACCENTS ===== */
+body.home-page{ --accent:var(--home); }
+body.brand-page{ --accent:var(--brand); }
+body.web-page{ --accent:var(--web); }
+body.seo-page{ --accent:var(--seo); }
 
 /* ===== GLOBAL ===== */
 *{box-sizing:border-box;}
@@ -102,7 +102,7 @@ img{display:block;max-width:100%;}
   transition:.2s ease;
 }
 
-/* Fixed nav colors */
+/* NAV COLORS */
 .nav-links a:nth-child(1){ color:var(--home); }
 .nav-links a:nth-child(2){ color:var(--brand); }
 .nav-links a:nth-child(3){ color:var(--web); }
@@ -119,6 +119,14 @@ img{display:block;max-width:100%;}
 }
 .nav-links a:nth-child(4):hover{
   text-shadow:0 0 6px var(--seo), 0 0 12px var(--seo);
+}
+
+/* ACTIVE PAGE GLOW */
+body.home-page .nav-links a:nth-child(1),
+body.brand-page .nav-links a:nth-child(2),
+body.web-page .nav-links a:nth-child(3),
+body.seo-page .nav-links a:nth-child(4){
+  text-shadow:0 0 8px currentColor, 0 0 18px currentColor;
 }
 
 /* ===== HERO ===== */
@@ -420,12 +428,6 @@ h2{
     white-space:nowrap;
     padding:8px 6px;
   }
-
-  /* keep same fixed colors on mobile */
-  .nav-links a:nth-child(1){ color:var(--home); }
-  .nav-links a:nth-child(2){ color:var(--brand); }
-  .nav-links a:nth-child(3){ color:var(--web); }
-  .nav-links a:nth-child(4){ color:var(--seo); }
 
   .hero-inner{
     padding:40px 0 34px;
