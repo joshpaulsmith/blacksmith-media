@@ -2,47 +2,91 @@
 // PAGE WIPE TRANSITIONS
 // =========================
 
-document.addEventListener("DOMContentLoaded", () => {
+(function () {
+  function shouldHandleLink(link) {
+    if (!link) return false;
 
-  // Create wipe overlay automatically
-  const wipe = document.createElement("div");
-  wipe.className = "page-wipe";
-  document.body.appendChild(wipe);
-
-  // Enter animation
-  document.body.classList.add("is-entering");
-
-  // Handle link clicks
-  const links = document.querySelectorAll("a[href]");
-
-  links.forEach(link => {
     const href = link.getAttribute("href");
+    if (!href) return false;
 
     if (
-      !href ||
       href.startsWith("#") ||
       href.startsWith("mailto:") ||
       href.startsWith("tel:") ||
-      href.startsWith("javascript:") ||
-      link.target === "_blank" ||
-      link.hasAttribute("download")
+      href.startsWith("javascript:")
     ) {
-      return;
+      return false;
     }
 
-    link.addEventListener("click", function(e) {
-      const url = this.href;
+    if (link.target === "_blank" || link.hasAttribute("download")) {
+      return false;
+    }
 
-      if (!url || url === window.location.href) return;
+    const url = new URL(link.href, window.location.origin);
+
+    // only handle same-origin links
+    if (url.origin !== window.location.origin) return false;
+
+    // don't animate same-page anchor jumps
+    if (
+      url.pathname === window.location.pathname &&
+      url.hash &&
+      url.hash !== ""
+    ) {
+      return false;
+    }
+
+    return true;
+  }
+
+  function ensureWipe() {
+    let wipe = document.querySelector(".page-wipe");
+    if (!wipe) {
+      wipe = document.createElement("div");
+      wipe.className = "page-wipe";
+      document.body.appendChild(wipe);
+    }
+    return wipe;
+  }
+
+  function enterAnimation() {
+    ensureWipe();
+    document.body.classList.remove("is-leaving");
+    document.body.classList.add("is-entering");
+
+    setTimeout(() => {
+      document.body.classList.remove("is-entering");
+    }, 650);
+  }
+
+  function leaveTo(url) {
+    ensureWipe();
+    document.body.classList.remove("is-entering");
+    document.body.classList.add("is-leaving");
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 520);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    enterAnimation();
+
+    // delegated click handling works better across pages/mobile
+    document.addEventListener("click", function (e) {
+      const link = e.target.closest("a");
+      if (!shouldHandleLink(link)) return;
+
+      const url = new URL(link.href, window.location.origin).href;
+      if (url === window.location.href) return;
 
       e.preventDefault();
-      document.body.classList.remove("is-entering");
-      document.body.classList.add("is-leaving");
-
-      setTimeout(() => {
-        window.location.href = url;
-      }, 520);
+      leaveTo(url);
     });
   });
 
-});
+  // helps when using back/forward cache on mobile Safari
+  window.addEventListener("pageshow", function () {
+    enterAnimation();
+  });
+})();
