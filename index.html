@@ -6,28 +6,17 @@
 
   <title>Blacksmith Media | Web Design Sault Ste. Marie | Northern Ontario Branding & Websites</title>
   <meta name="description" content="Blacksmith Media is a Sault Ste. Marie web design and branding studio serving Northern Ontario. We build clean, modern websites and brand identities for small businesses, contractors, and startups." />
-  <meta name="keywords" content="Sault Ste. Marie web design, Northern Ontario web design, branding Sault Ste. Marie, website design Northern Ontario, one page website, small business website Ontario" />
+  <meta name="keywords" content="Sault Ste. Marie web design, Northern Ontario web design, branding Sault Ste. Marie, website design Northern Ontario" />
   <meta name="author" content="Blacksmith Media" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://blacksmithmedia.ca/" />
-
-  <meta property="og:title" content="Blacksmith Media | Web Design Sault Ste. Marie" />
-  <meta property="og:description" content="Web design and branding studio based in Sault Ste. Marie, serving businesses across Northern Ontario." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://blacksmithmedia.ca/" />
-  <meta property="og:image" content="https://blacksmithmedia.ca/blacksmith-logo-full.png" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blacksmith Media | Web Design Sault Ste. Marie" />
-  <meta name="twitter:description" content="Web design and branding for businesses in Sault Ste. Marie and Northern Ontario." />
-  <meta name="twitter:image" content="https://blacksmithmedia.ca/blacksmith-logo-full.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS File -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- Google Analytics -->
@@ -38,53 +27,11 @@
     gtag('js', new Date());
     gtag('config', 'G-P6DTSDS8MV');
   </script>
-
-  <!-- Local Business Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Blacksmith Media",
-    "image": "https://blacksmithmedia.ca/blacksmith-logo.png",
-    "url": "https://blacksmithmedia.ca",
-    "email": "blacksmithmedia@protonmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Sault Ste. Marie",
-      "addressRegion": "ON",
-      "addressCountry": "CA"
-    },
-    "areaServed": [
-      "Sault Ste. Marie",
-      "Algoma District",
-      "Greater Sudbury",
-      "North Bay",
-      "Timmins",
-      "Northern Ontario"
-    ],
-    "description": "Blacksmith Media is a web design and branding studio based in Sault Ste. Marie, serving businesses across Northern Ontario."
-  }
-  </script>
 </head>
-<script>
-const openBtns = document.querySelectorAll('.open-project-form');
-const modal = document.getElementById('projectModal');
-const overlay = document.getElementById('projectModalOverlay');
-const closeBtn = document.getElementById('closeProjectForm');
 
-openBtns.forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault();
-    modal.classList.add('active');
-  });
-});
-
-overlay.onclick = closeBtn.onclick = () => {
-  modal.classList.remove('active');
-};
-</script>
 <body>
 
+  <!-- NAV -->
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="index.html">
@@ -104,6 +51,7 @@ overlay.onclick = closeBtn.onclick = () => {
     </div>
   </nav>
 
+  <!-- HERO -->
   <main id="top">
     <section class="hero">
       <div class="wrap hero-inner">
@@ -220,32 +168,54 @@ overlay.onclick = closeBtn.onclick = () => {
         </div>
       </div>
     </section>
-
   </main>
-<div class="project-modal" id="projectModal">
-  <div class="project-modal-overlay" id="projectModalOverlay"></div>
 
-  <div class="project-modal-panel">
-    <button class="project-close" id="closeProjectForm">&times;</button>
+  <!-- POPUP FORM -->
+  <div class="project-modal" id="projectModal">
+    <div class="project-modal-overlay" id="projectModalOverlay"></div>
 
-    <h2>Start a Project</h2>
+    <div class="project-modal-panel">
+      <button class="project-close" id="closeProjectForm">&times;</button>
 
-    <form class="project-form"
-      action="https://formsubmit.co/blacksmithmedia@protonmail.com"
-      method="POST">
-      
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="business" placeholder="Business Name">
-      <textarea name="project" placeholder="Tell us about the project"></textarea>
+      <h2>Start a Project</h2>
 
-      <button type="submit" class="btn primary">Send</button>
-    </form>
+      <form class="project-form"
+        action="https://formsubmit.co/blacksmithmedia@protonmail.com"
+        method="POST">
+        
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="business" placeholder="Business Name">
+        <textarea name="project" placeholder="Tell us about the project"></textarea>
+
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+    </div>
   </div>
-</div>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
   </footer>
+
+  <!-- POPUP SCRIPT -->
+  <script>
+  const openBtns = document.querySelectorAll('.open-project-form');
+  const modal = document.getElementById('projectModal');
+  const overlay = document.getElementById('projectModalOverlay');
+  const closeBtn = document.getElementById('closeProjectForm');
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      modal.classList.add('active');
+    });
+  });
+
+  overlay.onclick = closeBtn.onclick = () => {
+    modal.classList.remove('active');
+  };
+  </script>
 
 </body>
 </html>
