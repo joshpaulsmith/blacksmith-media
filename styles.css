@@ -11,37 +11,11 @@
   --radius:22px;
 }
 
-/* Page Accent Colors */
-.home-page .highlight {
-  color: #f2c94c; /* Yellow */
-}
-
-.brand-page .highlight {
-  color: #9b51e0; /* Purple */
-}
-
-/* Optional: button colors to match page */
-.home-page .btn.primary {
-  background: #f2c94c;
-  color: #000;
-  border: none;
-}
-
-.brand-page .btn.primary {
-  background: #9b51e0;
-  color: #fff;
-  border: none;
-}
-
-/* Button hover */
-.home-page .btn.primary:hover {
-  background: #e0b93f;
-}
-
-.brand-page .btn.primary:hover {
-  background: #7d3ccf;
-}
-}
+/* ===== PAGE COLORS ===== */
+.home-page{ --accent:#f2c94c; }   /* Yellow */
+.brand-page{ --accent:#9b51e0; }  /* Purple */
+.web-page{ --accent:#00ff9c; }    /* Green */
+.seo-page{ --accent:#7aa2ff; }    /* Blue */
 
 /* ===== GLOBAL ===== */
 *{box-sizing:border-box;}
@@ -123,52 +97,9 @@ img{display:block;max-width:100%;}
   transition:.2s ease;
 }
 
-/* Menu colors */
-.nav-links a:nth-child(1){
-  color:#bfbfbf; /* Home */
-}
-
-.nav-links a:nth-child(2){
-  color:#ffd84d; /* Brand Identity */
-}
-
-.nav-links a:nth-child(3){
-  color:#00ff9c; /* Website Design */
-}
-
-.nav-links a:nth-child(4){
-  color:#7aa2ff; /* SEO */
-  /* swap to purple if wanted:
-  color:#c77dff;
-  */
-}
-
-/* Hover glow */
-.nav-links a:nth-child(1):hover{
-  text-shadow:0 0 6px #bfbfbf, 0 0 12px #bfbfbf;
-}
-
-.nav-links a:nth-child(2):hover{
-  text-shadow:0 0 6px #ffd84d, 0 0 12px #ffd84d;
-}
-
-.nav-links a:nth-child(3):hover{
-  text-shadow:0 0 6px #00ff9c, 0 0 12px #00ff9c;
-}
-
-.nav-links a:nth-child(4):hover{
-  text-shadow:0 0 6px #7aa2ff, 0 0 12px #7aa2ff;
-  /* purple version:
-  text-shadow:0 0 6px #c77dff, 0 0 12px #c77dff;
-  */
-}
-
-/* Active page glow */
-.page-home .nav-links a:nth-child(1),
-.page-brand .nav-links a:nth-child(2),
-.page-web .nav-links a:nth-child(3),
-.page-seo .nav-links a:nth-child(4){
-  text-shadow:0 0 6px var(--accent), 0 0 14px var(--accent);
+.nav-links a:hover{
+  color:var(--accent);
+  text-shadow:0 0 6px var(--accent);
 }
 
 /* ===== HERO ===== */
@@ -186,7 +117,7 @@ img{display:block;max-width:100%;}
   font-size:12px;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:var(--muted);
+  color:var(--accent);
 }
 
 h1{
@@ -342,7 +273,7 @@ h2{
 
 .step-no{
   font-family:'Roboto Mono', monospace;
-  color:var(--muted);
+  color:var(--accent);
   font-size:14px;
   min-width:40px;
 }
@@ -383,10 +314,7 @@ h2{
   text-transform:uppercase;
 }
 
-/* ===== MODAL ===== */
-/* ===== POPUP MODAL ===== */
-/* ===== PROJECT FORM (BLACKSMITH STYLE) ===== */
-
+/* ===== PROJECT FORM ===== */
 .project-form{
   margin-top:10px;
 }
@@ -397,7 +325,8 @@ h2{
   margin-bottom:12px;
 }
 
-.project-form input{
+.project-form input,
+.project-form textarea{
   flex:1;
   padding:14px 16px;
   background:#111;
@@ -409,21 +338,8 @@ h2{
 }
 
 .project-form textarea{
-  flex:1;
-  padding:14px 16px;
-  background:#111;
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:6px;
-  color:#fff;
-  font-family:'Roboto', sans-serif;
-  font-size:14px;
   min-height:60px;
   resize:none;
-}
-
-.project-form input::placeholder,
-.project-form textarea::placeholder{
-  color:#aaa;
 }
 
 .project-form button{
@@ -438,7 +354,6 @@ h2{
   cursor:pointer;
 }
 
-/* Success message */
 .form-success{
   display:none;
   margin-top:10px;
@@ -452,18 +367,8 @@ h2{
 /* ===== MOBILE ===== */
 @media (max-width: 768px){
 
-  .wrap{
-    width:calc(100% - 24px);
-  }
-
-  .nav{
-    position:relative;
-  }
-
   .nav-inner{
-    min-height:auto;
     padding:14px 0 16px;
-    display:flex;
     flex-direction:column;
     align-items:flex-start;
     gap:14px;
@@ -474,7 +379,6 @@ h2{
     display:grid;
     grid-template-columns:52px 1fr;
     gap:12px;
-    align-items:start;
   }
 
   .brand img{
@@ -482,439 +386,36 @@ h2{
     height:52px;
   }
 
-  .brand-title{
-    font-size:15px;
-    line-height:1.05;
-    letter-spacing:.08em;
-  }
-
-  .brand-sub{
-    margin-top:6px;
-    font-size:10px;
-    line-height:1.25;
-    letter-spacing:.10em;
-  }
-
   .nav-links{
     width:100%;
     display:grid;
-    grid-template-columns:repeat(4, minmax(0, 1fr));
+    grid-template-columns:repeat(2, 1fr);
     gap:8px;
   }
 
   .nav-links a{
-    display:block;
     text-align:center;
     font-size:11px;
-    line-height:1.2;
-    white-space:nowrap;
+    padding:8px 6px;
   }
 
   .hero-inner{
     padding:40px 0 34px;
   }
 
-  .eyebrow{
-    margin-bottom:14px;
-    font-size:10px;
-    line-height:1.45;
-    letter-spacing:.12em;
-  }
-
   h1{
     font-size:30px;
-    line-height:1.02;
-    margin:0 0 14px;
-  }
-
-  .highlight{
-    padding:.02em .10em .05em .10em;
   }
 
   .lead{
-    max-width:100%;
-    margin:0 0 20px;
     font-size:15px;
-    line-height:1.65;
   }
 
-  .btn-row{
-    display:grid;
+  .cards{
     grid-template-columns:1fr;
-    gap:10px;
-    margin-bottom:14px;
-  }
-
-  .btn{
-    width:100%;
-    min-height:52px;
-    padding:0 18px;
-    font-size:13px;
-  }
-
-  .micro{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px 16px;
-    font-size:10px;
-    line-height:1.45;
   }
 
   .section{
     padding:46px 0;
-  }
-
-  .section-kicker{
-    font-size:10px;
-    margin-bottom:10px;
-  }
-
-  h2{
-    font-size:30px;
-    line-height:1.02;
-    margin:0 0 12px;
-  }
-
-  .section-copy,
-  .card p,
-  .step p,
-  .contact-note{
-    font-size:15px;
-    line-height:1.65;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-    gap:14px;
-  }
-
-  .card{
-    padding:18px;
-  }
-
-  .process{
-    gap:18px;
-  }
-
-  .step{
-    display:grid;
-    grid-template-columns:34px 1fr;
-    gap:14px;
-  }
-
-  .step-no{
-    min-width:0;
-    font-size:13px;
-  }
-
-  .step h3{
-    font-size:16px;
-    margin:0 0 6px;
-  }
-
-  .contact-box{
-    padding:18px;
-  }
-
-  .contact-email{
-    font-size:20px;
-    line-height:1.15;
-    word-break:break-word;
-  }
-
-  .footer{
-    font-size:11px;
-    line-height:1.5;
-    padding:24px 0 36px;
-  }
-
-  /* popup */
-  #projectModal{
-    padding:14px !important;
-  }
-
-  #projectModal > div:last-child{
-    width:100% !important;
-    max-width:none !important;
-    padding:22px 18px !important;
-    border-radius:20px !important;
-  }
-
-  #projectModal h2{
-    font-size:28px !important;
-    margin:0 0 14px !important;
-  }
-
-  .form-row{
-    flex-direction:column;
-    gap:10px;
-    margin-bottom:10px;
-  }
-
-  .project-form input,
-  .project-form textarea{
-    width:100%;
-    font-size:16px;
-  }
-
-  .project-form textarea{
-    min-height:110px;
-  }
-
-  .project-form button,
-  .send-btn{
-    width:100%;
-    height:50px;
-  }
-}
-
-@media (max-width: 420px){
-  .micro{
-    grid-template-columns:1fr;
-  }
-
-  .nav-links{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* ===== MOBILE HARD FIX ===== */
-@media screen and (max-width: 768px){
-
-  html, body{
-    overflow-x:hidden !important;
-  }
-
-  body{
-    width:100% !important;
-  }
-
-  .wrap{
-    width:calc(100% - 24px) !important;
-    max-width:none !important;
-    margin:0 auto !important;
-  }
-
-  .nav{
-    position:relative !important;
-  }
-
-  .nav-inner{
-    min-height:auto !important;
-    padding:12px 0 14px !important;
-    display:flex !important;
-    flex-direction:column !important;
-    align-items:flex-start !important;
-    gap:12px !important;
-  }
-
-  .brand{
-    width:100% !important;
-    display:grid !important;
-    grid-template-columns:44px 1fr !important;
-    gap:12px !important;
-    align-items:start !important;
-  }
-
-  .brand img{
-    width:44px !important;
-    height:44px !important;
-    object-fit:contain !important;
-  }
-
-  .brand-title{
-    font-size:14px !important;
-    line-height:1.05 !important;
-    letter-spacing:.07em !important;
-  }
-
-  .brand-sub{
-    margin-top:4px !important;
-    font-size:10px !important;
-    line-height:1.2 !important;
-    letter-spacing:.08em !important;
-  }
-
-  .nav-links{
-    width:100% !important;
-    display:grid !important;
-    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
-    gap:8px !important;
-  }
-
-  .nav-links a{
-    display:block !important;
-    width:100% !important;
-    text-align:center !important;
-    font-size:11px !important;
-    line-height:1.2 !important;
-    white-space:nowrap !important;
-    padding:8px 6px !important;
-  }
-
-  .hero-inner{
-    padding:38px 0 34px !important;
-  }
-
-  .eyebrow{
-    margin-bottom:14px !important;
-    font-size:10px !important;
-    line-height:1.45 !important;
-    letter-spacing:.12em !important;
-  }
-
-  h1{
-    font-size:28px !important;
-    line-height:1.02 !important;
-    margin:0 0 14px !important;
-    max-width:100% !important;
-  }
-
-  .highlight{
-    padding:.02em .10em .05em .10em !important;
-  }
-
-  .lead{
-    max-width:100% !important;
-    font-size:15px !important;
-    line-height:1.62 !important;
-    margin:0 0 20px !important;
-  }
-
-  .btn-row{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:10px !important;
-    margin-bottom:14px !important;
-  }
-
-  .btn{
-    width:100% !important;
-    min-height:50px !important;
-    padding:0 16px !important;
-    font-size:13px !important;
-  }
-
-  .micro{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:8px !important;
-    font-size:10px !important;
-    line-height:1.45 !important;
-    margin-top:10px !important;
-  }
-
-  .section{
-    padding:42px 0 !important;
-  }
-
-  .section-kicker{
-    font-size:10px !important;
-    margin-bottom:10px !important;
-  }
-
-  h2{
-    font-size:28px !important;
-    line-height:1.04 !important;
-    margin:0 0 12px !important;
-    max-width:100% !important;
-  }
-
-  .section-copy,
-  .card p,
-  .step p,
-  .contact-note{
-    font-size:15px !important;
-    line-height:1.6 !important;
-  }
-
-  .cards{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:14px !important;
-  }
-
-  .card{
-    width:100% !important;
-    padding:18px !important;
-  }
-
-  .process{
-    gap:18px !important;
-  }
-
-  .step{
-    display:grid !important;
-    grid-template-columns:32px 1fr !important;
-    gap:12px !important;
-    align-items:start !important;
-  }
-
-  .step-no{
-    font-size:13px !important;
-    min-width:0 !important;
-  }
-
-  .step h3{
-    font-size:16px !important;
-    margin:0 0 6px !important;
-  }
-
-  .contact-box{
-    width:100% !important;
-    padding:18px !important;
-    overflow:hidden !important;
-  }
-
-  .contact-email{
-    font-size:18px !important;
-    line-height:1.15 !important;
-    word-break:break-word !important;
-    overflow-wrap:anywhere !important;
-  }
-
-  .footer{
-    font-size:11px !important;
-    line-height:1.5 !important;
-    padding:22px 0 34px !important;
-  }
-
-  /* popup */
-  #projectModal{
-    padding:14px !important;
-  }
-
-  #projectModal > div:last-child{
-    width:100% !important;
-    max-width:none !important;
-    padding:20px 16px !important;
-    border-radius:18px !important;
-  }
-
-  #projectModal h2{
-    font-size:26px !important;
-    margin:0 0 12px !important;
-  }
-
-  .form-row{
-    flex-direction:column !important;
-    gap:10px !important;
-    margin-bottom:10px !important;
-  }
-
-  .project-form input,
-  .project-form textarea{
-    width:100% !important;
-    font-size:16px !important;
-  }
-
-  .project-form textarea{
-    min-height:110px !important;
-  }
-
-  .project-form button,
-  .send-btn{
-    width:100% !important;
-    height:50px !important;
   }
 }
