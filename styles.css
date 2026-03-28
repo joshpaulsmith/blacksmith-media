@@ -623,46 +623,172 @@ main{
   position:relative;
   z-index:1;
   will-change:transform, opacity;
+  transform-origin:center center;
 }
 
-.page-wipe,
-.page-fade{
+.page-transition-overlay{
   position:fixed;
   inset:0;
   background:#000;
+  opacity:0;
   pointer-events:none;
+  z-index:99999;
+  will-change:opacity;
   backface-visibility:hidden;
 }
 
-.page-wipe{
-  z-index:99999;
-  transform:translate3d(100%,0,0);
-  will-change:transform;
+/* DEFAULT PAGE TRANSITION */
+body.is-leaving-default .page-transition-overlay{
+  animation:overlayFadeIn .30s ease forwards;
 }
 
-.page-fade{
-  z-index:99998;
-  opacity:0;
-  will-change:opacity;
+body.is-entering-default .page-transition-overlay{
+  animation:overlayFadeOut .34s ease forwards;
 }
 
-/* DEFAULT NAV / MENU TRANSITION */
-body.is-leaving-default .page-wipe{
-  animation:wipeInFromRight .52s cubic-bezier(.77,0,.18,1) forwards;
+body.is-leaving-default main{
+  opacity:.94;
+  transform:scale(.988);
+  transition:transform .30s ease, opacity .30s ease;
 }
 
-body.is-entering-default .page-wipe{
-  animation:wipeOutToLeft .52s cubic-bezier(.77,0,.18,1) forwards;
+body.is-entering-default main{
+  animation:contentInDefault .36s ease forwards;
 }
 
-@keyframes wipeInFromRight{
-  from{ transform:translate3d(100%,0,0); }
-  to{ transform:translate3d(0,0,0); }
+@keyframes contentInDefault{
+  from{
+    opacity:.94;
+    transform:scale(1.012);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
 }
 
-@keyframes wipeOutToLeft{
-  from{ transform:translate3d(0,0,0); }
-  to{ transform:translate3d(-100%,0,0); }
+/* SERVICE CARD PAGE TRANSITION */
+body.is-leaving-service .page-transition-overlay{
+  animation:overlayFadeInStrong .36s ease forwards;
+}
+
+body.is-entering-service .page-transition-overlay{
+  animation:overlayFadeOutStrong .40s ease forwards;
+}
+
+body.is-leaving-service main{
+  opacity:.90;
+  transform:scale(.982);
+  transition:transform .34s ease, opacity .34s ease;
+}
+
+body.is-entering-service main{
+  animation:contentInService .42s ease forwards;
+}
+
+@keyframes contentInService{
+  from{
+    opacity:.92;
+    transform:scale(1.018);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@keyframes overlayFadeIn{
+  from{ opacity:0; }
+  to{ opacity:.16; }
+}
+
+@keyframes overlayFadeOut{
+  from{ opacity:.16; }
+  to{ opacity:0; }
+}
+
+@keyframes overlayFadeInStrong{
+  from{ opacity:0; }
+  to{ opacity:.24; }
+}
+
+@keyframes overlayFadeOutStrong{
+  from{ opacity:.24; }
+  to{ opacity:0; }
+}
+
+@media (max-width:768px){
+  body.is-leaving-default .page-transition-overlay{
+    animation:overlayFadeIn .22s ease forwards;
+  }
+
+  body.is-entering-default .page-transition-overlay{
+    animation:overlayFadeOut .26s ease forwards;
+  }
+
+  body.is-leaving-default main{
+    opacity:.96;
+    transform:scale(.992);
+    transition:transform .22s ease, opacity .22s ease;
+  }
+
+  body.is-entering-default main{
+    animation:contentInDefaultMobile .28s ease forwards;
+  }
+
+  @keyframes contentInDefaultMobile{
+    from{
+      opacity:.96;
+      transform:scale(1.008);
+    }
+    to{
+      opacity:1;
+      transform:scale(1);
+    }
+  }
+
+  body.is-leaving-service .page-transition-overlay{
+    animation:overlayFadeInStrong .26s ease forwards;
+  }
+
+  body.is-entering-service .page-transition-overlay{
+    animation:overlayFadeOutStrong .30s ease forwards;
+  }
+
+  body.is-leaving-service main{
+    opacity:.94;
+    transform:scale(.989);
+    transition:transform .26s ease, opacity .26s ease;
+  }
+
+  body.is-entering-service main{
+    animation:contentInServiceMobile .32s ease forwards;
+  }
+
+  @keyframes contentInServiceMobile{
+    from{
+      opacity:.95;
+      transform:scale(1.01);
+    }
+    to{
+      opacity:1;
+      transform:scale(1);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .page-transition-overlay,
+  main,
+  body.is-entering-default main,
+  body.is-leaving-default main,
+  body.is-entering-service main,
+  body.is-leaving-service main{
+    animation:none !important;
+    transition:none !important;
+    transform:none !important;
+    opacity:1 !important;
+  }
 }
 
 /* SERVICE CARD TRANSITION */
