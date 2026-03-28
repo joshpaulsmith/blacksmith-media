@@ -18,15 +18,6 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6DTSDS8MV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-P6DTSDS8MV');
-  </script>
 </head>
 
 <body>
@@ -179,17 +170,17 @@
 
       <h2>Start a Project</h2>
 
-      <form class="project-form"
-        action="https://formsubmit.co/blacksmithmedia@protonmail.com"
-        method="POST">
-        
+      <form class="project-form" action="https://formspree.io/f/mnqegjpd" method="POST">
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="text" name="business" placeholder="Business Name">
-        <textarea name="project" placeholder="Tell us about the project"></textarea>
-
+        <textarea name="message" placeholder="Tell us about the project"></textarea>
         <button type="submit" class="btn primary">Send</button>
       </form>
+
+      <div class="form-success" style="display:none; font-family:Roboto Mono; text-transform:uppercase;">
+        Project request sent. We'll be in touch.
+      </div>
     </div>
   </div>
 
@@ -204,6 +195,8 @@
   const modal = document.getElementById('projectModal');
   const overlay = document.getElementById('projectModalOverlay');
   const closeBtn = document.getElementById('closeProjectForm');
+  const form = document.querySelector('.project-form');
+  const successMsg = document.querySelector('.form-success');
 
   openBtns.forEach(btn => {
     btn.addEventListener('click', e => {
@@ -215,6 +208,24 @@
   overlay.onclick = closeBtn.onclick = () => {
     modal.classList.remove('active');
   };
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      form.style.display = "none";
+      successMsg.style.display = "block";
+    } else {
+      alert("Something went wrong. Please email blacksmithmedia@protonmail.com");
+    }
+  });
   </script>
 
 </body>
