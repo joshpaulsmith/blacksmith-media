@@ -167,13 +167,13 @@
 
       <h2>Start a Project</h2>
 
-      <form id="projectForm">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="business" placeholder="Business Name">
-        <textarea name="message" placeholder="Tell us about the project"></textarea>
-        <button type="submit" class="btn primary">Send</button>
-      </form>
+     <form id="projectForm" class="project-form">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="text" name="business" placeholder="Business Name" class="full">
+  <textarea name="message" placeholder="Tell us about the project" class="full"></textarea>
+  <button type="submit" class="full">Send</button>
+</form>
 
       <div id="formSuccess" style="display:none; font-family:Roboto Mono; text-transform:uppercase;">
         Project request sent. We'll be in touch.
