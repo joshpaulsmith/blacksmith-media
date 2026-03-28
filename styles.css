@@ -308,11 +308,12 @@ h2{
 }
 
 /* ===== MODAL ===== */
+/* ===== POPUP MODAL ===== */
 .project-modal{
   position:fixed;
   inset:0;
   display:none;
-  z-index:999;
+  z-index:9999;
 }
 
 .project-modal.active{
@@ -322,139 +323,98 @@ h2{
 .project-modal-overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.7);
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(6px);
 }
 
 .project-modal-panel{
   position:relative;
-  max-width:520px;
+  width:min(640px, calc(100% - 32px));
   margin:80px auto;
-  background:#111;
-  padding:30px;
-  border-radius:20px;
+  background:linear-gradient(180deg, #101010 0%, #0a0a0a 100%);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:26px;
+  padding:34px;
   z-index:2;
+  box-shadow:0 24px 70px rgba(0,0,0,.55);
 }
 
-.project-form input,
-.project-form textarea{
-  width:100%;
-  margin-bottom:12px;
-  padding:12px;
-  background:#0b0b0b;
-  border:1px solid #333;
-  color:#fff;
-}
-
+/* Close button */
 .project-close{
   position:absolute;
-  top:10px;
-  right:14px;
-  background:none;
+  top:14px;
+  right:16px;
+  width:42px;
+  height:42px;
   border:none;
+  background:transparent;
   color:#fff;
-  font-size:22px;
+  font-size:34px;
+  line-height:1;
   cursor:pointer;
+  opacity:.85;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 768px){
+.project-close:hover{
+  opacity:1;
+}
 
-  .nav-inner{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:14px 0;
-    gap:10px;
-  }
-
-  .brand img{
-    width:52px;
-    height:52px;
-  }
-
-  .nav-links{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:6px;
-  }
-
-  .nav-links a{
-    font-size:11px;
-  }
-
-  .hero-inner{
-    padding:50px 0 40px;
-  }
-
-  h1{
-    font-size:34px;
-    line-height:1.1;
-  }
-
-  .lead{
-    font-size:16px;
-  }
-
-  .btn-row{
-    flex-direction:column;
-  }
-
-  .btn{
-    width:100%;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .contact-email{
-    font-size:22px;
-  }
-
-  .section{
-    padding:50px 0;
-  }
-
-  h2{
-    font-size:28px;
-  }
-}/* ===== PROJECT FORM FIX ===== */
-
+/* Title */
 .project-modal-panel h2{
+  margin:0 0 18px;
   font-family:'Roboto Mono', monospace;
   font-size:42px;
-  margin-bottom:20px;
 }
 
+/* Form Layout */
 .project-form{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:14px;
 }
 
+.project-form .full{
+  grid-column:1 / -1;
+}
+
+/* Inputs */
 .project-form input,
 .project-form textarea{
   width:100%;
-  padding:14px;
-  background:#0b0b0b;
-  border:1px solid #333;
-  color:#fff;
+  padding:16px 18px;
+  background:#070707;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;
+  color:var(--text);
   font-family:'Roboto', sans-serif;
-  font-size:14px;
+  font-size:16px;
+  outline:none;
+}
+
+.project-form input::placeholder,
+.project-form textarea::placeholder{
+  color:#9a9a9a;
+}
+
+.project-form input:focus,
+.project-form textarea:focus{
+  border-color:rgba(231,217,79,.65);
+  box-shadow:0 0 0 3px rgba(231,217,79,.10);
 }
 
 .project-form textarea{
-  grid-column:span 2;
-  min-height:100px;
+  min-height:130px;
   resize:vertical;
 }
 
+/* Button */
 .project-form button{
-  grid-column:span 2;
-  margin-top:10px;
-  height:54px;
-  border-radius:999px;
+  appearance:none;
+  -webkit-appearance:none;
+  width:100%;
+  min-height:56px;
   border:none;
+  border-radius:999px;
   background:var(--accent);
   color:#000;
   font-family:'Roboto Mono', monospace;
@@ -463,32 +423,48 @@ h2{
   cursor:pointer;
 }
 
-/* MOBILE */
-@media (max-width: 768px){
-  .project-form{
-    grid-template-columns:1fr;
-  }
+/* Success message */
+.form-success{
+  display:none;
+  margin-top:12px;
+  font-family:'Roboto Mono', monospace;
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
 
-  .project-form textarea,
-  .project-form button{
-    grid-column:span 1;
-  }
+/* ===== MOBILE ===== */
+@media (max-width: 768px){
 
   .project-modal-panel{
-    margin:40px 16px;
-    padding:20px;
+    width:calc(100% - 20px);
+    margin:40px auto;
+    padding:22px 18px;
+    border-radius:20px;
   }
 
   .project-modal-panel h2{
     font-size:28px;
+    margin-bottom:14px;
   }
-}/* FORM GRID CONTROL */
-.project-form .full{
-  grid-column: span 2;
-}
 
-@media (max-width: 768px){
+  .project-form{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
   .project-form .full{
-    grid-column: span 1;
+    grid-column:auto;
+  }
+
+  .project-form input,
+  .project-form textarea{
+    padding:14px;
+    font-size:16px;
+  }
+
+  .project-form textarea{
+    min-height:110px;
   }
 }
