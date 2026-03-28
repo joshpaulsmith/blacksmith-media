@@ -756,4 +756,49 @@ body.seo-page::before{
 body.seo-page .highlight{
   background: #7aa2ff !important;
   color: #000 !important;
+}/* =========================
+   MOBILE PAGE COLOR THEME FIX
+   ========================= */
+
+@media (max-width: 768px){
+  body.brand-page::before,
+  body.web-page::before,
+  body.seo-page::before{
+    top: 0 !important;
+    bottom: 0 !important;
+    min-height: 100vh;
+  }
+
+  body.brand-page{
+    background: linear-gradient(
+      180deg,
+      #0b0b0b 0%,
+      #0b0b0b 100px,
+      #2d1a47 100px,
+      #3d2461 45%,
+      #2d1a47 100%
+    ) !important;
+  }
+
+  body.web-page{
+    background: linear-gradient(
+      180deg,
+      #0b0b0b 0%,
+      #0b0b0b 100px,
+      #0a3a2f 100px,
+      #0f5c49 45%,
+      #0a3a2f 100%
+    ) !important;
+  }
+
+  body.seo-page{
+    background: linear-gradient(
+      180deg,
+      #0b0b0b 0%,
+      #0b0b0b 100px,
+      #162a52 100px,
+      #1c3d7a 45%,
+      #162a52 100%
+    ) !important;
+  }
 }
