@@ -6,10 +6,6 @@
 
   <title>Blacksmith Media | Brand Identity Sault Ste. Marie</title>
   <meta name="description" content="Blacksmith Media creates brand identities in Sault Ste. Marie and Northern Ontario. We help businesses build their brand from strategy and direction through logo, typography, colours, and visual identity." />
-  <meta name="keywords" content="Brand Identity Sault Ste. Marie, Branding Sault Ste. Marie, Northern Ontario branding, logo design Sault Ste. Marie, visual identity design" />
-  <meta name="author" content="Blacksmith Media" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://blacksmithmedia.ca/brand-identity.html" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,9 +46,8 @@
         </h1>
 
         <p class="lead">
-          Blacksmith Media creates brand identities for businesses in Sault Ste. Marie and across Northern Ontario.
-          We help build brands from the ground up with strategy, direction, logo development, typography, colour systems,
-          and visual assets that give your business a clear and professional identity.
+          We help businesses build their brand from strategy and direction through logo,
+          typography, colour systems, and visual identity.
         </p>
 
         <div class="btn-row">
@@ -89,23 +84,30 @@
     </section>
   </main>
 
-  <!-- POPUP FORM -->
+  <!-- POPUP -->
   <div id="projectModal" style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:20px;">
-    <div id="projectModalOverlay" style="position:absolute; inset:0; background:rgba(0,0,0,.72);"></div>
+    <div id="projectModalOverlay" style="position:absolute; inset:0; background:rgba(0,0,0,.72); backdrop-filter:blur(6px);"></div>
 
-    <div style="position:relative; z-index:2; width:min(720px, 100%); background:#0b0b0b; border-radius:24px; padding:30px;">
-      <button id="closeProjectForm" style="position:absolute; top:14px; right:16px; background:none; border:none; color:#fff; font-size:30px;">&times;</button>
+    <div style="position:relative; z-index:2; width:min(720px, 100%); background:#0b0b0b; border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:30px;">
+      <button id="closeProjectForm" style="position:absolute; top:14px; right:16px; width:40px; height:40px; border:none; background:transparent; color:#fff; font-size:30px;">&times;</button>
 
       <h2 style="margin-bottom:18px; font-family:'Roboto Mono', monospace;">Start a Project</h2>
 
-      <form id="projectForm">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="business" placeholder="Business Name">
-        <textarea name="message" placeholder="Tell us about the project"></textarea>
-        <button type="submit">Send</button>
+      <form id="projectForm" class="project-form">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="business" placeholder="Business Name">
+        </div>
 
-        <div id="formSuccess" style="display:none; margin-top:10px;">Thanks — we’ll be in touch.</div>
+        <div class="form-row">
+          <textarea name="message" placeholder="Tell us about the project"></textarea>
+          <button type="submit">SEND</button>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          Thanks — we’ll be in touch.
+        </div>
       </form>
     </div>
   </div>
@@ -122,16 +124,26 @@
     const form = document.getElementById("projectForm");
     const successMsg = document.getElementById("formSuccess");
 
+    function openModal() {
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+      successMsg.style.display = "none";
+    }
+
     openBtns.forEach(btn => {
       btn.addEventListener("click", function(e) {
         e.preventDefault();
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden";
+        openModal();
       });
     });
 
-    overlay.onclick = () => modal.style.display = "none";
-    closeBtn.onclick = () => modal.style.display = "none";
+    overlay.onclick = closeModal;
+    closeBtn.onclick = closeModal;
 
     form.addEventListener("submit", async function(e) {
       e.preventDefault();
