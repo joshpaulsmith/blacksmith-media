@@ -593,4 +593,34 @@ html, body{
 .nav {
   padding: 20px 0 !important;
 }
+}/* =========================
+   SERVICE CARD COLORS
+   ========================= */
+
+.card-brand {
+  border: 1px solid rgba(181, 124, 255, 0.4);
+}
+
+.card-web {
+  border: 1px solid rgba(0, 230, 168, 0.4);
+}
+
+.card-seo {
+  border: 1px solid rgba(122, 162, 255, 0.4);
+}
+
+/* Glow effect on hover */
+.card-brand:hover {
+  box-shadow: 0 0 20px rgba(181, 124, 255, 0.25);
+  border: 1px solid rgba(181, 124, 255, 0.8);
+}
+
+.card-web:hover {
+  box-shadow: 0 0 20px rgba(0, 230, 168, 0.25);
+  border: 1px solid rgba(0, 230, 168, 0.8);
+}
+
+.card-seo:hover {
+  box-shadow: 0 0 20px rgba(122, 162, 255, 0.25);
+  border: 1px solid rgba(122, 162, 255, 0.8);
 }
