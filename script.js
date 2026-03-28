@@ -1,7 +1,3 @@
-// =========================
-// PAGE WIPE TRANSITIONS
-// =========================
-
 (function () {
   function shouldHandleLink(link) {
     if (!link) return false;
@@ -14,27 +10,15 @@
       href.startsWith("mailto:") ||
       href.startsWith("tel:") ||
       href.startsWith("javascript:")
-    ) {
-      return false;
-    }
+    ) return false;
 
-    if (link.target === "_blank" || link.hasAttribute("download")) {
-      return false;
-    }
+    if (link.target === "_blank" || link.hasAttribute("download")) return false;
 
     const url = new URL(link.href, window.location.origin);
 
-    // only handle same-origin links
     if (url.origin !== window.location.origin) return false;
 
-    // don't animate same-page anchor jumps
-    if (
-      url.pathname === window.location.pathname &&
-      url.hash &&
-      url.hash !== ""
-    ) {
-      return false;
-    }
+    if (url.pathname === window.location.pathname && url.hash) return false;
 
     return true;
   }
@@ -49,30 +33,29 @@
     return wipe;
   }
 
-  function enterAnimation() {
+  function enterPage() {
     ensureWipe();
     document.body.classList.remove("is-leaving");
     document.body.classList.add("is-entering");
 
     setTimeout(() => {
       document.body.classList.remove("is-entering");
-    }, 650);
+    }, 700);
   }
 
-  function leaveTo(url) {
+  function leavePage(url) {
     ensureWipe();
     document.body.classList.remove("is-entering");
     document.body.classList.add("is-leaving");
 
     setTimeout(() => {
       window.location.href = url;
-    }, 520);
+    }, 620);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    enterAnimation();
+    enterPage();
 
-    // delegated click handling works better across pages/mobile
     document.addEventListener("click", function (e) {
       const link = e.target.closest("a");
       if (!shouldHandleLink(link)) return;
@@ -81,12 +64,11 @@
       if (url === window.location.href) return;
 
       e.preventDefault();
-      leaveTo(url);
+      leavePage(url);
     });
   });
 
-  // helps when using back/forward cache on mobile Safari
   window.addEventListener("pageshow", function () {
-    enterAnimation();
+    enterPage();
   });
 })();
