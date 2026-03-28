@@ -67,8 +67,8 @@ img{display:block;max-width:100%;}
 }
 
 .brand img{
-  width:72px;
-  height:72px;
+  width:100px;
+  height:100px;
   object-fit:contain;
 }
 
@@ -574,24 +574,6 @@ html, body{
     line-height: 0.85;
   }
 }/* =========================
-   LOGO SIZE
-   ========================= */
-
-/* ===== FORCE LOGO SIZE ===== */
-.nav .brand img {
-  height: 60px !important;
-  width: auto !important;
-}
-
-@media (max-width: 600px) {
-  .nav .brand img {
-    height: 44px !important;
-  }
-}
-
-/* Make sure nav is tall enough */
-.nav {
-  padding: 20px 0 !important;
 }
 }/* =========================
    SERVICE CARD COLORS
