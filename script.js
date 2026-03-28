@@ -12,9 +12,9 @@
 
   function getDuration(type) {
     if (type === "service") {
-      return isMobile() ? 300 : 420;
+      return isMobile() ? 260 : 360;
     }
-    return isMobile() ? 400 : 520;
+    return isMobile() ? 220 : 300;
   }
 
   function shouldHandleLink(link) {
@@ -40,21 +40,16 @@
     return true;
   }
 
-  function ensureLayers() {
-    var wipe = document.querySelector(".page-wipe");
-    var fade = document.querySelector(".page-fade");
+  function ensureOverlay() {
+    var overlay = document.querySelector(".page-transition-overlay");
 
-    if (!wipe) {
-      wipe = document.createElement("div");
-      wipe.className = "page-wipe";
-      document.body.appendChild(wipe);
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.className = "page-transition-overlay";
+      document.body.appendChild(overlay);
     }
 
-    if (!fade) {
-      fade = document.createElement("div");
-      fade.className = "page-fade";
-      document.body.appendChild(fade);
-    }
+    return overlay;
   }
 
   function clearTransitionClasses() {
@@ -81,7 +76,7 @@
   }
 
   function enterPage() {
-    ensureLayers();
+    ensureOverlay();
     isTransitioning = false;
 
     if (isReducedMotion()) {
@@ -103,14 +98,14 @@
         "is-entering-default",
         "is-entering-service"
       );
-    }, getDuration(type));
+    }, type === "service" ? (isMobile() ? 320 : 420) : (isMobile() ? 280 : 360));
   }
 
   function leavePage(url, type) {
     if (isTransitioning) return;
     isTransitioning = true;
 
-    ensureLayers();
+    ensureOverlay();
     setStoredEnterType(type);
 
     if (isReducedMotion()) {
@@ -128,7 +123,7 @@
 
     window.setTimeout(function () {
       window.location.href = url;
-    }, getDuration(type) - 20);
+    }, getDuration(type));
   }
 
   document.addEventListener("DOMContentLoaded", function () {
