@@ -544,7 +544,7 @@ html, body{
 }/* Highlight text */
 .highlight {
   display: inline;
-  padding: 0.05em 0.2em;
+  padding: 0.05em 0.15em;
   line-height: 1.1;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
