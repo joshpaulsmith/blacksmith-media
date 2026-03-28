@@ -983,6 +983,15 @@ body.seo-page .nav-links a:nth-child(4){
   .page-wipe{
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+  }@media (max-width: 768px){
+  html, body{
+    overflow-x: hidden !important;
+    width: 100% !important;
   }
+
+  body{
+    position: relative;
+  }
+}
 }
 }
