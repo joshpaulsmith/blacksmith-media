@@ -11,6 +11,26 @@
   --radius:22px;
 }
 
+/* ===== PAGE ACCENTS ===== */
+.page-home{
+  --accent:#bfbfbf; /* gray */
+}
+
+.page-brand{
+  --accent:#ffd84d; /* yellow */
+}
+
+.page-web{
+  --accent:#00ff9c; /* green */
+}
+
+.page-seo{
+  --accent:#7aa2ff; /* blue */
+  /* swap to purple if you want:
+  --accent:#c77dff;
+  */
+}
+
 /* ===== GLOBAL ===== */
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -88,11 +108,55 @@ img{display:block;max-width:100%;}
   font-size:13px;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--muted);
+  transition:.2s ease;
 }
 
-.nav-links a:hover{
-  color:var(--text);
+/* Menu colors */
+.nav-links a:nth-child(1){
+  color:#bfbfbf; /* Home */
+}
+
+.nav-links a:nth-child(2){
+  color:#ffd84d; /* Brand Identity */
+}
+
+.nav-links a:nth-child(3){
+  color:#00ff9c; /* Website Design */
+}
+
+.nav-links a:nth-child(4){
+  color:#7aa2ff; /* SEO */
+  /* swap to purple if wanted:
+  color:#c77dff;
+  */
+}
+
+/* Hover glow */
+.nav-links a:nth-child(1):hover{
+  text-shadow:0 0 6px #bfbfbf, 0 0 12px #bfbfbf;
+}
+
+.nav-links a:nth-child(2):hover{
+  text-shadow:0 0 6px #ffd84d, 0 0 12px #ffd84d;
+}
+
+.nav-links a:nth-child(3):hover{
+  text-shadow:0 0 6px #00ff9c, 0 0 12px #00ff9c;
+}
+
+.nav-links a:nth-child(4):hover{
+  text-shadow:0 0 6px #7aa2ff, 0 0 12px #7aa2ff;
+  /* purple version:
+  text-shadow:0 0 6px #c77dff, 0 0 12px #c77dff;
+  */
+}
+
+/* Active page glow */
+.page-home .nav-links a:nth-child(1),
+.page-brand .nav-links a:nth-child(2),
+.page-web .nav-links a:nth-child(3),
+.page-seo .nav-links a:nth-child(4){
+  text-shadow:0 0 6px var(--accent), 0 0 14px var(--accent);
 }
 
 /* ===== HERO ===== */
