@@ -1,9 +1,5 @@
 (function () {
   var isTransitioning = false;
-  var ENTER_DURATION_DESKTOP = 520;
-  var LEAVE_DURATION_DESKTOP = 520;
-  var ENTER_DURATION_MOBILE = 400;
-  var LEAVE_DURATION_MOBILE = 400;
   var MOBILE_BREAKPOINT = 768;
 
   function isReducedMotion() {
@@ -14,12 +10,11 @@
     return window.innerWidth <= MOBILE_BREAKPOINT;
   }
 
-  function getEnterDuration() {
-    return isMobile() ? ENTER_DURATION_MOBILE : ENTER_DURATION_DESKTOP;
-  }
-
-  function getLeaveDuration() {
-    return isMobile() ? LEAVE_DURATION_MOBILE : LEAVE_DURATION_DESKTOP;
+  function getDuration(type) {
+    if (type === "service") {
+      return isMobile() ? 300 : 420;
+    }
+    return isMobile() ? 400 : 520;
   }
 
   function shouldHandleLink(link) {
@@ -40,14 +35,14 @@
     var url = new URL(link.href, window.location.origin);
 
     if (url.origin !== window.location.origin) return false;
-
     if (url.pathname === window.location.pathname && url.hash) return false;
 
     return true;
   }
 
-  function ensureWipe() {
+  function ensureLayers() {
     var wipe = document.querySelector(".page-wipe");
+    var fade = document.querySelector(".page-fade");
 
     if (!wipe) {
       wipe = document.createElement("div");
@@ -55,16 +50,38 @@
       document.body.appendChild(wipe);
     }
 
-    return wipe;
+    if (!fade) {
+      fade = document.createElement("div");
+      fade.className = "page-fade";
+      document.body.appendChild(fade);
+    }
   }
 
   function clearTransitionClasses() {
-    document.body.classList.remove("is-entering");
-    document.body.classList.remove("is-leaving");
+    document.body.classList.remove(
+      "is-leaving-default",
+      "is-entering-default",
+      "is-leaving-service",
+      "is-entering-service"
+    );
+  }
+
+  function getStoredEnterType() {
+    try {
+      return sessionStorage.getItem("pageTransitionType") || "default";
+    } catch (e) {
+      return "default";
+    }
+  }
+
+  function setStoredEnterType(type) {
+    try {
+      sessionStorage.setItem("pageTransitionType", type);
+    } catch (e) {}
   }
 
   function enterPage() {
-    ensureWipe();
+    ensureLayers();
     isTransitioning = false;
 
     if (isReducedMotion()) {
@@ -72,31 +89,46 @@
       return;
     }
 
+    var type = getStoredEnterType();
     clearTransitionClasses();
-    document.body.classList.add("is-entering");
+
+    if (type === "service") {
+      document.body.classList.add("is-entering-service");
+    } else {
+      document.body.classList.add("is-entering-default");
+    }
 
     window.setTimeout(function () {
-      document.body.classList.remove("is-entering");
-    }, getEnterDuration());
+      document.body.classList.remove(
+        "is-entering-default",
+        "is-entering-service"
+      );
+    }, getDuration(type));
   }
 
-  function leavePage(url) {
+  function leavePage(url, type) {
     if (isTransitioning) return;
     isTransitioning = true;
 
-    ensureWipe();
+    ensureLayers();
+    setStoredEnterType(type);
 
     if (isReducedMotion()) {
       window.location.href = url;
       return;
     }
 
-    document.body.classList.remove("is-entering");
-    document.body.classList.add("is-leaving");
+    clearTransitionClasses();
+
+    if (type === "service") {
+      document.body.classList.add("is-leaving-service");
+    } else {
+      document.body.classList.add("is-leaving-default");
+    }
 
     window.setTimeout(function () {
       window.location.href = url;
-    }, getLeaveDuration() - 20);
+    }, getDuration(type) - 20);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -109,8 +141,10 @@
       var url = new URL(link.href, window.location.origin).href;
       if (url === window.location.href) return;
 
+      var type = link.dataset.transition === "service" ? "service" : "default";
+
       e.preventDefault();
-      leavePage(url);
+      leavePage(url, type);
     });
   });
 
