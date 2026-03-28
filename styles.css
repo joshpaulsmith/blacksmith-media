@@ -687,79 +687,85 @@ body.is-entering main{
    PAGE COLOR THEMES
    ========================= */
 
-/* ===== WEB DESIGN (GREEN) ===== */
-body.web-page{
-  background: #0b0b0b;
-}
-
-body.web-page main{
-  background: linear-gradient(
-    180deg,
-    #0b0b0b 0%,
-    #0b0b0b 120px,
-    #0a3a2f 120px,
-    #0f5c49 45%,
-    #0a3a2f 100%
-  );
-}
-
-body.web-page .section{
-  background: transparent;
-}
-
-body.web-page .highlight{
-  background: #19e3a6;
-  color: #000;
-}
-
-
-/* ===== BRAND (PURPLE) ===== */
+/* BRAND */
 body.brand-page{
-  background: #0b0b0b;
+  background:#0b0b0b !important;
 }
 
 body.brand-page main{
-  background: linear-gradient(
+  background:linear-gradient(
     180deg,
     #0b0b0b 0%,
     #0b0b0b 120px,
     #2d1a47 120px,
     #3d2461 45%,
     #2d1a47 100%
-  );
+  ) !important;
 }
 
-body.brand-page .section{
-  background: transparent;
+body.brand-page .hero,
+body.brand-page .section,
+body.brand-page .footer{
+  background:transparent !important;
 }
 
 body.brand-page .highlight{
-  background: #b57cff;
-  color: #000;
+  background:#b57cff !important;
+  color:#000 !important;
 }
 
 
-/* ===== SEO (BLUE) ===== */
+/* WEB */
+body.web-page{
+  background:#0b0b0b !important;
+}
+
+body.web-page main{
+  background:linear-gradient(
+    180deg,
+    #0b0b0b 0%,
+    #0b0b0b 120px,
+    #0a3a2f 120px,
+    #0f5c49 45%,
+    #0a3a2f 100%
+  ) !important;
+}
+
+body.web-page .hero,
+body.web-page .section,
+body.web-page .footer{
+  background:transparent !important;
+}
+
+body.web-page .highlight{
+  background:#19e3a6 !important;
+  color:#000 !important;
+}
+
+
+/* SEO */
 body.seo-page{
-  background: #0b0b0b;
+  background:#0b0b0b !important;
 }
 
 body.seo-page main{
-  background: linear-gradient(
+  background:linear-gradient(
     180deg,
     #0b0b0b 0%,
     #0b0b0b 120px,
     #162a52 120px,
     #1c3d7a 45%,
     #162a52 100%
-  );
+  ) !important;
 }
 
-body.seo-page .section{
-  background: transparent;
+body.seo-page .hero,
+body.seo-page .section,
+body.seo-page .footer{
+  background:transparent !important;
 }
 
 body.seo-page .highlight{
-  background: #7aa2ff;
-  color: #000;
+  background:#7aa2ff !important;
+  color:#000 !important;
 }
