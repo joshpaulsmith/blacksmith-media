@@ -472,4 +472,20 @@ h2{
   .project-form textarea{
     min-height:110px;
   }
+}/* ===== CONTACT EMAIL MOBILE FIX ===== */
+.contact-box{
+  overflow:hidden;
+}
+
+.contact-email{
+  max-width:100%;
+  word-break:break-word;
+  overflow-wrap:anywhere;
+  line-height:1.15;
+}
+
+@media (max-width: 768px){
+  .contact-email{
+    font-size:18px;
+  }
 }
