@@ -222,7 +222,27 @@ overlay.onclick = closeBtn.onclick = () => {
     </section>
 
   </main>
+<div class="project-modal" id="projectModal">
+  <div class="project-modal-overlay" id="projectModalOverlay"></div>
 
+  <div class="project-modal-panel">
+    <button class="project-close" id="closeProjectForm">&times;</button>
+
+    <h2>Start a Project</h2>
+
+    <form class="project-form"
+      action="https://formsubmit.co/blacksmithmedia@protonmail.com"
+      method="POST">
+      
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="business" placeholder="Business Name">
+      <textarea name="project" placeholder="Tell us about the project"></textarea>
+
+      <button type="submit" class="btn primary">Send</button>
+    </form>
+  </div>
+</div>
   <footer class="footer">
     <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
   </footer>
