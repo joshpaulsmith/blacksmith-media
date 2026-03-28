@@ -9,13 +9,18 @@
   --accent:#e7d94f;
   --max:1160px;
   --radius:22px;
+
+  --home:#f2c94c;
+  --brand:#9b51e0;
+  --web:#00ff9c;
+  --seo:#7aa2ff;
 }
 
 /* ===== PAGE COLORS ===== */
-.home-page{ --accent:#f2c94c; }   /* Yellow */
-.brand-page{ --accent:#9b51e0; }  /* Purple */
-.web-page{ --accent:#00ff9c; }    /* Green */
-.seo-page{ --accent:#7aa2ff; }    /* Blue */
+.home-page{ --accent:var(--home); }
+.brand-page{ --accent:var(--brand); }
+.web-page{ --accent:var(--web); }
+.seo-page{ --accent:var(--seo); }
 
 /* ===== GLOBAL ===== */
 *{box-sizing:border-box;}
@@ -97,9 +102,23 @@ img{display:block;max-width:100%;}
   transition:.2s ease;
 }
 
-.nav-links a:hover{
-  color:var(--accent);
-  text-shadow:0 0 6px var(--accent);
+/* Fixed nav colors */
+.nav-links a:nth-child(1){ color:var(--home); }
+.nav-links a:nth-child(2){ color:var(--brand); }
+.nav-links a:nth-child(3){ color:var(--web); }
+.nav-links a:nth-child(4){ color:var(--seo); }
+
+.nav-links a:nth-child(1):hover{
+  text-shadow:0 0 6px var(--home), 0 0 12px var(--home);
+}
+.nav-links a:nth-child(2):hover{
+  text-shadow:0 0 6px var(--brand), 0 0 12px var(--brand);
+}
+.nav-links a:nth-child(3):hover{
+  text-shadow:0 0 6px var(--web), 0 0 12px var(--web);
+}
+.nav-links a:nth-child(4):hover{
+  text-shadow:0 0 6px var(--seo), 0 0 12px var(--seo);
 }
 
 /* ===== HERO ===== */
@@ -394,10 +413,19 @@ h2{
   }
 
   .nav-links a{
+    display:block;
     text-align:center;
     font-size:11px;
+    line-height:1.2;
+    white-space:nowrap;
     padding:8px 6px;
   }
+
+  /* keep same fixed colors on mobile */
+  .nav-links a:nth-child(1){ color:var(--home); }
+  .nav-links a:nth-child(2){ color:var(--brand); }
+  .nav-links a:nth-child(3){ color:var(--web); }
+  .nav-links a:nth-child(4){ color:var(--seo); }
 
   .hero-inner{
     padding:40px 0 34px;
@@ -417,5 +445,29 @@ h2{
 
   .section{
     padding:46px 0;
+  }
+
+  .btn-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .form-row{
+    flex-direction:column;
+  }
+
+  .project-form input,
+  .project-form textarea,
+  .project-form button{
+    width:100%;
+  }
+
+  .project-form textarea{
+    min-height:110px;
   }
 }
