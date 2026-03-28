@@ -680,4 +680,86 @@ body.is-entering main{
     animation: none !important;
     transition: none !important;
   }
+}/* =========================
+   WEB DESIGN PAGE BACKGROUND
+   ========================= */
+/* =========================
+   PAGE COLOR THEMES
+   ========================= */
+
+/* ===== WEB DESIGN (GREEN) ===== */
+body.web-page{
+  background: #0b0b0b;
+}
+
+body.web-page main{
+  background: linear-gradient(
+    180deg,
+    #0b0b0b 0%,
+    #0b0b0b 120px,
+    #0a3a2f 120px,
+    #0f5c49 45%,
+    #0a3a2f 100%
+  );
+}
+
+body.web-page .section{
+  background: transparent;
+}
+
+body.web-page .highlight{
+  background: #19e3a6;
+  color: #000;
+}
+
+
+/* ===== BRAND (PURPLE) ===== */
+body.brand-page{
+  background: #0b0b0b;
+}
+
+body.brand-page main{
+  background: linear-gradient(
+    180deg,
+    #0b0b0b 0%,
+    #0b0b0b 120px,
+    #2d1a47 120px,
+    #3d2461 45%,
+    #2d1a47 100%
+  );
+}
+
+body.brand-page .section{
+  background: transparent;
+}
+
+body.brand-page .highlight{
+  background: #b57cff;
+  color: #000;
+}
+
+
+/* ===== SEO (BLUE) ===== */
+body.seo-page{
+  background: #0b0b0b;
+}
+
+body.seo-page main{
+  background: linear-gradient(
+    180deg,
+    #0b0b0b 0%,
+    #0b0b0b 120px,
+    #162a52 120px,
+    #1c3d7a 45%,
+    #162a52 100%
+  );
+}
+
+body.seo-page .section{
+  background: transparent;
+}
+
+body.seo-page .highlight{
+  background: #7aa2ff;
+  color: #000;
 }
