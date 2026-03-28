@@ -488,4 +488,57 @@ h2{
   .contact-email{
     font-size:18px;
   }
+}/* ===== MOBILE OVERFLOW FIX ===== */
+html, body{
+  overflow-x:hidden;
+}
+
+.contact-box{
+  width:100%;
+  max-width:100%;
+  overflow:hidden;
+}
+
+.contact-email{
+  display:block;
+  width:100%;
+  max-width:100%;
+  font-size:clamp(18px, 4.8vw, 42px);
+  line-height:1.12;
+  word-break:break-word;
+  overflow-wrap:anywhere;
+}
+
+@media (max-width: 768px){
+  .wrap{
+    width:calc(100% - 24px);
+    max-width:none;
+    overflow:hidden;
+  }
+
+  .contact-box{
+    padding:18px;
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+  }
+
+  .contact-email{
+    display:block;
+    width:100%;
+    max-width:100%;
+    font-size:16px;
+    line-height:1.15;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  .btn-row{
+    width:100%;
+  }
+
+  .btn{
+    width:100%;
+    max-width:100%;
+  }
 }
