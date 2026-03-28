@@ -418,4 +418,68 @@ h2{
   h2{
     font-size:28px;
   }
+}/* ===== PROJECT FORM FIX ===== */
+
+.project-modal-panel h2{
+  font-family:'Roboto Mono', monospace;
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.project-form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.project-form input,
+.project-form textarea{
+  width:100%;
+  padding:14px;
+  background:#0b0b0b;
+  border:1px solid #333;
+  color:#fff;
+  font-family:'Roboto', sans-serif;
+  font-size:14px;
+}
+
+.project-form textarea{
+  grid-column:span 2;
+  min-height:100px;
+  resize:vertical;
+}
+
+.project-form button{
+  grid-column:span 2;
+  margin-top:10px;
+  height:54px;
+  border-radius:999px;
+  border:none;
+  background:var(--accent);
+  color:#000;
+  font-family:'Roboto Mono', monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px){
+  .project-form{
+    grid-template-columns:1fr;
+  }
+
+  .project-form textarea,
+  .project-form button{
+    grid-column:span 1;
+  }
+
+  .project-modal-panel{
+    margin:40px 16px;
+    padding:20px;
+  }
+
+  .project-modal-panel h2{
+    font-size:28px;
+  }
 }
