@@ -823,4 +823,27 @@ body.is-entering main{
       transform:translateX(0);
     }
   }
+}/* =========================
+   HOME PAGE NAV SPACING FIX
+   ========================= */
+
+@media (min-width: 769px){
+  body.home-page .nav-inner{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 48px;
+  }
+
+  body.home-page .nav-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+  }
+
+  body.home-page .brand{
+    min-width: 540px;
+  }
 }
