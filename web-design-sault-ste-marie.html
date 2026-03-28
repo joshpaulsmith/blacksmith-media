@@ -89,6 +89,7 @@
   </nav>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="wrap hero-inner">
         <div class="eyebrow">Web Design Sault Ste. Marie</div>
@@ -112,6 +113,7 @@
       </div>
     </section>
 
+    <!-- OVERVIEW -->
     <section class="section">
       <div class="wrap">
         <div class="section-kicker">Overview</div>
@@ -123,6 +125,7 @@
       </div>
     </section>
 
+    <!-- WHAT'S INCLUDED -->
     <section class="section">
       <div class="wrap">
         <div class="section-kicker">What’s Included</div>
@@ -145,6 +148,112 @@
       </div>
     </section>
 
+    <!-- PROCESS -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">Process</div>
+        <h2>Our web design process</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>1. Discovery</h3>
+            <p>We learn about your business, your services, and what you want your website to achieve.</p>
+          </div>
+
+          <div class="card">
+            <h3>2. Structure</h3>
+            <p>We plan the pages, layout, and structure so your website is clear and easy to navigate.</p>
+          </div>
+
+          <div class="card">
+            <h3>3. Design</h3>
+            <p>We design a clean, modern website that reflects your brand and builds trust.</p>
+          </div>
+
+          <div class="card">
+            <h3>4. Launch</h3>
+            <p>Your website goes live, is indexed by Google, and is ready for customers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">Who This Is For</div>
+        <h2>Websites for small businesses and service companies</h2>
+
+        <p class="section-copy">
+          We build websites for businesses that need a professional online presence and a site that helps
+          customers understand what they do and how to contact them.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Contractors & Trades</h3>
+            <p>HVAC, electrical, plumbing, construction, and other trades.</p>
+          </div>
+
+          <div class="card">
+            <h3>Local Businesses</h3>
+            <p>Businesses that need to be found on Google and look professional online.</p>
+          </div>
+
+          <div class="card">
+            <h3>Service Companies</h3>
+            <p>Companies that rely on calls, quote requests, and customer inquiries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY IT MATTERS -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">Why It Matters</div>
+        <h2>Your website is your first impression</h2>
+
+        <p class="section-copy">
+          Most people check a business online before calling or emailing. A clean, modern website makes
+          your business look established and trustworthy. A poor website can make a good business look
+          unprofessional. Our goal is to build websites that make your business look credible and make it
+          easy for customers to take the next step.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">FAQ</div>
+        <h2>Web design questions</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>How long does a website take to build?</h3>
+            <p>Most websites are completed within a few weeks depending on size and content.</p>
+          </div>
+
+          <div class="card">
+            <h3>Will my website work on mobile?</h3>
+            <p>Yes. All websites are built to work on phones, tablets, and desktop.</p>
+          </div>
+
+          <div class="card">
+            <h3>Can you help update the website later?</h3>
+            <p>Yes. We offer ongoing website updates, SEO, and site maintenance.</p>
+          </div>
+
+          <div class="card">
+            <h3>Will my website show up on Google?</h3>
+            <p>We build websites with proper SEO structure so they can be indexed and ranked on Google.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="section">
       <div class="wrap">
         <div class="section-kicker">Contact</div>
@@ -161,51 +270,11 @@
     </section>
   </main>
 
-  <!-- POPUP -->
-  <div
-    id="projectModal"
-    aria-hidden="true"
-    style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:20px;"
-  >
-    <div
-      id="projectModalOverlay"
-      style="position:absolute; inset:0; background:rgba(0,0,0,.72); backdrop-filter:blur(6px);"
-    ></div>
-
-    <div
-      style="position:relative; z-index:2; width:min(720px, 100%); background:#0b0b0b; border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:30px; box-shadow:0 24px 70px rgba(0,0,0,.55);"
-    >
-      <button
-        id="closeProjectForm"
-        aria-label="Close"
-        style="position:absolute; top:14px; right:16px; width:40px; height:40px; border:none; background:transparent; color:#fff; font-size:30px; line-height:1; cursor:pointer;"
-      >&times;</button>
-
-      <h2 style="margin:0 0 18px; font-family:'Roboto Mono', monospace; font-size:42px;">Start a Project</h2>
-
-      <form id="projectForm" class="project-form">
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="text" name="business" placeholder="Business Name">
-        </div>
-
-        <div class="form-row">
-          <textarea name="message" placeholder="Tell us about the project"></textarea>
-          <button type="submit">SEND</button>
-        </div>
-
-        <div class="form-success" id="formSuccess">
-          Thanks — we’ll be in touch.
-        </div>
-      </form>
-    </div>
-  </div>
-
   <footer class="footer">
     <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
   </footer>
 
+  <!-- POPUP SCRIPT (UNCHANGED) -->
   <script>
     const modal = document.getElementById("projectModal");
     const overlay = document.getElementById("projectModalOverlay");
@@ -245,7 +314,6 @@
 
     form.addEventListener("submit", async function(e) {
       e.preventDefault();
-
       const data = new FormData(form);
 
       try {
