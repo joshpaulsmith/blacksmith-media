@@ -801,5 +801,155 @@ body.seo-page .highlight{
       #162a52 100%
     ) !important;
   }
+}/* =========================
+   STICKY CODE-STYLE HEADER
+   ========================= */
+
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(5, 5, 5, 0.82) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,.28);
 }
+
+/* subtle code-style texture */
+.nav::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,.03),
+      rgba(255,255,255,0)
+    ),
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,.025) 0px,
+      rgba(255,255,255,.025) 1px,
+      transparent 1px,
+      transparent 24px
+    );
+  opacity: .22;
+}
+
+/* accent line */
+.nav::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(242,201,76,.9),
+    rgba(181,124,255,.9),
+    rgba(25,227,166,.9),
+    rgba(122,162,255,.9)
+  );
+  opacity: .7;
+}
+
+.nav-inner{
+  position: relative;
+  z-index: 2;
+}
+
+/* brand styling */
+.brand-title{
+  position: relative;
+  display: inline-block;
+  letter-spacing: .12em;
+}
+
+.brand-title::before{
+  content: "<";
+  color: var(--accent);
+  margin-right: 8px;
+  opacity: .9;
+}
+
+.brand-title::after{
+  content: "/>";
+  color: var(--accent);
+  margin-left: 8px;
+  opacity: .9;
+}
+
+.brand-sub{
+  opacity: .82;
+}
+
+/* nav links feel more like code tabs */
+.nav-links a{
+  position: relative;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: .22s ease;
+}
+
+.nav-links a::before{
+  content: "{";
+  opacity: 0;
+  margin-right: 4px;
+  transition: .22s ease;
+}
+
+.nav-links a::after{
+  content: "}";
+  opacity: 0;
+  margin-left: 4px;
+  transition: .22s ease;
+}
+
+.nav-links a:hover{
+  background: rgba(255,255,255,.04);
+  transform: translateY(-1px);
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after{
+  opacity: .8;
+}
+
+/* active page gets a stronger tab feel */
+body.home-page .nav-links a:nth-child(1),
+body.brand-page .nav-links a:nth-child(2),
+body.web-page .nav-links a:nth-child(3),
+body.seo-page .nav-links a:nth-child(4){
+  background: rgba(255,255,255,.05);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+/* logo polish */
+.brand img{
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.06));
+}
+
+/* mobile */
+@media (max-width: 768px){
+  .nav{
+    background: rgba(5,5,5,.9) !important;
+  }
+
+  .nav-links a{
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,.06);
+    background: rgba(255,255,255,.02);
+  }
+
+  .brand-title{
+    font-size: 16px;
+  }
+
+  .brand-sub{
+    font-size: 11px;
+  }
 }
