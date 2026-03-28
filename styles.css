@@ -577,26 +577,20 @@ html, body{
    LOGO SIZE
    ========================= */
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+/* ===== FORCE LOGO SIZE ===== */
+.nav .brand img {
+  height: 60px !important;
+  width: auto !important;
 }
 
-.brand img {
-  height: 52px;   /* desktop logo size */
-  width: auto;
-  display: block;
-}
-
-/* Mobile logo size */
 @media (max-width: 600px) {
-  .brand img {
-    height: 40px;
+  .nav .brand img {
+    height: 44px !important;
   }
 }
 
-/* Make nav a bit taller so logo fits nicely */
+/* Make sure nav is tall enough */
 .nav {
-  padding: 18px 0;
+  padding: 20px 0 !important;
+}
 }
