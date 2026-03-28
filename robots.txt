@@ -21,7 +21,7 @@
 User-agent: *
 Allow: /
 
-# Block AI training bots (optional)
+# Block AI training bots
 User-agent: GPTBot
 Disallow: /
 
