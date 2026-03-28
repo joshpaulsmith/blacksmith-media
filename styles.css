@@ -720,7 +720,7 @@ html, body{
    ========================= */
 
 .brand img{
-  height: 100px;
+  height: 200px;
   width: auto;
   object-fit: contain;
 }
@@ -733,7 +733,7 @@ html, body{
 /* Mobile */
 @media (max-width: 768px){
   .brand img{
-    height: 70px;
+    height: 100px;
   }
 
   .nav-inner{
