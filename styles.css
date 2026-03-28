@@ -598,4 +598,45 @@ h2{
     border:1px solid rgba(122,162,255,.8) !important;
     box-shadow:0 0 20px rgba(122,162,255,.18) !important;
   }
+}/* =========================
+   PAGE WIPE TRANSITION
+   ========================= */
+
+body{
+  opacity: 1;
+}
+
+.page-wipe{
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(100%);
+}
+
+body.is-entering .page-wipe{
+  animation: wipeInReveal .55s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+body.is-leaving .page-wipe{
+  animation: wipeOutCover .55s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+@keyframes wipeOutCover{
+  from{
+    transform: translateY(100%);
+  }
+  to{
+    transform: translateY(0%);
+  }
+}
+
+@keyframes wipeInReveal{
+  from{
+    transform: translateY(0%);
+  }
+  to{
+    transform: translateY(-100%);
+  }
 }
