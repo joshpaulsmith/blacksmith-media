@@ -11,24 +11,36 @@
   --radius:22px;
 }
 
-/* ===== PAGE ACCENTS ===== */
-.page-home{
-  --accent:#bfbfbf; /* gray */
+/* Page Accent Colors */
+.home-page .highlight {
+  color: #f2c94c; /* Yellow */
 }
 
-.page-brand{
-  --accent:#ffd84d; /* yellow */
+.brand-page .highlight {
+  color: #9b51e0; /* Purple */
 }
 
-.page-web{
-  --accent:#00ff9c; /* green */
+/* Optional: button colors to match page */
+.home-page .btn.primary {
+  background: #f2c94c;
+  color: #000;
+  border: none;
 }
 
-.page-seo{
-  --accent:#7aa2ff; /* blue */
-  /* swap to purple if you want:
-  --accent:#c77dff;
-  */
+.brand-page .btn.primary {
+  background: #9b51e0;
+  color: #fff;
+  border: none;
+}
+
+/* Button hover */
+.home-page .btn.primary:hover {
+  background: #e0b93f;
+}
+
+.brand-page .btn.primary:hover {
+  background: #7d3ccf;
+}
 }
 
 /* ===== GLOBAL ===== */
