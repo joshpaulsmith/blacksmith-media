@@ -482,4 +482,13 @@ h2{
   .project-modal-panel h2{
     font-size:28px;
   }
+}/* FORM GRID CONTROL */
+.project-form .full{
+  grid-column: span 2;
+}
+
+@media (max-width: 768px){
+  .project-form .full{
+    grid-column: span 1;
+  }
 }
