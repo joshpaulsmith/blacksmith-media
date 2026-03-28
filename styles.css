@@ -618,54 +618,84 @@ h2{
 }
 
 /* ===== PAGE TRANSITION ===== */
+/* ===== PAGE TRANSITION ===== */
 main{
   position:relative;
   z-index:1;
   will-change:transform, opacity;
 }
 
-.page-wipe{
+.page-wipe,
+.page-fade{
   position:fixed;
   inset:0;
   background:#000;
-  z-index:99999;
   pointer-events:none;
-  transform:translate3d(100%,0,0);
-  will-change:transform;
   backface-visibility:hidden;
 }
 
-body.is-leaving .page-wipe{
-  animation:wipeInFromRight var(--wipe-duration-desktop) var(--wipe-ease) forwards;
+.page-wipe{
+  z-index:99999;
+  transform:translate3d(100%,0,0);
+  will-change:transform;
 }
 
-body.is-entering .page-wipe{
-  animation:wipeOutToLeft var(--wipe-duration-desktop) var(--wipe-ease) forwards;
+.page-fade{
+  z-index:99998;
+  opacity:0;
+  will-change:opacity;
+}
+
+/* DEFAULT NAV / MENU TRANSITION */
+body.is-leaving-default .page-wipe{
+  animation:wipeInFromRight .52s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+body.is-entering-default .page-wipe{
+  animation:wipeOutToLeft .52s cubic-bezier(.77,0,.18,1) forwards;
 }
 
 @keyframes wipeInFromRight{
   from{ transform:translate3d(100%,0,0); }
-  to{ transform:translate3d(0%,0,0); }
+  to{ transform:translate3d(0,0,0); }
 }
 
 @keyframes wipeOutToLeft{
-  from{ transform:translate3d(0%,0,0); }
+  from{ transform:translate3d(0,0,0); }
   to{ transform:translate3d(-100%,0,0); }
 }
 
-body.is-leaving main{
+/* SERVICE CARD TRANSITION */
+body.is-leaving-service .page-fade{
+  animation:serviceFadeIn .42s ease forwards;
+}
+
+body.is-entering-service .page-fade{
+  animation:serviceFadeOut .42s ease forwards;
+}
+
+@keyframes serviceFadeIn{
+  from{ opacity:0; }
+  to{ opacity:1; }
+}
+
+@keyframes serviceFadeOut{
+  from{ opacity:1; }
+  to{ opacity:0; }
+}
+
+/* DEFAULT CONTENT MOTION */
+body.is-leaving-default main{
   opacity:.98;
   transform:translate3d(-10px,0,0);
-  transition:
-    transform var(--content-leave-duration) ease,
-    opacity var(--content-leave-duration) ease;
+  transition:transform .24s ease, opacity .24s ease;
 }
 
-body.is-entering main{
-  animation:contentIn var(--content-enter-duration) ease forwards;
+body.is-entering-default main{
+  animation:contentInDefault .32s ease forwards;
 }
 
-@keyframes contentIn{
+@keyframes contentInDefault{
   from{
     opacity:.96;
     transform:translate3d(10px,0,0);
@@ -673,6 +703,93 @@ body.is-entering main{
   to{
     opacity:1;
     transform:translate3d(0,0,0);
+  }
+}
+
+/* SERVICE CONTENT MOTION */
+body.is-leaving-service main{
+  opacity:.92;
+  transform:scale(.985);
+  transform-origin:center center;
+  transition:transform .32s ease, opacity .32s ease;
+}
+
+body.is-entering-service main{
+  animation:contentInService .36s ease forwards;
+}
+
+@keyframes contentInService{
+  from{
+    opacity:.94;
+    transform:scale(1.015);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@media (max-width:768px){
+  body.is-leaving-default .page-wipe{
+    animation:wipeInFromRight .40s cubic-bezier(.77,0,.18,1) forwards;
+  }
+
+  body.is-entering-default .page-wipe{
+    animation:wipeOutToLeft .40s cubic-bezier(.77,0,.18,1) forwards;
+  }
+
+  body.is-leaving-service .page-fade{
+    animation:serviceFadeIn .30s ease forwards;
+  }
+
+  body.is-entering-service .page-fade{
+    animation:serviceFadeOut .30s ease forwards;
+  }
+
+  body.is-leaving-default main{
+    transform:translate3d(-4px,0,0);
+  }
+
+  body.is-leaving-service main{
+    opacity:.96;
+    transform:scale(.992);
+  }
+
+  @keyframes contentInDefault{
+    from{
+      opacity:.97;
+      transform:translate3d(4px,0,0);
+    }
+    to{
+      opacity:1;
+      transform:translate3d(0,0,0);
+    }
+  }
+
+  @keyframes contentInService{
+    from{
+      opacity:.96;
+      transform:scale(1.01);
+    }
+    to{
+      opacity:1;
+      transform:scale(1);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .page-wipe,
+  .page-fade,
+  main,
+  body.is-entering-default main,
+  body.is-leaving-default main,
+  body.is-entering-service main,
+  body.is-leaving-service main{
+    animation:none !important;
+    transition:none !important;
+    transform:none !important;
+    opacity:1 !important;
   }
 }
 
