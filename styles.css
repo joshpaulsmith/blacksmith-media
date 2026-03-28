@@ -602,7 +602,7 @@ h2{
    PAGE WIPE TRANSITION
    ========================= */
 /* =========================
-   PAGE TRANSITION — RIGHT WIPE
+   PAGE TRANSITION — FULL SCREEN RIGHT WIPE
    ========================= */
 
 main{
@@ -610,50 +610,36 @@ main{
   z-index: 1;
 }
 
-/* wipe layer */
 .page-wipe{
   position: fixed;
-  top: 90px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0,0,0,0.98);
-  backdrop-filter: blur(4px);
   z-index: 99999;
   pointer-events: none;
   transform: translateX(100%);
   will-change: transform;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
-/* leaving page: wipe comes in from right */
 body.is-leaving .page-wipe{
   animation: wipeFromRightIn .6s cubic-bezier(.77,0,.18,1) forwards;
 }
 
-/* entering page: wipe exits to left */
 body.is-entering .page-wipe{
   animation: wipeToLeftOut .6s cubic-bezier(.77,0,.18,1) forwards;
 }
 
 @keyframes wipeFromRightIn{
-  from{
-    transform: translateX(100%);
-  }
-  to{
-    transform: translateX(0%);
-  }
+  from{ transform: translateX(100%); }
+  to{ transform: translateX(0%); }
 }
 
 @keyframes wipeToLeftOut{
-  from{
-    transform: translateX(0%);
-  }
-  to{
-    transform: translateX(-100%);
-  }
+  from{ transform: translateX(0%); }
+  to{ transform: translateX(-100%); }
 }
 
-/* subtle content fade only */
 body.is-leaving main{
   opacity: .92;
   transition: opacity .2s ease;
@@ -668,24 +654,14 @@ body.is-entering main{
   to{ opacity: 1; }
 }
 
-@media (max-width: 768px){
-  .page-wipe{
-    top: 120px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce){
   .page-wipe,
   main{
     animation: none !important;
     transition: none !important;
   }
-}/* =========================
-   WEB DESIGN PAGE BACKGROUND
-   ========================= */
-/* =========================
-   PAGE COLOR THEMES
-   ========================= */
+}
+
 /* =========================
    GUARANTEED PAGE COLOR THEMES
    ========================= */
@@ -756,52 +732,9 @@ body.seo-page::before{
 body.seo-page .highlight{
   background: #7aa2ff !important;
   color: #000 !important;
-}/* =========================
-   MOBILE PAGE COLOR THEME FIX
-   ========================= */
+}
 
-@media (max-width: 768px){
-  body.brand-page::before,
-  body.web-page::before,
-  body.seo-page::before{
-    top: 0 !important;
-    bottom: 0 !important;
-    min-height: 100vh;
-  }
-
-  body.brand-page{
-    background: linear-gradient(
-      180deg,
-      #0b0b0b 0%,
-      #0b0b0b 100px,
-      #2d1a47 100px,
-      #3d2461 45%,
-      #2d1a47 100%
-    ) !important;
-  }
-
-  body.web-page{
-    background: linear-gradient(
-      180deg,
-      #0b0b0b 0%,
-      #0b0b0b 100px,
-      #0a3a2f 100px,
-      #0f5c49 45%,
-      #0a3a2f 100%
-    ) !important;
-  }
-
-  body.seo-page{
-    background: linear-gradient(
-      180deg,
-      #0b0b0b 0%,
-      #0b0b0b 100px,
-      #162a52 100px,
-      #1c3d7a 45%,
-      #162a52 100%
-    ) !important;
-  }
-}/* =========================
+/* =========================
    STICKY CODE-STYLE HEADER
    ========================= */
 
@@ -816,7 +749,6 @@ body.seo-page .highlight{
   box-shadow: 0 10px 30px rgba(0,0,0,.28);
 }
 
-/* subtle code-style texture */
 .nav::before{
   content: "";
   position: absolute;
@@ -838,7 +770,6 @@ body.seo-page .highlight{
   opacity: .22;
 }
 
-/* accent line */
 .nav::after{
   content: "";
   position: absolute;
@@ -861,7 +792,6 @@ body.seo-page .highlight{
   z-index: 2;
 }
 
-/* brand styling */
 .brand-title{
   position: relative;
   display: inline-block;
@@ -886,7 +816,6 @@ body.seo-page .highlight{
   opacity: .82;
 }
 
-/* nav links feel more like code tabs */
 .nav-links a{
   position: relative;
   padding: 10px 12px;
@@ -918,7 +847,6 @@ body.seo-page .highlight{
   opacity: .8;
 }
 
-/* active page gets a stronger tab feel */
 body.home-page .nav-links a:nth-child(1),
 body.brand-page .nav-links a:nth-child(2),
 body.web-page .nav-links a:nth-child(3),
@@ -927,12 +855,14 @@ body.seo-page .nav-links a:nth-child(4){
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
 }
 
-/* logo polish */
 .brand img{
   filter: drop-shadow(0 0 10px rgba(255,255,255,.06));
 }
 
-/* mobile */
+/* =========================
+   MOBILE FIXES
+   ========================= */
+
 @media (max-width: 768px){
   .nav{
     background: rgba(5,5,5,.9) !important;
@@ -951,11 +881,8 @@ body.seo-page .nav-links a:nth-child(4){
 
   .brand-sub{
     font-size: 11px;
-  }/* =========================
-   MOBILE FIX — REMOVE BLACK STRIP
-   ========================= */
+  }
 
-@media (max-width: 768px){
   body.brand-page::before,
   body.web-page::before,
   body.seo-page::before{
@@ -980,10 +907,6 @@ body.seo-page .nav-links a:nth-child(4){
     background: transparent !important;
   }
 
-  .page-wipe{
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }@media (max-width: 768px){
   html, body{
     overflow-x: hidden !important;
     width: 100% !important;
@@ -992,6 +915,4 @@ body.seo-page .nav-links a:nth-child(4){
   body{
     position: relative;
   }
-}
-}
 }
