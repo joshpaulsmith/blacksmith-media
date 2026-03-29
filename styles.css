@@ -1128,46 +1128,107 @@ body.is-entering-service main{
     transform:none !important;
     opacity:1 !important;
   }
-}/* WHO WE WORK WITH */
-.who-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 30px;
+}/* ===== SECTION TITLE WIDTH CONTROL ===== */
+.section-title-narrow{
+  max-width: 1100px;
 }
 
-.who-item {
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 16px;
-  border-radius: 10px;
-  text-align: center;
-  font-family: 'Roboto Mono', monospace;
-  background: rgba(255,255,255,0.02);
+/* ===== WHO WE WORK WITH ===== */
+.who-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:14px;
+  margin-top:30px;
 }
 
-/* WHY BLACKSMITH */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  margin-top: 30px;
+.who-item{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  background:rgba(255,255,255,.02);
+  padding:18px 20px;
+  min-height:72px;
+  display:flex;
+  align-items:center;
 }
 
-.why-item {
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 18px;
-  border-radius: 10px;
-  font-family: 'Roboto Mono', monospace;
-  background: rgba(255,255,255,0.02);
+.who-item span{
+  position:relative;
+  display:inline-block;
+  padding-left:24px;
+  font-family:'Roboto Mono', monospace;
+  font-size:15px;
+  line-height:1.45;
+  color:var(--text);
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .who-grid {
-    grid-template-columns: repeat(2, 1fr);
+.who-item span::before{
+  content:"//";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--accent);
+  opacity:.95;
+}
+
+/* ===== WHY BLACKSMITH ===== */
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:14px;
+  margin-top:30px;
+}
+
+.why-item{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  background:rgba(255,255,255,.02);
+  padding:18px 20px;
+  min-height:72px;
+  display:flex;
+  align-items:center;
+}
+
+.why-item span{
+  position:relative;
+  display:inline-block;
+  padding-left:24px;
+  font-family:'Roboto Mono', monospace;
+  font-size:15px;
+  line-height:1.45;
+  color:var(--text);
+}
+
+.why-item span::before{
+  content:"//";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--accent);
+  opacity:.95;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:768px){
+  .section-title-narrow{
+    max-width:100%;
   }
 
-  .why-grid {
-    grid-template-columns: 1fr;
+  .who-grid{
+    grid-template-columns:1fr;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .who-item,
+  .why-item{
+    min-height:auto;
+    padding:16px 18px;
+  }
+
+  .who-item span,
+  .why-item span{
+    font-size:14px;
   }
 }
