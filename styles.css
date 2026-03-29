@@ -1128,4 +1128,46 @@ body.is-entering-service main{
     transform:none !important;
     opacity:1 !important;
   }
+}/* WHO WE WORK WITH */
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.who-item {
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  background: rgba(255,255,255,0.02);
+}
+
+/* WHY BLACKSMITH */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.why-item {
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 18px;
+  border-radius: 10px;
+  font-family: 'Roboto Mono', monospace;
+  background: rgba(255,255,255,0.02);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .who-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
 }
