@@ -1231,4 +1231,19 @@ body.is-entering-service main{
   .why-item span{
     font-size:14px;
   }
+}/* Coming Soon Button */
+.coming-soon-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 28px;
+  background: #ffffff;
+  color: #0e0e0e;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+
+.coming-soon-button:hover {
+  background: #dddddd;
 }
