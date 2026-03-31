@@ -1231,19 +1231,63 @@ body.is-entering-service main{
   .why-item span{
     font-size:14px;
   }
-}/* Coming Soon Button */
+}/* Coming Soon Page */
+.coming-soon-page {
+  background: #0e0e0e;
+  color: #ffffff;
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.coming-soon-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.coming-soon-logo {
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+.coming-soon-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto 10px auto;
+}
+
+.coming-soon-subtext {
+  color: #bdbdbd;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
 .coming-soon-button {
   display: inline-block;
-  margin-top: 25px;
-  padding: 14px 28px;
+  padding: 14px 32px;
   background: #ffffff;
   color: #0e0e0e;
   text-decoration: none;
   font-weight: 500;
   border-radius: 4px;
   transition: 0.2s ease;
+  margin: 0 auto;
 }
 
 .coming-soon-button:hover {
   background: #dddddd;
+}
+
+.coming-soon-footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
 }
