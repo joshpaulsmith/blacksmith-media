@@ -1290,4 +1290,26 @@ body.is-entering-service main{
   text-align: center;
   color: #777;
   font-size: 0.85rem;
+}/* Portfolio Domain List */
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  border-top: 1px solid #111;
+}
+
+.portfolio-item {
+  display: block;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid #111;
+  text-decoration: none;
+  color: #111;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.portfolio-item:hover {
+  opacity: 0.6;
+  transform: translateX(6px);
 }
