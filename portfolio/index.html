@@ -1,1 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Portfolio | Blacksmith Media</title>
+  <meta
+    name="description"
+    content="See recent website, branding, and SEO work by Blacksmith Media for businesses in Sault Ste. Marie and beyond."
+  />
+  <meta
+    name="keywords"
+    content="Blacksmith Media portfolio, web design portfolio, Sault Ste. Marie web design, branding portfolio, SEO portfolio"
+  />
+
+  <link rel="canonical" href="https://blacksmithmedia.ca/portfolio/" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    .portfolio-page {
+      background: #f6f1e8;
+      color: #111;
+    }
+
+    .portfolio-hero {
+      padding: 8.5rem 1.5rem 4rem;
+      background:
+        linear-gradient(180deg, rgba(246, 241, 232, 0.96) 0%, rgba(246, 241, 232, 0.98) 100%);
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+    }
+
+    .portfolio-wrap {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .portfolio-kicker {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #444;
+    }
+
+    .portfolio-title {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin: 0 0 1.25rem;
+      max-width: 9ch;
+    }
+
+    .portfolio-subtitle {
+      max-width: 760px;
+      font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+      line-height: 1.7;
+      color: #333;
+      margin: 0 0 2rem;
+    }
+
+    .portfolio-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .portfolio-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    }
+
+    .portfolio-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .portfolio-btn-primary {
+      background: #111;
+      color: #f6f1e8;
+    }
+
+    .portfolio-btn-secondary {
+      border: 1px solid rgba(17, 17, 17, 0.14);
+      color: #111;
+      background: transparent;
+    }
+
+    .portfolio-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .portfolio-stat {
+      padding: 1.2rem 1.25rem;
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: 1.25rem;
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(8px);
+    }
+
+    .portfolio-stat strong {
+      display: block;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.35rem;
+    }
+
+    .portfolio-stat span {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .portfolio-section {
+      padding: 4.5rem 1.5rem;
+    }
+
+    .portfolio-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .portfolio-section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1;
+      margin: 0;
+      letter-spacing: -0.04em;
+    }
+
+    .portfolio-section-head p {
+      max-width: 540px;
+      margin: 0;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      background: #fff;
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(17, 17, 17, 0.04);
+    }
+
+    .project-visual {
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: end;
+      padding: 1.2rem;
+      background:
+        linear-gradient(135deg, #111 0%, #2b2b2b 100%);
+      color: #f6f1e8;
+      position: relative;
+    }
+
+    .project-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.14), transparent 35%);
+      pointer-events: none;
+    }
+
+    .project-tag {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid rgba(246, 241, 232, 0.2);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .project-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.35rem;
+      flex: 1;
+    }
+
+    .project-body h3 {
+      margin: 0;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .project-body p {
+      margin: 0;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .project-meta span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #333;
+      background: #f3efe7;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    .project-links {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      padding-top: 0.35rem;
+    }
+
+    .project-links a {
+      font-weight: 700;
+      text-decoration: none;
+      color: #111;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .process-card {
+      padding: 1.4rem;
+      border-radius: 1.4rem;
+      background: #fff;
+      border: 1px solid rgba(17, 17, 17, 0.08);
+    }
+
+    .process-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: #111;
+      color: #f6f1e8;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .process-card h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.08rem;
+      letter-spacing: -0.02em;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: #444;
+      line-height: 1.7;
+      font-size: 0.96rem;
+    }
+
+    .portfolio-cta {
+      padding: 4.5rem 1.5rem 5.5rem;
+    }
+
+    .portfolio-cta-box {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem;
+      border-radius: 1.75rem;
+      background: #111;
+      color: #f6f1e8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-cta-box h2 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .portfolio-cta-box p {
+      margin: 0;
+      color: rgba(246, 241, 232, 0.78);
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
+    .portfolio-cta-box .portfolio-btn-primary {
+      background: #f6f1e8;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 980px) {
+      .project-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .portfolio-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .portfolio-hero {
+        padding-top: 7rem;
+      }
+
+      .project-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .portfolio-btn {
+        width: 100%;
+      }
+
+      .portfolio-cta-box {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="portfolio-page">
+  <main>
+    <section class="portfolio-hero">
+      <div class="portfolio-wrap">
+        <span class="portfolio-kicker">Blacksmith Media Portfolio</span>
+        <h1 class="portfolio-title">Built to look sharp. Designed to convert.</h1>
+        <p class="portfolio-subtitle">
+          A selection of website, branding, and SEO-focused work created for businesses
+          that need more than something that just looks good. Every project is built
+          with clarity, speed, and results in mind.
+        </p>
+
+        <div class="portfolio-actions">
+          <a href="/#contact" class="portfolio-btn portfolio-btn-primary">Start a Project</a>
+          <a href="/web-design/" class="portfolio-btn portfolio-btn-secondary">View Web Design Services</a>
+        </div>
+
+        <div class="portfolio-stats">
+          <div class="portfolio-stat">
+            <strong>Web Design</strong>
+            <span>Clean, modern sites built to feel professional and convert well on mobile.</span>
+          </div>
+          <div class="portfolio-stat">
+            <strong>Branding</strong>
+            <span>Logos, positioning, and visual systems that make a business look established.</span>
+          </div>
+          <div class="portfolio-stat">
+            <strong>SEO Structure</strong>
+            <span>Service pages, local targeting, and site structure built for search visibility.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="portfolio-wrap">
+        <div class="portfolio-section-head">
+          <div>
+            <h2>Featured Work</h2>
+          </div>
+          <p>
+            Swap these placeholders with your real client projects. This layout is made
+            to look premium even before screenshots are added.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-visual">
+              <span class="project-tag">Web Design</span>
+            </div>
+            <div class="project-body">
+              <h3>Veteran Electric</h3>
+              <p>
+                Full website design focused on a stronger first impression, cleaner navigation,
+                mobile responsiveness, and clear service positioning.
+              </p>
+              <div class="project-meta">
+                <span>Sault Ste. Marie</span>
+                <span>Trades</span>
+                <span>Responsive Build</span>
+              </div>
+              <div class="project-links">
+                <a href="#">View Project</a>
+                <a href="#">Live Site</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <span class="project-tag">Branding + Website</span>
+            </div>
+            <div class="project-body">
+              <h3>Capco Construction</h3>
+              <p>
+                Brand-forward site structure with a more confident visual identity,
+                cleaner hierarchy, and a portfolio-led layout for trust and credibility.
+              </p>
+              <div class="project-meta">
+                <span>Construction</span>
+                <span>Brand Refresh</span>
+                <span>Portfolio Layout</span>
+              </div>
+              <div class="project-links">
+                <a href="#">View Project</a>
+                <a href="#">Live Site</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <span class="project-tag">SEO + Local Presence</span>
+            </div>
+            <div class="project-body">
+              <h3>Blacksmith Media</h3>
+              <p>
+                Local SEO structure, service page positioning, and a clean site framework
+                aimed at ranking for web design in Sault Ste. Marie.
+              </p>
+              <div class="project-meta">
+                <span>Local SEO</span>
+                <span>Service Pages</span>
+                <span>Conversion Focused</span>
+              </div>
+              <div class="project-links">
+                <a href="#">View Project</a>
+                <a href="#">Live Site</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <span class="project-tag">Coming Soon</span>
+            </div>
+            <div class="project-body">
+              <h3>Launch Pages</h3>
+              <p>
+                Fast turnaround landing pages built for client reviews, early domain setup,
+                and a clean pre-launch presence while full websites are in development.
+              </p>
+              <div class="project-meta">
+                <span>Fast Deployment</span>
+                <span>Preview Ready</span>
+                <span>Lead Capture</span>
+              </div>
+              <div class="project-links">
+                <a href="#">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <span class="project-tag">Brand Identity</span>
+            </div>
+            <div class="project-body">
+              <h3>Identity Systems</h3>
+              <p>
+                Logo direction, typography, colour palettes, and simple brand systems
+                designed to make small businesses look established from day one.
+              </p>
+              <div class="project-meta">
+                <span>Logo Design</span>
+                <span>Visual Direction</span>
+                <span>Brand Strategy</span>
+              </div>
+              <div class="project-links">
+                <a href="#">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <span class="project-tag">Custom Build</span>
+            </div>
+            <div class="project-body">
+              <h3>Your Next Project</h3>
+              <p>
+                This spot can feature your next best client. Add a screenshot, short result,
+                and the services you delivered once it goes live.
+              </p>
+              <div class="project-meta">
+                <span>Open Slot</span>
+                <span>Web Design</span>
+                <span>SEO</span>
+              </div>
+              <div class="project-links">
+                <a href="/#contact">Let’s Build It</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="portfolio-wrap">
+        <div class="portfolio-section-head">
+          <div>
+            <h2>How Projects Are Built</h2>
+          </div>
+          <p>
+            A simple process that keeps things moving and avoids the bloated agency feel.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <span class="process-step">01</span>
+            <h3>Direction</h3>
+            <p>
+              We define the offer, target customer, and what the site actually needs to do.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span class="process-step">02</span>
+            <h3>Structure</h3>
+            <p>
+              The layout is built around clarity, hierarchy, and the pages that matter most.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span class="process-step">03</span>
+            <h3>Design</h3>
+            <p>
+              Clean visuals, strong typography, and a look that feels credible right away.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <span class="process-step">04</span>
+            <h3>Launch</h3>
+            <p>
+              The finished site is refined for mobile, speed, and a smooth handoff once live.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-cta">
+      <div class="portfolio-cta-box">
+        <div>
+          <h2>Need a site that actually looks like a business?</h2>
+          <p>
+            Whether you need a full website, a cleaner brand presence, or a stronger launch page,
+            Blacksmith Media builds sites that feel modern, credible, and ready to grow with you.
+          </p>
+        </div>
+
+        <a href="/#contact" class="portfolio-btn portfolio-btn-primary">Work With Blacksmith Media</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
