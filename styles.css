@@ -1290,7 +1290,7 @@ body.is-entering-service main{
   text-align: center;
   color: #777;
   font-size: 0.85rem;
-}/* Portfolio Domain List */
+}
 .portfolio-list {
   display: flex;
   flex-direction: column;
