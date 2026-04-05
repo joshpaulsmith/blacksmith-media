@@ -21,7 +21,6 @@
 
 <body class="home-page">
 
-  <!-- NAV -->
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="/">
@@ -41,10 +40,7 @@
     </div>
   </nav>
 
-  <!-- MAIN -->
   <main id="top">
-
-    <!-- HERO -->
     <section class="hero">
       <div class="wrap hero-inner">
         <div class="eyebrow">Sault Ste. Marie Branding + Northern Ontario Web Design</div>
@@ -72,13 +68,12 @@
         <div class="micro">
           <span>Branding</span>
           <span>Web Design</span>
-          <span>SEO & Site Maintenance</span>
+          <span>SEO &amp; Site Maintenance</span>
           <span>Ongoing Support</span>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="section" id="services">
       <div class="wrap">
         <div class="section-kicker">Services</div>
@@ -103,7 +98,6 @@
       </div>
     </section>
 
-    <!-- PORTFOLIO CTA -->
     <section class="section" id="portfolio-cta">
       <div class="wrap">
         <div class="section-kicker">Portfolio</div>
@@ -112,7 +106,7 @@
         </h2>
 
         <p class="section-lead">
-          We design websites and brands built to bring in work. 
+          We design websites and brands built to bring in work.
           Take a look at some of our recent projects.
         </p>
 
@@ -122,7 +116,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="wrap">
         <div class="section-kicker">Contact</div>
@@ -137,76 +130,75 @@
         </div>
       </div>
     </section>
-
   </main>
 
-<!-- PROJECT MODAL -->
-<div id="projectModal" class="project-modal" aria-hidden="true">
-  <div id="projectModalOverlay" class="project-modal-overlay"></div>
+  <div id="projectModal" class="project-modal" aria-hidden="true">
+    <div id="projectModalOverlay" class="project-modal-overlay"></div>
 
-  <div class="project-modal-panel">
-    <button
-      id="closeProjectForm"
-      class="project-modal-close"
-      aria-label="Close"
-      type="button"
-    >&times;</button>
+    <div class="project-modal-panel">
+      <button
+        id="closeProjectForm"
+        class="project-modal-close"
+        aria-label="Close"
+        type="button"
+      >&times;</button>
 
-    <div class="project-modal-kicker">Start a Project</div>
-    <h2 class="project-modal-title">Tell us what you need</h2>
-    <p class="project-modal-copy">
-      Fill out a few details and we’ll reach out to talk about your project.
-    </p>
+      <div class="project-modal-kicker">Start a Project</div>
+      <h2 class="project-modal-title">Tell us what you need</h2>
+      <p class="project-modal-copy">
+        Fill out a few details and we’ll reach out to talk about your project.
+      </p>
 
-    <form id="projectForm" class="project-form">
-      <div class="project-form-grid">
-        <div class="project-field">
-          <label for="project-name">Name</label>
-          <input id="project-name" type="text" name="name" placeholder="Your name" required>
+      <form id="projectForm" class="project-form">
+        <div class="project-form-grid">
+          <div class="project-field">
+            <label for="project-name">Name</label>
+            <input id="project-name" type="text" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="project-field">
+            <label for="project-email">Email</label>
+            <input id="project-email" type="email" name="email" placeholder="you@business.com" required>
+          </div>
+
+          <div class="project-field">
+            <label for="project-business">Business Name</label>
+            <input id="project-business" type="text" name="business" placeholder="Business name">
+          </div>
+
+          <div class="project-field">
+            <label for="project-phone">Phone Number</label>
+            <input id="project-phone" type="text" name="phone" placeholder="Phone number">
+          </div>
+
+          <div class="project-field project-field-full">
+            <label for="project-service">Service Needed</label>
+            <select id="project-service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="Brand Identity">Brand Identity</option>
+              <option value="Website Design">Website Design</option>
+              <option value="SEO &amp; Site Maintenance">SEO &amp; Site Maintenance</option>
+              <option value="Website + Branding">Website + Branding</option>
+              <option value="Ongoing Support">Ongoing Support</option>
+              <option value="Not Sure Yet">Not Sure Yet</option>
+            </select>
+          </div>
+
+          <div class="project-field project-field-full">
+            <label for="project-message">Project Details</label>
+            <textarea
+              id="project-message"
+              name="message"
+              placeholder="Tell us about your business, what you need, and any timeline or goals."
+              required
+            ></textarea>
+          </div>
         </div>
 
-        <div class="project-field">
-          <label for="project-email">Email</label>
-          <input id="project-email" type="email" name="email" placeholder="you@business.com" required>
+        <div class="project-form-actions">
+          <button type="submit" class="project-submit">Send Project Inquiry</button>
         </div>
-
-        <div class="project-field">
-          <label for="project-business">Business Name</label>
-          <input id="project-business" type="text" name="business" placeholder="Business name">
-        </div>
-
-        <div class="project-field">
-          <label for="project-phone">Phone Number</label>
-          <input id="project-phone" type="text" name="phone" placeholder="Phone number">
-        </div>
-
-        <div class="project-field project-field-full">
-          <label for="project-service">Service Needed</label>
-          <select id="project-service" name="service" required>
-            <option value="">Select a service</option>
-            <option value="Brand Identity">Brand Identity</option>
-            <option value="Website Design">Website Design</option>
-            <option value="SEO &amp; Site Maintenance">SEO &amp; Site Maintenance</option>
-            <option value="Website + Branding">Website + Branding</option>
-            <option value="Ongoing Support">Ongoing Support</option>
-            <option value="Not Sure Yet">Not Sure Yet</option>
-          </select>
-        </div>
-
-        <div class="project-field project-field-full">
-          <label for="project-message">Project Details</label>
-          <textarea
-            id="project-message"
-            name="message"
-            placeholder="Tell us about your business, what you need, and any timeline or goals."
-            required
-          ></textarea>
-        </div>
-      </div>
-
-      <div class="project-form-actions">
-        <button type="submit" class="project-submit">Send Project Inquiry</button>
-      </div>
+      </form>
 
       <div class="form-success" id="formSuccess" aria-hidden="true">
         <div class="form-success-title">Thank you.</div>
@@ -214,15 +206,14 @@
           Your project request has been sent successfully. We’ll be in touch shortly.
         </div>
       </div>
-    </form>
+    </div>
   </div>
-</div>
 
-<footer class="footer">
-  <div class="wrap">
-    © 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario
-  </div>
-</footer>
+  <footer class="footer">
+    <div class="wrap">
+      © 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario
+    </div>
+  </footer>
 
   <script src="/script.js"></script>
 </body>
