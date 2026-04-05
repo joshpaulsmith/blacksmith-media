@@ -62,10 +62,15 @@ img{
 }
 
 /* ===== PAGE THEMES ===== */
-body.home-page{
-  background:linear-gradient(180deg, #0b0b0b 0%, #0b0b0b 100%) !important;
+  body.home-page{
+  background:linear-gradient(
+    180deg,
+    #0b0b0b 0%,
+    #3a320a 22%,
+    #6a5a12 55%,
+    #3a320a 100%
+  ) !important;
 }
-
 body.brand-page{
   background:linear-gradient(180deg, #0b0b0b 0%, #2d1a47 22%, #3d2461 55%, #2d1a47 100%) !important;
 }
