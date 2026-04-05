@@ -149,3 +149,30 @@
     }
   });
 })();
+const portfolioForm = document.getElementById("portfolioForm");
+const portfolioFormSuccess = document.getElementById("portfolioFormSuccess");
+
+if (portfolioForm) {
+  portfolioForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(portfolioForm);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        portfolioForm.reset();
+        portfolioFormSuccess.style.display = "block";
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+}
