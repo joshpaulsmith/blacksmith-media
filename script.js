@@ -181,66 +181,89 @@
   }
 
   function initHomeProjectModal() {
-  var modal = document.getElementById("projectModal");
-  var overlay = document.getElementById("projectModalOverlay");
-  var closeBtn = document.getElementById("closeProjectForm");
-  var openBtns = document.querySelectorAll(".open-project-form");
-  var form = document.getElementById("projectForm");
-  var successMsg = document.getElementById("formSuccess");
+    var modal = document.getElementById("projectModal");
+    var overlay = document.getElementById("projectModalOverlay");
+    var closeBtn = document.getElementById("closeProjectForm");
+    var openBtns = document.querySelectorAll(".open-project-form");
+    var form = document.getElementById("projectForm");
+    var successMsg = document.getElementById("formSuccess");
 
-  if (!modal || !overlay || !closeBtn || !form || !successMsg || !openBtns.length) {
-    return;
-  }
-
-  function openModal() {
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeModal() {
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    successMsg.style.display = "none";
-    form.style.display = "block";
-  }
-
-  openBtns.forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      openModal();
-    });
-  });
-
-  overlay.addEventListener("click", closeModal);
-  closeBtn.addEventListener("click", closeModal);
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
-      closeModal();
+    if (!modal || !overlay || !closeBtn || !form || !successMsg || !openBtns.length) {
+      return;
     }
-  });
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+    function openModal() {
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
 
-    var data = new FormData(form);
+    function resetModalState() {
+      form.style.display = "block";
+      successMsg.classList.remove("is-visible");
+      successMsg.style.display = "none";
+      successMsg.setAttribute("aria-hidden", "true");
+    }
 
-    try {
-      var response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" }
+    function closeModal() {
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      resetModalState();
+    }
+
+    openBtns.forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal();
       });
+    });
 
-      if (response.ok) {
-        form.reset();
-        form.style.display = "none";
-        successMsg.style.display = "block";
-      } else {
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+        closeModal();
+      }
+    });
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      var data = new FormData(form);
+
+      try {
+        var response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
+          method: "POST",
+          body: data,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          successMsg.style.display = "block";
+          successMsg.classList.add("is-visible");
+          successMsg.setAttribute("aria-hidden", "false");
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch (err) {
         alert("Something went wrong. Please try again.");
       }
-    } catch (err) {
-      alert("Something went wrong. Please try again.");
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initPageTransitions();
+    initPortfolioForm();
+    initHomeProjectModal();
+  });
+
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted) {
+      enterPage();
     }
   });
-}
+})();
