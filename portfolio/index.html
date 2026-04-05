@@ -12,108 +12,32 @@
 
   <link rel="canonical" href="https://blacksmithmedia.ca/portfolio/" />
   <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="apple-touch-icon" href="../favicon.png" />
+  <meta name="theme-color" content="#0b0b0c" />
+
   <link rel="stylesheet" href="../styles.css" />
-
-  <style>
-    .portfolio-page {
-      background: #000;
-      color: #fff;
-    }
-
-    .portfolio-hero {
-      padding: 8rem 1.5rem 3rem;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-    }
-
-    .portfolio-wrap {
-      width: min(1100px, calc(100% - 2rem));
-      margin: 0 auto;
-    }
-
-    .portfolio-title {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.5rem;
-    }
-
-    .portfolio-subtitle {
-      max-width: 700px;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      color: #ccc;
-    }
-
-    .portfolio-section {
-      padding: 4rem 1.5rem;
-    }
-
-    .portfolio-section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      letter-spacing: -0.03em;
-    }
-
-    .portfolio-list {
-      display: flex;
-      flex-direction: column;
-      margin-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .portfolio-item {
-      display: block;
-      padding: 1.6rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.6rem;
-      letter-spacing: 0.05em;
-      transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
-    }
-
-    .portfolio-item:hover {
-      opacity: 0.7;
-      transform: translateX(8px);
-      color: #f2c94c;
-    }
-
-    .portfolio-cta {
-      padding: 4rem 1.5rem 5rem;
-      border-top: 1px solid rgba(255,255,255,0.15);
-    }
-
-    .portfolio-cta h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .portfolio-cta p {
-      max-width: 600px;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-      color: #ccc;
-    }
-
-    .portfolio-btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border: 1px solid #f2c94c;
-      text-decoration: none;
-      color: #f2c94c;
-      font-weight: 600;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .portfolio-btn:hover {
-      background: #f2c94c;
-      color: #000;
-    }
-  </style>
 </head>
 
 <body class="portfolio-page">
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/">
+        <img src="../blacksmith-logo.png" alt="Blacksmith Media logo" />
+        <div>
+          <div class="brand-title">Blacksmith Media</div>
+          <div class="brand-sub">Branding + Web Design</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/brand/">Brand Identity</a>
+        <a href="/web-design/">Website Design</a>
+        <a href="/seo/">SEO &amp; Site Maintenance</a>
+      </div>
+    </div>
+  </nav>
+
   <main>
     <section class="portfolio-hero">
       <div class="portfolio-wrap">
@@ -122,6 +46,10 @@
           A selection of websites designed and built by Blacksmith Media for contractors,
           service companies, and growing businesses.
         </p>
+
+        <div class="portfolio-hero-cta">
+          <a href="#portfolioForm" class="btn primary">Start a Project</a>
+        </div>
       </div>
     </section>
 
@@ -130,59 +58,60 @@
         <h2>Websites</h2>
 
         <div class="portfolio-list">
-          <a href="https://capcoconstruction.com" target="_blank" class="portfolio-item">
+          <a href="https://capcoconstruction.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
             capcoconstruction.com
           </a>
 
-          <a href="https://veteranelectric.ca" target="_blank" class="portfolio-item">
+          <a href="https://veteranelectric.ca" target="_blank" rel="noopener noreferrer" class="portfolio-item">
             veteranelectric.ca
           </a>
 
-          <a href="https://buildwithcollins.com" target="_blank" class="portfolio-item">
+          <a href="https://buildwithcollins.com" target="_blank" rel="noopener noreferrer" class="portfolio-item">
             buildwithcollins.com
           </a>
 
-          <a href="https://stellarhvac.ca" target="_blank" class="portfolio-item">
+          <a href="https://stellarhvac.ca" target="_blank" rel="noopener noreferrer" class="portfolio-item">
             stellarhvac.ca
           </a>
         </div>
       </div>
     </section>
 
-   <section class="portfolio-cta">
-  <div class="portfolio-wrap">
-    <div class="portfolio-contact-box">
-      <div class="section-kicker">Start a Project</div>
-      <h2>Like what you see?</h2>
-      <p>
-        If you need a clean, modern website for your business, send a few details
-        below and we’ll reach out to talk about your project.
-      </p>
+    <section class="portfolio-cta">
+      <div class="portfolio-wrap">
+        <div class="portfolio-contact-box">
+          <div class="section-kicker">Start a Project</div>
+          <h2>Like what you see?</h2>
+          <p>
+            If you need a clean, modern website for your business, send a few details
+            below and we’ll reach out to talk about your project.
+          </p>
 
-      <form id="portfolioForm" class="portfolio-form">
-        <div class="portfolio-form-grid">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
+          <form id="portfolioForm" class="portfolio-form">
+            <div class="portfolio-form-grid">
+              <input type="text" name="name" placeholder="Name" required />
+              <input type="email" name="email" placeholder="Email" required />
+            </div>
+
+            <div class="portfolio-form-grid">
+              <input type="text" name="business" placeholder="Business Name" />
+              <input type="text" name="phone" placeholder="Phone Number" />
+            </div>
+
+            <textarea name="message" placeholder="Tell us about your project" required></textarea>
+
+            <button type="submit" class="portfolio-submit">Send Project Inquiry</button>
+
+            <div class="portfolio-form-success" id="portfolioFormSuccess">
+              Thanks — we’ll be in touch.
+            </div>
+          </form>
         </div>
-
-        <div class="portfolio-form-grid">
-          <input type="text" name="business" placeholder="Business Name">
-          <input type="text" name="phone" placeholder="Phone Number">
-        </div>
-
-        <textarea name="message" placeholder="Tell us about your project" required></textarea>
-
-        <button type="submit" class="portfolio-submit">Send Project Inquiry</button>
-
-        <div class="portfolio-form-success" id="portfolioFormSuccess">
-          Thanks — we’ll be in touch.
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
   </main>
 
   <script src="../script.js"></script>
+  <script src="portfolio.js"></script>
 </body>
 </html>
