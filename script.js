@@ -181,83 +181,66 @@
   }
 
   function initHomeProjectModal() {
-    var modal = document.getElementById("projectModal");
-    var overlay = document.getElementById("projectModalOverlay");
-    var closeBtn = document.getElementById("closeProjectForm");
-    var openBtns = document.querySelectorAll(".open-project-form");
-    var form = document.getElementById("projectForm");
-    var successMsg = document.getElementById("formSuccess");
+  var modal = document.getElementById("projectModal");
+  var overlay = document.getElementById("projectModalOverlay");
+  var closeBtn = document.getElementById("closeProjectForm");
+  var openBtns = document.querySelectorAll(".open-project-form");
+  var form = document.getElementById("projectForm");
+  var successMsg = document.getElementById("formSuccess");
 
-    if (!modal || !overlay || !closeBtn || !form || !successMsg || !openBtns.length) {
-      return;
-    }
-
-    function openModal() {
-      modal.style.display = "flex";
-      modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal() {
-      modal.style.display = "none";
-      modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      successMsg.style.display = "none";
-      form.style.display = "block";
-    }
-
-    openBtns.forEach(function (btn) {
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
-        openModal();
-      });
-    });
-
-    overlay.addEventListener("click", closeModal);
-    closeBtn.addEventListener("click", closeModal);
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && modal.style.display === "flex") {
-        closeModal();
-      }
-    });
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      var data = new FormData(form);
-
-      try {
-        var response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
-          method: "POST",
-          body: data,
-          headers: {
-            Accept: "application/json"
-          }
-        });
-
-        if (response.ok) {
-          form.reset();
-          form.style.display = "none";
-          successMsg.style.display = "block";
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      } catch (err) {
-        alert("Something went wrong. Please try again.");
-      }
-    });
+  if (!modal || !overlay || !closeBtn || !form || !successMsg || !openBtns.length) {
+    return;
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    initPageTransitions();
-    initPortfolioForm();
-    initHomeProjectModal();
+  function openModal() {
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    successMsg.style.display = "none";
+    form.style.display = "block";
+  }
+
+  openBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      openModal();
+    });
   });
 
-  window.addEventListener("pageshow", function (e) {
-    if (e.persisted) {
-      enterPage();
+  overlay.addEventListener("click", closeModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+      closeModal();
     }
   });
-})();
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    var data = new FormData(form);
+
+    try {
+      var response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      });
+
+      if (response.ok) {
+        form.reset();
+        form.style.display = "none";
+        successMsg.style.display = "block";
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+}
