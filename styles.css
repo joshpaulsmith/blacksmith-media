@@ -2340,4 +2340,23 @@ body.portfolio-page{
     font-size:14px;
     line-height:1.5;
   }
+}@media (max-width: 768px) {
+  .project-modal-panel {
+    width: 92%;
+    max-width: 92%;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .project-modal-title {
+    font-size: 28px;
+  }
+
+  .project-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-submit {
+    width: 100%;
+  }
 }
