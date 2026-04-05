@@ -171,6 +171,8 @@
           portfolioForm.reset();
           portfolioForm.style.display = "none";
           portfolioFormSuccess.style.display = "block";
+          portfolioFormSuccess.classList.add("is-visible");
+          portfolioFormSuccess.setAttribute("aria-hidden", "false");
         } else {
           alert("Something went wrong. Please try again.");
         }
@@ -199,8 +201,8 @@
 
     function resetModalState() {
       form.style.display = "block";
-      successMsg.classList.remove("is-visible");
       successMsg.style.display = "none";
+      successMsg.classList.remove("is-visible");
       successMsg.setAttribute("aria-hidden", "true");
     }
 
