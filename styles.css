@@ -2359,4 +2359,15 @@ body.portfolio-page{
   .project-submit {
     width: 100%;
   }
+}.form-success {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.form-success.is-visible {
+  display: block;
 }
