@@ -190,41 +190,80 @@
 </main>
 
 <!-- POPUP -->
+<!-- PROJECT MODAL -->
 <div
   id="projectModal"
+  class="project-modal"
   aria-hidden="true"
-  style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:20px;"
 >
-  <div
-    id="projectModalOverlay"
-    style="position:absolute; inset:0; background:rgba(0,0,0,.72); backdrop-filter:blur(6px);"
-  ></div>
+  <div id="projectModalOverlay" class="project-modal-overlay"></div>
 
-  <div
-    style="position:relative; z-index:2; width:min(720px, 100%); background:#0b0b0b; border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:30px; box-shadow:0 24px 70px rgba(0,0,0,.55);"
-  >
+  <div class="project-modal-panel">
     <button
       id="closeProjectForm"
+      class="project-modal-close"
       aria-label="Close"
-      style="position:absolute; top:14px; right:16px; width:40px; height:40px; border:none; background:transparent; color:#fff; font-size:30px; line-height:1; cursor:pointer;"
+      type="button"
     >&times;</button>
 
-    <h2 style="margin:0 0 18px; font-family:'Roboto Mono', monospace; font-size:42px;">Start a Project</h2>
+    <div class="project-modal-kicker">Start a Project</div>
+    <h2 class="project-modal-title">Tell us what you need</h2>
+    <p class="project-modal-copy">
+      Fill out a few details and we’ll reach out to talk about your project.
+    </p>
 
     <form id="projectForm" class="project-form">
-      <div class="form-row">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="business" placeholder="Business Name">
+      <div class="project-form-grid">
+        <div class="project-field">
+          <label for="project-name">Name</label>
+          <input id="project-name" type="text" name="name" placeholder="Your name" required>
+        </div>
+
+        <div class="project-field">
+          <label for="project-email">Email</label>
+          <input id="project-email" type="email" name="email" placeholder="you@business.com" required>
+        </div>
+
+        <div class="project-field">
+          <label for="project-business">Business Name</label>
+          <input id="project-business" type="text" name="business" placeholder="Business name">
+        </div>
+
+        <div class="project-field">
+          <label for="project-phone">Phone Number</label>
+          <input id="project-phone" type="text" name="phone" placeholder="Phone number">
+        </div>
+
+        <div class="project-field project-field-full">
+          <label for="project-service">Service Needed</label>
+          <select id="project-service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="Brand Identity">Brand Identity</option>
+            <option value="Website Design">Website Design</option>
+            <option value="SEO & Site Maintenance">SEO &amp; Site Maintenance</option>
+            <option value="Website + Branding">Website + Branding</option>
+            <option value="Ongoing Support">Ongoing Support</option>
+            <option value="Not Sure Yet">Not Sure Yet</option>
+          </select>
+        </div>
+
+        <div class="project-field project-field-full">
+          <label for="project-message">Project Details</label>
+          <textarea
+            id="project-message"
+            name="message"
+            placeholder="Tell us about your business, what you need, and any timeline or goals."
+            required
+          ></textarea>
+        </div>
       </div>
 
-      <div class="form-row">
-        <textarea name="message" placeholder="Tell us about the project"></textarea>
-        <button type="submit">SEND</button>
+      <div class="project-form-actions">
+        <button type="submit" class="project-submit">Send Project Inquiry</button>
       </div>
 
       <div class="form-success" id="formSuccess">
-        Thanks — we’ll be in touch.
+        Thank you — your project request has been sent. We’ll be in touch shortly.
       </div>
     </form>
   </div>
