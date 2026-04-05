@@ -140,57 +140,89 @@
 
   </main>
 
-  <!-- MODAL -->
-  <div id="projectModal" class="project-modal" aria-hidden="true">
-    <div id="projectModalOverlay" class="project-modal-overlay"></div>
+<!-- PROJECT MODAL -->
+<div id="projectModal" class="project-modal" aria-hidden="true">
+  <div id="projectModalOverlay" class="project-modal-overlay"></div>
 
-    <div class="project-modal-panel">
-      <button id="closeProjectForm" class="project-modal-close" type="button">&times;</button>
+  <div class="project-modal-panel">
+    <button
+      id="closeProjectForm"
+      class="project-modal-close"
+      aria-label="Close"
+      type="button"
+    >&times;</button>
 
-      <div class="project-modal-kicker">Start a Project</div>
-      <h2 class="project-modal-title">Tell us what you need</h2>
-      <p class="project-modal-copy">
-        Fill out a few details and we’ll reach out to talk about your project.
-      </p>
+    <div class="project-modal-kicker">Start a Project</div>
+    <h2 class="project-modal-title">Tell us what you need</h2>
+    <p class="project-modal-copy">
+      Fill out a few details and we’ll reach out to talk about your project.
+    </p>
 
-      <form id="projectForm" class="project-form">
-        <div class="project-form-grid">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="text" name="business" placeholder="Business Name">
-          <input type="text" name="phone" placeholder="Phone Number">
+    <form id="projectForm" class="project-form">
+      <div class="project-form-grid">
+        <div class="project-field">
+          <label for="project-name">Name</label>
+          <input id="project-name" type="text" name="name" placeholder="Your name" required>
+        </div>
 
-          <select name="service" required>
+        <div class="project-field">
+          <label for="project-email">Email</label>
+          <input id="project-email" type="email" name="email" placeholder="you@business.com" required>
+        </div>
+
+        <div class="project-field">
+          <label for="project-business">Business Name</label>
+          <input id="project-business" type="text" name="business" placeholder="Business name">
+        </div>
+
+        <div class="project-field">
+          <label for="project-phone">Phone Number</label>
+          <input id="project-phone" type="text" name="phone" placeholder="Phone number">
+        </div>
+
+        <div class="project-field project-field-full">
+          <label for="project-service">Service Needed</label>
+          <select id="project-service" name="service" required>
             <option value="">Select a service</option>
             <option value="Brand Identity">Brand Identity</option>
             <option value="Website Design">Website Design</option>
-            <option value="SEO & Site Maintenance">SEO & Site Maintenance</option>
+            <option value="SEO &amp; Site Maintenance">SEO &amp; Site Maintenance</option>
             <option value="Website + Branding">Website + Branding</option>
             <option value="Ongoing Support">Ongoing Support</option>
             <option value="Not Sure Yet">Not Sure Yet</option>
           </select>
-
-          <textarea name="message" placeholder="Tell us about your project" required></textarea>
         </div>
 
+        <div class="project-field project-field-full">
+          <label for="project-message">Project Details</label>
+          <textarea
+            id="project-message"
+            name="message"
+            placeholder="Tell us about your business, what you need, and any timeline or goals."
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="project-form-actions">
         <button type="submit" class="project-submit">Send Project Inquiry</button>
+      </div>
 
-        <div class="form-success" id="formSuccess">
-          <div class="form-success-title">Thank you.</div>
-          <div class="form-success-copy">
-            Your project request has been sent successfully. We’ll be in touch shortly.
-          </div>
+      <div class="form-success" id="formSuccess" aria-hidden="true">
+        <div class="form-success-title">Thank you.</div>
+        <div class="form-success-copy">
+          Your project request has been sent successfully. We’ll be in touch shortly.
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="wrap">
-      © 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario
-    </div>
-  </footer>
+<footer class="footer">
+  <div class="wrap">
+    © 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario
+  </div>
+</footer>
 
   <script src="/script.js"></script>
 </body>
