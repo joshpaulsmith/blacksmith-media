@@ -28,9 +28,13 @@
       href.startsWith("mailto:") ||
       href.startsWith("tel:") ||
       href.startsWith("javascript:")
-    ) return false;
+    ) {
+      return false;
+    }
 
-    if (link.target === "_blank" || link.hasAttribute("download")) return false;
+    if (link.target === "_blank" || link.hasAttribute("download")) {
+      return false;
+    }
 
     var url = new URL(link.href, window.location.origin);
 
@@ -126,7 +130,7 @@
     }, getDuration(type));
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function initPageTransitions() {
     enterPage();
 
     document.addEventListener("click", function (e) {
@@ -141,6 +145,44 @@
       e.preventDefault();
       leavePage(url, type);
     });
+  }
+
+  function initPortfolioForm() {
+    var portfolioForm = document.getElementById("portfolioForm");
+    var portfolioFormSuccess = document.getElementById("portfolioFormSuccess");
+
+    if (!portfolioForm || !portfolioFormSuccess) return;
+
+    portfolioForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      var data = new FormData(portfolioForm);
+
+      try {
+        var response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
+          method: "POST",
+          body: data,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+          portfolioForm.reset();
+          portfolioForm.style.display = "none";
+          portfolioFormSuccess.style.display = "block";
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch (err) {
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initPageTransitions();
+    initPortfolioForm();
   });
 
   window.addEventListener("pageshow", function (e) {
@@ -149,30 +191,3 @@
     }
   });
 })();
-const portfolioForm = document.getElementById("portfolioForm");
-const portfolioFormSuccess = document.getElementById("portfolioFormSuccess");
-
-if (portfolioForm) {
-  portfolioForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const data = new FormData(portfolioForm);
-
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
-        method: "POST",
-        body: data,
-        headers: { "Accept": "application/json" }
-      });
-
-      if (response.ok) {
-        portfolioForm.reset();
-        portfolioFormSuccess.style.display = "block";
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    } catch (err) {
-      alert("Something went wrong. Please try again.");
-    }
-  });
-}
