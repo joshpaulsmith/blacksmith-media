@@ -2013,4 +2013,212 @@ body.portfolio-page{
   .project-submit{
     width:100%;
   }
+}/* ===== HOME PROJECT MODAL ===== */
+.project-modal{
+  display:none;
+  position:fixed !important;
+  inset:0 !important;
+  z-index:99999 !important;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.project-modal[aria-hidden="false"]{
+  display:flex !important;
+}
+
+.project-modal-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+.project-modal-panel{
+  position:relative;
+  z-index:2;
+  width:min(860px, 100%);
+  max-height:90vh;
+  overflow:auto;
+  background:#0b0b0b;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 24px 70px rgba(0,0,0,.55);
+}
+
+.project-modal-close{
+  position:absolute;
+  top:14px;
+  right:16px;
+  width:40px;
+  height:40px;
+  border:none;
+  background:transparent;
+  color:#fff;
+  font-size:30px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.project-modal-kicker{
+  margin-bottom:10px;
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.project-modal-title{
+  margin:0 0 12px;
+  font-family:'Roboto Mono', monospace;
+  font-size:clamp(32px, 5vw, 48px);
+  line-height:1.02;
+}
+
+.project-modal-copy{
+  margin:0 0 24px;
+  max-width:640px;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:16px;
+}
+
+.project-form{
+  margin-top:0;
+}
+
+.project-form-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:14px;
+}
+
+.project-field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.project-field-full{
+  grid-column:1 / -1;
+}
+
+.project-field label{
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.project-form input,
+.project-form select,
+.project-form textarea{
+  width:100%;
+  padding:15px 16px;
+  background:#111;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  color:#fff;
+  font-family:'Roboto', sans-serif;
+  font-size:15px;
+  outline:none;
+  transition:border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+.project-form select{
+  cursor:pointer;
+}
+
+.project-form textarea{
+  min-height:150px;
+  resize:vertical;
+}
+
+.project-form input:focus,
+.project-form select:focus,
+.project-form textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(242,201,76,.12);
+}
+
+.project-form-actions{
+  margin-top:18px;
+  display:flex;
+  justify-content:flex-start;
+}
+
+.project-submit{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:0 24px;
+  border-radius:999px;
+  border:1px solid var(--accent);
+  background:var(--accent);
+  color:#000;
+  font-family:'Roboto Mono', monospace;
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.project-submit:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(242,201,76,.18);
+}
+
+.form-success{
+  display:none;
+  margin-top:18px;
+  padding:18px 20px;
+  border:1px solid rgba(242,201,76,.35);
+  border-radius:12px;
+  background:rgba(242,201,76,.06);
+  color:var(--accent);
+  font-family:'Roboto Mono', monospace;
+  font-size:13px;
+  letter-spacing:.04em;
+  text-transform:none;
+}
+
+@media (max-width:768px){
+  .project-modal{
+    padding:0;
+    align-items:flex-end;
+  }
+
+  .project-modal-panel{
+    width:100%;
+    max-height:92vh;
+    border-radius:20px 20px 0 0;
+    padding:22px 16px 18px;
+  }
+
+  .project-form-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .project-modal-title{
+    font-size:clamp(28px, 10vw, 38px);
+  }
+
+  .project-modal-copy{
+    font-size:15px;
+    line-height:1.55;
+  }
+
+  .project-submit{
+    width:100%;
+  }
 }
