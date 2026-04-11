@@ -2370,4 +2370,89 @@ body.portfolio-page{
 
 .form-success.is-visible {
   display: block;
+}/* ===== HOME SEO ADDITIONS ===== */
+.section-lead{
+  max-width:820px;
+  color:var(--muted);
+  font-size:19px;
+  line-height:1.75;
+  margin:0 0 18px;
+}
+
+.seo-block{
+  max-width:820px;
+  margin:0 0 28px;
+  padding:18px 20px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  background:rgba(255,255,255,.03);
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.75;
+}
+
+.map-wrap{
+  margin-top:28px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  overflow:hidden;
+  background:rgba(255,255,255,.02);
+  box-shadow:0 20px 60px rgba(0,0,0,.22);
+}
+
+.map-wrap iframe{
+  display:block;
+  width:100%;
+  height:420px;
+  border:0;
+}
+
+.faq-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:16px;
+  margin-top:28px;
+}
+
+.faq-item{
+  padding:22px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  background:rgba(255,255,255,.02);
+}
+
+.faq-item h3{
+  margin:0 0 10px;
+  font-family:'Roboto Mono', monospace;
+  font-size:16px;
+  line-height:1.45;
+  text-transform:uppercase;
+}
+
+.faq-item p{
+  margin:0;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.75;
+}
+
+@media (max-width:768px){
+  .section-lead{
+    font-size:15px;
+    line-height:1.65;
+  }
+
+  .seo-block{
+    font-size:14px;
+    line-height:1.65;
+    padding:16px;
+  }
+
+  .map-wrap iframe{
+    height:320px;
+  }
+
+  .faq-grid{
+    grid-template-columns:1fr;
+  }
 }
