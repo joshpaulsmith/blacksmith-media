@@ -195,6 +195,7 @@
     }
 
     function openModal() {
+      modal.style.display = "flex";
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
     }
@@ -208,6 +209,7 @@
 
     function closeModal() {
       modal.setAttribute("aria-hidden", "true");
+      modal.style.display = "none";
       document.body.style.overflow = "";
       resetModalState();
     }
