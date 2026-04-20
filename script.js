@@ -261,10 +261,47 @@
     });
   }
 
+  function initContactForm() {
+    var contactForm = document.getElementById("contactForm");
+    var contactFormSuccess = document.getElementById("contactFormSuccess");
+
+    if (!contactForm || !contactFormSuccess) return;
+
+    contactForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      var data = new FormData(contactForm);
+      if (data.get("_honey")) return;
+
+      try {
+        var response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
+          method: "POST",
+          body: data,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          contactForm.style.display = "none";
+          contactFormSuccess.style.display = "block";
+          contactFormSuccess.classList.add("is-visible");
+          contactFormSuccess.setAttribute("aria-hidden", "false");
+        } else {
+          alert("Something went wrong. Please try again or email blacksmithmedia@protonmail.com.");
+        }
+      } catch (err) {
+        alert("Something went wrong. Please try again or email blacksmithmedia@protonmail.com.");
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initPageTransitions();
     initPortfolioForm();
     initHomeProjectModal();
+    initContactForm();
   });
 
   window.addEventListener("pageshow", function (e) {
