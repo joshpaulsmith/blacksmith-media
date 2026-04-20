@@ -157,6 +157,7 @@
       e.preventDefault();
 
       var data = new FormData(portfolioForm);
+      if (data.get("_honey")) return;
 
       try {
         var response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
@@ -234,6 +235,7 @@
       e.preventDefault();
 
       var data = new FormData(form);
+      if (data.get("_honey")) return;
 
       try {
         var response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {

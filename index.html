@@ -47,6 +47,14 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6DTSDS8MV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P6DTSDS8MV');
+  </script>
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -380,6 +388,16 @@
       </p>
 
       <form id="projectForm" class="project-form">
+        <input type="hidden" name="_subject" value="New Blacksmith Media project inquiry" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="form-honeypot" aria-hidden="true">
+          <label>
+            Leave this field empty
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
+
         <div class="project-form-grid">
           <div class="project-field">
             <label for="project-name">Name</label>

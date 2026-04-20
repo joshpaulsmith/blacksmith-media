@@ -341,6 +341,16 @@
       <h2 style="margin:0 0 18px; font-family:'Roboto Mono', monospace; font-size:42px;">Start a Project</h2>
 
       <form id="projectForm" class="project-form">
+        <input type="hidden" name="_subject" value="New Blacksmith Media SEO and maintenance inquiry" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="form-honeypot" aria-hidden="true">
+          <label>
+            Leave this field empty
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
+          </label>
+        </div>
+
         <div class="form-row">
           <input type="text" name="name" placeholder="Name" required>
           <input type="email" name="email" placeholder="Email" required>
@@ -348,7 +358,7 @@
         </div>
 
         <div class="form-row">
-          <textarea name="message" placeholder="Tell us about the project"></textarea>
+          <textarea name="message" placeholder="Tell us about the project" required></textarea>
           <button type="submit">SEND</button>
         </div>
 
