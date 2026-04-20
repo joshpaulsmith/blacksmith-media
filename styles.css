@@ -14,8 +14,8 @@
   --brand:#9b51e0;
   --web:#00ff9c;
   --seo:#7aa2ff;
-  --portfolio:#ff9f1c;
-  --contact:#ff4d4d;
+  --portfolio:#ff4d4d;
+  --contact:var(--muted);
 
   --wipe-ease:cubic-bezier(.77,0,.18,1);
   --wipe-duration-desktop:.52s;
@@ -31,7 +31,7 @@ body.web-page{ --accent:var(--web); }
 body.seo-page{ --accent:var(--seo); }
 body.portfolio-page{ --accent:var(--portfolio); }
 body.contact-page,
-body.privacy-page{ --accent:var(--contact); }
+body.privacy-page{ --accent:var(--home); }
 
 /* ===== GLOBAL ===== */
 *{ box-sizing:border-box; }
@@ -291,8 +291,7 @@ body.brand-page .nav-links a:nth-child(2),
 body.web-page .nav-links a:nth-child(3),
 body.seo-page .nav-links a:nth-child(4),
 body.portfolio-page .nav-links a:nth-child(5),
-body.contact-page .nav-links a:nth-child(6),
-body.privacy-page .nav-links a:nth-child(6){
+body.contact-page .nav-links a:nth-child(6){
   background:rgba(255,255,255,.05);
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
   text-shadow:0 0 8px currentColor, 0 0 18px currentColor;
