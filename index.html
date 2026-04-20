@@ -59,18 +59,77 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://blacksmithmedia.ca/#business",
       "name": "Blacksmith Media",
       "url": "https://blacksmithmedia.ca/",
       "logo": "https://blacksmithmedia.ca/blacksmith-logo.png",
       "image": "https://blacksmithmedia.ca/blacksmith-logo-full.png",
       "description": "Blacksmith Media provides web design, branding, and SEO services in Sault Ste. Marie, Northern Ontario, and across Canada.",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sault Ste. Marie",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      },
       "areaServed": [
         { "@type": "City", "name": "Sault Ste. Marie" },
+        { "@type": "AdministrativeArea", "name": "Northern Ontario" },
         { "@type": "AdministrativeArea", "name": "Ontario" },
         { "@type": "Country", "name": "Canada" }
       ],
       "email": "blacksmithmedia@protonmail.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "blacksmithmedia@protonmail.com",
+        "contactType": "customer support",
+        "areaServed": "CA",
+        "availableLanguage": "English"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Blacksmith Media Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website Design",
+              "url": "https://blacksmithmedia.ca/web-design/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Brand Identity",
+              "url": "https://blacksmithmedia.ca/brand/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO & Site Maintenance",
+              "url": "https://blacksmithmedia.ca/seo/"
+            }
+          }
+        ]
+      },
       "sameAs": []
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://blacksmithmedia.ca/#website",
+      "name": "Blacksmith Media",
+      "url": "https://blacksmithmedia.ca/",
+      "publisher": {
+        "@id": "https://blacksmithmedia.ca/#business"
+      }
     }
   </script>
 
@@ -84,7 +143,7 @@
           "name":"How much does web design cost in Sault Ste. Marie?",
           "acceptedAnswer":{
             "@type":"Answer",
-            "text":"Website pricing depends on the size, features, and goals of the project. Small business websites often vary based on the scope, branding, and SEO requirements."
+            "text":"Website pricing depends on page count, content writing, brand identity needs, forms, SEO requirements, and launch support. Blacksmith Media defines the scope first and quotes the project clearly from there."
           }
         },
         {
@@ -109,6 +168,22 @@
           "acceptedAnswer":{
             "@type":"Answer",
             "text":"We build websites for contractors, trades, service businesses, local companies, and growing brands that need a stronger online presence."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"What is included in a website project?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Projects can include custom page design, mobile-friendly development, SEO-ready structure, contact form setup, launch checks, and a site structure that can grow over time."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Can you help with website copy?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Yes. Blacksmith Media can help shape page structure and write or refine website copy so the business, services, and calls to action are clear."
           }
         }
       ]
@@ -211,6 +286,50 @@
       </div>
     </section>
 
+    <section class="section" id="what-you-get">
+      <div class="wrap">
+        <div class="section-kicker">What You Get</div>
+        <h2>A practical website foundation, not just a set of pages</h2>
+
+        <p class="section-lead">
+          Every project is built around the pieces a real business website needs to work clearly:
+          strong structure, direct messaging, clean design, mobile usability, and an easy path for customers to reach out.
+        </p>
+
+        <div class="deliverables-grid">
+          <div class="deliverable-item">
+            <span>Custom page design</span>
+            <p>Layouts shaped around your business, services, and customers.</p>
+          </div>
+
+          <div class="deliverable-item">
+            <span>Mobile-friendly build</span>
+            <p>Pages that stay clear and usable across phones, tablets, and desktop.</p>
+          </div>
+
+          <div class="deliverable-item">
+            <span>SEO-ready structure</span>
+            <p>Clean headings, metadata, internal links, and page organization.</p>
+          </div>
+
+          <div class="deliverable-item">
+            <span>Contact form setup</span>
+            <p>Project inquiry forms with clear fields, spam reduction, and email delivery.</p>
+          </div>
+
+          <div class="deliverable-item">
+            <span>Launch support</span>
+            <p>Final checks for links, page titles, analytics, indexing, and public launch details.</p>
+          </div>
+
+          <div class="deliverable-item">
+            <span>Room to grow</span>
+            <p>A site structure that can support new services, portfolio work, and future improvements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="process">
       <div class="wrap">
         <div class="section-kicker">Process</div>
@@ -284,29 +403,29 @@
 
     <section class="section" id="project-fit">
       <div class="wrap">
-        <div class="section-kicker">Project Fit</div>
-        <h2>Practical websites for businesses that need clarity</h2>
+        <div class="section-kicker">Pricing Guidance</div>
+        <h2>Clear scope before a quote</h2>
 
         <p class="section-lead">
-          Every project is scoped around what the business actually needs. A simple service website,
-          a full brand and website build, and an SEO maintenance plan are different kinds of work,
-          so we quote based on scope instead of forcing everything into one package.
+          Projects are quoted based on what needs to be planned, written, designed, built, and launched.
+          A simple service website, a brand and website build, and a larger SEO-focused project are different scopes,
+          so we define the work first and price it clearly from there.
         </p>
 
         <div class="cards">
           <div class="card">
-            <h3>What affects cost?</h3>
-            <p>Page count, content writing, brand identity work, forms, SEO needs, and ongoing support all affect project scope.</p>
+            <h3>What affects price?</h3>
+            <p>Page count, content writing, brand identity work, forms, SEO needs, and launch support all affect project scope.</p>
           </div>
 
           <div class="card">
-            <h3>What do you need first?</h3>
+            <h3>What comes first?</h3>
             <p>If the business is new, brand direction may come first. If the brand is ready, the website can move faster.</p>
           </div>
 
           <div class="card">
-            <h3>What happens after launch?</h3>
-            <p>We can help keep pages updated, improve SEO structure, add new services, and keep the site useful over time.</p>
+            <h3>What will you receive?</h3>
+            <p>You get a clear project scope, a built website, launch-ready pages, and the core assets needed to use the site confidently.</p>
           </div>
         </div>
       </div>
@@ -400,8 +519,8 @@
           <div class="faq-item">
             <h3>How much does web design cost in Sault Ste. Marie?</h3>
             <p>
-              Website pricing depends on the size, features, and goals of the project. Smaller brochure-style websites
-              are different from larger custom builds with SEO, branding, and ongoing support.
+              Website pricing depends on page count, content writing, brand identity needs, forms, SEO requirements,
+              and launch support. We define the scope first and quote the project clearly from there.
             </p>
           </div>
 
@@ -426,6 +545,22 @@
             <p>
               We build websites for contractors, trades, service companies, small businesses, and brands that need a
               more professional online presence and stronger lead generation.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is included in a website project?</h3>
+            <p>
+              Projects can include custom page design, mobile-friendly development, SEO-ready structure,
+              contact form setup, launch checks, and a site structure that can grow over time.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can you help with website copy?</h3>
+            <p>
+              Yes. We can help shape page structure and write or refine website copy so the business,
+              services, and calls to action are clear.
             </p>
           </div>
         </div>
@@ -535,7 +670,7 @@
       <div class="form-success" id="formSuccess" aria-hidden="true">
         <div class="form-success-title">Thank you.</div>
         <div class="form-success-copy">
-          Your project request has been sent successfully. We’ll be in touch shortly.
+          Your project request has been sent successfully. We usually reply within one business day.
         </div>
       </div>
     </div>

@@ -147,42 +147,6 @@
     });
   }
 
-  function initPortfolioForm() {
-    var portfolioForm = document.getElementById("portfolioForm");
-    var portfolioFormSuccess = document.getElementById("portfolioFormSuccess");
-
-    if (!portfolioForm || !portfolioFormSuccess) return;
-
-    portfolioForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      var data = new FormData(portfolioForm);
-      if (data.get("_honey")) return;
-
-      try {
-        var response = await fetch("https://formsubmit.co/ajax/blacksmithmedia@protonmail.com", {
-          method: "POST",
-          body: data,
-          headers: {
-            Accept: "application/json"
-          }
-        });
-
-        if (response.ok) {
-          portfolioForm.reset();
-          portfolioForm.style.display = "none";
-          portfolioFormSuccess.style.display = "block";
-          portfolioFormSuccess.classList.add("is-visible");
-          portfolioFormSuccess.setAttribute("aria-hidden", "false");
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      } catch (err) {
-        alert("Something went wrong. Please try again.");
-      }
-    });
-  }
-
   function initHomeProjectModal() {
     var modal = document.getElementById("projectModal");
     var overlay = document.getElementById("projectModalOverlay");
@@ -253,10 +217,10 @@
           successMsg.classList.add("is-visible");
           successMsg.setAttribute("aria-hidden", "false");
         } else {
-          alert("Something went wrong. Please try again.");
+          alert("Something went wrong. Please try again or email blacksmithmedia@protonmail.com.");
         }
       } catch (err) {
-        alert("Something went wrong. Please try again.");
+        alert("Something went wrong. Please try again or email blacksmithmedia@protonmail.com.");
       }
     });
   }
@@ -299,7 +263,6 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initPageTransitions();
-    initPortfolioForm();
     initHomeProjectModal();
     initContactForm();
   });
