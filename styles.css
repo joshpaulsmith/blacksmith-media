@@ -15,7 +15,7 @@
   --web:#00ff9c;
   --seo:#7aa2ff;
   --portfolio:#ff4d4d;
-  --contact:var(--muted);
+  --contact:#b8b8b8;
 
   --wipe-ease:cubic-bezier(.77,0,.18,1);
   --wipe-duration-desktop:.52s;
@@ -31,7 +31,7 @@ body.web-page{ --accent:var(--web); }
 body.seo-page{ --accent:var(--seo); }
 body.portfolio-page{ --accent:var(--portfolio); }
 body.contact-page,
-body.privacy-page{ --accent:var(--home); }
+body.privacy-page{ --accent:var(--contact); }
 
 /* ===== GLOBAL ===== */
 *{ box-sizing:border-box; }
@@ -80,6 +80,15 @@ body.web-page{
 
 body.seo-page{
   background:linear-gradient(180deg, #0b0b0b 0%, #162a52 22%, #1c3d7a 55%, #162a52 100%) !important;
+}
+
+body.portfolio-page{
+  background:linear-gradient(180deg, #0b0b0b 0%, #3b1116 22%, #6f1d25 55%, #3b1116 100%) !important;
+}
+
+body.contact-page,
+body.privacy-page{
+  background:linear-gradient(180deg, #0b0b0b 0%, #202124 22%, #34373d 55%, #202124 100%) !important;
 }
 
 .hero,
@@ -1759,7 +1768,6 @@ body.is-entering-service main{
 /* ===== PORTFOLIO PAGE ===== */
 body.portfolio-page{
   --accent:var(--portfolio);
-  background:#000 !important;
   color:#fff;
 }
 
