@@ -68,6 +68,50 @@
     "serviceType": "SEO and Site Maintenance"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://blacksmithmedia.ca/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SEO & Site Maintenance",
+        "item": "https://blacksmithmedia.ca/seo/"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does SEO take to work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SEO usually takes time. Improvements can build gradually as search engines crawl and reevaluate the website."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you update an existing website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Blacksmith Media can improve existing websites through content updates, page structure improvements, SEO, and maintenance."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="seo-page">
@@ -86,6 +130,14 @@
   <a href="/web-design/">Website Design</a>
   <a href="/seo/">SEO &amp; Site Maintenance</a>
 </div>
+    </div>
+  </nav>
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="wrap">
+      <a href="/">Home</a>
+      <span>/</span>
+      <span>SEO &amp; Site Maintenance</span>
     </div>
   </nav>
 
@@ -119,7 +171,7 @@
         <div class="section-kicker">Overview</div>
         <h2>SEO and maintenance that keeps your website working for your business.</h2>
         <p class="section-copy">
-          Launching a website is only part of the job. To keep your business visible and professional online,
+          Launching a <a href="/web-design/">website</a> is only part of the job. To keep your business visible and professional online,
           your site needs ongoing updates, strong page structure, and regular attention over time. We help
           businesses in Sault Ste. Marie and across Northern Ontario improve Google visibility, keep their
           websites current, and avoid the problems that come from neglected websites.
@@ -339,6 +391,9 @@
       >&times;</button>
 
       <h2 style="margin:0 0 18px; font-family:'Roboto Mono', monospace; font-size:42px;">Start a Project</h2>
+      <p class="project-modal-copy">
+        Prefer email? Reach us at <a href="mailto:blacksmithmedia@protonmail.com">blacksmithmedia@protonmail.com</a>.
+      </p>
 
       <form id="projectForm" class="project-form">
         <input type="hidden" name="_subject" value="New Blacksmith Media SEO and maintenance inquiry" />
@@ -352,13 +407,25 @@
         </div>
 
         <div class="form-row">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="text" name="business" placeholder="Business Name">
+          <label class="service-field">
+            Name
+            <input type="text" name="name" placeholder="Name" required>
+          </label>
+          <label class="service-field">
+            Email
+            <input type="email" name="email" placeholder="Email" required>
+          </label>
+          <label class="service-field">
+            Business Name
+            <input type="text" name="business" placeholder="Business Name">
+          </label>
         </div>
 
-        <div class="form-row">
-          <textarea name="message" placeholder="Tell us about the project" required></textarea>
+        <div class="form-row service-form-message">
+          <label class="service-field service-field-full">
+            Project Details
+            <textarea name="message" placeholder="Tell us about the project" required></textarea>
+          </label>
           <button type="submit">SEND</button>
         </div>
 
@@ -371,7 +438,16 @@
   </div>
 
   <footer class="footer">
-    <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
+    <div class="wrap footer-inner">
+      <div>© 2026 Blacksmith Media — Sault Ste. Marie &amp; Canada</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/brand/">Brand Identity</a>
+        <a href="/web-design/">Website Design</a>
+        <a href="/seo/">SEO &amp; Site Maintenance</a>
+        <a href="/portfolio/">Portfolio</a>
+      </nav>
+      <a class="footer-email" href="mailto:blacksmithmedia@protonmail.com">blacksmithmedia@protonmail.com</a>
+    </div>
   </footer>
 
   <script src="/script.js"></script>

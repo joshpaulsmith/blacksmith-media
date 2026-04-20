@@ -64,6 +64,50 @@
     "serviceType": "Brand Identity Design"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://blacksmithmedia.ca/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Brand Identity",
+        "item": "https://blacksmithmedia.ca/brand/"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is included in a brand identity project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brand identity projects can include logo design, colour systems, typography, visual direction, brand guidelines, and digital assets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you design logos for Sault Ste. Marie businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Blacksmith Media provides logo design and brand identity services for businesses in Sault Ste. Marie, Northern Ontario, and across Canada."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="brand-page">
@@ -82,6 +126,14 @@
   <a href="/web-design/">Website Design</a>
   <a href="/seo/">SEO &amp; Site Maintenance</a>
 </div>
+    </div>
+  </nav>
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="wrap">
+      <a href="/">Home</a>
+      <span>/</span>
+      <span>Brand Identity</span>
     </div>
   </nav>
 
@@ -114,7 +166,7 @@
         <h2>More than a logo — your business identity.</h2>
         <p class="section-copy">
           Your brand is how people recognize your business, remember your business, and decide whether they trust your business.
-          A strong brand identity creates consistency across your logo, colours, typography, website, and marketing materials
+          A strong brand identity creates consistency across your logo, colours, typography, <a href="/web-design/">website</a>, and marketing materials
           so your business looks professional everywhere it appears.
           <br><br>
           At Blacksmith Media, we build brand identities from the ground up — starting with direction and strategy, and finishing
@@ -235,9 +287,28 @@
           Northern Ontario. We work with local companies to create professional brand identities that can be used across
           websites, social media, signage, vehicles, print materials, and advertising.
           <br><br>
-          Whether you are launching a new business, rebranding an existing company, or building a new website, a strong brand
+          Whether you are launching a new business, rebranding an existing company, or building a new <a href="/web-design/">website</a>, a strong brand
           identity helps your business look established, recognizable, and trustworthy from the first impression.
         </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker">FAQ</div>
+        <h2>Brand identity questions</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>What is included in a brand identity project?</h3>
+            <p>Brand identity projects can include logo design, colour systems, typography, visual direction, brand guidelines, and digital assets.</p>
+          </div>
+
+          <div class="card">
+            <h3>Do you design logos for Sault Ste. Marie businesses?</h3>
+            <p>Yes. Blacksmith Media provides logo design and brand identity services for businesses in Sault Ste. Marie, Northern Ontario, and across Canada.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -278,6 +349,9 @@
       >&times;</button>
 
       <h2 style="margin:0 0 18px; font-family:'Roboto Mono', monospace; font-size:42px;">Start a Project</h2>
+      <p class="project-modal-copy">
+        Prefer email? Reach us at <a href="mailto:blacksmithmedia@protonmail.com">blacksmithmedia@protonmail.com</a>.
+      </p>
 
       <form id="projectForm" class="project-form">
         <input type="hidden" name="_subject" value="New Blacksmith Media brand identity inquiry" />
@@ -291,13 +365,25 @@
         </div>
 
         <div class="form-row">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="text" name="business" placeholder="Business Name">
+          <label class="service-field">
+            Name
+            <input type="text" name="name" placeholder="Name" required>
+          </label>
+          <label class="service-field">
+            Email
+            <input type="email" name="email" placeholder="Email" required>
+          </label>
+          <label class="service-field">
+            Business Name
+            <input type="text" name="business" placeholder="Business Name">
+          </label>
         </div>
 
-        <div class="form-row">
-          <textarea name="message" placeholder="Tell us about the project" required></textarea>
+        <div class="form-row service-form-message">
+          <label class="service-field service-field-full">
+            Project Details
+            <textarea name="message" placeholder="Tell us about the project" required></textarea>
+          </label>
           <button type="submit">SEND</button>
         </div>
 
@@ -310,7 +396,16 @@
   </div>
 
   <footer class="footer">
-    <div class="wrap">© 2026 Blacksmith Media — Web Design & Branding in Sault Ste. Marie, Ontario</div>
+    <div class="wrap footer-inner">
+      <div>© 2026 Blacksmith Media — Sault Ste. Marie &amp; Canada</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/brand/">Brand Identity</a>
+        <a href="/web-design/">Website Design</a>
+        <a href="/seo/">SEO &amp; Site Maintenance</a>
+        <a href="/portfolio/">Portfolio</a>
+      </nav>
+      <a class="footer-email" href="mailto:blacksmithmedia@protonmail.com">blacksmithmedia@protonmail.com</a>
+    </div>
   </footer>
 
   <script src="/script.js"></script>

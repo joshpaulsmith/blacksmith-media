@@ -419,6 +419,12 @@ h2{
   line-height:1.75;
 }
 
+.section-copy a,
+.section-lead a,
+.card a{
+  color:var(--accent);
+}
+
 /* ===== CARDS ===== */
 .cards{
   display:grid;
@@ -566,6 +572,61 @@ h2{
   text-transform:uppercase;
 }
 
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.footer-links{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.footer-links a,
+.footer-email{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.footer-links a:hover,
+.footer-email:hover{
+  color:var(--accent);
+}
+
+.breadcrumbs{
+  padding:92px 0 0;
+  color:var(--muted);
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.breadcrumbs .wrap{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.breadcrumbs a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.breadcrumbs a:hover{
+  color:var(--accent);
+}
+
+.project-modal-copy a{
+  color:var(--accent);
+  overflow-wrap:anywhere;
+}
+
 /* ===== PROJECT FORM ===== */
 .project-form{
   margin-top:10px;
@@ -583,6 +644,26 @@ h2{
   display:flex;
   gap:12px;
   margin-bottom:12px;
+}
+
+.service-field{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  gap:7px;
+  color:var(--muted);
+  font-family:'Roboto Mono', monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.service-form-message{
+  align-items:stretch;
+}
+
+.service-field-full{
+  min-width:0;
 }
 
 .project-form input,
@@ -1029,6 +1110,16 @@ body.is-entering-service main{
 
   .form-row{
     flex-direction:column;
+  }
+
+  .footer-inner,
+  .footer-links{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .breadcrumbs{
+    padding-top:128px;
   }
 
   .project-form input,
