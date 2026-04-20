@@ -2990,6 +2990,10 @@ body.portfolio-page .portfolio-link{
   color:var(--portfolio);
 }
 
+body.portfolio-page .portfolio-title .highlight{
+  font-weight:700;
+}
+
 body.portfolio-page .portfolio-item:hover{
   border-color:var(--portfolio);
   background:rgba(255,77,77,.08);
