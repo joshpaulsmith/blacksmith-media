@@ -32,6 +32,7 @@ body.seo-page{ --accent:var(--seo); }
 body.portfolio-page{ --accent:var(--portfolio); }
 body.contact-page,
 body.privacy-page{ --accent:var(--contact); }
+body.thank-you-page{ --accent:var(--contact); }
 
 /* ===== GLOBAL ===== */
 *{ box-sizing:border-box; }
@@ -54,6 +55,26 @@ body{
 a{
   text-decoration:none;
   color:inherit;
+}
+
+.skip-link{
+  position:absolute;
+  left:16px;
+  top:-44px;
+  z-index:1200;
+  padding:10px 14px;
+  border-radius:8px;
+  background:#fff;
+  color:#000;
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  transition:top .2s ease;
+}
+
+.skip-link:focus{
+  top:12px;
 }
 
 img{
@@ -271,6 +292,19 @@ body.seo-page .highlight{
   transform:translateY(-1px);
 }
 
+.nav-links a:focus-visible,
+.btn:focus-visible,
+.project-submit:focus-visible,
+.contact-field input:focus-visible,
+.contact-field select:focus-visible,
+.contact-field textarea:focus-visible,
+.project-form input:focus-visible,
+.project-form select:focus-visible,
+.project-form textarea:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:3px;
+}
+
 .nav-links a:hover::before,
 .nav-links a:hover::after{
   opacity:.8;
@@ -410,6 +444,26 @@ h1{
 }
 
 .micro span::before{
+  content:"// ";
+  color:var(--accent);
+}
+
+.trust-strip{
+  padding:24px 0;
+}
+
+.trust-strip-inner{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.trust-strip-inner span::before{
   content:"// ";
   color:var(--accent);
 }
@@ -2437,6 +2491,21 @@ body.portfolio-page{
   line-height:1.75;
 }
 
+.review-link-box{
+  margin-top:28px;
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.02);
+  max-width:760px;
+}
+
+.review-link-box p{
+  margin:0 0 18px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
 @media (max-width:768px){
   .section-lead{
     font-size:15px;
@@ -2735,4 +2804,15 @@ body.contact-page .project-submit{
   background:var(--accent);
   border-color:var(--accent);
   color:#000;
+}
+
+@media (max-width:768px){
+  .trust-strip-inner{
+    gap:10px;
+    font-size:11px;
+  }
+
+  .review-link-box{
+    padding:18px;
+  }
 }

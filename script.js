@@ -216,6 +216,9 @@
           successMsg.style.display = "block";
           successMsg.classList.add("is-visible");
           successMsg.setAttribute("aria-hidden", "false");
+          window.setTimeout(function () {
+            window.location.href = "/thank-you/";
+          }, 700);
         } else {
           alert("Something went wrong. Please try again or email blacksmithmedia@protonmail.com.");
         }
@@ -252,6 +255,9 @@
           contactFormSuccess.style.display = "block";
           contactFormSuccess.classList.add("is-visible");
           contactFormSuccess.setAttribute("aria-hidden", "false");
+          window.setTimeout(function () {
+            window.location.href = "/thank-you/";
+          }, 700);
         } else {
           alert("Something went wrong. Please try again or email blacksmithmedia@protonmail.com.");
         }
