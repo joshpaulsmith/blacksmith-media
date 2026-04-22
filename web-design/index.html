@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Web Design Sault Ste. Marie for Small Businesses | Blacksmith Media</title>
-  <meta name="description" content="Blacksmith Media provides web design in Sault Ste. Marie for contractors, trades, and small businesses. We build modern websites that look professional and turn visitors into inquiries." />
+  <title>Web Design Sault Ste. Marie | Blacksmith Media</title>
+  <meta name="description" content="Blacksmith Media provides web design in Sault Ste. Marie and Northern Ontario. We build clean, modern websites for small businesses, contractors, and service companies." />
   <meta name="keywords" content="Web Design Sault Ste. Marie, web designer Sault Ste. Marie, small business web design Sault Ste. Marie, contractor website design, Northern Ontario web design" />
   <meta name="author" content="Blacksmith Media" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://blacksmithmedia.ca/web-design/" />
 
   <!-- Social -->
-  <meta property="og:title" content="Web Design Sault Ste. Marie for Small Businesses | Blacksmith Media" />
-  <meta property="og:description" content="Modern web design in Sault Ste. Marie for contractors, trades, and small businesses that need more leads and a stronger online presence." />
+  <meta property="og:title" content="Web Design Sault Ste. Marie | Blacksmith Media" />
+  <meta property="og:description" content="Modern web design for businesses in Sault Ste. Marie and Northern Ontario." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://blacksmithmedia.ca/web-design/" />
   <meta property="og:image" content="https://blacksmithmedia.ca/blacksmith-logo-full.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Web Design Sault Ste. Marie for Small Businesses | Blacksmith Media" />
-  <meta name="twitter:description" content="Modern web design in Sault Ste. Marie for contractors, trades, and small businesses that need more leads and a stronger online presence." />
+  <meta name="twitter:title" content="Web Design Sault Ste. Marie | Blacksmith Media" />
+  <meta name="twitter:description" content="Modern web design for businesses in Sault Ste. Marie and Northern Ontario." />
   <meta name="twitter:image" content="https://blacksmithmedia.ca/blacksmith-logo-full.png" />
 
   <!-- Fonts -->
@@ -48,25 +48,108 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Web Design Sault Ste. Marie",
+    "@id": "https://blacksmithmedia.ca/web-design/#service",
+    "name": "Web Design in Sault Ste. Marie",
+    "url": "https://blacksmithmedia.ca/web-design/",
+    "mainEntityOfPage": "https://blacksmithmedia.ca/web-design/",
+    "description": "Web design services for small businesses, contractors, trades, and service companies in Sault Ste. Marie and Northern Ontario.",
     "provider": {
-      "@type": "LocalBusiness",
-      "name": "Blacksmith Media",
-      "url": "https://blacksmithmedia.ca",
-      "email": "blacksmithmedia@protonmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Sault Ste. Marie",
-        "addressRegion": "ON",
-        "addressCountry": "CA"
-      }
+      "@id": "https://blacksmithmedia.ca/#business"
     },
     "areaServed": [
-      "Sault Ste. Marie",
-      "Algoma District",
-      "Northern Ontario"
+      {
+        "@type": "City",
+        "name": "Sault Ste. Marie"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Algoma District"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Northern Ontario"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Ontario"
+      }
     ],
-    "serviceType": "Web Design in Sault Ste. Marie"
+    "serviceType": [
+      "Web Design",
+      "Small Business Website Design",
+      "Contractor Website Design",
+      "Mobile-Friendly Website Design",
+      "SEO-Ready Website Structure"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Website Design Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Small Business Website Design"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Contractor Website Design"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mobile-Friendly Website Design"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO-Ready Website Structure"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://blacksmithmedia.ca/#business",
+    "name": "Blacksmith Media",
+    "url": "https://blacksmithmedia.ca/",
+    "logo": "https://blacksmithmedia.ca/blacksmith-logo.png",
+    "image": "https://blacksmithmedia.ca/blacksmith-logo-full.png",
+    "email": "blacksmithmedia@protonmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sault Ste. Marie",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Sault Ste. Marie"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Northern Ontario"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Ontario"
+      }
+    ],
+    "makesOffer": {
+      "@id": "https://blacksmithmedia.ca/web-design/#service"
+    }
   }
   </script>
   <script type="application/ld+json">
@@ -167,18 +250,21 @@
       <div class="wrap hero-inner">
         <div class="eyebrow">Web Design Sault Ste. Marie</div>
 
-        <h1>Web Design <span class="highlight">Sault Ste. Marie</span> for Small Businesses</h1>
+        <h1>
+          web design for
+          <span class="highlight">professional</span>
+          businesses
+        </h1>
 
         <p class="lead">
-          Blacksmith Media provides web design in Sault Ste. Marie for small businesses, contractors,
-          trades, and service companies that need a professional website that helps bring in real inquiries.
-          We design clean, modern websites built for trust, mobile performance, and clear next steps.
+          Blacksmith Media provides web design in Sault Ste. Marie and across Northern Ontario.
+          We build clean, modern websites for small businesses, contractors, trades, and service companies
+          that need a professional online presence that actually helps bring in work.
         </p>
 
         <p class="seo-block">
-          If you are looking for a web designer in Sault Ste. Marie, we build websites that make local businesses
+          If you are looking for a web designer in Sault Ste. Marie, we build websites that help local businesses
           look more established, explain services clearly, and make it easier for customers to get in touch.
-          We also support businesses across Northern Ontario that need a stronger online presence.
         </p>
 
         <div class="btn-row">
