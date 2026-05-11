@@ -267,10 +267,98 @@
     });
   }
 
+  function initMotionSystem() {
+    if (isReducedMotion()) return;
+
+    document.body.classList.add("motion-enabled");
+
+    var revealGroups = [
+      {
+        selector: ".breadcrumbs .wrap > *, .hero .eyebrow, .hero h1, .hero .lead, .hero .seo-block, .hero .btn-row, .hero .micro",
+        step: 80
+      },
+      {
+        selector: ".trust-strip-inner > span",
+        step: 65
+      },
+      {
+        selector: "main .section > .wrap > .section-kicker, main .section > .wrap > h2, main .section > .wrap > .section-copy, main .section > .wrap > .section-lead, main .section > .wrap > .contact-layout, main .section > .wrap > .contact-box, main .section > .wrap > .legal-copy, main .section > .wrap > .review-link-box",
+        step: 70
+      },
+      {
+        selector: ".cards > .card, .process > .step, .process-grid > *, .deliverables-grid > *, .faq-grid > *, .portfolio-list > *, .footer-inner > *, .contact-points > *, .portfolio-cta .btn-row > *",
+        step: 60
+      }
+    ];
+
+    var seen = new WeakSet();
+    var revealItems = [];
+
+    revealGroups.forEach(function (group) {
+      var nodes = document.querySelectorAll(group.selector);
+      nodes.forEach(function (node, index) {
+        if (seen.has(node)) return;
+        seen.add(node);
+        node.classList.add("reveal-on-scroll");
+        node.style.setProperty("--reveal-delay", index * group.step + "ms");
+        revealItems.push(node);
+      });
+    });
+
+    if (!revealItems.length) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.16,
+      rootMargin: "0px 0px -10% 0px"
+    });
+
+    revealItems.forEach(function (item) {
+      observer.observe(item);
+    });
+  }
+
+  function initInteractiveCards() {
+    if (isReducedMotion() || isMobile()) return;
+
+    var targets = document.querySelectorAll(".card, .process-card, .deliverable-item, .contact-box, .contact-form, .portfolio-item");
+
+    targets.forEach(function (target) {
+      target.addEventListener("mousemove", function (e) {
+        var rect = target.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var px = x / rect.width;
+        var py = y / rect.height;
+        var rotateY = (px - 0.5) * 7;
+        var rotateX = (0.5 - py) * 6;
+
+        target.style.setProperty("--card-rotate-x", rotateX.toFixed(2) + "deg");
+        target.style.setProperty("--card-rotate-y", rotateY.toFixed(2) + "deg");
+        target.style.setProperty("--card-glow-x", (px * 100).toFixed(2) + "%");
+        target.style.setProperty("--card-glow-y", (py * 100).toFixed(2) + "%");
+      });
+
+      target.addEventListener("mouseleave", function () {
+        target.style.setProperty("--card-rotate-x", "0deg");
+        target.style.setProperty("--card-rotate-y", "0deg");
+        target.style.setProperty("--card-glow-x", "50%");
+        target.style.setProperty("--card-glow-y", "50%");
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initPageTransitions();
     initHomeProjectModal();
     initContactForm();
+    initMotionSystem();
+    initInteractiveCards();
   });
 
   window.addEventListener("pageshow", function (e) {
