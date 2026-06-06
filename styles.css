@@ -4654,6 +4654,152 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   margin-top:24px;
 }
 
+.forge-archive-controls{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin:26px 0 22px;
+}
+
+.forge-archive-summary{
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  opacity:.82;
+}
+
+.forge-search{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:min(420px, 100%);
+  padding:12px 14px;
+  border:1px solid rgba(0,0,0,.14);
+  border-radius:10px;
+  background:rgba(255,255,255,.28);
+}
+
+.forge-search label{
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.forge-search input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:0;
+  background:transparent;
+  color:#1d1208;
+  font:inherit;
+}
+
+.forge-search input::placeholder{
+  color:rgba(29,18,8,.6);
+}
+
+.forge-list{
+  display:grid;
+  gap:14px;
+}
+
+.forge-list-item{
+  display:grid;
+  grid-template-columns:180px minmax(0, 1fr) auto;
+  gap:22px;
+  align-items:start;
+  padding:20px 22px;
+  border:1px solid rgba(0,0,0,.14);
+  border-radius:12px;
+  background:rgba(255,255,255,.2);
+}
+
+.forge-list-date{
+  font-family:'Roboto Mono', monospace;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(29,18,8,.72);
+}
+
+.forge-list-main{
+  display:grid;
+  gap:10px;
+}
+
+.forge-list-taxonomy{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.forge-list-category{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:6px 10px;
+  border:1px solid rgba(0,0,0,.16);
+  border-radius:999px;
+  background:rgba(255,255,255,.26);
+  font-family:'Roboto Mono', monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#1d1208;
+}
+
+.forge-list-item h3{
+  margin:0;
+  font-size:clamp(24px, 2vw, 30px);
+  line-height:1.08;
+}
+
+.forge-list-item p{
+  margin:0;
+}
+
+.forge-list-link{
+  align-self:center;
+  justify-self:end;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:44px;
+  padding:10px 14px;
+  border:1px solid rgba(0,0,0,.16);
+  border-radius:10px;
+  background:#0b0d10;
+  color:#ffc090 !important;
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.forge-list-link::after{
+  content:"->";
+}
+
+.forge-list-empty{
+  display:none;
+  padding:18px 0 0;
+  font-size:16px;
+  line-height:1.7;
+}
+
+.forge-list-empty.is-visible{
+  display:block;
+}
+
 .forge-post-card{
   display:flex;
   flex-direction:column;
@@ -4752,11 +4898,33 @@ body.forge-page main > section:nth-of-type(odd):not(.hero) .article-note{
   .article-intro-grid{
     grid-template-columns:1fr;
   }
+
+  .forge-archive-controls{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .forge-search{
+    min-width:0;
+  }
+
+  .forge-list-item{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .forge-list-link{
+    justify-self:start;
+  }
 }
 
 @media (max-width: 640px){
   .forge-post-grid{
     grid-template-columns:1fr;
+  }
+
+  .forge-list-item{
+    padding:18px;
   }
 }
 

@@ -126,62 +126,74 @@
         </p>
         <div class="btn-row">
           <a class="btn primary" href="/contact/">Start a Project</a>
-          <a class="btn secondary" href="#latest-posts">Read the Latest</a>
+          <a class="btn secondary" href="#latest-posts">Browse Posts</a>
         </div>
       </div>
     </section>
 
     <section class="section" id="latest-posts">
       <div class="wrap">
-        <div class="section-kicker">Latest Notes</div>
-        <h2>Practical articles built around trust, structure, and follow-through.</h2>
+        <div class="section-kicker">Archive</div>
+        <h2>Posted notes from The Forge, organized by date and category.</h2>
         <p class="section-lead">
-          We write about the parts of digital work that matter once the excitement wears off: clear messaging, usable structure, stronger visibility, and a finished presentation that feels dependable.
+          A cleaner archive of practical writing on branding, website design, and SEO support. Search by topic, then open the post that fits the work you’re thinking through.
         </p>
 
-        <div class="forge-post-grid">
-          <article class="card forge-post-card">
-            <div class="section-kicker">Brand Strategy</div>
-            <h3>Brand systems that build trust.</h3>
-            <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
-            <a class="forge-post-link" href="/forge/brand-systems-that-build-trust/">Read article</a>
-          </article>
-
-          <article class="card forge-post-card">
-            <div class="section-kicker">Website Design</div>
-            <h3>Websites that earn more inquiries.</h3>
-            <p>What small businesses and service companies need from their site if it’s going to support real conversations instead of just sitting online.</p>
-            <a class="forge-post-link" href="/forge/websites-that-earn-inquiries/">Read article</a>
-          </article>
-
-          <article class="card forge-post-card">
-            <div class="section-kicker">SEO Support</div>
-            <h3>Local SEO after launch.</h3>
-            <p>What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.</p>
-            <a class="forge-post-link" href="/forge/local-seo-after-launch/">Read article</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-kicker">What You'll Find</div>
-        <h2>Not trend-chasing. Just useful thinking that supports stronger work.</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Clearer Scope</h3>
-            <p>Ways to define the work before design starts so the project has cleaner decisions and fewer loose ends.</p>
-          </div>
-          <div class="card">
-            <h3>Better Presentation</h3>
-            <p>Practical guidance on messaging, structure, and visual systems that help a business look more credible quickly.</p>
-          </div>
-          <div class="card">
-            <h3>Post-Launch Follow-Through</h3>
-            <p>What actually matters after launch if you want the site to keep supporting visibility, usability, and trust.</p>
+        <div class="forge-archive-controls">
+          <div class="forge-archive-summary">3 posts published</div>
+          <div class="forge-search">
+            <label for="forge-search-input">Search</label>
+            <input
+              id="forge-search-input"
+              type="search"
+              placeholder="Search by topic, title, or category"
+              aria-label="Search The Forge posts"
+            />
           </div>
         </div>
+
+        <div class="forge-list" id="forge-post-list">
+          <article class="forge-list-item" data-search="local seo after launch seo support visibility indexing google business profile">
+            <div class="forge-list-date">June 6, 2026</div>
+            <div class="forge-list-main">
+              <div class="forge-list-taxonomy">
+                <span class="forge-list-category">SEO Support</span>
+                <span class="forge-list-category">Post-Launch</span>
+              </div>
+              <h3>Local SEO after launch.</h3>
+              <p>What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.</p>
+            </div>
+            <a class="forge-list-link" href="/forge/local-seo-after-launch/">Read post</a>
+          </article>
+
+          <article class="forge-list-item" data-search="websites that earn more inquiries website design small business service companies messaging calls to action">
+            <div class="forge-list-date">June 4, 2026</div>
+            <div class="forge-list-main">
+              <div class="forge-list-taxonomy">
+                <span class="forge-list-category">Website Design</span>
+                <span class="forge-list-category">Conversion</span>
+              </div>
+              <h3>Websites that earn more inquiries.</h3>
+              <p>What small businesses and service companies need from their site if it’s going to support real conversations instead of just sitting online.</p>
+            </div>
+            <a class="forge-list-link" href="/forge/websites-that-earn-inquiries/">Read post</a>
+          </article>
+
+          <article class="forge-list-item" data-search="brand systems that build trust brand strategy messaging consistency visual identity credibility">
+            <div class="forge-list-date">June 2, 2026</div>
+            <div class="forge-list-main">
+              <div class="forge-list-taxonomy">
+                <span class="forge-list-category">Brand Strategy</span>
+                <span class="forge-list-category">Trust</span>
+              </div>
+              <h3>Brand systems that build trust.</h3>
+              <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
+            </div>
+            <a class="forge-list-link" href="/forge/brand-systems-that-build-trust/">Read post</a>
+          </article>
+        </div>
+
+        <p class="forge-list-empty" id="forge-empty-state">No posts match that search yet. Try a broader keyword like brand, website, or SEO.</p>
       </div>
     </section>
 
@@ -220,5 +232,32 @@
   </footer>
 
   <script src="/script.js?v=20260606f"></script>
+  <script>
+    (function () {
+      const searchInput = document.getElementById("forge-search-input");
+      const postList = document.getElementById("forge-post-list");
+      const emptyState = document.getElementById("forge-empty-state");
+
+      if (!searchInput || !postList || !emptyState) return;
+
+      const posts = Array.from(postList.querySelectorAll(".forge-list-item"));
+
+      function filterPosts() {
+        const query = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        posts.forEach((post) => {
+          const haystack = (post.dataset.search || post.textContent || "").toLowerCase();
+          const matches = !query || haystack.includes(query);
+          post.style.display = matches ? "" : "none";
+          if (matches) visibleCount += 1;
+        });
+
+        emptyState.classList.toggle("is-visible", visibleCount === 0);
+      }
+
+      searchInput.addEventListener("input", filterPosts);
+    })();
+  </script>
 </body>
 </html>
