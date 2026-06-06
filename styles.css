@@ -985,6 +985,20 @@ h2{
   flex-wrap:wrap;
 }
 
+.footer-meta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.footer-legal{
+  color:rgba(179,188,199,.78);
+  font-size:11px;
+  letter-spacing:.04em;
+  text-transform:none;
+  max-width:560px;
+}
+
 .footer-links{
   display:flex;
   gap:14px;
