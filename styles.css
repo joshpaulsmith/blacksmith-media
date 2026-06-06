@@ -4549,12 +4549,8 @@ body.portfolio-page .btn.secondary{
 body.portfolio-page .portfolio-section,
 body.portfolio-page .portfolio-cta{
   background:
-    radial-gradient(circle at 8% 14%, rgba(244, 207, 84, 0.42) 0, rgba(244, 207, 84, 0.16) 18%, rgba(244, 207, 84, 0) 38%),
-    radial-gradient(circle at 24% 78%, rgba(173, 110, 255, 0.38) 0, rgba(173, 110, 255, 0.16) 18%, rgba(173, 110, 255, 0) 40%),
-    radial-gradient(circle at 46% 18%, rgba(99, 239, 194, 0.36) 0, rgba(99, 239, 194, 0.14) 18%, rgba(99, 239, 194, 0) 40%),
-    radial-gradient(circle at 70% 72%, rgba(151, 182, 255, 0.4) 0, rgba(151, 182, 255, 0.16) 20%, rgba(151, 182, 255, 0) 42%),
-    radial-gradient(circle at 92% 24%, rgba(207, 95, 102, 0.44) 0, rgba(207, 95, 102, 0.22) 18%, rgba(207, 95, 102, 0) 38%),
-    linear-gradient(135deg, #cc7d83 0%, #b8656d 100%) !important;
+    linear-gradient(180deg, rgba(14, 10, 18, 0.22), rgba(44, 17, 21, 0.16)),
+    url("./assets/portfolio/brand-spectrum-bg.jpg") center/cover no-repeat !important;
   color:#22090b !important;
   border-bottom-color:rgba(0,0,0,.12) !important;
 }
