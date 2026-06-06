@@ -15,6 +15,7 @@
   --web:#00ff9c;
   --seo:#7aa2ff;
   --portfolio:#ff4d4d;
+  --forge:#ff8a3d;
   --contact:#b8b8b8;
 
   --wipe-ease:cubic-bezier(.77,0,.18,1);
@@ -30,6 +31,7 @@ body.brand-page{ --accent:var(--brand); }
 body.web-page{ --accent:var(--web); }
 body.seo-page{ --accent:var(--seo); }
 body.portfolio-page{ --accent:var(--portfolio); }
+body.forge-page{ --accent:var(--forge); }
 body.contact-page,
 body.privacy-page{ --accent:var(--contact); }
 body.thank-you-page{ --accent:var(--contact); }
@@ -105,6 +107,10 @@ body.seo-page{
 
 body.portfolio-page{
   background:linear-gradient(180deg, #0b0b0b 0%, #3b1116 22%, #6f1d25 55%, #3b1116 100%) !important;
+}
+
+body.forge-page{
+  background:linear-gradient(180deg, #0b0b0b 0%, #362113 22%, #5c3520 55%, #362113 100%) !important;
 }
 
 body.contact-page,
@@ -278,7 +284,8 @@ body.seo-page .highlight{
 .nav-links a:nth-child(3){ color:var(--web); }
 .nav-links a:nth-child(4){ color:var(--seo); }
 .nav-links a:nth-child(5){ color:var(--portfolio); }
-.nav-links a:nth-child(6){ color:var(--contact); }
+.nav-links a:nth-child(6){ color:var(--forge); }
+.nav-links a:nth-child(7){ color:var(--contact); }
 
 .nav-links a::before{
   content:"{";
@@ -333,6 +340,9 @@ body.seo-page .highlight{
   text-shadow:0 0 6px var(--portfolio), 0 0 12px var(--portfolio);
 }
 .nav-links a:nth-child(6):hover{
+  text-shadow:0 0 6px var(--forge), 0 0 12px var(--forge);
+}
+.nav-links a:nth-child(7):hover{
   text-shadow:0 0 6px var(--contact), 0 0 12px var(--contact);
 }
 
@@ -345,7 +355,8 @@ body.brand-page .nav-links a:nth-child(2),
 body.web-page .nav-links a:nth-child(3),
 body.seo-page .nav-links a:nth-child(4),
 body.portfolio-page .nav-links a:nth-child(5),
-body.contact-page .nav-links a:nth-child(6){
+body.forge-page .nav-links a:nth-child(6),
+body.contact-page .nav-links a:nth-child(7){
   background:rgba(255,255,255,.05);
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
   text-shadow:0 0 8px currentColor, 0 0 18px currentColor;
@@ -2004,7 +2015,8 @@ body.portfolio-page{
 .portfolio-page .nav-links a:nth-child(2),
 .portfolio-page .nav-links a:nth-child(3),
 .portfolio-page .nav-links a:nth-child(4),
-.portfolio-page .nav-links a:nth-child(6){
+.portfolio-page .nav-links a:nth-child(6),
+.portfolio-page .nav-links a:nth-child(7){
   background:none;
   box-shadow:none;
   text-shadow:none;
@@ -3605,6 +3617,7 @@ body.contact-page .project-submit{
   --web:#00ff9c;
   --seo:#7aa2ff;
   --portfolio:#ff4d4d;
+  --forge:#ff8a3d;
   --contact:#b8b8b8;
 }
 
@@ -3644,7 +3657,8 @@ body.contact-page .project-submit{
     rgba(155,81,224,.72),
     rgba(0,255,156,.72),
     rgba(122,162,255,.72),
-    rgba(255,77,77,.72)
+    rgba(255,77,77,.72),
+    rgba(255,138,61,.72)
   );
   opacity:.55;
 }
@@ -3673,7 +3687,8 @@ body.contact-page .project-submit{
 .nav-links a:nth-child(3){ color:var(--web) !important; }
 .nav-links a:nth-child(4){ color:var(--seo) !important; }
 .nav-links a:nth-child(5){ color:var(--portfolio) !important; }
-.nav-links a:nth-child(6){ color:#d4d8dd !important; }
+.nav-links a:nth-child(6){ color:var(--forge) !important; }
+.nav-links a:nth-child(7){ color:#d4d8dd !important; }
 
 .nav-links a::before,
 .nav-links a::after{
@@ -3691,7 +3706,8 @@ body.brand-page .nav-links a:nth-child(2),
 body.web-page .nav-links a:nth-child(3),
 body.seo-page .nav-links a:nth-child(4),
 body.portfolio-page .nav-links a:nth-child(5),
-body.contact-page .nav-links a:nth-child(6){
+body.forge-page .nav-links a:nth-child(6),
+body.contact-page .nav-links a:nth-child(7){
   background:rgba(255,255,255,.03);
   border:1px solid transparent;
   border-color:rgba(255,255,255,.08);
@@ -4444,6 +4460,14 @@ body.portfolio-page{
   --page-hero-end:#6a1c23;
 }
 
+body.forge-page{
+  --page-solid:#ffc090;
+  --page-solid-text:#1d1208;
+  --page-hero-start:#0b0b0b;
+  --page-hero-mid:#2f1d11;
+  --page-hero-end:#5c3520;
+}
+
 body.contact-page,
 body.privacy-page{
   --page-solid:#cfd4db;
@@ -4453,112 +4477,112 @@ body.privacy-page{
   --page-hero-end:#343942;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page){
   background:#0b0d10 !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) .breadcrumbs,
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) .hero,
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) .breadcrumbs,
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) .hero,
 body.portfolio-page .breadcrumbs,
 body.portfolio-page .portfolio-hero{
   background:#0b0b0b !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) .hero,
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) .hero,
 body.portfolio-page .portfolio-hero{
   border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero){
   background:var(--page-solid) !important;
   color:var(--page-solid-text) !important;
   border-bottom-color:rgba(0,0,0,.12) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero){
   background:#0b0d10 !important;
   color:var(--text) !important;
   border-bottom-color:rgba(255,255,255,.06) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(.section-kicker, .section-copy, .section-lead, .portfolio-lead, .portfolio-intro-copy, .portfolio-summary, .portfolio-feature-note p, .contact-email, .contact-points, .contact-points strong, .legal-copy, .faq-item p, .card p, .deliverable-item p, .process-card p, .overview-node p, .step p, .studio-point p, .review-link-box p, .portfolio-meta, .portfolio-link, .featured-work-link){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(.section-kicker, .section-copy, .section-lead, .portfolio-lead, .portfolio-intro-copy, .portfolio-summary, .portfolio-feature-note p, .contact-email, .contact-points, .contact-points strong, .legal-copy, .faq-item p, .card p, .deliverable-item p, .process-card p, .overview-node p, .step p, .studio-point p, .review-link-box p, .portfolio-meta, .portfolio-link, .featured-work-link){
   color:rgba(18,20,24,.82) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(h2, h3, strong, .step-no, .overview-no, .studio-panel-intro, .deliverable-item span, .why-item span, .who-item span, .card h3, .faq-item h3, .process-card h3, .overview-node h3, .featured-work-card h3, .studio-point span, .featured-work-tag, .portfolio-name, .portfolio-meta, .contact-field label){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(h2, h3, strong, .step-no, .overview-no, .studio-panel-intro, .deliverable-item span, .why-item span, .who-item span, .card h3, .faq-item h3, .process-card h3, .overview-node h3, .featured-work-card h3, .studio-point span, .featured-work-tag, .portfolio-name, .portfolio-meta, .contact-field label){
   color:var(--page-solid-text) !important;
   font-weight:700;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) a{
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) a{
   color:var(--page-solid-text) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(.card, .deliverable-item, .featured-work-card, .faq-item, .why-item, .who-item, .contact-box, .contact-form, .overview-node, .process-card, .step, .studio-split-panel, .review-link-box, .portfolio-item, .portfolio-feature-note, .portfolio-contact-box){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(.card, .deliverable-item, .featured-work-card, .faq-item, .why-item, .who-item, .contact-box, .contact-form, .overview-node, .process-card, .step, .studio-split-panel, .review-link-box, .portfolio-item, .portfolio-feature-note, .portfolio-contact-box){
   background:rgba(255,255,255,.16) !important;
   border-color:rgba(0,0,0,.14) !important;
   box-shadow:none !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(.btn.primary, .project-submit){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(.btn.primary, .project-submit){
   background:#0b0d10 !important;
   border-color:#0b0d10 !important;
   color:var(--page-solid) !important;
   box-shadow:none !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .btn.secondary{
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .btn.secondary{
   background:rgba(11,13,16,.08) !important;
   border-color:rgba(11,13,16,.18) !important;
   color:var(--page-solid-text) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(input, select, textarea){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(input, select, textarea){
   background:rgba(255,255,255,.48) !important;
   border-color:rgba(0,0,0,.16) !important;
   color:var(--page-solid-text) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(input::placeholder, textarea::placeholder){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(input::placeholder, textarea::placeholder){
   color:rgba(18,20,24,.55) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .map-wrap{
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .map-wrap{
   border-color:rgba(0,0,0,.14) !important;
   box-shadow:none !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .map-wrap iframe{
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .map-wrap iframe{
   filter:grayscale(100%) contrast(92%) brightness(92%);
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) :is(.section-kicker, .section-copy, .section-lead, .portfolio-lead, .portfolio-intro-copy, .portfolio-summary, .portfolio-feature-note p, .contact-email, .contact-points, .contact-points strong, .legal-copy, .faq-item p, .card p, .deliverable-item p, .process-card p, .overview-node p, .step p, .studio-point p, .review-link-box p, .portfolio-link){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) :is(.section-kicker, .section-copy, .section-lead, .portfolio-lead, .portfolio-intro-copy, .portfolio-summary, .portfolio-feature-note p, .contact-email, .contact-points, .contact-points strong, .legal-copy, .faq-item p, .card p, .deliverable-item p, .process-card p, .overview-node p, .step p, .studio-point p, .review-link-box p, .portfolio-link){
   color:var(--muted) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) :is(h2, h3, strong, .step-no, .overview-no, .studio-panel-intro, .deliverable-item span, .why-item span, .who-item span, .card h3, .faq-item h3, .process-card h3, .overview-node h3, .featured-work-card h3, .studio-point span, .portfolio-name, .contact-field label){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) :is(h2, h3, strong, .step-no, .overview-no, .studio-panel-intro, .deliverable-item span, .why-item span, .who-item span, .card h3, .faq-item h3, .process-card h3, .overview-node h3, .featured-work-card h3, .studio-point span, .portfolio-name, .contact-field label){
   color:var(--text) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) :is(.card, .deliverable-item, .featured-work-card, .faq-item, .why-item, .who-item, .contact-box, .contact-form, .overview-node, .process-card, .step, .studio-split-panel, .review-link-box, .portfolio-item, .portfolio-feature-note, .portfolio-contact-box){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) :is(.card, .deliverable-item, .featured-work-card, .faq-item, .why-item, .who-item, .contact-box, .contact-form, .overview-node, .process-card, .step, .studio-split-panel, .review-link-box, .portfolio-item, .portfolio-feature-note, .portfolio-contact-box){
   background:rgba(255,255,255,.03) !important;
   border-color:rgba(255,255,255,.08) !important;
   box-shadow:none !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) :is(.btn.primary, .project-submit){
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) :is(.btn.primary, .project-submit){
   background:var(--accent) !important;
   border-color:var(--accent) !important;
   color:#0b0d10 !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .btn.secondary{
+:is(body.brand-page, body.web-page, body.seo-page, body.forge-page, body.contact-page, body.privacy-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .btn.secondary{
   background:rgba(255,255,255,.02) !important;
   border-color:rgba(255,255,255,.14) !important;
   color:var(--text) !important;
 }
 
-:is(body.brand-page, body.web-page, body.seo-page, body.portfolio-page, body.contact-page, body.privacy-page) .footer{
+:is(body.brand-page, body.web-page, body.seo-page, body.portfolio-page, body.forge-page, body.contact-page, body.privacy-page) .footer{
   background:#0b0d10 !important;
   color:var(--muted) !important;
   border-top:1px solid rgba(255,255,255,.08);
@@ -4621,6 +4645,119 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar:hover{
   background:#eef6ff !important;
   border-color:#1d4f91 !important;
+}
+
+.forge-post-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:20px;
+  margin-top:24px;
+}
+
+.forge-post-card{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  min-height:100%;
+}
+
+.forge-post-card .section-kicker{
+  margin-bottom:0;
+}
+
+.forge-post-card h3{
+  margin:0;
+  font-size:clamp(24px, 2.2vw, 30px);
+  line-height:1.08;
+}
+
+.forge-post-card p{
+  margin:0;
+}
+
+.forge-post-link,
+.forge-back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:auto;
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.forge-post-link::after,
+.forge-back-link::after{
+  content:"->";
+}
+
+.article-intro-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1.15fr) minmax(260px, .85fr);
+  gap:24px;
+  align-items:start;
+  margin-top:24px;
+}
+
+.article-rail{
+  display:grid;
+  gap:14px;
+}
+
+.article-body{
+  display:grid;
+  gap:24px;
+}
+
+.article-body p,
+.article-body li{
+  font-size:17px;
+  line-height:1.8;
+}
+
+.article-body h2{
+  margin:0 0 10px;
+}
+
+.article-body ul{
+  margin:0;
+  padding-left:20px;
+  display:grid;
+  gap:10px;
+}
+
+.article-note{
+  padding:18px 20px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+}
+
+body.forge-page main > section:nth-of-type(even):not(.hero) .article-note{
+  background:rgba(255,255,255,.16) !important;
+  border-color:rgba(0,0,0,.14) !important;
+}
+
+body.forge-page main > section:nth-of-type(odd):not(.hero) .article-note{
+  background:rgba(255,255,255,.03) !important;
+  border-color:rgba(255,255,255,.08) !important;
+}
+
+@media (max-width: 980px){
+  .forge-post-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .article-intro-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 640px){
+  .forge-post-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-meta,
