@@ -4609,14 +4609,14 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins{
-  background:#20452b !important;
-  border-color:#17331f !important;
+  background:#2d5a39 !important;
+  border-color:#21432b !important;
   color:#ddd0b1 !important;
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins:hover{
-  background:#295637 !important;
-  border-color:#17331f !important;
+  background:#356845 !important;
+  border-color:#21432b !important;
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins .portfolio-meta,
