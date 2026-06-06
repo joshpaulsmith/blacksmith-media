@@ -4766,8 +4766,8 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 
 .forge-editorial-shell{
   display:grid;
-  grid-template-columns:220px minmax(0, 1fr);
-  gap:44px;
+  grid-template-columns:190px minmax(0, 1fr);
+  gap:56px;
   align-items:start;
 }
 
@@ -4819,13 +4819,13 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 
 .forge-editorial-main{
   display:grid;
-  gap:28px;
+  gap:36px;
 }
 
 .forge-editorial-header{
   display:grid;
-  grid-template-columns:minmax(0, 1fr) minmax(320px, .9fr);
-  gap:28px;
+  grid-template-columns:minmax(0, 1.2fr) minmax(300px, .8fr);
+  gap:36px;
   align-items:end;
 }
 
@@ -4846,7 +4846,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 .forge-featured-block{
   display:grid;
   gap:18px;
-  margin:34px 0 28px;
+  margin:12px 0 12px;
 }
 
 .forge-featured-header{
@@ -4903,8 +4903,8 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 .forge-featured-post{
   display:grid;
   grid-template-columns:minmax(240px, 320px) minmax(0, 1fr) auto;
-  gap:20px;
-  align-items:end;
+  gap:24px;
+  align-items:center;
   padding:28px;
   border:1px solid rgba(0,0,0,.16);
   border-radius:18px;
@@ -4929,6 +4929,17 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   min-height:220px;
   border:1px solid rgba(0,0,0,.08);
   background:#f4f4f4;
+  overflow:hidden;
+}
+
+.forge-featured-media img,
+.forge-archive-card-media img,
+.forge-popular-thumb img,
+.forge-post-cover img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .forge-featured-post h3{
@@ -4961,21 +4972,15 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 }
 
 .forge-media-seo{
-  background:
-    radial-gradient(circle at 22% 28%, rgba(76,123,255,.35), transparent 42%),
-    linear-gradient(135deg, #eef3ff, #ffffff);
+  background:#eef3ff;
 }
 
 .forge-media-web{
-  background:
-    linear-gradient(135deg, rgba(0,220,161,.18), rgba(0,220,161,0) 55%),
-    linear-gradient(135deg, #f4fffb, #ffffff);
+  background:#f4fffb;
 }
 
 .forge-media-brand{
-  background:
-    linear-gradient(135deg, rgba(142,76,224,.18), rgba(142,76,224,0) 55%),
-    linear-gradient(135deg, #faf5ff, #ffffff);
+  background:#faf5ff;
 }
 
 .forge-start-grid{
@@ -5104,7 +5109,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   align-items:end;
   justify-content:space-between;
   gap:18px;
-  margin:30px 0 22px;
+  margin:18px 0 10px;
 }
 
 .forge-archive-summary{
@@ -5192,7 +5197,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 .forge-editorial-grid{
   display:grid;
   grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:20px;
+  gap:24px;
 }
 
 .forge-list-item{
@@ -5218,8 +5223,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   position:relative;
   overflow:hidden;
   display:grid;
-  gap:18px;
-  padding:18px;
+  gap:0;
   border:1px solid rgba(0,0,0,.12);
   border-radius:18px;
   background:#fbfbfb;
@@ -5235,6 +5239,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 .forge-archive-card-main{
   display:grid;
   gap:12px;
+  padding:20px 22px 22px;
 }
 
 .forge-list-item::before{
@@ -5374,26 +5379,29 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 
 .forge-popular-strip{
   display:grid;
-  gap:16px;
+  gap:18px;
   padding-top:8px;
 }
 
 .forge-popular-list{
   display:grid;
-  gap:14px;
+  gap:16px;
 }
 
 .forge-popular-item{
   display:grid;
-  gap:6px;
-  padding:18px 0;
+  grid-template-columns:120px minmax(0, 1fr);
+  gap:18px;
+  align-items:center;
+  padding:0;
   border-top:1px solid rgba(0,0,0,.08);
+  padding-top:16px;
 }
 
 .forge-popular-item strong{
   color:#121418;
-  font-size:28px;
-  line-height:1.08;
+  font-size:24px;
+  line-height:1.12;
 }
 
 .forge-popular-taxonomy{
@@ -5403,6 +5411,19 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   letter-spacing:.08em;
   text-transform:uppercase;
   color:rgba(18,20,24,.58);
+}
+
+.forge-popular-thumb{
+  aspect-ratio:16 / 10;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.08);
+  background:#f4f4f4;
+}
+
+.forge-popular-copy{
+  display:grid;
+  gap:8px;
 }
 
 .forge-list-empty.is-visible{
@@ -5836,6 +5857,10 @@ body.forge-post-page main > section.forge-article-section + section.forge-articl
     grid-template-columns:1fr;
   }
 
+  .forge-popular-item{
+    grid-template-columns:96px minmax(0, 1fr);
+  }
+
   .forge-related-grid{
     grid-template-columns:1fr;
   }
@@ -5865,6 +5890,19 @@ body.forge-post-page main > section.forge-article-section + section.forge-articl
 
   .forge-editorial-header h2{
     font-size:clamp(38px, 14vw, 56px);
+  }
+
+  .forge-featured-post{
+    padding:20px;
+  }
+
+  .forge-featured-media,
+  .forge-archive-card-media{
+    min-height:180px;
+  }
+
+  .forge-popular-item{
+    grid-template-columns:1fr;
   }
 
   .forge-post-meta-row{
