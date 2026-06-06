@@ -3865,6 +3865,68 @@ body.home-page .portfolio-feature-copy{
   top:110px;
 }
 
+body.home-page main > .section:nth-of-type(even){
+  background:#e2c75b;
+  color:#11110d;
+  border-bottom-color:rgba(0,0,0,.12);
+}
+
+body.home-page main > .section:nth-of-type(even) .section-kicker,
+body.home-page main > .section:nth-of-type(even) .section-copy,
+body.home-page main > .section:nth-of-type(even) .section-lead,
+body.home-page main > .section:nth-of-type(even) p,
+body.home-page main > .section:nth-of-type(even) .portfolio-lead,
+body.home-page main > .section:nth-of-type(even) .featured-work-tag,
+body.home-page main > .section:nth-of-type(even) .featured-work-link,
+body.home-page main > .section:nth-of-type(even) .contact-email,
+body.home-page main > .section:nth-of-type(even) .why-item,
+body.home-page main > .section:nth-of-type(even) .faq-item p{
+  color:#2f2917 !important;
+}
+
+body.home-page main > .section:nth-of-type(even) h2,
+body.home-page main > .section:nth-of-type(even) h3,
+body.home-page main > .section:nth-of-type(even) strong,
+body.home-page main > .section:nth-of-type(even) .step-no,
+body.home-page main > .section:nth-of-type(even) .overview-no{
+  color:#11110d !important;
+}
+
+body.home-page main > .section:nth-of-type(even) a{
+  color:#11110d;
+}
+
+body.home-page main > .section:nth-of-type(even) .card,
+body.home-page main > .section:nth-of-type(even) .deliverable-item,
+body.home-page main > .section:nth-of-type(even) .featured-work-card,
+body.home-page main > .section:nth-of-type(even) .faq-item,
+body.home-page main > .section:nth-of-type(even) .why-item,
+body.home-page main > .section:nth-of-type(even) .contact-box{
+  background:rgba(255,255,255,.18) !important;
+  border-color:rgba(0,0,0,.12) !important;
+}
+
+body.home-page main > .section:nth-of-type(even) .btn.primary{
+  background:#11110d !important;
+  border-color:#11110d !important;
+  color:#f2df8f !important;
+  box-shadow:none !important;
+}
+
+body.home-page main > .section:nth-of-type(even) .btn.secondary{
+  background:transparent !important;
+  border-color:rgba(0,0,0,.18) !important;
+  color:#11110d !important;
+}
+
+body.home-page main > .section:nth-of-type(even) .map-wrap{
+  border-color:rgba(0,0,0,.12) !important;
+}
+
+body.home-page main > .section:nth-of-type(even) .map-wrap iframe{
+  filter:grayscale(100%) contrast(92%) brightness(92%);
+}
+
 @media (max-width:960px){
   body.home-page .hero-inner{
     max-width:none;
