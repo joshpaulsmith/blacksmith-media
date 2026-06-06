@@ -361,7 +361,7 @@
         step: 40
       },
       {
-        selector: ".cards > .card, .process > .step, .process-grid > *, .deliverables-grid > *, .faq-grid > *, .portfolio-list > *, .footer-inner > *, .contact-points > *, .portfolio-cta .btn-row > *",
+        selector: ".cards > .card, .process > .step, .process-grid > *, .deliverables-grid > *, .faq-grid > *, .portfolio-list > *, .contact-points > *, .portfolio-cta .btn-row > *",
         step: 34
       }
     ];

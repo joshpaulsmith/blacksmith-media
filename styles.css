@@ -3869,6 +3869,10 @@ body.home-page main{
   background:#f2c94c !important;
 }
 
+body.home-page .hero{
+  background:#0b0b0b !important;
+}
+
 body.home-page main > .section{
   background:#f2c94c !important;
   color:#11110d;
@@ -3884,7 +3888,10 @@ body.home-page main > .section .featured-work-tag,
 body.home-page main > .section .featured-work-link,
 body.home-page main > .section .contact-email,
 body.home-page main > .section .why-item,
-body.home-page main > .section .faq-item p{
+body.home-page main > .section .faq-item p,
+body.home-page main > .section .studio-point p,
+body.home-page main > .section .contact-points,
+body.home-page main > .section .legal-copy{
   color:#2f2917 !important;
 }
 
@@ -3892,12 +3899,14 @@ body.home-page main > .section h2,
 body.home-page main > .section h3,
 body.home-page main > .section strong,
 body.home-page main > .section .step-no,
-body.home-page main > .section .overview-no{
+body.home-page main > .section .overview-no,
+body.home-page main > .section .studio-panel-intro{
   color:#11110d !important;
+  font-weight:700;
 }
 
 body.home-page main > .section a{
-  color:#11110d;
+  color:#11110d !important;
 }
 
 body.home-page main > .section .card,
@@ -3921,8 +3930,8 @@ body.home-page main > .section .btn.primary{
 }
 
 body.home-page main > .section .btn.secondary{
-  background:transparent !important;
-  border-color:rgba(0,0,0,.18) !important;
+  background:rgba(17,17,13,.1) !important;
+  border-color:rgba(17,17,13,.22) !important;
   color:#11110d !important;
 }
 
