@@ -4546,8 +4546,8 @@ body.portfolio-page .btn.secondary{
   color:#22090b !important;
 }
 
-body.portfolio-page .portfolio-section,
-body.portfolio-page .portfolio-cta{
+body.portfolio-page main > section.portfolio-section,
+body.portfolio-page main > section.portfolio-cta{
   background:
     linear-gradient(180deg, rgba(14, 10, 18, 0.22), rgba(44, 17, 21, 0.16)),
     url("./assets/portfolio/brand-spectrum-bg.jpg") center/cover no-repeat !important;
@@ -4555,13 +4555,13 @@ body.portfolio-page .portfolio-cta{
   border-bottom-color:rgba(0,0,0,.12) !important;
 }
 
-body.portfolio-page .portfolio-section :is(.section-kicker, .portfolio-intro-copy, .portfolio-summary, .portfolio-link, .portfolio-meta, .portfolio-feature-note-inline, .portfolio-cta p),
-body.portfolio-page .portfolio-cta :is(.section-kicker, p){
+body.portfolio-page main > section.portfolio-section :is(.section-kicker, .portfolio-intro-copy, .portfolio-summary, .portfolio-link, .portfolio-meta, .portfolio-feature-note-inline, .portfolio-cta p),
+body.portfolio-page main > section.portfolio-cta :is(.section-kicker, p){
   color:rgba(34,9,11,.82) !important;
 }
 
-body.portfolio-page .portfolio-section :is(h2, h3, strong, .portfolio-name),
-body.portfolio-page .portfolio-cta :is(h2, h3, strong){
+body.portfolio-page main > section.portfolio-section :is(h2, h3, strong, .portfolio-name),
+body.portfolio-page main > section.portfolio-cta :is(h2, h3, strong){
   color:#22090b !important;
 }
 
