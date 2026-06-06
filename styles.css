@@ -3865,12 +3865,7 @@ body.home-page .portfolio-feature-copy{
   top:110px;
 }
 
-body.home-page main{
-  background:#e6cf76;
-}
-
-body.home-page main > .section,
-body.home-page .footer{
+body.home-page main > .section{
   background:#e6cf76;
   color:#11110d;
   border-bottom-color:rgba(0,0,0,.12);
@@ -3885,10 +3880,7 @@ body.home-page main > .section .featured-work-tag,
 body.home-page main > .section .featured-work-link,
 body.home-page main > .section .contact-email,
 body.home-page main > .section .why-item,
-body.home-page main > .section .faq-item p,
-body.home-page .footer,
-body.home-page .footer-links a,
-body.home-page .footer-email{
+body.home-page main > .section .faq-item p{
   color:#2f2917 !important;
 }
 
@@ -3896,13 +3888,11 @@ body.home-page main > .section h2,
 body.home-page main > .section h3,
 body.home-page main > .section strong,
 body.home-page main > .section .step-no,
-body.home-page main > .section .overview-no,
-body.home-page .footer strong{
+body.home-page main > .section .overview-no{
   color:#11110d !important;
 }
 
-body.home-page main > .section a,
-body.home-page .footer a{
+body.home-page main > .section a{
   color:#11110d;
 }
 
@@ -3919,16 +3909,14 @@ body.home-page main > .section .studio-split-panel{
   border-color:rgba(0,0,0,.12) !important;
 }
 
-body.home-page main > .section .btn.primary,
-body.home-page .footer .btn.primary{
+body.home-page main > .section .btn.primary{
   background:#11110d !important;
   border-color:#11110d !important;
   color:#f2df8f !important;
   box-shadow:none !important;
 }
 
-body.home-page main > .section .btn.secondary,
-body.home-page .footer .btn.secondary{
+body.home-page main > .section .btn.secondary{
   background:transparent !important;
   border-color:rgba(0,0,0,.18) !important;
   color:#11110d !important;
@@ -3943,13 +3931,24 @@ body.home-page main > .section .map-wrap iframe{
 }
 
 body.home-page .footer{
-  border-top:1px solid rgba(0,0,0,.12);
+  background:#0b0b0b;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.08);
 }
 
 body.home-page .footer-links a:hover,
 body.home-page .footer-email:hover{
-  color:#11110d !important;
-  opacity:.8;
+  color:var(--home) !important;
+  opacity:1;
+}
+
+body.home-page .footer-links a,
+body.home-page .footer-email{
+  color:var(--muted) !important;
+}
+
+body.home-page .footer strong{
+  color:var(--text) !important;
 }
 
 @media (max-width:960px){
