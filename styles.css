@@ -4279,7 +4279,7 @@ body.seo-page{
 }
 
 body.portfolio-page{
-  --page-solid:#ff8e8e;
+  --page-solid:#cf5f66;
   --page-solid-text:#22090b;
   --page-hero-start:#0b0b0b;
   --page-hero-mid:#331116;
@@ -4303,7 +4303,7 @@ body.privacy-page{
 :is(body.brand-page, body.web-page, body.seo-page, body.contact-page, body.privacy-page) .hero,
 body.portfolio-page .breadcrumbs,
 body.portfolio-page .portfolio-hero{
-  background:linear-gradient(180deg, var(--page-hero-start) 0%, var(--page-hero-mid) 56%, var(--page-hero-end) 100%) !important;
+  background:#0b0b0b !important;
 }
 
 :is(body.brand-page, body.web-page, body.seo-page, body.portfolio-page, body.contact-page, body.privacy-page) .hero,
@@ -4404,6 +4404,19 @@ body.portfolio-page .portfolio-hero{
   background:#0b0d10 !important;
   color:var(--muted) !important;
   border-top:1px solid rgba(255,255,255,.08);
+}
+
+body.portfolio-page .btn.primary{
+  background:#0b0d10 !important;
+  border-color:#0b0d10 !important;
+  color:#cf5f66 !important;
+  box-shadow:none !important;
+}
+
+body.portfolio-page .btn.secondary{
+  background:rgba(11,13,16,.08) !important;
+  border-color:rgba(11,13,16,.22) !important;
+  color:#22090b !important;
 }
 
 @media (max-width:960px){
