@@ -2204,6 +2204,120 @@ body.portfolio-page{
   letter-spacing:-0.03em;
 }
 
+.portfolio-item.project-stellar{
+  background:#1d4f91 !important;
+  border-color:#153c70 !important;
+  color:#f4f8ff !important;
+}
+
+.portfolio-item.project-stellar:hover{
+  background:#245fae !important;
+  border-color:#153c70 !important;
+}
+
+.portfolio-item.project-stellar .portfolio-meta,
+.portfolio-item.project-stellar .portfolio-name,
+.portfolio-item.project-stellar .portfolio-summary,
+.portfolio-item.project-stellar .portfolio-link{
+  color:#f4f8ff !important;
+}
+
+.portfolio-item.project-stellar .portfolio-feature-points span{
+  background:#0f2b52 !important;
+  border-color:#0f2b52 !important;
+  color:#f4f8ff !important;
+}
+
+.portfolio-item.project-seabrook{
+  background:#7b1f2d !important;
+  border-color:#5d1521 !important;
+  color:#fff7f8 !important;
+}
+
+.portfolio-item.project-seabrook:hover{
+  background:#912538 !important;
+  border-color:#5d1521 !important;
+}
+
+.portfolio-item.project-seabrook .portfolio-meta,
+.portfolio-item.project-seabrook .portfolio-name,
+.portfolio-item.project-seabrook .portfolio-summary,
+.portfolio-item.project-seabrook .portfolio-link{
+  color:#fff7f8 !important;
+}
+
+.portfolio-item.project-capco{
+  background:#f2c94c !important;
+  border-color:#d6ad2b !important;
+  color:#11110d !important;
+}
+
+.portfolio-item.project-capco:hover{
+  background:#f5d66e !important;
+  border-color:#d6ad2b !important;
+}
+
+.portfolio-item.project-capco .portfolio-meta,
+.portfolio-item.project-capco .portfolio-name,
+.portfolio-item.project-capco .portfolio-summary,
+.portfolio-item.project-capco .portfolio-link{
+  color:#11110d !important;
+}
+
+.portfolio-item.project-veteran{
+  background:#bf2a2a !important;
+  border-color:#971d1d !important;
+  color:#fff8f8 !important;
+}
+
+.portfolio-item.project-veteran:hover{
+  background:#d13030 !important;
+  border-color:#971d1d !important;
+}
+
+.portfolio-item.project-veteran .portfolio-meta,
+.portfolio-item.project-veteran .portfolio-name,
+.portfolio-item.project-veteran .portfolio-summary,
+.portfolio-item.project-veteran .portfolio-link{
+  color:#fff8f8 !important;
+}
+
+.portfolio-item.project-collins{
+  background:#20452b !important;
+  border-color:#17331f !important;
+  color:#ddd0b1 !important;
+}
+
+.portfolio-item.project-collins:hover{
+  background:#295637 !important;
+  border-color:#17331f !important;
+}
+
+.portfolio-item.project-collins .portfolio-meta,
+.portfolio-item.project-collins .portfolio-name,
+.portfolio-item.project-collins .portfolio-summary,
+.portfolio-item.project-collins .portfolio-link{
+  color:#ddd0b1 !important;
+}
+
+.portfolio-item.project-quickthrills{
+  background:#d13c3c !important;
+  border-color:#a82626 !important;
+  color:#11110d !important;
+}
+
+.portfolio-item.project-quickthrills:hover{
+  background:#e14a4a !important;
+  border-color:#a82626 !important;
+}
+
+.portfolio-item.project-quickthrills .portfolio-meta,
+.portfolio-item.project-quickthrills .portfolio-name,
+.portfolio-item.project-quickthrills .portfolio-summary,
+.portfolio-item.project-quickthrills .portfolio-link{
+  color:#11110d !important;
+}
+
 .portfolio-cta p{
   max-width:620px;
   margin:0 0 1.5rem;
