@@ -2090,6 +2090,14 @@ body.portfolio-page{
   text-transform:uppercase;
 }
 
+.portfolio-card-logo{
+  width:auto;
+  max-width:88px;
+  max-height:88px;
+  margin:0 0 14px;
+  object-fit:contain;
+}
+
 .portfolio-name{
   font-family:'Roboto Mono', monospace;
   font-size:1.65rem;
