@@ -2213,7 +2213,7 @@ body.portfolio-page{
   padding:2.3rem;
   border:1px solid rgba(255,255,255,0.1);
   border-radius:8px;
-  background:rgba(255,255,255,0.03);
+  background:linear-gradient(180deg, rgba(11,13,16,.92), rgba(17,20,24,.84));
   box-shadow:0 20px 60px rgba(0,0,0,0.35);
 }
 
@@ -4561,7 +4561,9 @@ body.portfolio-page .btn.secondary{
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero){
-  background:#cf5f66 !important;
+  background:
+    linear-gradient(180deg, rgba(12, 8, 14, 0.18), rgba(30, 10, 12, 0.12)),
+    url("/assets/portfolio/brand-spectrum-bg.jpg") center/cover no-repeat !important;
   color:#22090b !important;
   border-bottom-color:rgba(0,0,0,.12) !important;
 }
@@ -4578,16 +4580,6 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(h2, h3, strong, .portfolio-name){
   color:#22090b !important;
-}
-
-body.portfolio-page .portfolio-overview,
-body.portfolio-page .portfolio-contact-box{
-  background-image:
-    linear-gradient(180deg, rgba(12, 8, 14, 0.18), rgba(30, 10, 12, 0.12)),
-    url("/assets/portfolio/brand-spectrum-bg.jpg") !important;
-  background-position:center center !important;
-  background-size:cover !important;
-  background-repeat:no-repeat !important;
 }
 
 /* ===== PORTFOLIO PROJECT CARD BRAND OVERRIDES ===== */
