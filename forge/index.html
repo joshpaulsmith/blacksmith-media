@@ -135,142 +135,143 @@
     </section>
 
     <section class="section" id="latest-posts">
-      <div class="wrap">
-        <div class="section-kicker">Archive</div>
-        <h2>Posted notes from The Forge, organized by date and category.</h2>
-        <p class="section-lead">
-          A cleaner archive of practical writing on branding, website design, and SEO support. Search by topic, then open the post that fits the work you’re thinking through.
-        </p>
+      <div class="wrap forge-editorial-shell">
+        <aside class="forge-editorial-sidebar">
+          <div class="section-kicker">Topics</div>
+          <h2 class="forge-sidebar-title">Tools &amp; <em>Craft</em></h2>
+          <p class="forge-sidebar-copy">
+            Practical notes on branding, website structure, and SEO support for businesses that want a cleaner public-facing presence.
+          </p>
 
-        <div class="forge-featured-block">
-          <div class="forge-featured-header">
-            <div>
-              <div class="section-kicker">Latest Post</div>
-              <h3>Start with the newest note from The Forge.</h3>
-            </div>
-            <div class="forge-featured-meta">
-              <span class="forge-meta-pill forge-meta-pill-seo">SEO Support</span>
-              <span class="forge-meta-pill">June 6, 2026</span>
-              <span class="forge-meta-pill">4 min read</span>
+          <div class="forge-sidebar-group">
+            <div class="section-kicker">Browse</div>
+            <div class="forge-category-rail forge-category-rail-sidebar" aria-label="Forge categories">
+              <button class="forge-filter is-active" type="button" data-filter="all">All Posts</button>
+              <button class="forge-filter forge-filter-brand" type="button" data-filter="brand-strategy">Brand Strategy</button>
+              <button class="forge-filter forge-filter-web" type="button" data-filter="website-design">Website Design</button>
+              <button class="forge-filter forge-filter-seo" type="button" data-filter="seo-support">SEO Support</button>
+              <button class="forge-filter" type="button" data-filter="trust">Trust</button>
+              <button class="forge-filter" type="button" data-filter="conversion">Conversion</button>
+              <button class="forge-filter" type="button" data-filter="post-launch">Post-Launch</button>
             </div>
           </div>
 
-          <a class="forge-featured-post forge-featured-post-seo" href="/forge/local-seo-after-launch/">
-            <div class="forge-featured-copy">
-              <div class="forge-featured-taxonomy">
-                <span class="forge-list-category">SEO Support</span>
-                <span class="forge-list-category">Post-Launch</span>
-              </div>
-              <h3>Local SEO after launch.</h3>
-              <p>
-                What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.
+          <div class="forge-sidebar-group">
+            <div class="section-kicker">Latest</div>
+            <div class="forge-sidebar-links">
+              <a href="/forge/local-seo-after-launch/">Local SEO After Launch</a>
+              <a href="/forge/websites-that-earn-inquiries/">Websites That Earn More Inquiries</a>
+              <a href="/forge/brand-systems-that-build-trust/">Brand Systems That Build Trust</a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="forge-editorial-main">
+          <div class="forge-editorial-header">
+            <div>
+              <div class="section-kicker">Archive</div>
+              <h2>Posted notes from The Forge, organized by date and category.</h2>
+              <p class="section-lead">
+                A cleaner archive of practical writing on branding, website design, and SEO support. Search by topic, then open the post that fits the work you’re thinking through.
               </p>
             </div>
-            <span class="forge-list-cta">Read latest</span>
-          </a>
-        </div>
-
-        <div class="forge-start-grid">
-          <div class="forge-start-intro">
-            <div class="section-kicker">Start Here</div>
-            <h3>Pick the track that matches what you are sorting out.</h3>
-            <p>
-              If you are thinking through brand clarity, site structure, or post-launch visibility, these are the fastest entry points into the archive.
-            </p>
-          </div>
-          <div class="forge-start-links">
-            <a class="forge-start-card forge-start-card-brand" href="/forge/brand-systems-that-build-trust/">
-              <span class="forge-start-label">Brand Strategy</span>
-              <strong>How trust gets built through consistency.</strong>
-            </a>
-            <a class="forge-start-card forge-start-card-web" href="/forge/websites-that-earn-inquiries/">
-              <span class="forge-start-label">Website Design</span>
-              <strong>What makes a site easier to act on.</strong>
-            </a>
-            <a class="forge-start-card forge-start-card-seo" href="/forge/local-seo-after-launch/">
-              <span class="forge-start-label">SEO Support</span>
-              <strong>What should keep improving after launch.</strong>
-            </a>
-          </div>
-        </div>
-
-        <div class="forge-category-rail" aria-label="Forge categories">
-          <button class="forge-filter is-active" type="button" data-filter="all">All Posts</button>
-          <button class="forge-filter forge-filter-brand" type="button" data-filter="brand-strategy">Brand Strategy</button>
-          <button class="forge-filter forge-filter-web" type="button" data-filter="website-design">Website Design</button>
-          <button class="forge-filter forge-filter-seo" type="button" data-filter="seo-support">SEO Support</button>
-          <button class="forge-filter" type="button" data-filter="trust">Trust</button>
-          <button class="forge-filter" type="button" data-filter="conversion">Conversion</button>
-          <button class="forge-filter" type="button" data-filter="post-launch">Post-Launch</button>
-        </div>
-
-        <div class="forge-archive-controls">
-          <div class="forge-archive-summary">
-            <span class="forge-archive-total">3 posts published</span>
-            <span class="forge-archive-current" id="forge-current-filter">Showing all categories</span>
-          </div>
-          <div class="forge-search">
-            <span class="forge-search-icon" aria-hidden="true">⌕</span>
-            <label for="forge-search-input">Search</label>
-            <input
-              id="forge-search-input"
-              type="search"
-              placeholder="Search by topic, title, or category"
-              aria-label="Search The Forge posts"
-            />
-          </div>
-        </div>
-
-        <div class="forge-list-heading">
-          <div class="section-kicker">More from The Forge</div>
-          <p>Recent posts, sorted by date and easy to scan by category.</p>
-        </div>
-
-        <div class="forge-list" id="forge-post-list">
-          <a class="forge-list-item forge-list-item-seo" href="/forge/local-seo-after-launch/" data-search="local seo after launch seo support visibility indexing google business profile" data-categories="seo-support post-launch">
-            <div class="forge-list-date">June 6, 2026</div>
-            <div class="forge-list-main">
-              <div class="forge-list-taxonomy">
-                <span class="forge-list-category">SEO Support</span>
-                <span class="forge-list-category">Post-Launch</span>
-                <span class="forge-list-category">4 min read</span>
+            <div class="forge-archive-controls">
+              <div class="forge-archive-summary">
+                <span class="forge-archive-total">3 posts published</span>
+                <span class="forge-archive-current" id="forge-current-filter">Showing all categories</span>
               </div>
-              <h3>Local SEO after launch.</h3>
-              <p>What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.</p>
-            </div>
-            <span class="forge-list-cta">Read post</span>
-          </a>
-
-          <a class="forge-list-item forge-list-item-web" href="/forge/websites-that-earn-inquiries/" data-search="websites that earn more inquiries website design small business service companies messaging calls to action" data-categories="website-design conversion">
-            <div class="forge-list-date">June 4, 2026</div>
-            <div class="forge-list-main">
-              <div class="forge-list-taxonomy">
-                <span class="forge-list-category">Website Design</span>
-                <span class="forge-list-category">Conversion</span>
-                <span class="forge-list-category">4 min read</span>
+              <div class="forge-search">
+                <span class="forge-search-icon" aria-hidden="true">⌕</span>
+                <label for="forge-search-input">Search</label>
+                <input
+                  id="forge-search-input"
+                  type="search"
+                  placeholder="Search by topic, title, or category"
+                  aria-label="Search The Forge posts"
+                />
               </div>
-              <h3>Websites that earn more inquiries.</h3>
-              <p>What small businesses and service companies need from their site if it’s going to support real conversations instead of just sitting online.</p>
             </div>
-            <span class="forge-list-cta">Read post</span>
-          </a>
+          </div>
 
-          <a class="forge-list-item forge-list-item-brand" href="/forge/brand-systems-that-build-trust/" data-search="brand systems that build trust brand strategy messaging consistency visual identity credibility" data-categories="brand-strategy trust">
-            <div class="forge-list-date">June 2, 2026</div>
-            <div class="forge-list-main">
-              <div class="forge-list-taxonomy">
-                <span class="forge-list-category">Brand Strategy</span>
-                <span class="forge-list-category">Trust</span>
-                <span class="forge-list-category">4 min read</span>
+          <div class="forge-featured-block">
+            <div class="forge-featured-header">
+              <div>
+                <div class="section-kicker">Latest Post</div>
+                <h3>Start with the newest note from The Forge.</h3>
               </div>
-              <h3>Brand systems that build trust.</h3>
-              <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
+              <div class="forge-featured-meta">
+                <span class="forge-meta-pill forge-meta-pill-seo">SEO Support</span>
+                <span class="forge-meta-pill">June 6, 2026</span>
+                <span class="forge-meta-pill">4 min read</span>
+              </div>
             </div>
-            <span class="forge-list-cta">Read post</span>
-          </a>
+
+            <a class="forge-featured-post forge-featured-post-seo forge-archive-item" href="/forge/local-seo-after-launch/" data-search="local seo after launch seo support visibility indexing google business profile" data-categories="seo-support post-launch">
+              <div class="forge-featured-media forge-media-seo" aria-hidden="true"></div>
+              <div class="forge-featured-copy">
+                <div class="forge-featured-taxonomy">
+                  <span class="forge-list-category">SEO Support</span>
+                  <span class="forge-list-category">Post-Launch</span>
+                </div>
+                <h3>Local SEO after launch.</h3>
+                <p>
+                  What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.
+                </p>
+              </div>
+              <span class="forge-list-cta">Read latest</span>
+            </a>
+          </div>
+
+          <div class="forge-editorial-grid" id="forge-post-list">
+            <a class="forge-archive-card forge-archive-item forge-list-item-web" href="/forge/websites-that-earn-inquiries/" data-search="websites that earn more inquiries website design small business service companies messaging calls to action" data-categories="website-design conversion">
+              <div class="forge-archive-card-media forge-media-web" aria-hidden="true"></div>
+              <div class="forge-archive-card-main">
+                <div class="forge-list-taxonomy">
+                  <span class="forge-list-category">Website Design</span>
+                  <span class="forge-list-category">Conversion</span>
+                </div>
+                <div class="forge-list-date">June 4, 2026 · 4 min read</div>
+                <h3>Websites that earn more inquiries.</h3>
+                <p>What small businesses and service companies need from their site if it’s going to support real conversations instead of just sitting online.</p>
+                <span class="forge-list-cta">Read post</span>
+              </div>
+            </a>
+
+            <a class="forge-archive-card forge-archive-item forge-list-item-brand" href="/forge/brand-systems-that-build-trust/" data-search="brand systems that build trust brand strategy messaging consistency visual identity credibility" data-categories="brand-strategy trust">
+              <div class="forge-archive-card-media forge-media-brand" aria-hidden="true"></div>
+              <div class="forge-archive-card-main">
+                <div class="forge-list-taxonomy">
+                  <span class="forge-list-category">Brand Strategy</span>
+                  <span class="forge-list-category">Trust</span>
+                </div>
+                <div class="forge-list-date">June 2, 2026 · 4 min read</div>
+                <h3>Brand systems that build trust.</h3>
+                <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
+                <span class="forge-list-cta">Read post</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="forge-popular-strip">
+            <div class="section-kicker">Popular</div>
+            <div class="forge-popular-list">
+              <a class="forge-popular-item" href="/forge/local-seo-after-launch/">
+                <span class="forge-popular-taxonomy">SEO Support</span>
+                <strong>Local SEO after launch.</strong>
+              </a>
+              <a class="forge-popular-item" href="/forge/websites-that-earn-inquiries/">
+                <span class="forge-popular-taxonomy">Website Design</span>
+                <strong>Websites that earn more inquiries.</strong>
+              </a>
+              <a class="forge-popular-item" href="/forge/brand-systems-that-build-trust/">
+                <span class="forge-popular-taxonomy">Brand Strategy</span>
+                <strong>Brand systems that build trust.</strong>
+              </a>
+            </div>
+          </div>
+
+          <p class="forge-list-empty" id="forge-empty-state">No posts match that search yet. Try a broader keyword like brand, website, or SEO.</p>
         </div>
-
-        <p class="forge-list-empty" id="forge-empty-state">No posts match that search yet. Try a broader keyword like brand, website, or SEO.</p>
       </div>
     </section>
 
@@ -312,17 +313,17 @@
   <script>
     (function () {
       const searchInput = document.getElementById("forge-search-input");
-      const postList = document.getElementById("forge-post-list");
+      const archiveScope = document.getElementById("latest-posts");
       const emptyState = document.getElementById("forge-empty-state");
       const filters = Array.from(document.querySelectorAll(".forge-filter"));
       const currentFilter = document.getElementById("forge-current-filter");
 
-      if (!searchInput || !postList || !emptyState || !currentFilter) return;
+      if (!searchInput || !archiveScope || !emptyState || !currentFilter) return;
 
-      const posts = Array.from(postList.querySelectorAll(".forge-list-item"));
+      const posts = Array.from(archiveScope.querySelectorAll(".forge-archive-item"));
       const highlightTargets = posts.map((post) => ({
         post,
-        nodes: Array.from(post.querySelectorAll("h3, p, .forge-list-category")),
+        nodes: Array.from(post.querySelectorAll("h3, p, strong, .forge-list-category, .forge-list-date")),
       }));
       let activeFilter = "all";
 
