@@ -29,7 +29,7 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/styles.css?v=20260606forgeposts2" />
+  <link rel="stylesheet" href="/styles.css?v=20260606forgeplus" />
   <link rel="icon" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
 
@@ -95,6 +95,7 @@
 
 <body class="forge-page forge-post-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="forge-reading-progress" aria-hidden="true"><span class="forge-reading-progress-bar" id="reading-progress-bar"></span></div>
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="/">
@@ -130,7 +131,15 @@
     <section class="hero" style="background:#0b0b0b !important; border-bottom:1px solid rgba(255,255,255,.06) !important;">
       <div class="wrap hero-inner">
         <div class="eyebrow">SEO Support</div>
-        <div class="section-kicker">Posted June 6, 2026</div>
+        <div class="forge-post-meta-row">
+          <div class="section-kicker">Posted June 6, 2026</div>
+          <div class="forge-post-meta-pills">
+            <span class="forge-meta-pill forge-meta-pill-seo">SEO Support</span>
+            <span class="forge-meta-pill">Post-Launch</span>
+            <span class="forge-meta-pill">4 min read</span>
+          </div>
+          <button class="forge-copy-link" type="button" data-copy-link>Copy link</button>
+        </div>
         <h1>Local SEO <span class="highlight">after launch</span></h1>
         <p class="lead">
           Launch day is not the end of the SEO work. It is the point where structure, copy, indexing, and follow-through start to matter more consistently.
@@ -177,9 +186,40 @@
           <p>
             SEO usually becomes more effective when the website gets easier to understand. If the structure improves, the messaging improves, and the business details stay current, the search performance often gets stronger alongside that clarity.
           </p>
+          <blockquote class="forge-pullquote">
+            The best post-launch SEO work usually looks like steady clarification, not a one-time trick.
+          </blockquote>
           <p>
             That is why post-launch support matters. Websites that are left alone too long tend to fall behind. Websites that get small, deliberate improvements tend to stay more useful to both search engines and people.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section forge-article-section forge-related-section">
+      <div class="wrap">
+        <div class="forge-related-head">
+          <div>
+            <div class="section-kicker">Related Posts</div>
+            <h2>Keep the next improvement in view.</h2>
+          </div>
+          <p class="section-lead">
+            These notes sit close to the same problem: making the site clearer, easier to trust, and easier to keep improving.
+          </p>
+        </div>
+        <div class="forge-post-grid forge-related-grid">
+          <a class="forge-post-card" href="/forge/websites-that-earn-inquiries/">
+            <div class="section-kicker">Website Design · 3 min read</div>
+            <h3>Websites that earn more inquiries.</h3>
+            <p>What helps a site support real conversations once visitors actually arrive.</p>
+            <span class="forge-post-link">Read related post</span>
+          </a>
+          <a class="forge-post-card" href="/forge/brand-systems-that-build-trust/">
+            <div class="section-kicker">Brand Strategy · 3 min read</div>
+            <h3>Brand systems that build trust.</h3>
+            <p>Why consistency across copy, color, and structure still shapes credibility.</p>
+            <span class="forge-post-link">Read related post</span>
+          </a>
         </div>
       </div>
     </section>
@@ -219,5 +259,36 @@
   </footer>
 
   <script src="/script.js?v=20260606f"></script>
+  <script>
+    (function () {
+      const progressBar = document.getElementById("reading-progress-bar");
+      const copyButton = document.querySelector("[data-copy-link]");
+      const mainContent = document.getElementById("main-content");
+
+      function updateProgress() {
+        if (!progressBar || !mainContent) return;
+        const total = Math.max(mainContent.offsetHeight - window.innerHeight, 1);
+        const progress = Math.min(Math.max((window.scrollY - (mainContent.offsetTop || 0)) / total, 0), 1);
+        progressBar.style.transform = "scaleX(" + progress + ")";
+      }
+
+      if (copyButton) {
+        copyButton.addEventListener("click", async function () {
+          try {
+            await navigator.clipboard.writeText(window.location.href);
+            copyButton.textContent = "Copied";
+            setTimeout(() => { copyButton.textContent = "Copy link"; }, 1600);
+          } catch (error) {
+            copyButton.textContent = "Copy failed";
+            setTimeout(() => { copyButton.textContent = "Copy link"; }, 1600);
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("resize", updateProgress);
+      updateProgress();
+    })();
+  </script>
 </body>
 </html>

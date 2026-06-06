@@ -29,7 +29,7 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/styles.css?v=20260606forgeposts2" />
+  <link rel="stylesheet" href="/styles.css?v=20260606forgeplus" />
   <link rel="icon" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
 
@@ -95,6 +95,7 @@
 
 <body class="forge-page forge-post-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="forge-reading-progress" aria-hidden="true"><span class="forge-reading-progress-bar" id="reading-progress-bar"></span></div>
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="/">
@@ -130,7 +131,15 @@
     <section class="hero" style="background:#0b0b0b !important; border-bottom:1px solid rgba(255,255,255,.06) !important;">
       <div class="wrap hero-inner">
         <div class="eyebrow">Website Design</div>
-        <div class="section-kicker">Posted June 4, 2026</div>
+        <div class="forge-post-meta-row">
+          <div class="section-kicker">Posted June 4, 2026</div>
+          <div class="forge-post-meta-pills">
+            <span class="forge-meta-pill forge-meta-pill-web">Website Design</span>
+            <span class="forge-meta-pill">Conversion</span>
+            <span class="forge-meta-pill">3 min read</span>
+          </div>
+          <button class="forge-copy-link" type="button" data-copy-link>Copy link</button>
+        </div>
         <h1>Websites that <span class="highlight">earn more inquiries</span></h1>
         <p class="lead">
           A business website should not only explain what the organization does. It should make the next step feel easier, more obvious, and more worth taking.
@@ -176,9 +185,40 @@
           <p>
             Businesses often underestimate how much structure affects conversion. Visitors want to know whether the company understands its own work, whether it looks reliable, and whether reaching out will feel straightforward. That is as much a writing and organization problem as it is a design problem.
           </p>
+          <blockquote class="forge-pullquote">
+            Strong websites remove doubt early, then make the next step feel straightforward.
+          </blockquote>
           <p>
             The strongest sites tend to reduce friction on purpose. They make the offer easier to read, the next step easier to find, and the business easier to trust. When those pieces align, inquiries feel less accidental and more qualified.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section forge-article-section forge-related-section">
+      <div class="wrap">
+        <div class="forge-related-head">
+          <div>
+            <div class="section-kicker">Related Posts</div>
+            <h2>Keep reading through adjacent topics.</h2>
+          </div>
+          <p class="section-lead">
+            If the conversation is really about trust, clarity, or post-launch support, these are the next useful notes to open.
+          </p>
+        </div>
+        <div class="forge-post-grid forge-related-grid">
+          <a class="forge-post-card" href="/forge/brand-systems-that-build-trust/">
+            <div class="section-kicker">Brand Strategy · 3 min read</div>
+            <h3>Brand systems that build trust.</h3>
+            <p>How consistency and stronger visual structure make a business feel more established.</p>
+            <span class="forge-post-link">Read related post</span>
+          </a>
+          <a class="forge-post-card" href="/forge/local-seo-after-launch/">
+            <div class="section-kicker">SEO Support · 4 min read</div>
+            <h3>Local SEO after launch.</h3>
+            <p>What should keep improving after the site goes live and starts getting real traffic.</p>
+            <span class="forge-post-link">Read related post</span>
+          </a>
         </div>
       </div>
     </section>
@@ -218,5 +258,37 @@
   </footer>
 
   <script src="/script.js?v=20260606f"></script>
+  <script>
+    (function () {
+      const progressBar = document.getElementById("reading-progress-bar");
+      const copyButton = document.querySelector("[data-copy-link]");
+      const mainContent = document.getElementById("main-content");
+
+      function updateProgress() {
+        if (!progressBar || !mainContent) return;
+        const rect = mainContent.getBoundingClientRect();
+        const total = Math.max(mainContent.offsetHeight - window.innerHeight, 1);
+        const progress = Math.min(Math.max((window.scrollY - (mainContent.offsetTop || 0)) / total, 0), 1);
+        progressBar.style.transform = "scaleX(" + progress + ")";
+      }
+
+      if (copyButton) {
+        copyButton.addEventListener("click", async function () {
+          try {
+            await navigator.clipboard.writeText(window.location.href);
+            copyButton.textContent = "Copied";
+            setTimeout(() => { copyButton.textContent = "Copy link"; }, 1600);
+          } catch (error) {
+            copyButton.textContent = "Copy failed";
+            setTimeout(() => { copyButton.textContent = "Copy link"; }, 1600);
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("resize", updateProgress);
+      updateProgress();
+    })();
+  </script>
 </body>
 </html>
