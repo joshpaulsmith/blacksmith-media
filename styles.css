@@ -2125,13 +2125,29 @@ body.portfolio-page{
   grid-template-columns:minmax(0, 1.1fr) minmax(280px, .9fr);
   gap:28px;
   align-items:end;
+  padding:1.6rem 1.75rem;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;
+  background:linear-gradient(180deg, rgba(11,13,16,.52), rgba(11,13,16,.34));
+  backdrop-filter:blur(8px);
+  box-shadow:0 18px 44px rgba(0,0,0,.16);
+}
+
+.portfolio-overview .section-kicker{
+  color:rgba(255,255,255,.72) !important;
+}
+
+.portfolio-overview h2{
+  color:#fff !important;
+  text-shadow:0 2px 18px rgba(0,0,0,.24);
 }
 
 .portfolio-intro-copy{
   margin:0;
-  color:#cfcfcf;
+  color:rgba(255,255,255,.9);
   font-size:1rem;
   line-height:1.82;
+  text-shadow:0 2px 16px rgba(0,0,0,.22);
 }
 
 .portfolio-feature-shell{
