@@ -324,7 +324,7 @@
   }
 
   function initInteractiveCards() {
-    if (isReducedMotion() || isMobile()) return;
+    return;
 
     var targets = document.querySelectorAll(".card, .process-card, .deliverable-item, .contact-box, .contact-form, .portfolio-item");
 
