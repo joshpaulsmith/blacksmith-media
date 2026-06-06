@@ -3406,7 +3406,7 @@ body.contact-page .project-submit{
 
 .brand-title::before,
 .brand-title::after{
-  color:var(--home);
+  color:var(--accent);
 }
 
 .brand-sub{
