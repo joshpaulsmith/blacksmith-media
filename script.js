@@ -267,6 +267,41 @@
     });
   }
 
+  function initDashboardPanels() {
+    document.querySelectorAll("[data-dashboard]").forEach(function (dashboard) {
+      var tabs = dashboard.querySelectorAll(".dashboard-tab");
+      var panels = dashboard.querySelectorAll(".dashboard-panel");
+
+      if (!tabs.length || !panels.length) return;
+
+      function activate(panelName) {
+        tabs.forEach(function (tab) {
+          var active = tab.getAttribute("data-panel") === panelName;
+          tab.classList.toggle("is-active", active);
+          tab.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        panels.forEach(function (panel) {
+          var active = panel.getAttribute("data-panel") === panelName;
+          panel.classList.toggle("is-active", active);
+          panel.hidden = !active;
+        });
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          activate(tab.getAttribute("data-panel"));
+        });
+
+        tab.addEventListener("mouseenter", function () {
+          if (window.innerWidth > MOBILE_BREAKPOINT) {
+            activate(tab.getAttribute("data-panel"));
+          }
+        });
+      });
+    });
+  }
+
   function initMobileNav() {
     var nav = document.querySelector(".nav");
     var navInner = document.querySelector(".nav-inner");
@@ -353,7 +388,7 @@
         step: 42
       },
       {
-        selector: ".trust-strip-inner > span",
+        selector: ".signal-grid > .signal-card",
         step: 36
       },
       {
@@ -361,7 +396,7 @@
         step: 40
       },
       {
-        selector: ".cards > .card, .process > .step, .process-grid > *, .deliverables-grid > *, .faq-grid > *, .portfolio-list > *, .footer-inner > *, .contact-points > *, .portfolio-cta .btn-row > *",
+        selector: ".cards > .card, .process > .step, .process-grid > *, .deliverables-grid > *, .faq-grid > *, .portfolio-list > *, .footer-inner > *, .contact-points > *, .portfolio-cta .btn-row > *, .dashboard-tabs > *, .dashboard-panels > *",
         step: 34
       }
     ];
@@ -433,6 +468,7 @@
     initMobileNav();
     initHomeProjectModal();
     initContactForm();
+    initDashboardPanels();
     initMotionSystem();
     initInteractiveCards();
   });

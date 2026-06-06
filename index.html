@@ -40,7 +40,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles.css?v=20260606f" />
+  <link rel="stylesheet" href="styles.css?v=20260606g" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png" />
@@ -251,34 +251,97 @@
       </div>
     </section>
 
-    <section class="section trust-strip" aria-label="Trust">
-      <div class="wrap trust-strip-inner">
-        <span>Based in Sault Ste. Marie</span>
-        <span>Serving Ontario and Canada</span>
-        <span>Branding, Web Design, SEO</span>
-        <span>Structured Delivery</span>
+    <section class="section signal-strip" aria-label="Studio Snapshot">
+      <div class="wrap">
+        <div class="section-kicker">Studio Snapshot</div>
+        <div class="signal-grid">
+          <article class="signal-card">
+            <span class="signal-label">Location</span>
+            <strong>Sault Ste. Marie</strong>
+            <div class="signal-meter" aria-hidden="true"><span style="width:82%"></span></div>
+            <p>Local project work with support for regional and public-facing delivery.</p>
+          </article>
+
+          <article class="signal-card">
+            <span class="signal-label">Coverage</span>
+            <strong>Ontario + Canada</strong>
+            <div class="signal-meter" aria-hidden="true"><span style="width:74%"></span></div>
+            <p>Remote-friendly process for organizations that need clear communication and steady follow-through.</p>
+          </article>
+
+          <article class="signal-card">
+            <span class="signal-label">Services</span>
+            <strong>Brand, Web, SEO</strong>
+            <div class="signal-meter" aria-hidden="true"><span style="width:88%"></span></div>
+            <p>Focused scope across the services most businesses need to look stronger online.</p>
+          </article>
+
+          <article class="signal-card">
+            <span class="signal-label">Delivery</span>
+            <strong>Structured</strong>
+            <div class="signal-meter" aria-hidden="true"><span style="width:79%"></span></div>
+            <p>Clean build process, launch checks, and practical support after the site goes live.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section executive-strip" aria-label="Executive Summary">
+    <section class="section executive-strip" aria-label="Capability Board">
       <div class="wrap executive-strip-grid">
         <div class="executive-strip-copy">
-          <div class="section-kicker">Executive Summary</div>
-          <h2>Work that looks clear, feels current, and holds up under review.</h2>
+          <div class="section-kicker">Capability Board</div>
+          <h2>Work that reads clearly, presents well, and stays easy to maintain.</h2>
+          <p class="section-lead">
+            Instead of treating every project the same, we focus on the areas that improve trust and clarity the fastest.
+          </p>
         </div>
 
-        <div class="executive-strip-points">
-          <div class="executive-point">
-            <span>Clear scope</span>
-            <p>Defined project structure before design and build.</p>
+        <div class="executive-dashboard" data-dashboard>
+          <div class="dashboard-tabs" role="tablist" aria-label="Project priorities">
+            <button class="dashboard-tab is-active" type="button" role="tab" aria-selected="true" data-panel="scope">Scope</button>
+            <button class="dashboard-tab" type="button" role="tab" aria-selected="false" data-panel="presentation">Presentation</button>
+            <button class="dashboard-tab" type="button" role="tab" aria-selected="false" data-panel="support">Support</button>
           </div>
-          <div class="executive-point">
-            <span>Professional presentation</span>
-            <p>Clean layouts and messaging built to improve trust quickly.</p>
-          </div>
-          <div class="executive-point">
-            <span>Reliable support</span>
-            <p>Launch guidance, SEO support, and ongoing maintenance when needed.</p>
+
+          <div class="dashboard-panels">
+            <article class="dashboard-panel is-active" data-panel="scope">
+              <div class="dashboard-panel-head">
+                <span class="dashboard-panel-label">Project Scope</span>
+                <strong>Clear structure before design starts.</strong>
+              </div>
+              <div class="dashboard-bars" aria-hidden="true">
+                <div class="dashboard-bar"><span style="height:88%"></span><small>Pages</small></div>
+                <div class="dashboard-bar"><span style="height:74%"></span><small>Copy</small></div>
+                <div class="dashboard-bar"><span style="height:92%"></span><small>Flow</small></div>
+              </div>
+              <p>Page planning, service hierarchy, and message direction are defined early so the rest of the project moves cleanly.</p>
+            </article>
+
+            <article class="dashboard-panel" data-panel="presentation" hidden>
+              <div class="dashboard-panel-head">
+                <span class="dashboard-panel-label">Presentation</span>
+                <strong>Professional design that feels current without getting noisy.</strong>
+              </div>
+              <div class="dashboard-bars" aria-hidden="true">
+                <div class="dashboard-bar"><span style="height:84%"></span><small>Visual</small></div>
+                <div class="dashboard-bar"><span style="height:78%"></span><small>Readability</small></div>
+                <div class="dashboard-bar"><span style="height:90%"></span><small>Trust</small></div>
+              </div>
+              <p>Typography, spacing, contrast, and layout are tuned to make the business look more credible at a glance.</p>
+            </article>
+
+            <article class="dashboard-panel" data-panel="support" hidden>
+              <div class="dashboard-panel-head">
+                <span class="dashboard-panel-label">Support</span>
+                <strong>Launch guidance and ongoing upkeep where it matters.</strong>
+              </div>
+              <div class="dashboard-bars" aria-hidden="true">
+                <div class="dashboard-bar"><span style="height:76%"></span><small>Launch</small></div>
+                <div class="dashboard-bar"><span style="height:82%"></span><small>SEO</small></div>
+                <div class="dashboard-bar"><span style="height:68%"></span><small>Updates</small></div>
+              </div>
+              <p>From indexing and analytics to maintenance and page changes, support stays available after the build is finished.</p>
+            </article>
           </div>
         </div>
       </div>
@@ -792,6 +855,6 @@
     </div>
   </footer>
 
-  <script src="/script.js?v=20260606b"></script>
+  <script src="/script.js?v=20260606c"></script>
 </body>
 </html>
