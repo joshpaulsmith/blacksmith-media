@@ -3865,8 +3865,12 @@ body.home-page .portfolio-feature-copy{
   top:110px;
 }
 
+body.home-page main{
+  background:#f2c94c !important;
+}
+
 body.home-page main > .section{
-  background:#e6cf76;
+  background:#f2c94c !important;
   color:#11110d;
   border-bottom-color:rgba(0,0,0,.12);
 }
@@ -3931,7 +3935,7 @@ body.home-page main > .section .map-wrap iframe{
 }
 
 body.home-page .footer{
-  background:#0b0b0b;
+  background:#0b0b0b !important;
   color:var(--muted);
   border-top:1px solid rgba(255,255,255,.08);
 }
