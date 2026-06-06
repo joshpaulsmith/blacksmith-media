@@ -3470,13 +3470,7 @@ body.portfolio-page{
 /* ===== FINAL PAGE THEME OVERRIDES ===== */
 body.portfolio-page{
   --accent:var(--portfolio);
-  background-color:#6f1d25 !important;
-  background-image:
-    linear-gradient(180deg, rgba(12, 8, 14, 0.18), rgba(30, 10, 12, 0.12)),
-    url("/assets/portfolio/brand-spectrum-bg.jpg") !important;
-  background-position:center top !important;
-  background-size:cover !important;
-  background-repeat:no-repeat !important;
+  background:#0b0b0b !important;
 }
 
 body.contact-page,
