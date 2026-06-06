@@ -3900,7 +3900,19 @@ body.home-page main > .section h3,
 body.home-page main > .section strong,
 body.home-page main > .section .step-no,
 body.home-page main > .section .overview-no,
-body.home-page main > .section .studio-panel-intro{
+body.home-page main > .section .studio-panel-intro,
+body.home-page main > .section .deliverable-item span,
+body.home-page main > .section .why-item span,
+body.home-page main > .section .who-item span,
+body.home-page main > .section .card h3,
+body.home-page main > .section .faq-item h3,
+body.home-page main > .section .process-card h3,
+body.home-page main > .section .overview-node h3,
+body.home-page main > .section .featured-work-card h3,
+body.home-page main > .section .studio-point span,
+body.home-page main > .section .contact-points strong,
+body.home-page main > .section .featured-work-tag,
+body.home-page main > .section .featured-work-link{
   color:#11110d !important;
   font-weight:700;
 }
