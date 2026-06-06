@@ -534,10 +534,10 @@ h1{
 
 .overview-node{
   position:relative;
-  padding:18px 16px 16px;
-  border:1px solid rgba(255,255,255,.06);
+  padding:16px 14px 14px;
+  border:1px solid rgba(255,255,255,.04);
   border-radius:12px;
-  background:rgba(255,255,255,.02);
+  background:rgba(255,255,255,.008);
 }
 
 .overview-node::after{
@@ -562,10 +562,10 @@ h1{
   justify-content:center;
   width:34px;
   height:34px;
-  margin-bottom:16px;
+  margin-bottom:12px;
   border-radius:999px;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.018);
   color:var(--accent);
   font-family:'Roboto Mono', monospace;
   font-size:12px;
@@ -573,7 +573,7 @@ h1{
 }
 
 .overview-node h3{
-  margin:0 0 10px;
+  margin:0 0 8px;
   font-family:'Roboto Mono', monospace;
   font-size:18px;
   text-transform:uppercase;
@@ -583,12 +583,12 @@ h1{
   margin:0;
   color:var(--muted);
   font-size:14px;
-  line-height:1.62;
+  line-height:1.56;
 }
 
 /* ===== SECTIONS ===== */
 .section{
-  padding:92px 0;
+  padding:76px 0;
   border-bottom:1px solid var(--line);
 }
 
@@ -3765,7 +3765,7 @@ body.motion-enabled .trust-strip-inner span.is-visible{
 
 body.home-page .hero-inner{
   max-width:980px;
-  padding:82px 0 56px;
+  padding:72px 0 44px;
 }
 
 body.home-page h1{
@@ -3792,7 +3792,7 @@ body.home-page .lead{
 
 body.home-page .seo-block{
   max-width:720px;
-  margin:0 0 26px;
+  margin:0 0 22px;
   padding:14px 16px 14px 18px;
   border:1px solid rgba(255,255,255,.06) !important;
   border-left:2px solid rgba(215,192,138,.45) !important;
@@ -3808,8 +3808,8 @@ body.home-page .btn-row{
 }
 
 body.home-page .micro{
-  margin-top:18px;
-  gap:12px;
+  margin-top:14px;
+  gap:10px;
   font-size:11px;
   color:#95a0ab;
 }
@@ -3825,27 +3825,20 @@ body.home-page .micro span::before{
   content:"";
 }
 
-body.home-page main > .section > .wrap{
-  padding:26px 28px 28px;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:16px;
-  background:rgba(255,255,255,.014);
-}
-
 body.home-page .overview-shell{
-  padding:12px 0 14px;
+  padding:8px 0 10px;
 }
 
 body.home-page .overview-board{
-  gap:20px;
+  gap:16px;
 }
 
 body.home-page .overview-rail{
-  gap:10px;
+  gap:8px;
 }
 
 body.home-page .process-shell{
-  padding-top:18px;
+  padding-top:10px;
 }
 
 body.home-page .section-kicker{
@@ -3860,12 +3853,12 @@ body.home-page .cards,
 body.home-page .process-grid,
 body.home-page .deliverables-grid,
 body.home-page .faq-grid{
-  margin-top:24px;
+  margin-top:18px;
 }
 
 body.home-page .studio-split-grid,
 body.home-page .portfolio-feature-grid{
-  gap:24px;
+  gap:18px;
 }
 
 body.home-page .portfolio-feature-copy{
@@ -3929,7 +3922,7 @@ body.home-page .portfolio-feature-copy{
 
 @media (max-width:768px){
   body.home-page .hero-inner{
-    padding:44px 0 30px;
+    padding:38px 0 24px;
   }
 
   body.home-page h1{
@@ -3944,9 +3937,9 @@ body.home-page .portfolio-feature-copy{
   }
 
   body.home-page .seo-block{
-    padding:11px 11px 11px 13px;
+    padding:10px 10px 10px 12px;
     font-size:13px;
-    line-height:1.54;
+    line-height:1.5;
   }
 
   body.home-page .btn-row{
@@ -3972,15 +3965,15 @@ body.home-page .portfolio-feature-copy{
   }
 
   body.home-page main > .section > .wrap{
-    padding:20px 18px 22px;
+    padding:0;
   }
 
   .overview-shell{
-    padding:10px 0 12px;
+    padding:6px 0 8px;
   }
 
   .overview-node{
-    padding:16px 14px 14px;
+    padding:14px 12px 12px;
   }
 
   .overview-rail{
@@ -3993,7 +3986,7 @@ body.home-page .portfolio-feature-copy{
   }
 
   .process-grid{
-    gap:14px;
+    gap:12px;
   }
 
   .process-grid::before,
@@ -4002,8 +3995,8 @@ body.home-page .portfolio-feature-copy{
   }
 
   .process-card{
-    margin-left:24px !important;
-    padding:16px;
+    margin-left:22px !important;
+    padding:14px;
   }
 
   .process-card::after{
