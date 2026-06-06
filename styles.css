@@ -4476,6 +4476,15 @@ body.forge-post-page main{
   background:var(--page-solid) !important;
 }
 
+body.forge-post-page main > section:not(.hero):not(.forge-post-cta-section){
+  background:transparent !important;
+  border:none !important;
+  border-top:none !important;
+  border-bottom:none !important;
+  box-shadow:none !important;
+  outline:none !important;
+}
+
 body.contact-page,
 body.privacy-page{
   --page-solid:#cfd4db;
