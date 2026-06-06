@@ -4534,117 +4534,117 @@ body.portfolio-page .btn.secondary{
 }
 
 /* ===== PORTFOLIO PROJECT CARD BRAND OVERRIDES ===== */
-body.portfolio-page .portfolio-item.project-stellar{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar{
   background:#f7fbff !important;
   border-color:#1d4f91 !important;
   color:#1d4f91 !important;
 }
 
-body.portfolio-page .portfolio-item.project-stellar:hover{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar:hover{
   background:#eef6ff !important;
   border-color:#1d4f91 !important;
 }
 
-body.portfolio-page .portfolio-item.project-stellar .portfolio-meta,
-body.portfolio-page .portfolio-item.project-stellar .portfolio-name,
-body.portfolio-page .portfolio-item.project-stellar .portfolio-summary,
-body.portfolio-page .portfolio-item.project-stellar .portfolio-link{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-meta,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-name,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-summary,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-link{
   color:#1d4f91 !important;
 }
 
-body.portfolio-page .portfolio-item.project-stellar .portfolio-feature-points span{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-feature-points span{
   background:#ffffff !important;
   border-color:#1d4f91 !important;
   color:#1d4f91 !important;
 }
 
-body.portfolio-page .portfolio-item.project-capco{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-capco{
   background:#f2c94c !important;
   border-color:#d6ad2b !important;
   color:#11110d !important;
 }
 
-body.portfolio-page .portfolio-item.project-capco:hover{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-capco:hover{
   background:#f5d66e !important;
   border-color:#d6ad2b !important;
 }
 
-body.portfolio-page .portfolio-item.project-capco .portfolio-meta,
-body.portfolio-page .portfolio-item.project-capco .portfolio-name,
-body.portfolio-page .portfolio-item.project-capco .portfolio-summary,
-body.portfolio-page .portfolio-item.project-capco .portfolio-link{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-capco .portfolio-meta,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-capco .portfolio-name,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-capco .portfolio-summary,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-capco .portfolio-link{
   color:#11110d !important;
 }
 
-body.portfolio-page .portfolio-item.project-veteran{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-veteran{
   background:#ffffff !important;
   border-color:#bf2a2a !important;
   color:#bf2a2a !important;
 }
 
-body.portfolio-page .portfolio-item.project-veteran:hover{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-veteran:hover{
   background:#fff5f5 !important;
   border-color:#971d1d !important;
 }
 
-body.portfolio-page .portfolio-item.project-veteran .portfolio-meta,
-body.portfolio-page .portfolio-item.project-veteran .portfolio-name,
-body.portfolio-page .portfolio-item.project-veteran .portfolio-summary,
-body.portfolio-page .portfolio-item.project-veteran .portfolio-link{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-veteran .portfolio-meta,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-veteran .portfolio-name,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-veteran .portfolio-summary,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-veteran .portfolio-link{
   color:#bf2a2a !important;
 }
 
-body.portfolio-page .portfolio-item.project-collins{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins{
   background:#20452b !important;
   border-color:#17331f !important;
   color:#ddd0b1 !important;
 }
 
-body.portfolio-page .portfolio-item.project-collins:hover{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins:hover{
   background:#295637 !important;
   border-color:#17331f !important;
 }
 
-body.portfolio-page .portfolio-item.project-collins .portfolio-meta,
-body.portfolio-page .portfolio-item.project-collins .portfolio-name,
-body.portfolio-page .portfolio-item.project-collins .portfolio-summary,
-body.portfolio-page .portfolio-item.project-collins .portfolio-link{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins .portfolio-meta,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins .portfolio-name,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins .portfolio-summary,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins .portfolio-link{
   color:#ddd0b1 !important;
 }
 
-body.portfolio-page .portfolio-item.project-quickthrills{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-quickthrills{
   background:#ffffff !important;
   border-color:#11110d !important;
   color:#11110d !important;
 }
 
-body.portfolio-page .portfolio-item.project-quickthrills:hover{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-quickthrills:hover{
   background:#f2f2f2 !important;
   border-color:#11110d !important;
 }
 
-body.portfolio-page .portfolio-item.project-quickthrills .portfolio-meta,
-body.portfolio-page .portfolio-item.project-quickthrills .portfolio-name,
-body.portfolio-page .portfolio-item.project-quickthrills .portfolio-summary,
-body.portfolio-page .portfolio-item.project-quickthrills .portfolio-link{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-quickthrills .portfolio-meta,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-quickthrills .portfolio-name,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-quickthrills .portfolio-summary,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-quickthrills .portfolio-link{
   color:#11110d !important;
 }
 
-body.portfolio-page .portfolio-item.project-seabrook{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook{
   background:#b92333 !important;
   border-color:#5d1521 !important;
   color:#11110d !important;
 }
 
-body.portfolio-page .portfolio-item.project-seabrook:hover{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook:hover{
   background:#cf2a3d !important;
   border-color:#5d1521 !important;
 }
 
-body.portfolio-page .portfolio-item.project-seabrook .portfolio-meta,
-body.portfolio-page .portfolio-item.project-seabrook .portfolio-name,
-body.portfolio-page .portfolio-item.project-seabrook .portfolio-summary,
-body.portfolio-page .portfolio-item.project-seabrook .portfolio-link{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook .portfolio-meta,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook .portfolio-name,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook .portfolio-summary,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook .portfolio-link{
   color:#11110d !important;
 }
 
