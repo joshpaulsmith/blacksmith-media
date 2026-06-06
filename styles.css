@@ -4585,6 +4585,18 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   color:#22090b !important;
 }
 
+body.portfolio-page main > section.portfolio-section .portfolio-overview .section-kicker{
+  color:rgba(255,255,255,.82) !important;
+}
+
+body.portfolio-page main > section.portfolio-section .portfolio-overview h2{
+  color:#ffffff !important;
+}
+
+body.portfolio-page main > section.portfolio-section .portfolio-overview .portfolio-intro-copy{
+  color:rgba(255,255,255,.94) !important;
+}
+
 /* ===== PORTFOLIO PROJECT CARD BRAND OVERRIDES ===== */
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar{
   background:#f7fbff !important;
