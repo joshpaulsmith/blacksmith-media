@@ -2205,37 +2205,37 @@ body.portfolio-page{
 }
 
 .portfolio-item.project-stellar{
-  background:#1d4f91 !important;
-  border-color:#153c70 !important;
-  color:#f4f8ff !important;
+  background:#f7fbff !important;
+  border-color:#1d4f91 !important;
+  color:#1d4f91 !important;
 }
 
 .portfolio-item.project-stellar:hover{
-  background:#245fae !important;
-  border-color:#153c70 !important;
+  background:#eef6ff !important;
+  border-color:#1d4f91 !important;
 }
 
 .portfolio-item.project-stellar .portfolio-meta,
 .portfolio-item.project-stellar .portfolio-name,
 .portfolio-item.project-stellar .portfolio-summary,
 .portfolio-item.project-stellar .portfolio-link{
-  color:#f4f8ff !important;
+  color:#1d4f91 !important;
 }
 
 .portfolio-item.project-stellar .portfolio-feature-points span{
-  background:#0f2b52 !important;
-  border-color:#0f2b52 !important;
-  color:#f4f8ff !important;
+  background:#ffffff !important;
+  border-color:#1d4f91 !important;
+  color:#1d4f91 !important;
 }
 
 .portfolio-item.project-seabrook{
-  background:#7b1f2d !important;
+  background:#b92333 !important;
   border-color:#5d1521 !important;
-  color:#fff7f8 !important;
+  color:#11110d !important;
 }
 
 .portfolio-item.project-seabrook:hover{
-  background:#912538 !important;
+  background:#cf2a3d !important;
   border-color:#5d1521 !important;
 }
 
@@ -2243,7 +2243,7 @@ body.portfolio-page{
 .portfolio-item.project-seabrook .portfolio-name,
 .portfolio-item.project-seabrook .portfolio-summary,
 .portfolio-item.project-seabrook .portfolio-link{
-  color:#fff7f8 !important;
+  color:#11110d !important;
 }
 
 .portfolio-item.project-capco{
@@ -2265,13 +2265,13 @@ body.portfolio-page{
 }
 
 .portfolio-item.project-veteran{
-  background:#bf2a2a !important;
-  border-color:#971d1d !important;
-  color:#fff8f8 !important;
+  background:#ffffff !important;
+  border-color:#bf2a2a !important;
+  color:#bf2a2a !important;
 }
 
 .portfolio-item.project-veteran:hover{
-  background:#d13030 !important;
+  background:#fff5f5 !important;
   border-color:#971d1d !important;
 }
 
@@ -2279,7 +2279,7 @@ body.portfolio-page{
 .portfolio-item.project-veteran .portfolio-name,
 .portfolio-item.project-veteran .portfolio-summary,
 .portfolio-item.project-veteran .portfolio-link{
-  color:#fff8f8 !important;
+  color:#bf2a2a !important;
 }
 
 .portfolio-item.project-collins{
@@ -2301,14 +2301,14 @@ body.portfolio-page{
 }
 
 .portfolio-item.project-quickthrills{
-  background:#d13c3c !important;
-  border-color:#a82626 !important;
+  background:#ffffff !important;
+  border-color:#11110d !important;
   color:#11110d !important;
 }
 
 .portfolio-item.project-quickthrills:hover{
-  background:#e14a4a !important;
-  border-color:#a82626 !important;
+  background:#f2f2f2 !important;
+  border-color:#11110d !important;
 }
 
 .portfolio-item.project-quickthrills .portfolio-meta,
