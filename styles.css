@@ -2418,7 +2418,10 @@ body.portfolio-page{
   }
 
   .portfolio-hero{
-    padding:3rem 1rem 2.25rem;
+    min-height:68svh;
+    padding:4.5rem 1rem 3rem;
+    display:flex;
+    align-items:flex-end;
   }
 
   .portfolio-wrap{
@@ -4304,6 +4307,19 @@ body.home-page #local-seo a,
 body.home-page #portfolio-cta a,
 body.home-page #faq a{
   color:var(--text) !important;
+  font-weight:700;
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:.18em;
+}
+
+body.home-page #services .section-lead a,
+body.home-page #studio-approach .section-lead a,
+body.home-page #who-we-work-with .section-lead a,
+body.home-page #local-seo .section-lead a,
+body.home-page #portfolio-cta .section-lead a,
+body.home-page #faq .section-lead a{
+  color:#f2df8f !important;
 }
 
 body.home-page #services .card,
@@ -4362,6 +4378,26 @@ body.home-page #faq .process-card,
 body.home-page #faq .studio-split-panel{
   background:rgba(255,255,255,.03) !important;
   border-color:rgba(255,255,255,.08) !important;
+}
+
+body.home-page #studio-approach .studio-point span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:34px;
+  min-height:34px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#f2c94c !important;
+  border:1px solid rgba(0,0,0,.16) !important;
+  color:#11110d !important;
+  font-weight:700;
+  box-shadow:none !important;
+}
+
+body.home-page #studio-approach .studio-panel-intro,
+body.home-page #studio-approach .studio-point p{
+  color:#f4f1e8 !important;
 }
 
 body.home-page #services .btn.primary,
