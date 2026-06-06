@@ -267,6 +267,81 @@
     });
   }
 
+  function initMobileNav() {
+    var nav = document.querySelector(".nav");
+    var navInner = document.querySelector(".nav-inner");
+    var navLinks = document.querySelector(".nav-links");
+
+    if (!nav || !navInner || !navLinks) return;
+    if (navInner.querySelector(".nav-toggle")) return;
+
+    var toggle = document.createElement("button");
+    toggle.className = "nav-toggle";
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "site-nav-links");
+    toggle.setAttribute("aria-label", "Open menu");
+    toggle.innerHTML =
+      '<span class="nav-toggle-box" aria-hidden="true">' +
+      '<span class="nav-toggle-line"></span>' +
+      '<span class="nav-toggle-line"></span>' +
+      '<span class="nav-toggle-line"></span>' +
+      "</span>" +
+      '<span class="nav-toggle-text">Menu</span>';
+
+    if (!navLinks.id) {
+      navLinks.id = "site-nav-links";
+    }
+
+    navInner.insertBefore(toggle, navLinks);
+
+    function closeMenu() {
+      nav.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+      document.body.classList.remove("nav-is-open");
+    }
+
+    function openMenu() {
+      nav.classList.add("nav-open");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
+      document.body.classList.add("nav-is-open");
+    }
+
+    toggle.addEventListener("click", function () {
+      if (nav.classList.contains("nav-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!nav.classList.contains("nav-open")) return;
+      if (nav.contains(e.target)) return;
+      closeMenu();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("nav-open")) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > MOBILE_BREAKPOINT) {
+        closeMenu();
+      }
+    });
+  }
+
   function initMotionSystem() {
     if (isReducedMotion()) return;
 
@@ -355,6 +430,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initPageTransitions();
+    initMobileNav();
     initHomeProjectModal();
     initContactForm();
     initMotionSystem();
