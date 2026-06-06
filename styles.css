@@ -4472,6 +4472,10 @@ body.forge-post-page{
   background:#0b0d10 !important;
 }
 
+body.forge-post-page main{
+  background:var(--page-solid) !important;
+}
+
 body.contact-page,
 body.privacy-page{
   --page-solid:#cfd4db;
@@ -4962,13 +4966,15 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 }
 
 body.forge-page main > section.forge-article-section{
-  background:var(--page-solid) !important;
+  background:transparent !important;
   color:var(--page-solid-text) !important;
-  border-bottom:0 !important;
+  border:0 !important;
+  box-shadow:none !important;
 }
 
 body.forge-page main > section.forge-article-section + section.forge-article-section{
   border-top:0 !important;
+  margin-top:0 !important;
 }
 
 body.forge-page main > section.forge-article-section :is(.section-kicker, .section-copy, .section-lead, .article-body p, .article-body li){
