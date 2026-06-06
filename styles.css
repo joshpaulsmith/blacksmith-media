@@ -4205,6 +4205,18 @@ body.home-page #faq .btn.secondary{
   color:var(--text) !important;
 }
 
+body.home-page #services .cards .card.card-brand h3{
+  color:#b57cff !important;
+}
+
+body.home-page #services .cards .card.card-web h3{
+  color:#00e6a8 !important;
+}
+
+body.home-page #services .cards .card.card-seo h3{
+  color:#7aa2ff !important;
+}
+
 body.home-page #local-seo .map-wrap{
   border-color:rgba(255,255,255,.08) !important;
 }

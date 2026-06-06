@@ -476,8 +476,6 @@
     initMobileNav();
     initHomeProjectModal();
     initContactForm();
-    initMotionSystem();
-    initProcessFlow();
     initInteractiveCards();
   });
 
