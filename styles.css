@@ -3267,24 +3267,12 @@ body.contact-page .project-submit{
   --accent:#d7c08a;
   --radius:14px;
 
-  --home:#d7c08a;
-  --brand:#d7c08a;
-  --web:#d7c08a;
-  --seo:#d7c08a;
-  --portfolio:#d7c08a;
-  --contact:#d7c08a;
-}
-
-body.home-page,
-body.brand-page,
-body.web-page,
-body.seo-page,
-body.portfolio-page,
-body.contact-page,
-body.privacy-page,
-body.thank-you-page{
-  background:
-    linear-gradient(180deg, #101318 0%, #12161b 30%, #0d1014 100%) !important;
+  --home:#f2c94c;
+  --brand:#9b51e0;
+  --web:#00ff9c;
+  --seo:#7aa2ff;
+  --portfolio:#ff4d4d;
+  --contact:#b8b8b8;
 }
 
 .nav{
@@ -3380,13 +3368,6 @@ body.contact-page .nav-links a:nth-child(6){
 
 .hero{
   border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.highlight{
-  background:rgba(255,255,255,.05) !important;
-  color:var(--text) !important;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:4px;
 }
 
 .seo-block,
@@ -3563,7 +3544,10 @@ body.home-page h1{
 }
 
 body.home-page .hero .highlight{
+  background:var(--home) !important;
+  color:#000 !important;
   padding:.02em .12em .05em;
+  border:0;
   border-radius:3px;
 }
 
