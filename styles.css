@@ -2127,9 +2127,7 @@ body.portfolio-page{
 }
 
 .portfolio-feature-shell{
-  display:grid;
-  grid-template-columns:minmax(0, 1.25fr) minmax(240px, .75fr);
-  gap:20px;
+  display:block;
   margin-top:2.5rem;
 }
 
@@ -2165,6 +2163,13 @@ body.portfolio-page{
   border-radius:8px;
   background:rgba(255,255,255,.02);
   align-self:stretch;
+}
+
+.portfolio-feature-note-inline{
+  margin-top:1.25rem;
+  max-width:44rem;
+  font-size:.98rem;
+  line-height:1.82;
 }
 
 .portfolio-feature-note p{
@@ -4548,7 +4553,8 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-meta,
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-name,
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-summary,
-body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-link{
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-link,
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar .portfolio-feature-note-inline{
   color:#1d4f91 !important;
 }
 
