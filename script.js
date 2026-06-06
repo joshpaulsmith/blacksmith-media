@@ -267,41 +267,6 @@
     });
   }
 
-  function initDashboardPanels() {
-    document.querySelectorAll("[data-dashboard]").forEach(function (dashboard) {
-      var tabs = dashboard.querySelectorAll(".dashboard-tab");
-      var panels = dashboard.querySelectorAll(".dashboard-panel");
-
-      if (!tabs.length || !panels.length) return;
-
-      function activate(panelName) {
-        tabs.forEach(function (tab) {
-          var active = tab.getAttribute("data-panel") === panelName;
-          tab.classList.toggle("is-active", active);
-          tab.setAttribute("aria-selected", active ? "true" : "false");
-        });
-
-        panels.forEach(function (panel) {
-          var active = panel.getAttribute("data-panel") === panelName;
-          panel.classList.toggle("is-active", active);
-          panel.hidden = !active;
-        });
-      }
-
-      tabs.forEach(function (tab) {
-        tab.addEventListener("click", function () {
-          activate(tab.getAttribute("data-panel"));
-        });
-
-        tab.addEventListener("mouseenter", function () {
-          if (window.innerWidth > MOBILE_BREAKPOINT) {
-            activate(tab.getAttribute("data-panel"));
-          }
-        });
-      });
-    });
-  }
-
   function initMobileNav() {
     var nav = document.querySelector(".nav");
     var navInner = document.querySelector(".nav-inner");
@@ -388,7 +353,7 @@
         step: 42
       },
       {
-        selector: ".signal-grid > .signal-card",
+        selector: ".overview-rail > .overview-node",
         step: 36
       },
       {
@@ -396,7 +361,7 @@
         step: 40
       },
       {
-        selector: ".cards > .card, .process > .step, .process-grid > *, .deliverables-grid > *, .faq-grid > *, .portfolio-list > *, .footer-inner > *, .contact-points > *, .portfolio-cta .btn-row > *, .dashboard-tabs > *, .dashboard-panels > *",
+        selector: ".cards > .card, .process > .step, .process-grid > *, .deliverables-grid > *, .faq-grid > *, .portfolio-list > *, .footer-inner > *, .contact-points > *, .portfolio-cta .btn-row > *",
         step: 34
       }
     ];
@@ -430,6 +395,49 @@
 
     revealItems.forEach(function (item) {
       observer.observe(item);
+    });
+  }
+
+  function initProcessFlow() {
+    var grid = document.querySelector("[data-process-grid]");
+    if (!grid) return;
+
+    var steps = Array.prototype.slice.call(grid.querySelectorAll("[data-process-step]"));
+    if (!steps.length) return;
+
+    function setProgress(activeIndex) {
+      var percent = steps.length <= 1 ? 100 : (activeIndex / (steps.length - 1)) * 100;
+      grid.style.setProperty("--process-progress", percent.toFixed(2));
+
+      steps.forEach(function (step, index) {
+        step.classList.toggle("is-active", index <= activeIndex);
+      });
+    }
+
+    setProgress(0);
+
+    if (isReducedMotion()) {
+      setProgress(steps.length - 1);
+      return;
+    }
+
+    var maxSeen = 0;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var idx = steps.indexOf(entry.target);
+        if (idx > maxSeen) {
+          maxSeen = idx;
+          setProgress(maxSeen);
+        }
+      });
+    }, {
+      threshold: 0.45,
+      rootMargin: "0px 0px -18% 0px"
+    });
+
+    steps.forEach(function (step) {
+      observer.observe(step);
     });
   }
 
@@ -468,8 +476,8 @@
     initMobileNav();
     initHomeProjectModal();
     initContactForm();
-    initDashboardPanels();
     initMotionSystem();
+    initProcessFlow();
     initInteractiveCards();
   });
 
