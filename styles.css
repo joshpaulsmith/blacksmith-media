@@ -4560,6 +4560,36 @@ body.portfolio-page .btn.secondary{
   color:#22090b !important;
 }
 
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero){
+  background:#cf5f66 !important;
+  color:#22090b !important;
+  border-bottom-color:rgba(0,0,0,.12) !important;
+}
+
+body.portfolio-page main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero){
+  background:#0b0d10 !important;
+  color:var(--text) !important;
+  border-bottom-color:rgba(255,255,255,.06) !important;
+}
+
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(.section-kicker, .portfolio-intro-copy, .portfolio-summary, .portfolio-link, .portfolio-meta, .portfolio-feature-note-inline, .portfolio-cta p){
+  color:rgba(34,9,11,.82) !important;
+}
+
+body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) :is(h2, h3, strong, .portfolio-name){
+  color:#22090b !important;
+}
+
+body.portfolio-page .portfolio-overview,
+body.portfolio-page .portfolio-contact-box{
+  background-image:
+    linear-gradient(180deg, rgba(12, 8, 14, 0.18), rgba(30, 10, 12, 0.12)),
+    url("/assets/portfolio/brand-spectrum-bg.jpg") !important;
+  background-position:center center !important;
+  background-size:cover !important;
+  background-repeat:no-repeat !important;
+}
+
 /* ===== PORTFOLIO PROJECT CARD BRAND OVERRIDES ===== */
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar{
   background:#f7fbff !important;
