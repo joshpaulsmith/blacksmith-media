@@ -4573,14 +4573,14 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-capco{
-  background:#f2c94c !important;
-  border-color:#d6ad2b !important;
+  background:#f0ddb0 !important;
+  border-color:#d1bb82 !important;
   color:#11110d !important;
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-capco:hover{
-  background:#f5d66e !important;
-  border-color:#d6ad2b !important;
+  background:#f4e4bc !important;
+  border-color:#d1bb82 !important;
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-capco .portfolio-meta,
