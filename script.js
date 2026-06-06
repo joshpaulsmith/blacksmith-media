@@ -350,19 +350,19 @@
     var revealGroups = [
       {
         selector: ".breadcrumbs .wrap > *, .hero .eyebrow, .hero h1, .hero .lead, .hero .seo-block, .hero .btn-row, .hero .micro",
-        step: 80
+        step: 42
       },
       {
         selector: ".trust-strip-inner > span",
-        step: 65
+        step: 36
       },
       {
         selector: "main .section > .wrap > .section-kicker, main .section > .wrap > h2, main .section > .wrap > .section-copy, main .section > .wrap > .section-lead, main .section > .wrap > .contact-layout, main .section > .wrap > .contact-box, main .section > .wrap > .legal-copy, main .section > .wrap > .review-link-box",
-        step: 70
+        step: 40
       },
       {
         selector: ".cards > .card, .process > .step, .process-grid > *, .deliverables-grid > *, .faq-grid > *, .portfolio-list > *, .footer-inner > *, .contact-points > *, .portfolio-cta .btn-row > *",
-        step: 60
+        step: 34
       }
     ];
 
@@ -389,8 +389,8 @@
         observer.unobserve(entry.target);
       });
     }, {
-      threshold: 0.16,
-      rootMargin: "0px 0px -10% 0px"
+      threshold: 0.14,
+      rootMargin: "0px 0px -12% 0px"
     });
 
     revealItems.forEach(function (item) {
