@@ -2126,28 +2126,28 @@ body.portfolio-page{
   gap:28px;
   align-items:end;
   padding:1.6rem 1.75rem;
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(0,0,0,.28);
   border-radius:8px;
-  background:linear-gradient(180deg, rgba(11,13,16,.52), rgba(11,13,16,.34));
-  backdrop-filter:blur(8px);
-  box-shadow:0 18px 44px rgba(0,0,0,.16);
+  background:linear-gradient(180deg, rgba(11,13,16,.72), rgba(11,13,16,.56));
+  backdrop-filter:blur(10px);
+  box-shadow:0 20px 54px rgba(0,0,0,.22);
 }
 
 .portfolio-overview .section-kicker{
-  color:rgba(255,255,255,.72) !important;
+  color:rgba(255,255,255,.78) !important;
 }
 
 .portfolio-overview h2{
   color:#fff !important;
-  text-shadow:0 2px 18px rgba(0,0,0,.24);
+  text-shadow:0 2px 22px rgba(0,0,0,.36);
 }
 
 .portfolio-intro-copy{
   margin:0;
-  color:rgba(255,255,255,.9);
+  color:#f3f4f7;
   font-size:1rem;
   line-height:1.82;
-  text-shadow:0 2px 16px rgba(0,0,0,.22);
+  text-shadow:0 2px 18px rgba(0,0,0,.32);
 }
 
 .portfolio-feature-shell{
@@ -4548,9 +4548,9 @@ body.portfolio-page .portfolio-hero{
 }
 
 body.portfolio-page .btn.primary{
-  background:#0b0d10 !important;
-  border-color:#0b0d10 !important;
-  color:#cf5f66 !important;
+  background:#ff4d4d !important;
+  border-color:#ff4d4d !important;
+  color:#0b0d10 !important;
   box-shadow:none !important;
 }
 
