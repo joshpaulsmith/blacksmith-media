@@ -4655,11 +4655,12 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 }
 
 .forge-archive-controls{
-  display:flex;
-  align-items:center;
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(280px, 420px);
+  align-items:end;
   justify-content:space-between;
-  gap:16px;
-  margin:26px 0 22px;
+  gap:18px;
+  margin:30px 0 22px;
 }
 
 .forge-archive-summary{
@@ -4674,12 +4675,14 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 .forge-search{
   display:flex;
   align-items:center;
-  gap:10px;
-  min-width:min(420px, 100%);
-  padding:12px 14px;
-  border:1px solid rgba(0,0,0,.14);
-  border-radius:10px;
-  background:rgba(255,255,255,.28);
+  gap:12px;
+  width:100%;
+  min-width:0;
+  padding:14px 16px;
+  border:1px solid rgba(0,0,0,.16);
+  border-radius:12px;
+  background:rgba(255,255,255,.44);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25);
 }
 
 .forge-search label{
@@ -4690,6 +4693,18 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   text-transform:uppercase;
 }
 
+.forge-search-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  background:rgba(11,13,16,.08);
+  font-size:13px;
+  color:#1d1208;
+}
+
 .forge-search input{
   flex:1;
   border:0;
@@ -4698,26 +4713,70 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   background:transparent;
   color:#1d1208;
   font:inherit;
+  font-size:15px;
+  line-height:1.4;
 }
 
 .forge-search input::placeholder{
-  color:rgba(29,18,8,.6);
+  color:rgba(29,18,8,.58);
 }
 
 .forge-list{
   display:grid;
-  gap:14px;
+  gap:16px;
 }
 
 .forge-list-item{
+  position:relative;
+  overflow:hidden;
   display:grid;
-  grid-template-columns:180px minmax(0, 1fr) auto;
+  grid-template-columns:160px minmax(0, 1fr) auto;
   gap:22px;
   align-items:start;
-  padding:20px 22px;
-  border:1px solid rgba(0,0,0,.14);
-  border-radius:12px;
-  background:rgba(255,255,255,.2);
+  padding:22px 24px;
+  border:1px solid rgba(0,0,0,.16);
+  border-radius:14px;
+  background:rgba(255,255,255,.34);
+  box-shadow:0 10px 24px rgba(27,16,10,.08);
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    background-color .22s ease;
+}
+
+.forge-list-item::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:5px;
+  background:#1d1208;
+}
+
+.forge-list-item:hover{
+  transform:translateY(-2px);
+  border-color:rgba(0,0,0,.22);
+  background:rgba(255,255,255,.46);
+  box-shadow:0 18px 34px rgba(27,16,10,.14);
+}
+
+.forge-list-item:focus-visible{
+  outline:2px solid #0b0d10;
+  outline-offset:4px;
+}
+
+.forge-list-item-seo::before{
+  background:linear-gradient(180deg, #4c7bff 0%, #85a8ff 100%);
+}
+
+.forge-list-item-web::before{
+  background:linear-gradient(180deg, #00dca1 0%, #70f0c8 100%);
+}
+
+.forge-list-item-brand::before{
+  background:linear-gradient(180deg, #8e4ce0 0%, #c49cff 100%);
 }
 
 .forge-list-date{
@@ -4731,7 +4790,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 
 .forge-list-main{
   display:grid;
-  gap:10px;
+  gap:12px;
 }
 
 .forge-list-taxonomy{
@@ -4756,26 +4815,43 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   color:#1d1208;
 }
 
+.forge-list-item-seo .forge-list-category:first-child{
+  border-color:rgba(76,123,255,.26);
+  color:#2d58c8;
+}
+
+.forge-list-item-web .forge-list-category:first-child{
+  border-color:rgba(0,220,161,.24);
+  color:#067f5f;
+}
+
+.forge-list-item-brand .forge-list-category:first-child{
+  border-color:rgba(142,76,224,.26);
+  color:#6f2ec2;
+}
+
 .forge-list-item h3{
   margin:0;
   font-size:clamp(24px, 2vw, 30px);
   line-height:1.08;
+  color:#0f0c08;
 }
 
 .forge-list-item p{
   margin:0;
+  color:rgba(29,18,8,.82);
 }
 
-.forge-list-link{
+.forge-list-cta{
   align-self:center;
   justify-self:end;
   display:inline-flex;
   align-items:center;
   gap:8px;
   min-height:44px;
-  padding:10px 14px;
-  border:1px solid rgba(0,0,0,.16);
-  border-radius:10px;
+  padding:10px 15px;
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:999px;
   background:#0b0d10;
   color:#ffc090 !important;
   font-family:'Roboto Mono', monospace;
@@ -4783,9 +4859,10 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   font-weight:700;
   letter-spacing:.08em;
   text-transform:uppercase;
+  box-shadow:0 8px 18px rgba(11,13,16,.18);
 }
 
-.forge-list-link::after{
+.forge-list-cta::after{
   content:"->";
 }
 
@@ -4900,8 +4977,8 @@ body.forge-page main > section:nth-of-type(odd):not(.hero) .article-note{
   }
 
   .forge-archive-controls{
-    flex-direction:column;
-    align-items:stretch;
+    grid-template-columns:1fr;
+    align-items:start;
   }
 
   .forge-search{
@@ -4913,7 +4990,7 @@ body.forge-page main > section:nth-of-type(odd):not(.hero) .article-note{
     gap:14px;
   }
 
-  .forge-list-link{
+  .forge-list-cta{
     justify-self:start;
   }
 }
