@@ -161,7 +161,7 @@
         </p>
 
         <div class="btn-row">
-          <a class="btn primary open-project-form" href="#">Start a Project</a>
+          <a class="btn primary" href="/contact/">Start a Project</a>
           <a class="btn secondary" href="/">Back to Home</a>
         </div>
       </div>
@@ -364,80 +364,13 @@
         <div class="contact-box">
           <div class="contact-email">blacksmithmedia<wbr>@protonmail.com</div>
           <div class="btn-row">
-            <a class="btn primary open-project-form" href="#">Start a Project</a>
+            <a class="btn primary" href="/contact/">Start a Project</a>
             <a class="btn secondary" href="/">Back to Home</a>
           </div>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- POPUP -->
-  <div
-    id="projectModal"
-    aria-hidden="true"
-    style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:20px;"
-  >
-    <div
-      id="projectModalOverlay"
-      style="position:absolute; inset:0; background:rgba(0,0,0,.72); backdrop-filter:blur(6px);"
-    ></div>
-
-    <div
-      style="position:relative; z-index:2; width:min(720px, 100%); background:#0b0b0b; border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:30px; box-shadow:0 24px 70px rgba(0,0,0,.55);"
-    >
-      <button
-        id="closeProjectForm"
-        aria-label="Close"
-        style="position:absolute; top:14px; right:16px; width:40px; height:40px; border:none; background:transparent; color:#fff; font-size:30px; line-height:1; cursor:pointer;"
-      >&times;</button>
-
-      <h2 style="margin:0 0 18px; font-family:'Roboto Mono', monospace; font-size:42px;">Start a Project</h2>
-      <p class="project-modal-copy">
-        Prefer email? Reach us at <a href="mailto:blacksmithmedia@protonmail.com">blacksmithmedia@protonmail.com</a>.
-      </p>
-
-      <form id="projectForm" class="project-form">
-        <input type="hidden" name="_subject" value="New Blacksmith Media SEO and maintenance inquiry" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <div class="form-honeypot" aria-hidden="true">
-          <label>
-            Leave this field empty
-            <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
-          </label>
-        </div>
-
-        <div class="form-row">
-          <label class="service-field">
-            Name
-            <input type="text" name="name" placeholder="Name" required>
-          </label>
-          <label class="service-field">
-            Email
-            <input type="email" name="email" placeholder="Email" required>
-          </label>
-          <label class="service-field">
-            Business Name
-            <input type="text" name="business" placeholder="Business Name">
-          </label>
-        </div>
-
-        <div class="form-row service-form-message">
-          <label class="service-field service-field-full">
-            Project Details
-            <textarea name="message" placeholder="Tell us about the project" required></textarea>
-          </label>
-          <button type="submit">SEND</button>
-        </div>
-
-      </form>
-
-      <div class="form-success" id="formSuccess">
-        Thanks — we’ll be in touch.
-      </div>
-    </div>
-  </div>
 
   <footer class="footer">
     <div class="wrap footer-inner">
