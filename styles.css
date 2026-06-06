@@ -4964,7 +4964,11 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 body.forge-page main > section.forge-article-section{
   background:var(--page-solid) !important;
   color:var(--page-solid-text) !important;
-  border-bottom-color:rgba(0,0,0,.12) !important;
+  border-bottom:0 !important;
+}
+
+body.forge-page main > section.forge-article-section + section.forge-article-section{
+  border-top:0 !important;
 }
 
 body.forge-page main > section.forge-article-section :is(.section-kicker, .section-copy, .section-lead, .article-body p, .article-body li){
