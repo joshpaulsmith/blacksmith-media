@@ -4548,9 +4548,13 @@ body.portfolio-page .btn.secondary{
 
 body.portfolio-page main > section.portfolio-section,
 body.portfolio-page main > section.portfolio-cta{
-  background:
+  background-color:#b8656d !important;
+  background-image:
     linear-gradient(180deg, rgba(14, 10, 18, 0.22), rgba(44, 17, 21, 0.16)),
-    url("./assets/portfolio/brand-spectrum-bg.jpg") center/cover no-repeat !important;
+    url("/assets/portfolio/brand-spectrum-bg.jpg") !important;
+  background-position:center center !important;
+  background-size:cover !important;
+  background-repeat:no-repeat !important;
   color:#22090b !important;
   border-bottom-color:rgba(0,0,0,.12) !important;
 }
