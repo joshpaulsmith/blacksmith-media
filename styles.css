@@ -4647,7 +4647,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook{
   background:#b92333 !important;
   border-color:#5d1521 !important;
-  color:#11110d !important;
+  color:#ffffff !important;
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook:hover{
@@ -4659,7 +4659,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook .portfolio-name,
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook .portfolio-summary,
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-seabrook .portfolio-link{
-  color:#11110d !important;
+  color:#ffffff !important;
 }
 
 @media (max-width:960px){
