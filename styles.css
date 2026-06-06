@@ -4496,8 +4496,8 @@ body.portfolio-page{
 }
 
 body.forge-page{
-  --page-solid:#ffc090;
-  --page-solid-text:#1d1208;
+  --page-solid:#ffffff;
+  --page-solid-text:#121418;
   --page-hero-start:#0b0b0b;
   --page-hero-mid:#2f1d11;
   --page-hero-end:#5c3520;
@@ -4508,7 +4508,7 @@ body.forge-post-page{
 }
 
 body.forge-post-page main{
-  background:var(--page-solid) !important;
+  background:#ffffff !important;
 }
 
 body.forge-post-page .breadcrumbs,
@@ -4527,6 +4527,32 @@ body.forge-post-page main > section:not(.hero):not(.forge-post-cta-section){
   border-bottom:none !important;
   box-shadow:none !important;
   outline:none !important;
+}
+
+body.forge-page:not(.forge-post-page) main > section:not(.hero):not(.forge-cta-section){
+  background:#ffffff !important;
+  color:#121418 !important;
+  border-bottom-color:rgba(0,0,0,.08) !important;
+}
+
+body.forge-page:not(.forge-post-page) main > section:not(.hero):not(.forge-cta-section) :is(.section-kicker, .section-lead, .section-copy, h2, h3, strong, p, a){
+  color:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) main > section:not(.hero):not(.forge-cta-section) :is(.forge-featured-post, .forge-start-card, .forge-list-item, .forge-post-card){
+  background:#fbfbfb !important;
+  border-color:rgba(0,0,0,.12) !important;
+  box-shadow:0 12px 24px rgba(18,20,24,.06) !important;
+}
+
+body.forge-page:not(.forge-post-page) main > section:not(.hero):not(.forge-cta-section) .forge-category-rail{
+  background:rgba(255,255,255,.96) !important;
+  border-color:rgba(0,0,0,.12) !important;
+}
+
+body.forge-page:not(.forge-post-page) main > section:not(.hero):not(.forge-cta-section) .forge-search{
+  background:#ffffff !important;
+  border-color:rgba(0,0,0,.14) !important;
 }
 
 body.forge-post-page .breadcrumbs{
@@ -4811,7 +4837,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   padding:28px;
   border:1px solid rgba(0,0,0,.16);
   border-radius:18px;
-  background:linear-gradient(135deg, rgba(255,255,255,.42), rgba(255,255,255,.22));
+  background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(247,247,247,.96));
   box-shadow:0 16px 34px rgba(27,16,10,.1);
 }
 
@@ -4892,7 +4918,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   padding:18px;
   border:1px solid rgba(0,0,0,.14);
   border-radius:14px;
-  background:rgba(255,255,255,.28);
+  background:#fbfbfb;
   box-shadow:0 12px 26px rgba(27,16,10,.08);
   transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
@@ -5007,7 +5033,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   padding:14px 16px;
   border:1px solid rgba(0,0,0,.16);
   border-radius:12px;
-  background:rgba(255,255,255,.44);
+  background:#ffffff;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.25);
 }
 
@@ -5062,7 +5088,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   padding:22px 24px;
   border:1px solid rgba(0,0,0,.16);
   border-radius:14px;
-  background:rgba(255,255,255,.34);
+  background:#fbfbfb;
   box-shadow:0 10px 24px rgba(27,16,10,.08);
   transition:
     transform .22s ease,
@@ -5084,7 +5110,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 .forge-list-item:hover{
   transform:translateY(-2px);
   border-color:rgba(0,0,0,.22);
-  background:rgba(255,255,255,.46);
+  background:#ffffff;
   box-shadow:0 18px 34px rgba(27,16,10,.14);
 }
 
@@ -5218,7 +5244,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   padding:20px;
   border:1px solid rgba(0,0,0,.14);
   border-radius:14px;
-  background:rgba(255,255,255,.24);
+  background:#fbfbfb;
   box-shadow:0 12px 24px rgba(27,16,10,.08);
 }
 
@@ -5234,6 +5260,32 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 
 .forge-post-card p{
   margin:0;
+}
+
+body.forge-page:not(.forge-post-page) main > section.section:not(.hero):not(.forge-cta-section){
+  background:#ffffff !important;
+  color:#121418 !important;
+  border-bottom-color:rgba(0,0,0,.08) !important;
+}
+
+body.forge-page:not(.forge-post-page) main > section.section:not(.hero):not(.forge-cta-section) :is(.section-kicker, .section-lead, .section-copy, h2, h3, strong, p, a){
+  color:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) main > section.section:not(.hero):not(.forge-cta-section) :is(.forge-featured-post, .forge-start-card, .forge-list-item, .forge-post-card){
+  background:#fbfbfb !important;
+  border-color:rgba(0,0,0,.12) !important;
+  box-shadow:0 12px 24px rgba(18,20,24,.06) !important;
+}
+
+body.forge-page:not(.forge-post-page) main > section.section:not(.hero):not(.forge-cta-section) .forge-category-rail{
+  background:rgba(255,255,255,.96) !important;
+  border-color:rgba(0,0,0,.12) !important;
+}
+
+body.forge-page:not(.forge-post-page) main > section.section:not(.hero):not(.forge-cta-section) .forge-search{
+  background:#ffffff !important;
+  border-color:rgba(0,0,0,.14) !important;
 }
 
 .forge-post-link,
@@ -5348,7 +5400,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
   margin:18px 0;
   padding:18px 20px;
   border-left:4px solid var(--forge);
-  background:rgba(255,255,255,.18);
+  background:#fff4eb;
   color:#0f0c08;
   font-family:'Roboto Mono', monospace;
   font-size:clamp(20px, 2.3vw, 28px);
@@ -5392,7 +5444,7 @@ body.forge-page main > section.forge-article-section + section.forge-article-sec
 }
 
 body.forge-page main > section.forge-article-section :is(.section-kicker, .section-copy, .section-lead, .article-body p, .article-body li){
-  color:rgba(29,18,8,.84) !important;
+  color:rgba(18,20,24,.84) !important;
 }
 
 body.forge-page main > section.forge-article-section :is(h2, h3, strong){
@@ -5401,8 +5453,8 @@ body.forge-page main > section.forge-article-section :is(h2, h3, strong){
 }
 
 body.forge-page main > section.forge-article-section .article-note{
-  background:rgba(255,255,255,.18) !important;
-  border-color:rgba(0,0,0,.14) !important;
+  background:#fff6ef !important;
+  border-color:rgba(255,138,61,.22) !important;
 }
 
 .forge-cta-section{
@@ -5457,13 +5509,13 @@ body.forge-page main > section.forge-article-section .article-note{
 }
 
 body.forge-page:not(.forge-post-page) main > section:nth-of-type(even):not(.hero) .article-note{
-  background:rgba(255,255,255,.16) !important;
-  border-color:rgba(0,0,0,.14) !important;
+  background:#fff6ef !important;
+  border-color:rgba(255,138,61,.22) !important;
 }
 
 body.forge-page:not(.forge-post-page) main > section:nth-of-type(odd):not(.hero) .article-note{
-  background:rgba(255,255,255,.03) !important;
-  border-color:rgba(255,255,255,.08) !important;
+  background:#fff6ef !important;
+  border-color:rgba(255,138,61,.22) !important;
 }
 
 body.forge-page main > section.forge-post-cta-section{
