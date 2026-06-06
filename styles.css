@@ -4546,6 +4546,29 @@ body.portfolio-page .btn.secondary{
   color:#22090b !important;
 }
 
+body.portfolio-page .portfolio-section,
+body.portfolio-page .portfolio-cta{
+  background:
+    radial-gradient(circle at 10% 18%, rgba(244, 207, 84, 0.22) 0, rgba(244, 207, 84, 0) 30%),
+    radial-gradient(circle at 26% 76%, rgba(173, 110, 255, 0.18) 0, rgba(173, 110, 255, 0) 34%),
+    radial-gradient(circle at 48% 22%, rgba(99, 239, 194, 0.18) 0, rgba(99, 239, 194, 0) 30%),
+    radial-gradient(circle at 74% 68%, rgba(151, 182, 255, 0.2) 0, rgba(151, 182, 255, 0) 32%),
+    radial-gradient(circle at 92% 26%, rgba(207, 95, 102, 0.24) 0, rgba(207, 95, 102, 0) 28%),
+    linear-gradient(180deg, #d3888e 0%, #c7757d 100%) !important;
+  color:#22090b !important;
+  border-bottom-color:rgba(0,0,0,.12) !important;
+}
+
+body.portfolio-page .portfolio-section :is(.section-kicker, .portfolio-intro-copy, .portfolio-summary, .portfolio-link, .portfolio-meta, .portfolio-feature-note-inline, .portfolio-cta p),
+body.portfolio-page .portfolio-cta :is(.section-kicker, p){
+  color:rgba(34,9,11,.82) !important;
+}
+
+body.portfolio-page .portfolio-section :is(h2, h3, strong, .portfolio-name),
+body.portfolio-page .portfolio-cta :is(h2, h3, strong){
+  color:#22090b !important;
+}
+
 /* ===== PORTFOLIO PROJECT CARD BRAND OVERRIDES ===== */
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-stellar{
   background:#f7fbff !important;
