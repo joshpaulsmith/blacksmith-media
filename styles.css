@@ -5052,6 +5052,16 @@ body.forge-page main > section.forge-post-cta-section{
   border-bottom-color:rgba(255,255,255,.06) !important;
 }
 
+body.forge-post-page main > section.forge-article-section{
+  border-top:none !important;
+  border-bottom:none !important;
+  box-shadow:none !important;
+}
+
+body.forge-post-page main > section.forge-article-section + section.forge-article-section{
+  border-top:none !important;
+}
+
 .forge-post-contact-box{
   max-width:760px;
   text-align:center;
