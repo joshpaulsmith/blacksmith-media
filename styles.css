@@ -248,14 +248,21 @@ body.seo-page .highlight{
 .nav-links{
   display:flex;
   gap:18px;
+  align-items:center;
 }
 
 .nav-links a{
   position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
   padding:10px 12px;
   border-radius:10px;
   font-family:'Roboto Mono', monospace;
   font-size:13px;
+  line-height:1.18;
+  text-align:center;
   letter-spacing:.08em;
   text-transform:uppercase;
   transition:
@@ -1667,19 +1674,20 @@ body.is-entering-service main{
     display:grid;
     grid-template-columns:auto 1fr;
     align-items:center;
-    gap:48px;
+    gap:40px;
   }
 
   body.home-page .nav-links{
     display:flex;
-    justify-content:space-between;
+    justify-content:flex-end;
     align-items:center;
-    gap:14px;
-    width:100%;
+    gap:10px;
+    width:auto;
+    margin-left:auto;
   }
 
   body.home-page .brand{
-    min-width:360px;
+    min-width:330px;
   }
 
   .nav-toggle{
@@ -3564,9 +3572,9 @@ body.motion-enabled .trust-strip-inner span.is-visible{
 
 .executive-strip-grid{
   display:grid;
-  grid-template-columns:minmax(0, .95fr) minmax(0, 1.05fr);
+  grid-template-columns:minmax(0, 1.08fr) minmax(0, .92fr);
   gap:18px;
-  align-items:stretch;
+  align-items:start;
 }
 
 .executive-strip-copy,
@@ -3578,9 +3586,9 @@ body.motion-enabled .trust-strip-inner span.is-visible{
 }
 
 .executive-strip-copy h2{
-  max-width:12ch;
+  max-width:11ch;
   margin-bottom:0;
-  font-size:clamp(28px, 4vw, 44px);
+  font-size:clamp(28px, 3.5vw, 42px);
   line-height:1.04;
 }
 
@@ -3588,6 +3596,7 @@ body.motion-enabled .trust-strip-inner span.is-visible{
   display:grid;
   grid-template-columns:repeat(3, minmax(0, 1fr));
   gap:12px;
+  align-items:start;
 }
 
 .executive-point span{
@@ -3604,7 +3613,7 @@ body.motion-enabled .trust-strip-inner span.is-visible{
   margin:0;
   color:var(--muted);
   font-size:14px;
-  line-height:1.72;
+  line-height:1.68;
 }
 
 body.home-page .hero-inner{
