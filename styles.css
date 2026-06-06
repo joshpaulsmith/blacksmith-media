@@ -2135,10 +2135,12 @@ body.portfolio-page{
 
 .portfolio-overview .section-kicker{
   color:rgba(255,255,255,.78) !important;
+  font-weight:700;
 }
 
 .portfolio-overview h2{
   color:#fff !important;
+  font-weight:700;
   text-shadow:0 2px 22px rgba(0,0,0,.36);
 }
 
@@ -2147,6 +2149,7 @@ body.portfolio-page{
   color:#f3f4f7;
   font-size:1rem;
   line-height:1.82;
+  font-weight:500;
   text-shadow:0 2px 18px rgba(0,0,0,.32);
 }
 
