@@ -559,6 +559,10 @@
       white-space: nowrap;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-mobile-category-tags {
+      display: none;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-archive-panels {
       display: grid;
     }
@@ -1087,13 +1091,13 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-switcher {
-        display: none;
+        display: inline-grid;
+        width: min(100%, 320px);
+        margin: 0 auto;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-topbar {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 6px;
-        align-items: stretch;
+        display: none;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-mode-pill {
@@ -1101,6 +1105,24 @@
         padding: 0 14px;
         font-size: 10px;
         width: 100%;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-category-toolbar {
+        display: none;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-category-tags {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-category-tags .forge-topic-tag {
+        width: 100%;
+        min-height: 42px;
+        justify-content: center;
+        padding: 0 10px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-story-list {
@@ -1358,19 +1380,9 @@
           <div class="forge-main-column">
             <div class="forge-archive-shell">
               <div class="forge-mobile-archive-tools">
-                <div class="forge-mobile-topbar">
-                  <span class="forge-mobile-mode-pill">Latest</span>
-                  <div class="forge-topics-mobile forge-topics-mobile-archive forge-topics-mobile-archive--v2">
-                    <select id="forge-topic-select-mobile" aria-label="Choose a Forge topic">
-                      <option value="all">All Posts</option>
-                      <option value="brand-strategy">Brand Strategy</option>
-                      <option value="website-design">Website Design</option>
-                      <option value="seo-support">SEO Support</option>
-                      <option value="trust">Trust</option>
-                      <option value="conversion">Conversion</option>
-                      <option value="post-launch">Post-Launch</option>
-                    </select>
-                  </div>
+                <div class="forge-switcher forge-switcher--v2" role="tablist" aria-label="The Forge mobile views">
+                  <button class="forge-switcher-tab is-active" type="button" data-view="latest" role="tab" aria-selected="true">Latest</button>
+                  <button class="forge-switcher-tab" type="button" data-view="categories" role="tab" aria-selected="false">Categories</button>
                 </div>
                 <div class="forge-utility-grid">
                   <div class="forge-utility-card">
@@ -1453,6 +1465,15 @@
                 </section>
 
                 <section class="forge-archive-panel" data-panel="categories" aria-label="Posts by category">
+                  <div class="forge-mobile-category-tags" aria-label="Forge categories">
+                    <button class="forge-topic-tag forge-topic-control is-active" type="button" data-category="all">All Posts</button>
+                    <button class="forge-topic-tag forge-topic-control" type="button" data-category="brand-strategy">Brand Strategy</button>
+                    <button class="forge-topic-tag forge-topic-control" type="button" data-category="website-design">Website Design</button>
+                    <button class="forge-topic-tag forge-topic-control" type="button" data-category="seo-support">SEO Support</button>
+                    <button class="forge-topic-tag forge-topic-control" type="button" data-category="trust">Trust</button>
+                    <button class="forge-topic-tag forge-topic-control" type="button" data-category="conversion">Conversion</button>
+                    <button class="forge-topic-tag forge-topic-control" type="button" data-category="post-launch">Post-Launch</button>
+                  </div>
                   <div class="forge-category-toolbar">
                     <div class="forge-topics-mobile forge-topics-mobile-archive forge-topics-mobile-archive--v2">
                       <label for="forge-topic-select">Choose a category</label>
