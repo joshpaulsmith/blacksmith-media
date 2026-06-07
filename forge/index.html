@@ -422,7 +422,9 @@
 
     body.forge-page:not(.forge-post-page) .forge-rail-item {
       display: grid;
-      gap: 8px;
+      grid-template-columns: 88px minmax(0, 1fr);
+      align-items: center;
+      gap: 14px;
       padding: 16px 0;
       color: inherit;
       text-decoration: none;
@@ -438,21 +440,42 @@
       padding-bottom: 0;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-rail-thumb {
+      width: 88px;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ece6db;
+      border: 1px solid rgba(18, 20, 24, 0.08);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-rail-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-rail-item-body {
+      display: grid;
+      gap: 6px;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-rail-item h4 {
       margin: 0;
       color: #121418;
       font-family: 'Roboto', sans-serif !important;
-      font-size: 1.38rem;
+      font-size: 1.18rem;
       font-weight: 700;
-      line-height: 1.1;
+      line-height: 1.12;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-item p {
       margin: 0;
       color: rgba(18, 20, 24, 0.68);
       font-family: 'Roboto', sans-serif !important;
-      font-size: 0.96rem;
-      line-height: 1.56;
+      font-size: 0.92rem;
+      line-height: 1.5;
     }
 
     body.forge-page:not(.forge-post-page) .forge-category-toolbar {
@@ -636,11 +659,19 @@
         justify-self: center;
       }
 
-      body.forge-page:not(.forge-post-page) .forge-rail-header,
-      body.forge-page:not(.forge-post-page) .forge-rail-item,
-      body.forge-page:not(.forge-post-page) .forge-rail-item-meta {
+      body.forge-page:not(.forge-post-page) .forge-rail-header {
         text-align: center;
         justify-items: center;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-rail-item {
+        grid-template-columns: 88px minmax(0, 1fr);
+        text-align: left;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-rail-item-meta {
+        text-align: left;
+        justify-items: start;
       }
 
       body.forge-page:not(.forge-post-page) .forge-archive-card-main {
@@ -664,6 +695,14 @@
     }
 
     @media (max-width: 900px) {
+      body.forge-page:not(.forge-post-page) .forge-rail-item {
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-rail-thumb {
+        width: 72px;
+      }
       body.forge-page:not(.forge-post-page) .forge-utility-grid {
         grid-template-columns: 1fr;
       }
@@ -886,27 +925,37 @@
 
                 <aside class="forge-rail">
                   <div class="forge-rail-header">
-                    <div class="section-kicker">Check Out More Posts</div>
+                    <div class="section-kicker">More Notes From The Forge</div>
                     <p>Two more notes from the archive, kept close at hand.</p>
                   </div>
 
                   <div class="forge-rail-list">
                     <a class="forge-rail-item" href="/forge/websites-that-earn-inquiries/">
-                      <div class="forge-rail-item-meta">
-                        <span>Website Design</span>
-                        <span>June 4, 2026</span>
+                      <div class="forge-rail-thumb">
+                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Thumbnail for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
                       </div>
-                      <h4>Websites that earn more inquiries.</h4>
-                      <p>What small businesses and service companies need from their site if it’s going to support real conversations.</p>
+                      <div class="forge-rail-item-body">
+                        <div class="forge-rail-item-meta">
+                          <span>Website Design</span>
+                          <span>June 4, 2026</span>
+                        </div>
+                        <h4>Websites that earn more inquiries.</h4>
+                        <p>What small businesses and service companies need from their site if it’s going to support real conversations.</p>
+                      </div>
                     </a>
 
                     <a class="forge-rail-item" href="/forge/brand-systems-that-build-trust/">
-                      <div class="forge-rail-item-meta">
-                        <span>Brand Strategy</span>
-                        <span>June 2, 2026</span>
+                      <div class="forge-rail-thumb">
+                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Thumbnail for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
                       </div>
-                      <h4>Brand systems that build trust.</h4>
-                      <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
+                      <div class="forge-rail-item-body">
+                        <div class="forge-rail-item-meta">
+                          <span>Brand Strategy</span>
+                          <span>June 2, 2026</span>
+                        </div>
+                        <h4>Brand systems that build trust.</h4>
+                        <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
+                      </div>
                     </a>
                   </div>
                 </aside>
