@@ -307,6 +307,79 @@
       text-transform: uppercase;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-desktop-brief {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      width: min(560px, 100%);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-brief-card {
+      background: #fffdfa;
+      border: 1px solid rgba(18, 20, 24, 0.08);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: grid;
+      gap: 10px;
+      text-align: left;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-brief-card .section-kicker {
+      margin: 0;
+      color: rgba(18, 20, 24, 0.74) !important;
+      font-size: 9px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-brief-list,
+    body.forge-page:not(.forge-post-page) .forge-topic-tags {
+      display: grid;
+      gap: 8px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-brief-link {
+      color: #121418;
+      text-decoration: none;
+      display: grid;
+      gap: 2px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-brief-link strong {
+      font-family: 'Roboto', sans-serif !important;
+      font-size: 0.96rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-brief-link span {
+      color: rgba(18, 20, 24, 0.68);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-topic-tags {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-topic-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      border-radius: 999px;
+      background: #f1ebdf;
+      border: 1px solid rgba(18, 20, 24, 0.08);
+      color: #7a4310;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0 12px;
+      text-align: center;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-archive-panels {
       display: grid;
     }
@@ -747,6 +820,10 @@
         grid-template-columns: 1fr;
       }
 
+      body.forge-page:not(.forge-post-page) .forge-desktop-brief {
+        display: none;
+      }
+
       body.forge-page:not(.forge-post-page) .forge-category-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -959,6 +1036,38 @@
                 <div class="forge-utility-card">
                   <span class="forge-utility-label">Coverage</span>
                   <strong>Brand, Web, SEO</strong>
+                </div>
+              </div>
+
+              <div class="forge-desktop-brief" aria-label="Forge editorial overview">
+                <div class="forge-brief-card">
+                  <div class="section-kicker">Start Here</div>
+                  <div class="forge-brief-list">
+                    <a class="forge-brief-link" href="/forge/brand-systems-that-build-trust/">
+                      <strong>Brand systems that build trust</strong>
+                      <span>Brand strategy</span>
+                    </a>
+                    <a class="forge-brief-link" href="/forge/websites-that-earn-inquiries/">
+                      <strong>Websites that earn more inquiries</strong>
+                      <span>Website design</span>
+                    </a>
+                    <a class="forge-brief-link" href="/forge/local-seo-after-launch/">
+                      <strong>Local SEO after launch</strong>
+                      <span>SEO support</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="forge-brief-card">
+                  <div class="section-kicker">Topics We’re Growing Into</div>
+                  <div class="forge-topic-tags" aria-label="Editorial topics">
+                    <span class="forge-topic-tag">AI</span>
+                    <span class="forge-topic-tag">Technology</span>
+                    <span class="forge-topic-tag">Branding</span>
+                    <span class="forge-topic-tag">Web</span>
+                    <span class="forge-topic-tag">SEO</span>
+                    <span class="forge-topic-tag">Strategy</span>
+                  </div>
                 </div>
               </div>
             </div>
