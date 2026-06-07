@@ -6983,6 +6983,8 @@ body.forge-page:not(.forge-post-page) .forge-editorial-header{
 
 body.forge-page:not(.forge-post-page) .forge-editorial-header > div:first-child{
   max-width:760px !important;
+  justify-self:center !important;
+  text-align:center !important;
 }
 
 body.forge-page:not(.forge-post-page) .forge-editorial-header .section-kicker{
@@ -7006,6 +7008,8 @@ body.forge-page:not(.forge-post-page) .forge-editorial-header .section-lead{
   color:rgba(18,20,24,.72) !important;
   font-size:17px !important;
   line-height:1.55 !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
 }
 
 body.forge-page:not(.forge-post-page) .forge-archive-controls{
@@ -7480,6 +7484,23 @@ body.forge-post-page .forge-post-contact-box .btn-row{
   justify-content:center !important;
 }
 
+body.forge-post-page .forge-post-contact-box,
+body.forge-post-page .forge-post-contact-box *{
+  color:#121418 !important;
+}
+
+body.forge-post-page .forge-post-contact-box .section-kicker{
+  color:#c56a23 !important;
+}
+
+body.forge-post-page .forge-post-contact-box .btn.primary{
+  color:#121418 !important;
+}
+
+body.forge-post-page .forge-post-contact-box .btn.secondary{
+  color:#121418 !important;
+}
+
 @media (max-width: 960px){
   body.forge-page:not(.forge-post-page) .nav .nav-links{
     gap:10px !important;
@@ -7492,6 +7513,14 @@ body.forge-post-page .forge-post-contact-box .btn-row{
   body.forge-page:not(.forge-post-page) .forge-editorial-header{
     gap:14px !important;
     margin-bottom:18px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-header{
+    justify-items:center !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-header > div:first-child{
+    text-align:center !important;
   }
 }
 
