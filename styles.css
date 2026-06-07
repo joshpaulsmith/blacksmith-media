@@ -8420,3 +8420,26 @@ body.web-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .
 body.web-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .card a {
   color: #ecfff4 !important;
 }
+
+/* ===== SEO PAGE ACCESSIBILITY TUNING ===== */
+body.seo-page main > .section .section-copy a,
+body.seo-page main > .section .section-lead a,
+body.seo-page main > .section .card a {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-decoration-color: currentColor !important;
+  text-underline-offset: 0.18em !important;
+}
+
+body.seo-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .section-copy a,
+body.seo-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .section-lead a,
+body.seo-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .card a {
+  color: #121418 !important;
+}
+
+body.seo-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .section-copy a,
+body.seo-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .section-lead a,
+body.seo-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .card a {
+  color: #eef2ff !important;
+}
