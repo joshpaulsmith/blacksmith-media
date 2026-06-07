@@ -6893,3 +6893,352 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
     max-width:none;
   }
 }
+
+/* Final Forge archive reset */
+body.forge-page:not(.forge-post-page){
+  background:#f7f5f1 !important;
+  color:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) .breadcrumbs{
+  background:#ffffff !important;
+  border-bottom:1px solid rgba(18,20,24,.08) !important;
+}
+
+body.forge-page:not(.forge-post-page) .breadcrumbs :is(a, span){
+  color:rgba(18,20,24,.58) !important;
+}
+
+body.forge-page:not(.forge-post-page) .hero.forge-hero-archive{
+  background:#ffffff !important;
+  color:#121418 !important;
+  border-bottom:1px solid rgba(18,20,24,.08) !important;
+  padding:26px 0 20px !important;
+  min-height:0 !important;
+}
+
+body.forge-page:not(.forge-post-page) .hero.forge-hero-archive .hero-inner.forge-hero-compact{
+  max-width:980px !important;
+  padding:0 0 4px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-masthead{
+  display:block !important;
+  max-width:620px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-masthead-copy{
+  display:grid !important;
+  gap:10px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-masthead .section-kicker{
+  color:#c56a23 !important;
+  font-family:'Roboto Mono', monospace !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+  letter-spacing:.16em !important;
+  text-transform:uppercase !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-masthead h1{
+  margin:0 !important;
+  color:#121418 !important;
+  font-family:'Roboto Mono', monospace !important;
+  font-size:clamp(40px, 5.4vw, 72px) !important;
+  font-weight:700 !important;
+  line-height:.96 !important;
+  letter-spacing:0 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-masthead h1 span{
+  color:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-masthead .lead{
+  max-width:40ch !important;
+  margin:0 !important;
+  color:rgba(18,20,24,.72) !important;
+  font-family:'Roboto', sans-serif !important;
+  font-size:17px !important;
+  line-height:1.55 !important;
+}
+
+body.forge-page:not(.forge-post-page) #latest-posts{
+  background:#f7f5f1 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-editorial-main--full{
+  max-width:1240px !important;
+  padding-top:26px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-editorial-header{
+  display:grid !important;
+  grid-template-columns:minmax(0, 1.35fr) minmax(320px, .75fr) !important;
+  gap:22px 32px !important;
+  align-items:start !important;
+  margin-bottom:28px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-editorial-header > div:first-child{
+  max-width:760px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-editorial-header .section-kicker{
+  color:#c56a23 !important;
+  margin-bottom:8px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-editorial-header h2{
+  margin:0 0 12px !important;
+  color:#121418 !important;
+  font-family:'Roboto Mono', monospace !important;
+  font-size:clamp(32px, 5vw, 64px) !important;
+  line-height:.98 !important;
+  letter-spacing:0 !important;
+  max-width:10ch !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-editorial-header .section-lead{
+  margin:0 !important;
+  max-width:42ch !important;
+  color:rgba(18,20,24,.72) !important;
+  font-size:17px !important;
+  line-height:1.55 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-archive-controls{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:12px !important;
+  align-self:start !important;
+  justify-items:stretch !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-archive-summary{
+  display:grid !important;
+  gap:6px !important;
+  color:rgba(18,20,24,.56) !important;
+  font-family:'Roboto Mono', monospace !important;
+  font-size:12px !important;
+  letter-spacing:.12em !important;
+  text-transform:uppercase !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-archive-total,
+body.forge-page:not(.forge-post-page) .forge-archive-current{
+  display:block !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-topics-mobile{
+  display:block !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-topics-mobile label{
+  display:block !important;
+  margin:0 0 6px !important;
+  color:rgba(18,20,24,.56) !important;
+  font-family:'Roboto Mono', monospace !important;
+  font-size:11px !important;
+  letter-spacing:.14em !important;
+  text-transform:uppercase !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-topics-mobile select{
+  width:100% !important;
+  min-height:48px !important;
+  padding:0 16px !important;
+  background:#ffffff !important;
+  border:1px solid rgba(18,20,24,.12) !important;
+  border-radius:14px !important;
+  color:#121418 !important;
+  font-family:'Roboto', sans-serif !important;
+  font-size:15px !important;
+  box-shadow:none !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-search{
+  display:grid !important;
+  grid-template-columns:20px minmax(0, 1fr) !important;
+  align-items:center !important;
+  gap:10px !important;
+  min-height:48px !important;
+  padding:0 14px !important;
+  background:#ffffff !important;
+  border:1px solid rgba(18,20,24,.12) !important;
+  border-radius:14px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-search label{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-search-icon{
+  display:grid !important;
+  place-items:center !important;
+  width:20px !important;
+  height:20px !important;
+  color:#c56a23 !important;
+  background:transparent !important;
+  font-size:15px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-search input{
+  min-width:0 !important;
+  width:100% !important;
+  padding:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  color:#121418 !important;
+  font-size:15px !important;
+  font-family:'Roboto', sans-serif !important;
+  box-shadow:none !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-search input::placeholder{
+  color:rgba(18,20,24,.44) !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-featured-block{
+  margin-bottom:24px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-featured-header{
+  margin-bottom:14px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-featured-header h3{
+  font-family:'Roboto Mono', monospace !important;
+  font-size:clamp(24px, 3vw, 38px) !important;
+  line-height:1.04 !important;
+  max-width:15ch !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-meta-pill{
+  background:#ffffff !important;
+  border:1px solid rgba(18,20,24,.10) !important;
+  color:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-meta-pill-seo,
+body.forge-page:not(.forge-post-page) .forge-list-category,
+body.forge-page:not(.forge-post-page) .forge-popular-taxonomy{
+  color:#c56a23 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-editorial-grid{
+  gap:18px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-archive-card{
+  background:#ffffff !important;
+  border:1px solid rgba(18,20,24,.08) !important;
+  box-shadow:none !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-archive-card-main{
+  gap:8px !important;
+  padding:18px 18px 20px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-archive-card h3,
+body.forge-page:not(.forge-post-page) .forge-popular-copy strong{
+  font-family:'Roboto', sans-serif !important;
+  font-weight:700 !important;
+  letter-spacing:0 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-popular-strip{
+  margin-top:12px !important;
+  padding-top:20px !important;
+  border-top:1px solid rgba(18,20,24,.08) !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-popular-list{
+  gap:14px !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-popular-item{
+  padding:10px 0 !important;
+  border-bottom:1px solid rgba(18,20,24,.08) !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-popular-item:last-child{
+  border-bottom:0 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-cta-section{
+  background:#f7f5f1 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-contact-box{
+  max-width:760px !important;
+}
+
+@media (max-width: 960px){
+  body.forge-page:not(.forge-post-page) .hero.forge-hero-archive{
+    padding:22px 0 18px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-header{
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-header h2{
+    max-width:11ch !important;
+    font-size:clamp(30px, 8vw, 48px) !important;
+  }
+}
+
+@media (max-width: 640px){
+  body.forge-page:not(.forge-post-page) .breadcrumbs{
+    padding-top:2px !important;
+    padding-bottom:2px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .hero.forge-hero-archive{
+    padding:16px 0 14px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-masthead h1{
+    font-size:clamp(34px, 11vw, 44px) !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-masthead .lead{
+    font-size:15px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-main--full{
+    padding-top:20px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-header h2{
+    max-width:10ch !important;
+    font-size:clamp(28px, 10vw, 40px) !important;
+    line-height:1.02 !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-search,
+  body.forge-page:not(.forge-post-page) .forge-topics-mobile select{
+    min-height:44px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-featured-header h3{
+    font-size:clamp(22px, 8vw, 30px) !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-popular-item{
+    grid-template-columns:72px 1fr !important;
+    gap:12px !important;
+  }
+}

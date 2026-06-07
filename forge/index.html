@@ -35,7 +35,7 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/styles.css?v=20260606forgeeditorial13" />
+  <link rel="stylesheet" href="/styles.css?v=20260606forgeeditorial14" />
   <link rel="icon" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
 
@@ -122,7 +122,7 @@
         <div class="forge-masthead">
           <div class="forge-masthead-copy">
             <div class="section-kicker">Blog by Blacksmith Media</div>
-            <h1>The Forge</h1>
+            <h1><span>The</span> Forge</h1>
             <p class="lead">
               Notes on branding, website structure, and SEO support for businesses that want a clearer public-facing presence.
             </p>
@@ -313,7 +313,6 @@
       const searchInput = document.getElementById("forge-search-input");
       const archiveScope = document.getElementById("latest-posts");
       const emptyState = document.getElementById("forge-empty-state");
-      const filters = Array.from(document.querySelectorAll(".forge-filter"));
       const currentFilter = document.getElementById("forge-current-filter");
 
       if (!searchInput || !archiveScope || !emptyState || !currentFilter) return;
@@ -375,24 +374,11 @@
           : "Filtering by " + activeFilter.replace(/-/g, " ");
       }
 
-      filters.forEach((filter) => {
-        filter.addEventListener("click", function () {
-          activeFilter = filter.dataset.filter || "all";
-          filters.forEach((button) => button.classList.toggle("is-active", button === filter));
-          filterPosts();
-          if (filter.classList.contains("forge-masthead-filter")) {
-            const archive = document.getElementById("latest-posts");
-            if (archive) archive.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        });
-      });
-
       const topicSelect = document.getElementById("forge-topic-select");
       if (topicSelect) {
         topicSelect.addEventListener("change", function () {
-          const target = topicSelect.value || "all";
-          const matching = filters.find((filter) => (filter.dataset.filter || "all") === target);
-          if (matching) matching.click();
+          activeFilter = topicSelect.value || "all";
+          filterPosts();
           const archive = document.getElementById("latest-posts");
           if (archive) archive.scrollIntoView({ behavior: "smooth", block: "start" });
         });
