@@ -47,18 +47,22 @@ body.forge-page:not(.forge-post-page) .hero .hero-inner.forge-hero-compact{
 }
 
 body.forge-page:not(.forge-post-page) .forge-masthead{
-  grid-template-columns:minmax(280px, 520px) !important;
+  grid-template-columns:1fr !important;
   gap:0 !important;
+  justify-items:center !important;
+  text-align:center !important;
 }
 
 body.forge-page:not(.forge-post-page) .forge-masthead-copy{
   gap:6px !important;
+  justify-items:center !important;
 }
 
 body.forge-page:not(.forge-post-page) .forge-masthead h1{
   color:#121418 !important;
   font-family:'Roboto', sans-serif !important;
-  font-size:clamp(34px, 4vw, 48px) !important;
+  font-size:clamp(40px, 5.2vw, 68px) !important;
+  line-height:.92 !important;
 }
 
 body.forge-page:not(.forge-post-page) .forge-masthead .highlight{
@@ -68,10 +72,10 @@ body.forge-page:not(.forge-post-page) .forge-masthead .highlight{
 }
 
 body.forge-page:not(.forge-post-page) .forge-masthead .lead{
-  max-width:36ch !important;
+  max-width:42ch !important;
   color:rgba(18,20,24,.72) !important;
-  font-size:14px !important;
-  line-height:1.48 !important;
+  font-size:15px !important;
+  line-height:1.52 !important;
 }
 
 body.forge-page:not(.forge-post-page) .section-kicker{
@@ -130,7 +134,12 @@ body.forge-page:not(.forge-post-page) .forge-list-category{
   }
 
   body.forge-page:not(.forge-post-page) .forge-masthead h1{
-    font-size:clamp(30px, 9vw, 40px) !important;
+    font-size:clamp(34px, 10vw, 48px) !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-masthead .lead{
+    max-width:28ch !important;
+    font-size:14px !important;
   }
 
   body.forge-page:not(.forge-post-page) .forge-archive-controls{
