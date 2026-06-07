@@ -7417,6 +7417,50 @@ body.forge-page:not(.forge-post-page) .forge-contact-box .btn.secondary:hover{
   border-color:rgba(18,20,24,.2) !important;
 }
 
+body.forge-post-page main > section.forge-post-cta-section{
+  background:#f7f5f1 !important;
+  color:#121418 !important;
+  border-bottom-color:rgba(18,20,24,.08) !important;
+}
+
+body.forge-post-page .forge-post-contact-box{
+  background:#efe8de !important;
+  border:1px solid rgba(18,20,24,.08) !important;
+  border-top:2px solid rgba(245,146,69,.28) !important;
+  box-shadow:none !important;
+  color:#121418 !important;
+}
+
+body.forge-post-page .forge-post-contact-box :is(.section-kicker, h2, p, strong, a){
+  color:#121418 !important;
+}
+
+body.forge-post-page .forge-post-contact-box .section-kicker{
+  color:#c56a23 !important;
+}
+
+body.forge-post-page .forge-post-contact-box .btn.primary{
+  background:#f59245 !important;
+  color:#121418 !important;
+  border-color:#f59245 !important;
+}
+
+body.forge-post-page .forge-post-contact-box .btn.primary:hover{
+  background:#f2a15f !important;
+  border-color:#f2a15f !important;
+}
+
+body.forge-post-page .forge-post-contact-box .btn.secondary{
+  background:#f7f5f1 !important;
+  color:#121418 !important;
+  border-color:rgba(18,20,24,.12) !important;
+}
+
+body.forge-post-page .forge-post-contact-box .btn.secondary:hover{
+  background:#efe8de !important;
+  border-color:rgba(18,20,24,.2) !important;
+}
+
 @media (max-width: 960px){
   body.forge-page:not(.forge-post-page) .nav .nav-links{
     gap:10px !important;
