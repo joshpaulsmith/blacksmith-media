@@ -954,7 +954,337 @@
       display: none;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-score-section {
+      padding: 10px 0 16px;
+      background: #f8f5ef;
+      border-top: 0 !important;
+      border-bottom: 0 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-shell {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 20px;
+      align-items: start;
+      background: #fffdfa;
+      border: 1px solid rgba(18, 20, 24, 0.08);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 22px 48px rgba(18, 20, 24, 0.06);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-copy {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-copy h2 {
+      margin: 0;
+      color: #121418;
+      font-family: 'Roboto Mono', monospace;
+      font-size: clamp(2rem, 3.4vw, 3.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-copy h2 span {
+      color: #c56a23;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-copy .forge-score-intro {
+      margin: 0;
+      max-width: 40ch;
+      color: rgba(18, 20, 24, 0.84);
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-notes {
+      display: grid;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-note {
+      display: grid;
+      gap: 2px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: #f5efe5;
+      border: 1px solid rgba(18, 20, 24, 0.08);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-note strong {
+      color: #121418;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-note span {
+      color: rgba(18, 20, 24, 0.74);
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-panel {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+      padding: 18px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(197, 106, 35, 0.16), transparent 36%),
+        linear-gradient(180deg, #121418 0%, #17191d 100%);
+      border: 1px solid rgba(197, 106, 35, 0.22);
+      color: #fffdfa;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-panel .section-kicker {
+      margin: 0;
+      color: rgba(255, 248, 238, 0.74) !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-form {
+      display: grid;
+      gap: 10px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-form-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-input {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 248, 238, 0.18);
+      background: rgba(255, 253, 250, 0.08);
+      color: #fffdfa;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-input::placeholder {
+      color: rgba(255, 248, 238, 0.6);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-input:focus {
+      border-color: rgba(197, 106, 35, 0.72);
+      box-shadow: 0 0 0 3px rgba(197, 106, 35, 0.18);
+      background: rgba(255, 253, 250, 0.12);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-submit {
+      min-width: 152px;
+      min-height: 52px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 16px;
+      background: #c56a23;
+      color: #121418;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
+      box-shadow: 0 10px 24px rgba(197, 106, 35, 0.24);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-submit:hover {
+      filter: brightness(1.02);
+      transform: translateY(-1px);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-submit:disabled {
+      opacity: 0.72;
+      cursor: wait;
+      transform: none;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-helper {
+      margin: 0;
+      color: rgba(255, 248, 238, 0.68);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-status {
+      margin: 0;
+      color: rgba(255, 248, 238, 0.84);
+      font-size: 0.9rem;
+      line-height: 1.45;
+      min-height: 1.4em;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-status.is-error {
+      color: #ffb48d;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-status.is-success {
+      color: #f5c699;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-results {
+      display: none;
+      gap: 14px;
+      padding-top: 2px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-results.is-visible {
+      display: grid;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-summary {
+      display: grid;
+      gap: 8px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 253, 250, 0.08);
+      border: 1px solid rgba(255, 248, 238, 0.12);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-headline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-headline strong {
+      color: #fffdfa;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.02rem;
+      line-height: 1.25;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 74px;
+      min-height: 74px;
+      padding: 8px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #f7b26f 0%, #c56a23 100%);
+      color: #121418;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.22rem;
+      font-weight: 700;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-summary p {
+      margin: 0;
+      color: rgba(255, 248, 238, 0.76);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-metric {
+      display: grid;
+      gap: 6px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 253, 250, 0.08);
+      border: 1px solid rgba(255, 248, 238, 0.12);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-metric-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-metric-label {
+      color: rgba(255, 248, 238, 0.74);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-metric-value {
+      color: #fffdfa;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-bar {
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 253, 250, 0.12);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-bar > span {
+      display: block;
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #f7b26f 0%, #c56a23 100%);
+      transition: width 240ms ease;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-recommendations {
+      display: grid;
+      gap: 8px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 253, 250, 0.08);
+      border: 1px solid rgba(255, 248, 238, 0.12);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-recommendations strong {
+      color: #fffdfa;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-recommendations ul {
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(255, 248, 238, 0.8);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-recommendations li + li {
+      margin-top: 6px;
+    }
+
     @media (max-width: 1040px) {
+      body.forge-page:not(.forge-post-page) .forge-score-card {
+        grid-template-columns: 1fr;
+      }
+
       body.forge-page:not(.forge-post-page) .forge-page-grid {
         grid-template-columns: 220px minmax(0, 1fr);
       }
@@ -970,6 +1300,35 @@
     }
 
     @media (max-width: 900px) {
+      body.forge-page:not(.forge-post-page) .forge-score-section {
+        padding: 8px 0 12px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-shell {
+        padding: 0 16px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-card {
+        padding: 18px;
+        gap: 16px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-copy h2 {
+        font-size: clamp(1.92rem, 8vw, 2.5rem);
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-form-row {
+        grid-template-columns: 1fr;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-submit {
+        width: 100%;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-metrics {
+        grid-template-columns: 1fr;
+      }
+
       body.forge-page:not(.forge-post-page) .forge-page-grid {
         grid-template-columns: 1fr;
       }
@@ -1050,6 +1409,35 @@
     }
 
     @media (max-width: 640px) {
+      body.forge-page:not(.forge-post-page) .forge-score-card {
+        border-radius: 22px;
+        padding: 16px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-copy .forge-score-intro {
+        font-size: 0.94rem;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-note {
+        padding: 11px 12px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-summary,
+      body.forge-page:not(.forge-post-page) .forge-score-recommendations,
+      body.forge-page:not(.forge-post-page) .forge-score-metric {
+        padding: 12px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-headline {
+        align-items: start;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-badge {
+        min-width: 64px;
+        min-height: 64px;
+        font-size: 1.04rem;
+      }
+
       body.forge-page:not(.forge-post-page) .breadcrumbs .wrap {
         max-width: 100% !important;
         padding-left: 16px !important;
@@ -1338,6 +1726,109 @@
             <p class="lead">
               Notes on branding, website structure, and SEO support for businesses that want a clearer public-facing presence.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section forge-score-section" aria-labelledby="forge-score-heading">
+      <div class="forge-score-shell">
+        <div class="forge-score-card">
+          <div class="forge-score-copy">
+            <div class="section-kicker">Interactive audit</div>
+            <h2 id="forge-score-heading"><span>The Forge</span> Score</h2>
+            <p class="forge-score-intro">
+              Enter a domain and get a fast first-pass reading on speed, mobile performance, SEO, trust, and design clarity. It is a quick way to see how sharp your current website really is.
+            </p>
+            <div class="forge-score-notes" aria-label="Forge Score notes">
+              <div class="forge-score-note">
+                <strong>What it checks</strong>
+                <span>PageSpeed performance, mobile readiness, SEO signals, trust markers, and design-related stability.</span>
+              </div>
+              <div class="forge-score-note">
+                <strong>How it helps</strong>
+                <span>Turn a rough audit into a clear next conversation about what to strengthen first.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="forge-score-panel">
+            <div class="section-kicker">Score a website</div>
+            <form class="forge-score-form" id="forge-score-form">
+              <div class="forge-score-form-row">
+                <label class="sr-only" for="forge-score-url">Website URL</label>
+                <input
+                  class="forge-score-input"
+                  id="forge-score-url"
+                  name="url"
+                  type="url"
+                  inputmode="url"
+                  placeholder="Enter a domain like example.com"
+                  autocomplete="url"
+                  required
+                />
+                <button class="forge-score-submit" id="forge-score-submit" type="submit">Forge Score</button>
+              </div>
+            </form>
+            <p class="forge-score-helper">
+              Speed and mobile scores come from Google PageSpeed Insights. The Forge blends those results with our own scoring rules for design, trust, and SEO.
+            </p>
+            <p class="forge-score-status" id="forge-score-status" aria-live="polite"></p>
+
+            <div class="forge-score-results" id="forge-score-results">
+              <div class="forge-score-summary">
+                <div class="forge-score-headline">
+                  <strong id="forge-score-summary">Run a score to see how your website is forging.</strong>
+                  <div class="forge-score-badge" id="forge-score-total">--</div>
+                </div>
+                <p id="forge-score-subcopy">We will translate the results into one overall blade rating and point to the quickest ways to sharpen it.</p>
+              </div>
+
+              <div class="forge-score-metrics" id="forge-score-metrics">
+                <div class="forge-score-metric" data-metric="design">
+                  <div class="forge-score-metric-top">
+                    <span class="forge-score-metric-label">Design</span>
+                    <span class="forge-score-metric-value">--</span>
+                  </div>
+                  <div class="forge-score-bar"><span></span></div>
+                </div>
+                <div class="forge-score-metric" data-metric="speed">
+                  <div class="forge-score-metric-top">
+                    <span class="forge-score-metric-label">Speed</span>
+                    <span class="forge-score-metric-value">--</span>
+                  </div>
+                  <div class="forge-score-bar"><span></span></div>
+                </div>
+                <div class="forge-score-metric" data-metric="seo">
+                  <div class="forge-score-metric-top">
+                    <span class="forge-score-metric-label">SEO</span>
+                    <span class="forge-score-metric-value">--</span>
+                  </div>
+                  <div class="forge-score-bar"><span></span></div>
+                </div>
+                <div class="forge-score-metric" data-metric="trust">
+                  <div class="forge-score-metric-top">
+                    <span class="forge-score-metric-label">Trust</span>
+                    <span class="forge-score-metric-value">--</span>
+                  </div>
+                  <div class="forge-score-bar"><span></span></div>
+                </div>
+                <div class="forge-score-metric" data-metric="mobile">
+                  <div class="forge-score-metric-top">
+                    <span class="forge-score-metric-label">Mobile</span>
+                    <span class="forge-score-metric-value">--</span>
+                  </div>
+                  <div class="forge-score-bar"><span></span></div>
+                </div>
+              </div>
+
+              <div class="forge-score-recommendations">
+                <strong>How to sharpen it</strong>
+                <ul id="forge-score-recommendations">
+                  <li>Run a score to get a first set of recommendations.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1700,6 +2191,240 @@
 
       setActiveView("latest");
       filterByCategory("all");
+    })();
+
+    (function () {
+      const apiKey = "AIzaSyB28FSZ9z7dyzOni-146rO--5sKAjp2BN0";
+      const form = document.getElementById("forge-score-form");
+      const urlInput = document.getElementById("forge-score-url");
+      const submitButton = document.getElementById("forge-score-submit");
+      const status = document.getElementById("forge-score-status");
+      const results = document.getElementById("forge-score-results");
+      const summary = document.getElementById("forge-score-summary");
+      const subcopy = document.getElementById("forge-score-subcopy");
+      const total = document.getElementById("forge-score-total");
+      const recommendationsList = document.getElementById("forge-score-recommendations");
+      const metricCards = Array.from(document.querySelectorAll(".forge-score-metric"));
+
+      if (!form || !urlInput || !submitButton || !status || !results || !summary || !subcopy || !total || !recommendationsList || !metricCards.length) {
+        return;
+      }
+
+      const metricMap = metricCards.reduce((acc, card) => {
+        const key = card.dataset.metric;
+        if (!key) return acc;
+        acc[key] = {
+          value: card.querySelector(".forge-score-metric-value"),
+          bar: card.querySelector(".forge-score-bar > span")
+        };
+        return acc;
+      }, {});
+
+      function clampScore(value) {
+        return Math.max(0, Math.min(100, Math.round(value)));
+      }
+
+      function normalizeUrl(rawValue) {
+        const trimmed = rawValue.trim();
+        if (!trimmed) return "";
+        return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+      }
+
+      function getScoreValue(report, categoryKey) {
+        const score = report?.lighthouseResult?.categories?.[categoryKey]?.score;
+        return typeof score === "number" ? clampScore(score * 100) : null;
+      }
+
+      function getAuditNumeric(report, auditKey) {
+        const value = report?.lighthouseResult?.audits?.[auditKey]?.numericValue;
+        return typeof value === "number" ? value : null;
+      }
+
+      function getAuditScore(report, auditKey) {
+        const score = report?.lighthouseResult?.audits?.[auditKey]?.score;
+        return typeof score === "number" ? clampScore(score * 100) : null;
+      }
+
+      function getAuditBooleanPass(report, auditKey) {
+        const audit = report?.lighthouseResult?.audits?.[auditKey];
+        if (!audit) return null;
+        if (typeof audit.score === "number") return audit.score >= 0.9;
+        if (typeof audit.displayValue === "string") return !/fail|no|not/i.test(audit.displayValue);
+        return null;
+      }
+
+      function setStatus(message, mode) {
+        status.textContent = message || "";
+        status.classList.remove("is-error", "is-success");
+        if (mode === "error") status.classList.add("is-error");
+        if (mode === "success") status.classList.add("is-success");
+      }
+
+      function setMetric(name, value) {
+        const metric = metricMap[name];
+        if (!metric) return;
+        const safeValue = value == null ? "--" : `${clampScore(value)}/100`;
+        metric.value.textContent = safeValue;
+        metric.bar.style.width = value == null ? "0%" : `${clampScore(value)}%`;
+      }
+
+      function getBladeLabel(score) {
+        if (score >= 85) return "tempered";
+        if (score >= 70) return "sturdy";
+        if (score >= 55) return "serviceable";
+        return "rough-forged";
+      }
+
+      function buildRecommendations(metrics, reports) {
+        const items = [];
+        const desktop = reports.desktop;
+        const mobile = reports.mobile;
+
+        if (metrics.mobile < 70 || metrics.speed < 70) {
+          items.push("Speed up the first load by trimming heavy assets, compressing imagery, and reducing blocking scripts.");
+        }
+
+        if (metrics.design < 72) {
+          const cls = getAuditNumeric(mobile, "cumulative-layout-shift");
+          const lcp = getAuditNumeric(mobile, "largest-contentful-paint");
+          if (cls != null && cls > 0.15) {
+            items.push("Tighten layout stability so the page stops shifting while it loads and feels more deliberate on mobile.");
+          } else if (lcp != null && lcp > 3200) {
+            items.push("Improve the first impression by getting the main visual and headline visible much sooner on mobile.");
+          } else {
+            items.push("Simplify the first screen and improve visual hierarchy so the design reads faster and feels more settled.");
+          }
+        }
+
+        if (metrics.trust < 75) {
+          if (!getAuditBooleanPass(desktop, "is-on-https")) {
+            items.push("Serve the site securely on HTTPS everywhere so it feels safer and more trustworthy immediately.");
+          } else {
+            items.push("Strengthen trust markers with clearer contact pathways, steadier structure, and fewer technical rough edges.");
+          }
+        }
+
+        if (metrics.seo < 78) {
+          items.push("Clean up the SEO layer: make sure titles, descriptions, crawl signals, and mobile page structure stay aligned.");
+        }
+
+        if (items.length < 3) {
+          items.push("Keep publishing clearer service, brand, and post-launch content so the site compounds trust over time.");
+        }
+
+        return items.slice(0, 4);
+      }
+
+      function deriveMetrics(reports) {
+        const desktop = reports.desktop;
+        const mobile = reports.mobile;
+        const desktopPerf = getScoreValue(desktop, "performance") ?? 0;
+        const mobilePerf = getScoreValue(mobile, "performance") ?? desktopPerf;
+        const desktopSeo = getScoreValue(desktop, "seo") ?? 0;
+        const mobileSeo = getScoreValue(mobile, "seo") ?? desktopSeo;
+        const desktopA11y = getScoreValue(desktop, "accessibility") ?? 0;
+        const mobileA11y = getScoreValue(mobile, "accessibility") ?? desktopA11y;
+        const desktopBest = getScoreValue(desktop, "best-practices") ?? 0;
+        const mobileBest = getScoreValue(mobile, "best-practices") ?? desktopBest;
+
+        const mobileViewport = getAuditScore(mobile, "viewport") ?? 100;
+        const mobileTapTargets = getAuditScore(mobile, "tap-targets") ?? 100;
+        const desktopTapTargets = getAuditScore(desktop, "tap-targets") ?? 100;
+        const metaDescription = getAuditScore(desktop, "meta-description") ?? 80;
+        const documentTitle = getAuditScore(desktop, "document-title") ?? 80;
+        const hreflang = getAuditScore(desktop, "hreflang") ?? 100;
+        const imageAlt = getAuditScore(desktop, "image-alt") ?? 90;
+        const lcpDesktop = getAuditNumeric(desktop, "largest-contentful-paint") ?? 0;
+        const lcpMobile = getAuditNumeric(mobile, "largest-contentful-paint") ?? 0;
+        const clsMobile = getAuditNumeric(mobile, "cumulative-layout-shift") ?? 0;
+        const httpsPass = getAuditBooleanPass(desktop, "is-on-https") ? 100 : 55;
+
+        const lcpHealth = (() => {
+          if (!lcpMobile && !lcpDesktop) return 78;
+          const worst = Math.max(lcpMobile || 0, lcpDesktop || 0);
+          if (worst <= 2500) return 96;
+          if (worst <= 4000) return 78;
+          return 56;
+        })();
+
+        const clsHealth = (() => {
+          if (clsMobile <= 0.1) return 96;
+          if (clsMobile <= 0.25) return 74;
+          return 52;
+        })();
+
+        const speed = clampScore((desktopPerf * 0.55) + (mobilePerf * 0.45));
+        const mobileScore = clampScore((mobilePerf * 0.55) + (mobileViewport * 0.25) + (mobileTapTargets * 0.2));
+        const seo = clampScore((desktopSeo * 0.45) + (mobileSeo * 0.2) + (metaDescription * 0.15) + (documentTitle * 0.12) + (hreflang * 0.08));
+        const trust = clampScore((desktopBest * 0.28) + (mobileBest * 0.18) + (desktopA11y * 0.16) + (httpsPass * 0.16) + (imageAlt * 0.1) + (documentTitle * 0.12));
+        const design = clampScore((desktopA11y * 0.25) + (mobileA11y * 0.2) + (lcpHealth * 0.2) + (clsHealth * 0.15) + (mobileViewport * 0.1) + (desktopTapTargets * 0.1));
+        const overall = clampScore((design * 0.22) + (speed * 0.2) + (seo * 0.22) + (trust * 0.18) + (mobileScore * 0.18));
+
+        return { design, speed, seo, trust, mobile: mobileScore, overall };
+      }
+
+      async function fetchPageSpeed(url, strategy) {
+        const endpoint = new URL("https://www.googleapis.com/pagespeedonline/v5/runPagespeed");
+        endpoint.searchParams.set("url", url);
+        endpoint.searchParams.set("strategy", strategy);
+        endpoint.searchParams.append("category", "performance");
+        endpoint.searchParams.append("category", "accessibility");
+        endpoint.searchParams.append("category", "best-practices");
+        endpoint.searchParams.append("category", "seo");
+        endpoint.searchParams.set("key", apiKey);
+
+        const response = await fetch(endpoint.toString());
+        if (!response.ok) {
+          throw new Error(`PageSpeed request failed (${response.status})`);
+        }
+        return response.json();
+      }
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const normalizedUrl = normalizeUrl(urlInput.value);
+
+        if (!normalizedUrl) {
+          setStatus("Enter a website URL first so we can forge a score.", "error");
+          return;
+        }
+
+        results.classList.remove("is-visible");
+        setStatus("Heating the metal and checking the site now...", "");
+        submitButton.disabled = true;
+        submitButton.textContent = "Scoring...";
+
+        try {
+          const [desktopReport, mobileReport] = await Promise.all([
+            fetchPageSpeed(normalizedUrl, "desktop"),
+            fetchPageSpeed(normalizedUrl, "mobile")
+          ]);
+
+          const metrics = deriveMetrics({ desktop: desktopReport, mobile: mobileReport });
+          const blade = getBladeLabel(metrics.overall);
+          const tips = buildRecommendations(metrics, { desktop: desktopReport, mobile: mobileReport });
+
+          summary.textContent = `Your website forged a ${metrics.overall}/100 ${blade} blade. Here's how to sharpen it.`;
+          subcopy.textContent = `${new URL(normalizedUrl).hostname.replace(/^www\./, "")} has a strong starting read in some areas and a few places that want focused work next.`;
+          total.textContent = `${metrics.overall}/100`;
+
+          setMetric("design", metrics.design);
+          setMetric("speed", metrics.speed);
+          setMetric("seo", metrics.seo);
+          setMetric("trust", metrics.trust);
+          setMetric("mobile", metrics.mobile);
+
+          recommendationsList.innerHTML = tips.map((item) => `<li>${item}</li>`).join("");
+          results.classList.add("is-visible");
+          setStatus("Forge Score complete. Use the weakest numbers as the first sharpening pass.", "success");
+        } catch (error) {
+          console.error(error);
+          setStatus("We couldn't forge a score from that URL just yet. Try a live public domain with https enabled.", "error");
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Forge Score";
+        }
+      });
     })();
   </script>
 </body>
