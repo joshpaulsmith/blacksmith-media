@@ -7429,6 +7429,7 @@ body.forge-post-page .forge-post-contact-box{
   border-top:2px solid rgba(245,146,69,.28) !important;
   box-shadow:none !important;
   color:#121418 !important;
+  text-align:center !important;
 }
 
 body.forge-post-page .forge-post-contact-box :is(.section-kicker, h2, p, strong, a){
@@ -7437,6 +7438,20 @@ body.forge-post-page .forge-post-contact-box :is(.section-kicker, h2, p, strong,
 
 body.forge-post-page .forge-post-contact-box .section-kicker{
   color:#c56a23 !important;
+}
+
+body.forge-post-page .forge-post-contact-box h2{
+  max-width:13ch !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  color:#121418 !important;
+}
+
+body.forge-post-page .forge-post-contact-box .section-copy{
+  max-width:48ch !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  color:rgba(18,20,24,.8) !important;
 }
 
 body.forge-post-page .forge-post-contact-box .btn.primary{
@@ -7459,6 +7474,10 @@ body.forge-post-page .forge-post-contact-box .btn.secondary{
 body.forge-post-page .forge-post-contact-box .btn.secondary:hover{
   background:#efe8de !important;
   border-color:rgba(18,20,24,.2) !important;
+}
+
+body.forge-post-page .forge-post-contact-box .btn-row{
+  justify-content:center !important;
 }
 
 @media (max-width: 960px){
@@ -7523,5 +7542,45 @@ body.forge-post-page .forge-post-contact-box .btn.secondary:hover{
 
   body.forge-page:not(.forge-post-page) .forge-popular-strip{
     padding-top:14px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-main--full{
+    display:grid !important;
+    gap:14px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-header{
+    margin-bottom:10px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-archive-controls{
+    order:-1 !important;
+    margin-bottom:2px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-header > div:first-child{
+    max-width:none !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-editorial-header h2,
+  body.forge-page:not(.forge-post-page) .forge-editorial-header .section-lead{
+    text-align:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-archive-summary{
+    text-align:center !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-featured-header{
+    gap:10px !important;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-featured-header > div:first-child,
+  body.forge-page:not(.forge-post-page) .forge-featured-header h3{
+    text-align:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
   }
 }
