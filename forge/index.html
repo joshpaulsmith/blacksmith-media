@@ -114,7 +114,12 @@
     }
 
     body.forge-page:not(.forge-post-page) .breadcrumbs .wrap {
+      max-width: 760px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
       justify-content: center !important;
+      padding-left: 24px !important;
+      padding-right: 24px !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-hero-archive {
@@ -124,7 +129,8 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-hero-compact {
-      max-width: 980px;
+      max-width: 760px;
+      width: min(760px, calc(100% - 48px));
       margin-left: auto !important;
       margin-right: auto !important;
       display: grid !important;
@@ -143,7 +149,8 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-masthead-copy {
-      max-width: 720px;
+      max-width: 640px;
+      width: 100%;
       margin: 0 auto;
       text-align: center;
     }
@@ -182,21 +189,23 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-editorial-main--full {
-      max-width: 1380px;
+      max-width: 1420px;
       padding-top: 24px !important;
       padding-bottom: 34px !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-page-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1060px);
+      grid-template-columns: 240px minmax(0, 760px) 240px;
       justify-content: center;
       align-items: start;
-      gap: 0;
+      gap: 24px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-side-rail {
-      display: none;
+      display: grid;
+      gap: 16px;
+      align-content: start;
     }
 
     body.forge-page:not(.forge-post-page) .forge-side-card {
@@ -269,25 +278,25 @@
 
     body.forge-page:not(.forge-post-page) .forge-main-column {
       display: grid;
-      gap: 22px;
+      gap: 18px;
       min-width: 0;
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-shell {
       display: grid;
-      gap: 22px;
+      gap: 20px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-overview {
-      max-width: 1040px;
-      margin: 0 auto 24px;
-      background: #fffdfa;
-      border: 1px solid rgba(18, 20, 24, 0.08);
-      border-radius: 30px;
-      padding: 32px;
-      box-shadow: 0 18px 42px rgba(18, 20, 24, 0.04);
+      max-width: 760px;
+      margin: 0 auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
       display: grid;
-      gap: 22px;
+      gap: 14px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-editorial-header.forge-archive-redesign {
@@ -302,43 +311,29 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-copy {
-      max-width: 720px;
+      max-width: 680px;
       margin: 0 auto;
       text-align: center;
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-copy h2 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: #121418;
       font-family: 'Roboto Mono', monospace !important;
-      font-size: clamp(2.05rem, 3.4vw, 3.05rem) !important;
-      line-height: 1.02 !important;
-      max-width: 15ch;
+      font-size: clamp(2rem, 3vw, 2.75rem) !important;
+      line-height: 1.04 !important;
+      max-width: 12ch;
       margin-left: auto;
       margin-right: auto;
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-copy .section-lead {
-      max-width: 50ch;
+      max-width: 44ch;
       margin: 0 auto;
       color: rgba(18, 20, 24, 0.82);
       font-family: 'Roboto', sans-serif !important;
-      font-size: 1.02rem !important;
-      line-height: 1.62 !important;
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-archive-utility-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.92fr);
-      gap: 20px;
-      align-items: start;
-      max-width: 100%;
-      margin: 0 auto;
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-archive-utility-stack {
-      display: grid;
-      gap: 18px;
+      font-size: 0.98rem !important;
+      line-height: 1.6 !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-utility-card {
@@ -373,9 +368,7 @@
     body.forge-page:not(.forge-post-page) .forge-archive-tools {
       display: grid;
       gap: 12px;
-      justify-items: center;
       width: 100%;
-      margin: 0 auto;
     }
 
     body.forge-page:not(.forge-post-page) .forge-switcher {
@@ -418,7 +411,7 @@
 
     body.forge-page:not(.forge-post-page) .forge-utility-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 8px;
       width: 100%;
     }
@@ -430,8 +423,8 @@
       padding: 10px 12px;
       display: grid;
       gap: 3px;
-      text-align: center;
-      min-height: 108px;
+      text-align: left;
+      min-height: 0;
       align-content: start;
     }
 
@@ -523,6 +516,10 @@
       text-align: center;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools {
+      display: none;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-archive-panels {
       display: grid;
     }
@@ -535,69 +532,83 @@
       display: block;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-latest-layout {
+    body.forge-page:not(.forge-post-page) .forge-story-list {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 16px;
-      align-items: start;
-      max-width: 900px;
+      gap: 0;
+      max-width: 760px;
       margin: 0 auto;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-lead-story {
+    body.forge-page:not(.forge-post-page) .forge-story-item {
       display: grid;
-      gap: 14px;
+      grid-template-columns: minmax(0, 1fr) 120px;
+      gap: 18px;
+      align-items: center;
+      padding: 22px 0;
+      border-top: 1px solid rgba(18, 20, 24, 0.08);
       color: inherit;
       text-decoration: none;
-      justify-items: center;
-      text-align: center;
+      text-align: left;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-lead-story-media {
-      aspect-ratio: 16 / 9;
-      border-radius: 22px;
+    body.forge-page:not(.forge-post-page) .forge-story-item:first-child {
+      border-top: 0;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-item--lead {
+      grid-template-columns: minmax(0, 1fr) 140px;
+      padding-top: 8px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-thumb {
+      width: 120px;
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
       overflow: hidden;
-      background: #e8e2d8;
+      background: #ece6db;
       border: 1px solid rgba(18, 20, 24, 0.08);
+      justify-self: end;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-lead-story-media img {
+    body.forge-page:not(.forge-post-page) .forge-story-item--lead .forge-story-thumb {
+      width: 140px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-lead-story-copy {
+    body.forge-page:not(.forge-post-page) .forge-story-body {
       display: grid;
       gap: 8px;
+      text-align: left;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-lead-story-copy h3 {
+    body.forge-page:not(.forge-post-page) .forge-story-body h3 {
       margin: 0;
       color: #121418;
       font-family: 'Roboto', sans-serif !important;
-      font-size: clamp(2rem, 3.6vw, 2.7rem);
+      font-size: 1.45rem;
       font-weight: 700;
-      line-height: 1.08;
-      max-width: 12ch;
-      margin-left: auto;
-      margin-right: auto;
+      line-height: 1.1;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-lead-story-copy p {
+    body.forge-page:not(.forge-post-page) .forge-story-body p {
       margin: 0;
       color: rgba(18, 20, 24, 0.82);
       font-family: 'Roboto', sans-serif !important;
-      font-size: 1rem;
-      line-height: 1.56;
+      font-size: 0.97rem;
+      line-height: 1.55;
     }
 
     body.forge-page:not(.forge-post-page) .forge-list-taxonomy {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     body.forge-page:not(.forge-post-page) .forge-list-category,
@@ -613,8 +624,12 @@
       text-transform: uppercase;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-story-meta,
     body.forge-page:not(.forge-post-page) .forge-list-date,
     body.forge-page:not(.forge-post-page) .forge-rail-item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       color: rgba(18, 20, 24, 0.76);
       font-family: 'Roboto Mono', monospace;
       font-size: 11px;
@@ -641,12 +656,13 @@
 
     body.forge-page:not(.forge-post-page) .forge-rail {
       display: grid;
-      gap: 12px;
-      padding: 16px;
-      background: #fffdfa;
-      border: 1px solid rgba(18, 20, 24, 0.08);
-      border-radius: 20px;
-      align-self: start;
+      gap: 10px;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 14px 0 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
       width: 100%;
     }
 
@@ -667,13 +683,12 @@
 
     body.forge-page:not(.forge-post-page) .forge-rail-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 0;
     }
 
     body.forge-page:not(.forge-post-page) .forge-panel-note {
-      margin: -4px auto 0;
-      max-width: 56ch;
+      margin: 0 auto;
+      max-width: 52ch;
       color: rgba(18, 20, 24, 0.72);
       font-family: 'Roboto', sans-serif;
       font-size: 0.9rem;
@@ -683,29 +698,24 @@
 
     body.forge-page:not(.forge-post-page) .forge-rail-item {
       display: grid;
-      grid-template-columns: 88px minmax(0, 1fr);
+      grid-template-columns: 72px minmax(0, 1fr);
       align-items: center;
       gap: 12px;
-      padding: 14px;
+      padding: 14px 0;
       color: inherit;
       text-decoration: none;
-      border: 1px solid rgba(18, 20, 24, 0.08);
-      border-radius: 16px;
-      background: #fffdfa;
+      border-top: 1px solid rgba(18, 20, 24, 0.08);
+      background: transparent;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-item:first-child {
-      padding-top: 14px;
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-rail-item:last-child {
-      padding-bottom: 14px;
+      border-top: 0;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-thumb {
-      width: 88px;
+      width: 72px;
       aspect-ratio: 4 / 3;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
       background: #ece6db;
       border: 1px solid rgba(18, 20, 24, 0.08);
@@ -720,7 +730,7 @@
 
     body.forge-page:not(.forge-post-page) .forge-rail-item-body {
       display: grid;
-      gap: 6px;
+      gap: 5px;
       text-align: left;
     }
 
@@ -728,7 +738,7 @@
       margin: 0;
       color: #121418;
       font-family: 'Roboto', sans-serif !important;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
       line-height: 1.14;
     }
@@ -737,7 +747,7 @@
       margin: 0;
       color: rgba(18, 20, 24, 0.8);
       font-family: 'Roboto', sans-serif !important;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       line-height: 1.45;
     }
 
@@ -844,17 +854,17 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
-      max-width: 640px;
-      margin: 0 auto;
+      max-width: 760px;
+      margin: 8px auto 0;
       padding: 20px 24px;
       background: #f1ebdf !important;
       border: 1px solid rgba(18, 20, 24, 0.08) !important;
       border-radius: 16px;
-      text-align: left;
+      text-align: center;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) auto;
+      grid-template-columns: 1fr;
       align-items: center;
-      gap: 18px 22px;
+      gap: 12px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .section-kicker,
@@ -866,7 +876,7 @@
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .section-kicker {
       grid-column: 1 / -1;
       margin-bottom: -8px;
-      text-align: left;
+      text-align: center;
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive h3 {
@@ -874,14 +884,14 @@
       font-family: 'Roboto Mono', monospace;
       font-size: clamp(1.15rem, 2vw, 1.5rem);
       line-height: 1.05;
-      max-width: 14ch;
-      margin-left: 0;
-      margin-right: 0;
+      max-width: 18ch;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive p {
-      max-width: 40ch;
-      margin: 8px 0 0;
+      max-width: 42ch;
+      margin: 0 auto;
       color: rgba(18, 20, 24, 0.82) !important;
       font-family: 'Roboto', sans-serif;
       font-size: 0.9rem;
@@ -889,10 +899,10 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .btn-row {
-      justify-content: flex-end;
+      justify-content: center;
       gap: 8px;
-      grid-column: 2;
-      grid-row: 2 / span 2;
+      grid-column: auto;
+      grid-row: auto;
       align-self: center;
     }
 
@@ -944,102 +954,65 @@
     }
 
 
-    @media (min-width: 641px) {
-      body.forge-page:not(.forge-post-page) .forge-lead-story {
-        max-width: 760px;
-        justify-items: center;
-        text-align: center;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-lead-story-copy {
-        justify-items: center;
-        text-align: center;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-list-taxonomy {
-        justify-content: center;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-archive-card-main {
-        justify-items: center;
-        text-align: center;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-archive-card .forge-list-taxonomy {
-        justify-content: center;
-      }
-    }
-
     @media (max-width: 1040px) {
-      body.forge-page:not(.forge-post-page) .forge-archive-overview {
-        max-width: 760px;
-        padding: 26px 22px;
-        border-radius: 24px;
+      body.forge-page:not(.forge-post-page) .forge-page-grid {
+        grid-template-columns: 220px minmax(0, 1fr);
       }
 
-      body.forge-page:not(.forge-post-page) .forge-archive-utility-row {
-        grid-template-columns: 1fr;
-        max-width: 100%;
+      body.forge-page:not(.forge-post-page) .forge-side-rail--right {
+        display: none;
       }
 
-      body.forge-page:not(.forge-post-page) .forge-archive-utility-stack {
-        grid-template-columns: 1fr;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-rail-list {
-        grid-template-columns: 1fr;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
-        max-width: 560px;
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .section-kicker {
-        text-align: center;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive h3,
-      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .btn-row {
-        grid-column: auto;
-        grid-row: auto;
-        justify-content: center;
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools {
+        display: grid;
+        gap: 14px;
       }
     }
 
     @media (max-width: 900px) {
-      body.forge-page:not(.forge-post-page) .forge-rail-item {
-        grid-template-columns: 72px minmax(0, 1fr);
-        gap: 12px;
+      body.forge-page:not(.forge-post-page) .forge-page-grid {
+        grid-template-columns: 1fr;
       }
 
-      body.forge-page:not(.forge-post-page) .forge-rail-thumb {
-        width: 72px;
-      }
-      body.forge-page:not(.forge-post-page) .forge-utility-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-desktop-brief {
+      body.forge-page:not(.forge-post-page) .forge-side-rail {
         display: none;
       }
 
-      body.forge-page:not(.forge-post-page) .forge-category-grid {
-        grid-template-columns: 1fr 1fr;
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools {
+        display: grid;
+        gap: 14px;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-item,
+      body.forge-page:not(.forge-post-page) .forge-story-item--lead {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        text-align: left;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-thumb,
+      body.forge-page:not(.forge-post-page) .forge-story-item--lead .forge-story-thumb {
+        width: 100%;
+        justify-self: stretch;
+        aspect-ratio: 16 / 10;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-rail {
+        padding-top: 10px;
       }
     }
 
     @media (max-width: 640px) {
+      body.forge-page:not(.forge-post-page) .breadcrumbs .wrap {
+        max-width: 100% !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
       body.forge-page:not(.forge-post-page) .forge-archive-overview {
-        padding: 20px 16px;
-        margin-bottom: 18px;
-        border-radius: 20px;
+        margin-bottom: 8px;
       }
 
       body.forge-page:not(.forge-post-page) .hero.forge-hero-archive {
@@ -1047,6 +1020,7 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-hero-compact {
+        width: calc(100% - 32px);
         padding-top: 2px !important;
         padding-bottom: 4px !important;
       }
@@ -1065,12 +1039,12 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-archive-copy h2 {
-        font-size: clamp(1.8rem, 7.6vw, 2.3rem) !important;
-        max-width: 12ch;
+        font-size: clamp(1.7rem, 7.2vw, 2.2rem) !important;
+        max-width: 11ch;
       }
 
       body.forge-page:not(.forge-post-page) .forge-archive-copy .section-lead {
-        max-width: 30ch;
+        max-width: 32ch;
         font-size: 0.98rem !important;
       }
 
@@ -1092,20 +1066,8 @@
         grid-template-columns: 1fr;
       }
 
-      body.forge-page:not(.forge-post-page) .forge-lead-story-copy h3 {
-        font-size: clamp(1.75rem, 9vw, 2.35rem);
-      }
-
       body.forge-page:not(.forge-post-page) .forge-rail {
         padding: 14px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-rail-list {
-        grid-template-columns: 1fr;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-category-grid {
-        grid-template-columns: 1fr;
       }
 
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
@@ -1231,7 +1193,30 @@
     <section class="section" id="latest-posts">
       <div class="wrap forge-editorial-main forge-editorial-main--full forge-editorial-main--v2">
         <div class="forge-page-grid">
-          <aside class="forge-side-rail forge-side-rail--left" aria-label="Forge topics and reading paths">
+          <aside class="forge-side-rail forge-side-rail--left" aria-label="Forge archive tools">
+            <div class="forge-archive-utility-card forge-archive-utility-card--switcher">
+              <div class="forge-archive-tools">
+                <div class="forge-switcher forge-switcher--v2" role="tablist" aria-label="The Forge views">
+                  <button class="forge-switcher-tab is-active" type="button" data-view="latest" role="tab" aria-selected="true">Latest</button>
+                  <button class="forge-switcher-tab" type="button" data-view="categories" role="tab" aria-selected="false">Categories</button>
+                </div>
+                <div class="forge-utility-grid">
+                  <div class="forge-utility-card">
+                    <span class="forge-utility-label">Published</span>
+                    <strong>03 posts</strong>
+                  </div>
+                  <div class="forge-utility-card">
+                    <span class="forge-utility-label">Latest update</span>
+                    <strong>June 6, 2026</strong>
+                  </div>
+                  <div class="forge-utility-card">
+                    <span class="forge-utility-label">Coverage</span>
+                    <strong>Brand, Web, SEO</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="forge-side-card">
               <div class="section-kicker">Topics</div>
               <div class="forge-topic-tags" aria-label="Editorial topics">
@@ -1262,6 +1247,24 @@
                 </a>
               </div>
             </div>
+
+            <div class="forge-side-card">
+              <div class="section-kicker">Start Here</div>
+              <div class="forge-brief-list">
+                <a class="forge-brief-link" href="/forge/brand-systems-that-build-trust/">
+                  <strong>Brand systems that build trust</strong>
+                  <span>Brand strategy</span>
+                </a>
+                <a class="forge-brief-link" href="/forge/websites-that-earn-inquiries/">
+                  <strong>Websites that earn more inquiries</strong>
+                  <span>Website design</span>
+                </a>
+                <a class="forge-brief-link" href="/forge/local-seo-after-launch/">
+                  <strong>Local SEO after launch</strong>
+                  <span>SEO support</span>
+                </a>
+              </div>
+            </div>
           </aside>
 
           <div class="forge-main-column">
@@ -1277,198 +1280,168 @@
                   </div>
                 </div>
 
-                <div class="forge-archive-utility-row">
-                  <div class="forge-archive-utility-card">
-                    <div class="section-kicker">Topics</div>
-                    <div class="forge-topic-tags forge-archive-utility-topics" aria-label="Browse Forge topics">
-                      <button class="forge-topic-tag forge-topic-control is-active" type="button" data-category="all">All Posts</button>
-                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="brand-strategy">Brand Strategy</button>
-                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="website-design">Website Design</button>
-                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="seo-support">SEO Support</button>
-                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="trust">Trust</button>
-                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="conversion">Conversion</button>
-                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="post-launch">Post-Launch</button>
-                    </div>
-                    <p class="forge-panel-note">Choose a topic to jump straight into the part of the archive that matches what you are thinking through.</p>
+                <div class="forge-mobile-archive-tools">
+                  <div class="forge-switcher forge-switcher--v2" role="tablist" aria-label="The Forge views">
+                    <button class="forge-switcher-tab is-active" type="button" data-view="latest" role="tab" aria-selected="true">Latest</button>
+                    <button class="forge-switcher-tab" type="button" data-view="categories" role="tab" aria-selected="false">Categories</button>
                   </div>
-
-                  <div class="forge-archive-utility-stack">
-                    <div class="forge-archive-utility-card">
-                      <div class="forge-archive-tools">
-                        <div class="forge-switcher forge-switcher--v2" role="tablist" aria-label="The Forge views">
-                          <button class="forge-switcher-tab is-active" type="button" data-view="latest" role="tab" aria-selected="true">Latest</button>
-                          <button class="forge-switcher-tab" type="button" data-view="categories" role="tab" aria-selected="false">Categories</button>
-                        </div>
-
-                        <div class="forge-utility-grid">
-                          <div class="forge-utility-card">
-                            <span class="forge-utility-label">Published</span>
-                            <strong>03 posts</strong>
-                          </div>
-                          <div class="forge-utility-card">
-                            <span class="forge-utility-label">Latest update</span>
-                            <strong>June 6, 2026</strong>
-                          </div>
-                          <div class="forge-utility-card">
-                            <span class="forge-utility-label">Coverage</span>
-                            <strong>Brand, Web, SEO</strong>
-                          </div>
-                          <div class="forge-utility-card">
-                            <span class="forge-utility-label">Avg read</span>
-                            <strong>4 min</strong>
-                          </div>
-                        </div>
-                      </div>
+                  <div class="forge-utility-grid">
+                    <div class="forge-utility-card">
+                      <span class="forge-utility-label">Published</span>
+                      <strong>03 posts</strong>
                     </div>
-
-                    <div class="forge-archive-utility-card">
-                      <div class="section-kicker">Start Here</div>
-                      <div class="forge-brief-list">
-                        <a class="forge-brief-link" href="/forge/brand-systems-that-build-trust/">
-                          <strong>Brand systems that build trust</strong>
-                          <span>Brand strategy</span>
-                        </a>
-                        <a class="forge-brief-link" href="/forge/websites-that-earn-inquiries/">
-                          <strong>Websites that earn more inquiries</strong>
-                          <span>Website design</span>
-                        </a>
-                        <a class="forge-brief-link" href="/forge/local-seo-after-launch/">
-                          <strong>Local SEO after launch</strong>
-                          <span>SEO support</span>
-                        </a>
-                      </div>
+                    <div class="forge-utility-card">
+                      <span class="forge-utility-label">Latest update</span>
+                      <strong>June 6, 2026</strong>
+                    </div>
+                    <div class="forge-utility-card">
+                      <span class="forge-utility-label">Coverage</span>
+                      <strong>Brand, Web, SEO</strong>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="forge-archive-panels">
-            <section class="forge-archive-panel is-active" data-panel="latest" aria-label="Latest posts">
-              <div class="forge-latest-layout">
-                <a class="forge-lead-story forge-lead-story--v2" href="/forge/local-seo-after-launch/">
-                  <div class="forge-lead-story-media">
-                    <img src="/assets/forge/local-seo-after-launch.webp" alt="Illustration for Local SEO after launch" width="1365" height="768" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="forge-lead-story-copy">
-                    <div class="forge-list-taxonomy">
-                      <span class="forge-list-category">SEO Support</span>
-                      <span class="forge-list-category">Post-Launch</span>
-                    </div>
-                    <div class="forge-list-date">June 6, 2026 · 4 min read</div>
-                    <h3>Local SEO after launch.</h3>
-                    <p>What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.</p>
-                    <span class="forge-list-cta">Read latest</span>
-                  </div>
-                </a>
-
-                <aside class="forge-rail">
-                  <div class="forge-rail-header">
-                    <div class="section-kicker">More Notes From The Forge</div>
-                    <p>Two more notes from the archive, kept close at hand.</p>
-                  </div>
-
-                  <div class="forge-rail-list">
-                    <a class="forge-rail-item" href="/forge/websites-that-earn-inquiries/">
-                      <div class="forge-rail-thumb">
-                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Thumbnail for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
+                <section class="forge-archive-panel is-active" data-panel="latest" aria-label="Latest posts">
+                  <div class="forge-story-list">
+                    <a class="forge-story-item forge-story-item--lead" href="/forge/local-seo-after-launch/">
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/local-seo-after-launch.webp" alt="Illustration for Local SEO after launch" width="1365" height="768" loading="lazy" decoding="async" />
                       </div>
-                      <div class="forge-rail-item-body">
-                        <div class="forge-rail-item-meta">
-                          <span>Website Design</span>
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">SEO Support</span>
+                          <span class="forge-list-category">Post-Launch</span>
+                        </div>
+                        <h3>Local SEO after launch.</h3>
+                        <p>What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.</p>
+                        <div class="forge-story-meta">
+                          <span>June 6, 2026</span>
+                          <span>4 min read</span>
+                          <span>Blacksmith Media Inc.</span>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a class="forge-story-item" href="/forge/websites-that-earn-inquiries/">
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
+                      </div>
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">Website Design</span>
+                          <span class="forge-list-category">Conversion</span>
+                        </div>
+                        <h3>Websites that earn more inquiries.</h3>
+                        <p>What small businesses and service companies need from their site if it is going to support real conversations instead of just sitting online.</p>
+                        <div class="forge-story-meta">
                           <span>June 4, 2026</span>
+                          <span>4 min read</span>
+                          <span>Blacksmith Media Inc.</span>
                         </div>
-                        <h4>Websites that earn more inquiries.</h4>
-                        <p>What small businesses and service companies need from their site if it’s going to support real conversations.</p>
                       </div>
                     </a>
 
-                    <a class="forge-rail-item" href="/forge/brand-systems-that-build-trust/">
-                      <div class="forge-rail-thumb">
-                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Thumbnail for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
+                    <a class="forge-story-item" href="/forge/brand-systems-that-build-trust/">
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Illustration for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
                       </div>
-                      <div class="forge-rail-item-body">
-                        <div class="forge-rail-item-meta">
-                          <span>Brand Strategy</span>
-                          <span>June 2, 2026</span>
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">Brand Strategy</span>
+                          <span class="forge-list-category">Trust</span>
                         </div>
-                        <h4>Brand systems that build trust.</h4>
+                        <h3>Brand systems that build trust.</h3>
                         <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
+                        <div class="forge-story-meta">
+                          <span>June 2, 2026</span>
+                          <span>4 min read</span>
+                          <span>Blacksmith Media Inc.</span>
+                        </div>
                       </div>
                     </a>
                   </div>
-                </aside>
-              </div>
-            </section>
+                </section>
 
-            <section class="forge-archive-panel" data-panel="categories" aria-label="Posts by category">
-              <div class="forge-category-toolbar">
-                <div class="section-kicker">Categories</div>
-                <div class="forge-topics-mobile forge-topics-mobile-archive forge-topics-mobile-archive--v2">
-                  <label for="forge-topic-select">Choose a category</label>
-                  <select id="forge-topic-select" aria-label="Choose a Forge category">
-                    <option value="all">All Posts</option>
-                    <option value="brand-strategy">Brand Strategy</option>
-                    <option value="website-design">Website Design</option>
-                    <option value="seo-support">SEO Support</option>
-                    <option value="trust">Trust</option>
-                    <option value="conversion">Conversion</option>
-                    <option value="post-launch">Post-Launch</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="forge-category-grid" id="forge-category-grid">
-                <a class="forge-archive-card forge-archive-item forge-list-item-seo" href="/forge/local-seo-after-launch/" data-categories="seo-support post-launch">
-                  <div class="forge-archive-card-media forge-media-seo">
-                    <img src="/assets/forge/local-seo-after-launch.webp" alt="Illustration for Local SEO after launch" width="1365" height="768" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="forge-archive-card-main">
-                    <div class="forge-list-taxonomy">
-                      <span class="forge-list-category">SEO Support</span>
-                      <span class="forge-list-category">Post-Launch</span>
+                <section class="forge-archive-panel" data-panel="categories" aria-label="Posts by category">
+                  <div class="forge-category-toolbar">
+                    <div class="section-kicker">Categories</div>
+                    <div class="forge-topics-mobile forge-topics-mobile-archive forge-topics-mobile-archive--v2">
+                      <label for="forge-topic-select">Choose a category</label>
+                      <select id="forge-topic-select" aria-label="Choose a Forge category">
+                        <option value="all">All Posts</option>
+                        <option value="brand-strategy">Brand Strategy</option>
+                        <option value="website-design">Website Design</option>
+                        <option value="seo-support">SEO Support</option>
+                        <option value="trust">Trust</option>
+                        <option value="conversion">Conversion</option>
+                        <option value="post-launch">Post-Launch</option>
+                      </select>
                     </div>
-                    <div class="forge-list-date">June 6, 2026 · 4 min read</div>
-                    <h3>Local SEO after launch.</h3>
-                    <p>What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.</p>
-                    <span class="forge-list-cta">Read post</span>
                   </div>
-                </a>
 
-                <a class="forge-archive-card forge-archive-item forge-list-item-web" href="/forge/websites-that-earn-inquiries/" data-categories="website-design conversion">
-                  <div class="forge-archive-card-media forge-media-web">
-                    <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="forge-archive-card-main">
-                    <div class="forge-list-taxonomy">
-                      <span class="forge-list-category">Website Design</span>
-                      <span class="forge-list-category">Conversion</span>
-                    </div>
-                    <div class="forge-list-date">June 4, 2026 · 4 min read</div>
-                    <h3>Websites that earn more inquiries.</h3>
-                    <p>What small businesses and service companies need from their site if it’s going to support real conversations instead of just sitting online.</p>
-                    <span class="forge-list-cta">Read post</span>
-                  </div>
-                </a>
+                  <div class="forge-story-list forge-story-list--categories" id="forge-category-grid">
+                    <a class="forge-story-item forge-archive-item" href="/forge/local-seo-after-launch/" data-categories="seo-support post-launch">
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/local-seo-after-launch.webp" alt="Illustration for Local SEO after launch" width="1365" height="768" loading="lazy" decoding="async" />
+                      </div>
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">SEO Support</span>
+                          <span class="forge-list-category">Post-Launch</span>
+                        </div>
+                        <h3>Local SEO after launch.</h3>
+                        <p>What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.</p>
+                        <div class="forge-story-meta">
+                          <span>June 6, 2026</span>
+                          <span>4 min read</span>
+                          <span>Blacksmith Media Inc.</span>
+                        </div>
+                      </div>
+                    </a>
 
-                <a class="forge-archive-card forge-archive-item forge-list-item-brand" href="/forge/brand-systems-that-build-trust/" data-categories="brand-strategy trust">
-                  <div class="forge-archive-card-media forge-media-brand">
-                    <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Illustration for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="forge-archive-card-main">
-                    <div class="forge-list-taxonomy">
-                      <span class="forge-list-category">Brand Strategy</span>
-                      <span class="forge-list-category">Trust</span>
-                    </div>
-                    <div class="forge-list-date">June 2, 2026 · 4 min read</div>
-                    <h3>Brand systems that build trust.</h3>
-                    <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
-                    <span class="forge-list-cta">Read post</span>
-                  </div>
-                </a>
-              </div>
+                    <a class="forge-story-item forge-archive-item" href="/forge/websites-that-earn-inquiries/" data-categories="website-design conversion">
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
+                      </div>
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">Website Design</span>
+                          <span class="forge-list-category">Conversion</span>
+                        </div>
+                        <h3>Websites that earn more inquiries.</h3>
+                        <p>What small businesses and service companies need from their site if it is going to support real conversations instead of just sitting online.</p>
+                        <div class="forge-story-meta">
+                          <span>June 4, 2026</span>
+                          <span>4 min read</span>
+                          <span>Blacksmith Media Inc.</span>
+                        </div>
+                      </div>
+                    </a>
 
-              <p class="forge-list-empty" id="forge-empty-state">No posts match this category yet.</p>
-            </section>
+                    <a class="forge-story-item forge-archive-item" href="/forge/brand-systems-that-build-trust/" data-categories="brand-strategy trust">
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Illustration for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
+                      </div>
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">Brand Strategy</span>
+                          <span class="forge-list-category">Trust</span>
+                        </div>
+                        <h3>Brand systems that build trust.</h3>
+                        <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
+                        <div class="forge-story-meta">
+                          <span>June 2, 2026</span>
+                          <span>4 min read</span>
+                          <span>Blacksmith Media Inc.</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <p class="forge-list-empty" id="forge-empty-state">No posts match this category yet.</p>
+                </section>
               </div>
 
               <div class="forge-inline-cta forge-inline-cta-archive">
@@ -1484,7 +1457,6 @@
               </div>
             </div>
           </div>
-
         </div>
     </section>
   </main>
