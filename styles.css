@@ -6909,6 +6909,77 @@ body.forge-page:not(.forge-post-page) .breadcrumbs :is(a, span){
   color:rgba(18,20,24,.58) !important;
 }
 
+body.forge-page:not(.forge-post-page) .nav{
+  background:#fffdf9 !important;
+  border-bottom:1px solid rgba(18,20,24,.08) !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav::before{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(247,245,241,.98)),
+    linear-gradient(90deg, rgba(245,146,69,.08), rgba(245,146,69,0)) !important;
+  border-bottom:1px solid rgba(18,20,24,.06) !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav::after{
+  background:linear-gradient(90deg, rgba(245,146,69,.32), rgba(245,146,69,.16), rgba(18,20,24,.08)) !important;
+}
+
+body.forge-page:not(.forge-post-page) .brand-title{
+  color:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) .brand-title::before,
+body.forge-page:not(.forge-post-page) .brand-title::after{
+  color:#c56a23 !important;
+}
+
+body.forge-page:not(.forge-post-page) .brand-sub{
+  color:rgba(18,20,24,.64) !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-links a{
+  color:rgba(18,20,24,.78) !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-links a:hover{
+  color:#121418 !important;
+  background:rgba(18,20,24,.04) !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-links a::before,
+body.forge-page:not(.forge-post-page) .nav-links a::after{
+  opacity:.38 !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(1){ color:#9c7a15 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(2){ color:#7a47cb !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(3){ color:#1e9f74 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(4){ color:#4d71d8 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(5){ color:#cb5252 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(6){ color:#c56a23 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(7){ color:#4f545d !important; }
+
+body.forge-page:not(.forge-post-page) .nav-links a[aria-current="page"]{
+  background:rgba(245,146,69,.12) !important;
+  border-color:rgba(197,106,35,.22) !important;
+  color:#c56a23 !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-toggle{
+  background:#fffdf9 !important;
+  border-color:rgba(18,20,24,.12) !important;
+  color:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-toggle-line{
+  background:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-toggle-text{
+  color:#121418 !important;
+}
+
 body.forge-page:not(.forge-post-page) .hero.forge-hero-archive{
   background:#ffffff !important;
   color:#121418 !important;
