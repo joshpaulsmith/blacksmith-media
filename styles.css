@@ -2902,21 +2902,21 @@ body.portfolio-page{
 }
 
 .portfolio-item.project-collins{
-  background:#20452b !important;
-  border-color:#17331f !important;
-  color:#ddd0b1 !important;
+  background:#a8bea0 !important;
+  border-color:#4d684f !important;
+  color:#132318 !important;
 }
 
 .portfolio-item.project-collins:hover{
-  background:#295637 !important;
-  border-color:#17331f !important;
+  background:#b5c8ae !important;
+  border-color:#4d684f !important;
 }
 
 .portfolio-item.project-collins .portfolio-meta,
 .portfolio-item.project-collins .portfolio-name,
 .portfolio-item.project-collins .portfolio-summary,
 .portfolio-item.project-collins .portfolio-link{
-  color:#ddd0b1 !important;
+  color:#132318 !important;
 }
 
 .portfolio-item.project-quickthrills{
@@ -6691,21 +6691,21 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins{
-  background:#4c7a58 !important;
-  border-color:#355640 !important;
-  color:#ddd0b1 !important;
+  background:#a8bea0 !important;
+  border-color:#4d684f !important;
+  color:#132318 !important;
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins:hover{
-  background:#5a8866 !important;
-  border-color:#355640 !important;
+  background:#b5c8ae !important;
+  border-color:#4d684f !important;
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins .portfolio-meta,
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins .portfolio-name,
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins .portfolio-summary,
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-collins .portfolio-link{
-  color:#ddd0b1 !important;
+  color:#132318 !important;
 }
 
 body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-hero) .portfolio-item.project-quickthrills{
