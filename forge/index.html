@@ -35,7 +35,7 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/styles.css?v=20260606forgeeditorial9" />
+  <link rel="stylesheet" href="/styles.css?v=20260606forgeeditorial11" />
   <link rel="icon" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
 
@@ -139,34 +139,20 @@
             </div>
           </div>
           <div class="forge-masthead-nav" aria-label="Browse Forge topics">
-            <a href="#latest-posts">All Posts</a>
-            <button class="forge-masthead-filter" type="button" data-filter-target="brand-strategy">Brand Strategy</button>
-            <button class="forge-masthead-filter" type="button" data-filter-target="website-design">Website Design</button>
-            <button class="forge-masthead-filter" type="button" data-filter-target="seo-support">SEO Support</button>
-            <button class="forge-masthead-filter" type="button" data-filter-target="trust">Trust</button>
-            <button class="forge-masthead-filter" type="button" data-filter-target="conversion">Conversion</button>
-            <button class="forge-masthead-filter" type="button" data-filter-target="post-launch">Post-Launch</button>
+            <button class="forge-masthead-filter forge-filter is-active" type="button" data-filter="all">All Posts</button>
+            <button class="forge-masthead-filter forge-filter" type="button" data-filter="brand-strategy">Brand Strategy</button>
+            <button class="forge-masthead-filter forge-filter" type="button" data-filter="website-design">Website Design</button>
+            <button class="forge-masthead-filter forge-filter" type="button" data-filter="seo-support">SEO Support</button>
+            <button class="forge-masthead-filter forge-filter" type="button" data-filter="trust">Trust</button>
+            <button class="forge-masthead-filter forge-filter" type="button" data-filter="conversion">Conversion</button>
+            <button class="forge-masthead-filter forge-filter" type="button" data-filter="post-launch">Post-Launch</button>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="latest-posts">
-      <div class="wrap forge-editorial-shell">
-        <aside class="forge-editorial-sidebar">
-          <div class="section-kicker">Topics</div>
-
-          <div class="forge-sidebar-group">
-            <div class="section-kicker">Latest</div>
-            <div class="forge-sidebar-links">
-              <a href="/forge/local-seo-after-launch/">Local SEO After Launch</a>
-              <a href="/forge/websites-that-earn-inquiries/">Websites That Earn More Inquiries</a>
-              <a href="/forge/brand-systems-that-build-trust/">Brand Systems That Build Trust</a>
-            </div>
-          </div>
-        </aside>
-
-        <div class="forge-editorial-main">
+      <div class="wrap forge-editorial-main forge-editorial-main--full">
           <div class="forge-editorial-header">
             <div>
               <div class="section-kicker">Archive</div>
@@ -293,7 +279,6 @@
 
           <p class="forge-list-empty" id="forge-empty-state">No posts match that search yet. Try a broader keyword like brand, website, or SEO.</p>
         </div>
-      </div>
     </section>
 
     <section class="section forge-cta-section">
@@ -403,16 +388,10 @@
           activeFilter = filter.dataset.filter || "all";
           filters.forEach((button) => button.classList.toggle("is-active", button === filter));
           filterPosts();
-        });
-      });
-
-      document.querySelectorAll(".forge-masthead-filter").forEach((filterButton) => {
-        filterButton.addEventListener("click", function () {
-          const target = filterButton.dataset.filterTarget || "all";
-          const matching = filters.find((filter) => (filter.dataset.filter || "all") === target);
-          if (matching) matching.click();
-          const archive = document.getElementById("latest-posts");
-          if (archive) archive.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (filter.classList.contains("forge-masthead-filter")) {
+            const archive = document.getElementById("latest-posts");
+            if (archive) archive.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         });
       });
 

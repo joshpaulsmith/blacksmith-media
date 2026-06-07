@@ -104,10 +104,13 @@ body.forge-page:not(.forge-post-page) .forge-masthead .lead{
   cursor:pointer;
 }
 
-.forge-masthead-nav a:hover,
-.forge-masthead-nav a:focus-visible,
+.forge-masthead-nav .forge-masthead-filter:hover,
 .forge-masthead-filter:hover,
 .forge-masthead-filter:focus-visible{
+  color:#ff9a4d;
+}
+
+.forge-masthead-filter.is-active{
   color:#ff9a4d;
 }
 
@@ -361,6 +364,103 @@ body.forge-page:not(.forge-post-page) .forge-masthead .lead{
   .forge-featured-post{
     gap:14px;
     padding:16px;
+  }
+}
+
+/* Forge archive reset */
+.forge-editorial-main--full{
+  max-width:1180px;
+  margin:0 auto;
+}
+
+.forge-editorial-main--full .forge-editorial-header{
+  grid-template-columns:minmax(0, 1fr) minmax(280px, 340px);
+  align-items:start;
+}
+
+.forge-editorial-main--full .forge-editorial-header h2{
+  max-width:12ch;
+}
+
+body.forge-page:not(.forge-post-page) .hero{
+  padding:.18rem 0 .32rem !important;
+}
+
+body.forge-page:not(.forge-post-page) .hero .hero-inner.forge-hero-compact{
+  max-width:1180px;
+}
+
+.forge-masthead{
+  grid-template-columns:minmax(280px, 420px) minmax(0, 1fr);
+  gap:24px;
+}
+
+body.forge-page:not(.forge-post-page) .forge-masthead h1{
+  font-size:clamp(34px, 4vw, 48px);
+}
+
+body.forge-page:not(.forge-post-page) .forge-masthead .lead{
+  max-width:34ch;
+  font-size:14px;
+}
+
+.forge-masthead-nav{
+  gap:10px 16px;
+  justify-content:flex-start;
+  align-content:start;
+  padding-top:14px;
+}
+
+.forge-masthead-nav a,
+.forge-masthead-filter{
+  font-family:'Roboto Mono', monospace;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.forge-editorial-main--full{
+  gap:14px;
+}
+
+.forge-featured-block{
+  margin-top:2px;
+}
+
+.forge-popular-strip{
+  margin-top:6px;
+}
+
+@media (max-width: 980px){
+  .forge-editorial-main--full .forge-editorial-header{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 640px){
+  body.forge-page:not(.forge-post-page) .hero{
+    padding:.08rem 0 .24rem !important;
+  }
+
+  .forge-masthead{
+    gap:10px;
+  }
+
+  body.forge-page:not(.forge-post-page) .forge-masthead h1{
+    font-size:clamp(30px, 9vw, 38px);
+  }
+
+  .forge-masthead-nav{
+    display:none;
+  }
+
+  .forge-topics-mobile{
+    display:block;
+  }
+
+  .forge-editorial-main--full{
+    gap:12px;
   }
 }
 
