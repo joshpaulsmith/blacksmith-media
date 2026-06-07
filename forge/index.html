@@ -189,18 +189,14 @@
 
     body.forge-page:not(.forge-post-page) .forge-page-grid {
       display: grid;
-      grid-template-columns: 220px minmax(0, 820px) 280px;
+      grid-template-columns: minmax(0, 1060px);
       justify-content: center;
       align-items: start;
-      gap: 24px;
+      gap: 0;
     }
 
     body.forge-page:not(.forge-post-page) .forge-side-rail {
-      display: grid;
-      gap: 14px;
-      position: sticky;
-      top: 110px;
-      align-self: start;
+      display: none;
     }
 
     body.forge-page:not(.forge-post-page) .forge-side-card {
@@ -282,6 +278,18 @@
       gap: 22px;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-archive-overview {
+      max-width: 1040px;
+      margin: 0 auto 24px;
+      background: #fffdfa;
+      border: 1px solid rgba(18, 20, 24, 0.08);
+      border-radius: 30px;
+      padding: 32px;
+      box-shadow: 0 18px 42px rgba(18, 20, 24, 0.04);
+      display: grid;
+      gap: 22px;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-editorial-header.forge-archive-redesign {
       display: grid !important;
       justify-items: center;
@@ -294,7 +302,7 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-copy {
-      max-width: 760px;
+      max-width: 720px;
       margin: 0 auto;
       text-align: center;
     }
@@ -303,8 +311,8 @@
       margin: 0 0 12px;
       color: #121418;
       font-family: 'Roboto Mono', monospace !important;
-      font-size: clamp(2.1rem, 3.8vw, 3.15rem) !important;
-      line-height: 0.98 !important;
+      font-size: clamp(2.05rem, 3.4vw, 3.05rem) !important;
+      line-height: 1.02 !important;
       max-width: 15ch;
       margin-left: auto;
       margin-right: auto;
@@ -317,6 +325,49 @@
       font-family: 'Roboto', sans-serif !important;
       font-size: 1.02rem !important;
       line-height: 1.62 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-archive-utility-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.92fr);
+      gap: 20px;
+      align-items: start;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-archive-utility-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-archive-utility-card {
+      background: #fff;
+      border: 1px solid rgba(18, 20, 24, 0.07);
+      border-radius: 24px;
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+      text-align: left;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-archive-utility-card .section-kicker {
+      margin: 0;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-archive-utility-card .forge-panel-note {
+      margin: 0;
+      max-width: none;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-archive-utility-topics {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-archive-utility-card .forge-topic-tags {
+      gap: 10px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-tools {
@@ -380,6 +431,8 @@
       display: grid;
       gap: 3px;
       text-align: center;
+      min-height: 108px;
+      align-content: start;
     }
 
     body.forge-page:not(.forge-post-page) .forge-utility-card strong {
@@ -487,7 +540,7 @@
       grid-template-columns: minmax(0, 1fr);
       gap: 16px;
       align-items: start;
-      max-width: 820px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -918,12 +971,19 @@
     }
 
     @media (max-width: 1040px) {
-      body.forge-page:not(.forge-post-page) .forge-page-grid {
-        grid-template-columns: minmax(0, 1fr);
+      body.forge-page:not(.forge-post-page) .forge-archive-overview {
+        max-width: 760px;
+        padding: 26px 22px;
+        border-radius: 24px;
       }
 
-      body.forge-page:not(.forge-post-page) .forge-side-rail {
-        display: none;
+      body.forge-page:not(.forge-post-page) .forge-archive-utility-row {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-archive-utility-stack {
+        grid-template-columns: 1fr;
       }
 
       body.forge-page:not(.forge-post-page) .forge-rail-list {
@@ -976,6 +1036,12 @@
     }
 
     @media (max-width: 640px) {
+      body.forge-page:not(.forge-post-page) .forge-archive-overview {
+        padding: 20px 16px;
+        margin-bottom: 18px;
+        border-radius: 20px;
+      }
+
       body.forge-page:not(.forge-post-page) .hero.forge-hero-archive {
         padding: 12px 0 10px !important;
       }
@@ -999,17 +1065,26 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-archive-copy h2 {
-        font-size: clamp(2.2rem, 10vw, 3.2rem) !important;
+        font-size: clamp(1.8rem, 7.6vw, 2.3rem) !important;
         max-width: 12ch;
       }
 
       body.forge-page:not(.forge-post-page) .forge-archive-copy .section-lead {
         max-width: 30ch;
+        font-size: 0.98rem !important;
       }
 
       body.forge-page:not(.forge-post-page) .forge-switcher {
         width: 100%;
         min-width: 0;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-archive-utility-card {
+        padding: 16px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-archive-utility-topics {
+        grid-template-columns: 1fr;
       }
 
       body.forge-page:not(.forge-post-page) .forge-utility-grid {
@@ -1191,13 +1266,79 @@
 
           <div class="forge-main-column">
             <div class="forge-archive-shell">
-              <div class="forge-editorial-header forge-archive-redesign forge-archive-redesign--v2">
-                <div class="forge-archive-copy forge-archive-copy--v2">
-                  <div class="section-kicker">Archive</div>
-                  <h2>Notes from our team, sorted by date and category.</h2>
-                  <p class="section-lead">
-                    Practical writing on branding, website design, and SEO support. Start with the latest post, then browse the rest of the archive by category.
-                  </p>
+              <div class="forge-archive-overview">
+                <div class="forge-editorial-header forge-archive-redesign forge-archive-redesign--v2">
+                  <div class="forge-archive-copy forge-archive-copy--v2">
+                    <div class="section-kicker">Archive</div>
+                    <h2>Notes from our team, sorted by date and category.</h2>
+                    <p class="section-lead">
+                      Practical writing on branding, website design, and SEO support. Start with the latest post, then browse the rest of the archive by category.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="forge-archive-utility-row">
+                  <div class="forge-archive-utility-card">
+                    <div class="section-kicker">Topics</div>
+                    <div class="forge-topic-tags forge-archive-utility-topics" aria-label="Browse Forge topics">
+                      <button class="forge-topic-tag forge-topic-control is-active" type="button" data-category="all">All Posts</button>
+                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="brand-strategy">Brand Strategy</button>
+                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="website-design">Website Design</button>
+                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="seo-support">SEO Support</button>
+                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="trust">Trust</button>
+                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="conversion">Conversion</button>
+                      <button class="forge-topic-tag forge-topic-control" type="button" data-category="post-launch">Post-Launch</button>
+                    </div>
+                    <p class="forge-panel-note">Choose a topic to jump straight into the part of the archive that matches what you are thinking through.</p>
+                  </div>
+
+                  <div class="forge-archive-utility-stack">
+                    <div class="forge-archive-utility-card">
+                      <div class="forge-archive-tools">
+                        <div class="forge-switcher forge-switcher--v2" role="tablist" aria-label="The Forge views">
+                          <button class="forge-switcher-tab is-active" type="button" data-view="latest" role="tab" aria-selected="true">Latest</button>
+                          <button class="forge-switcher-tab" type="button" data-view="categories" role="tab" aria-selected="false">Categories</button>
+                        </div>
+
+                        <div class="forge-utility-grid">
+                          <div class="forge-utility-card">
+                            <span class="forge-utility-label">Published</span>
+                            <strong>03 posts</strong>
+                          </div>
+                          <div class="forge-utility-card">
+                            <span class="forge-utility-label">Latest update</span>
+                            <strong>June 6, 2026</strong>
+                          </div>
+                          <div class="forge-utility-card">
+                            <span class="forge-utility-label">Coverage</span>
+                            <strong>Brand, Web, SEO</strong>
+                          </div>
+                          <div class="forge-utility-card">
+                            <span class="forge-utility-label">Avg read</span>
+                            <strong>4 min</strong>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="forge-archive-utility-card">
+                      <div class="section-kicker">Start Here</div>
+                      <div class="forge-brief-list">
+                        <a class="forge-brief-link" href="/forge/brand-systems-that-build-trust/">
+                          <strong>Brand systems that build trust</strong>
+                          <span>Brand strategy</span>
+                        </a>
+                        <a class="forge-brief-link" href="/forge/websites-that-earn-inquiries/">
+                          <strong>Websites that earn more inquiries</strong>
+                          <span>Website design</span>
+                        </a>
+                        <a class="forge-brief-link" href="/forge/local-seo-after-launch/">
+                          <strong>Local SEO after launch</strong>
+                          <span>SEO support</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -1344,67 +1485,6 @@
             </div>
           </div>
 
-          <aside class="forge-side-rail forge-side-rail--right" aria-label="Forge archive controls and quick links">
-              <div class="forge-archive-tools">
-                <div class="forge-switcher forge-switcher--v2" role="tablist" aria-label="The Forge views">
-                  <button class="forge-switcher-tab is-active" type="button" data-view="latest" role="tab" aria-selected="true">Latest</button>
-                  <button class="forge-switcher-tab" type="button" data-view="categories" role="tab" aria-selected="false">Categories</button>
-                </div>
-
-              <div class="forge-utility-grid">
-                <div class="forge-utility-card">
-                  <span class="forge-utility-label">Published</span>
-                  <strong>03 posts</strong>
-                </div>
-                <div class="forge-utility-card">
-                  <span class="forge-utility-label">Latest update</span>
-                  <strong>June 6, 2026</strong>
-                </div>
-                <div class="forge-utility-card">
-                  <span class="forge-utility-label">Coverage</span>
-                  <strong>Brand, Web, SEO</strong>
-                </div>
-              </div>
-
-              <div class="forge-desktop-brief" aria-label="Forge editorial overview">
-                <div class="forge-brief-card">
-                  <div class="section-kicker">Start Here</div>
-                  <div class="forge-brief-list">
-                    <a class="forge-brief-link" href="/forge/brand-systems-that-build-trust/">
-                      <strong>Brand systems that build trust</strong>
-                      <span>Brand strategy</span>
-                    </a>
-                    <a class="forge-brief-link" href="/forge/websites-that-earn-inquiries/">
-                      <strong>Websites that earn more inquiries</strong>
-                      <span>Website design</span>
-                    </a>
-                    <a class="forge-brief-link" href="/forge/local-seo-after-launch/">
-                      <strong>Local SEO after launch</strong>
-                      <span>SEO support</span>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="forge-brief-card">
-                  <div class="section-kicker">Publishing Lens</div>
-                  <div class="forge-rail-stat-list">
-                    <div class="forge-rail-stat">
-                      <span class="forge-rail-stat-label">Avg read</span>
-                      <span class="forge-rail-stat-value">4 min</span>
-                    </div>
-                    <div class="forge-rail-stat">
-                      <span class="forge-rail-stat-label">Topics tracked</span>
-                      <span class="forge-rail-stat-value">06</span>
-                    </div>
-                    <div class="forge-rail-stat">
-                      <span class="forge-rail-stat-label">Next up</span>
-                      <span class="forge-rail-stat-value">AI, Tech</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </aside>
         </div>
     </section>
   </main>
