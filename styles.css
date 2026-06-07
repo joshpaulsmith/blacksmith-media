@@ -4773,7 +4773,7 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 
 body.forge-page:not(.forge-post-page) .hero{
   min-height:auto;
-  padding:1.2rem 0 .95rem;
+  padding:.75rem 0 .55rem;
   background:#0b0d10 !important;
   color:#f2f4f7 !important;
   border-bottom:1px solid rgba(255,255,255,.06);
@@ -4781,24 +4781,24 @@ body.forge-page:not(.forge-post-page) .hero{
 
 body.forge-page:not(.forge-post-page) .hero .hero-inner{
   max-width:680px;
-  gap:8px;
+  gap:5px;
 }
 
 body.forge-page:not(.forge-post-page) .hero h1{
-  font-size:clamp(34px, 5vw, 50px);
+  font-size:clamp(30px, 4.2vw, 42px);
   color:#f2f4f7;
 }
 
 body.forge-page:not(.forge-post-page) .hero .lead{
-  max-width:48ch;
-  font-size:15px;
-  line-height:1.55;
+  max-width:46ch;
+  font-size:14px;
+  line-height:1.5;
   color:rgba(242,244,247,.82);
 }
 
 body.forge-page:not(.forge-post-page) .hero .btn-row{
-  margin-top:4px;
-  gap:8px;
+  margin-top:2px;
+  gap:6px;
   justify-content:flex-start;
 }
 
@@ -4813,9 +4813,9 @@ body.forge-page:not(.forge-post-page) .hero .highlight{
 }
 
 body.forge-page:not(.forge-post-page) .hero .btn{
-  min-height:36px;
-  padding:8px 14px;
-  font-size:11px;
+  min-height:32px;
+  padding:6px 12px;
+  font-size:10px;
 }
 
 body.forge-page:not(.forge-post-page) .hero .btn.secondary{
@@ -4896,10 +4896,10 @@ body.forge-page:not(.forge-post-page) .hero .forge-hero-browse{
 
 .forge-publisher-note{
   max-width:62ch;
-  margin:8px 0 0;
+  margin:4px 0 0;
   color:rgba(18,20,24,.62);
-  font-size:14px;
-  line-height:1.65;
+  font-size:13px;
+  line-height:1.55;
 }
 
 .forge-featured-block{
@@ -5910,7 +5910,7 @@ body.forge-post-page main > section.forge-article-section + section.forge-articl
   }
 
   body.forge-page:not(.forge-post-page) .hero{
-    padding:1rem 0 .85rem;
+    padding:.65rem 0 .5rem;
   }
 
   .forge-post-grid{
@@ -5984,20 +5984,20 @@ body.forge-post-page main > section.forge-article-section + section.forge-articl
 
 @media (max-width: 640px){
   body.forge-page:not(.forge-post-page) .hero{
-    padding:.85rem 0 .7rem;
+    padding:.5rem 0 .4rem;
   }
 
   body.forge-page:not(.forge-post-page) .hero .hero-inner{
-    gap:6px;
+    gap:4px;
   }
 
   body.forge-page:not(.forge-post-page) .hero h1{
-    font-size:clamp(28px, 10vw, 34px);
+    font-size:clamp(24px, 9vw, 30px);
   }
 
   body.forge-page:not(.forge-post-page) .hero .lead{
-    font-size:13px;
-    line-height:1.5;
+    font-size:12px;
+    line-height:1.45;
   }
 
   body.forge-page:not(.forge-post-page) .hero .btn-row{
@@ -6008,8 +6008,8 @@ body.forge-post-page main > section.forge-article-section + section.forge-articl
   body.forge-page:not(.forge-post-page) .hero .btn{
     width:auto;
     justify-content:flex-start;
-    min-height:34px;
-    padding:7px 12px;
+    min-height:30px;
+    padding:6px 10px;
   }
 
   .forge-post-grid{
