@@ -1086,14 +1086,26 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools {
-        gap: 6px;
-        margin: 0 auto;
+        gap: 8px;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto 2px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-switcher {
-        display: inline-grid;
-        width: min(100%, 320px);
+        display: grid;
+        width: 100%;
+        max-width: none;
+        min-width: 0;
         margin: 0 auto;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-switcher-tab {
+        min-width: 0;
+        padding: 11px 8px !important;
+        font-size: 10px !important;
+        letter-spacing: 0.1em !important;
+        white-space: nowrap;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-topbar {
@@ -1115,7 +1127,7 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
-        margin-bottom: 12px;
+        margin: 2px 0 10px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-category-tags .forge-topic-tag {
@@ -1131,20 +1143,40 @@
 
       body.forge-page:not(.forge-post-page) .forge-story-item,
       body.forge-page:not(.forge-post-page) .forge-story-item.is-featured {
-        padding: 12px 12px;
-        gap: 10px;
-        grid-template-columns: minmax(0, 1fr) 72px;
+        padding: 12px;
+        gap: 12px;
+        grid-template-columns: minmax(0, 1fr) 74px;
+        align-items: start;
       }
 
       body.forge-page:not(.forge-post-page) .forge-story-thumb,
       body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-thumb {
-        width: 72px;
+        width: 74px;
         aspect-ratio: 1 / 1;
         border-radius: 12px;
+        justify-self: end;
+        align-self: start;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-body {
+        gap: 6px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-body h3 {
+        font-size: 1.16rem;
+        line-height: 1.08;
       }
 
       body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-body h3 {
-        font-size: 1.28rem;
+        font-size: 1.22rem;
+        line-height: 1.05;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-body p,
+      body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-body p {
+        font-size: 0.92rem;
+        line-height: 1.42;
+        max-width: none;
       }
 
       body.forge-page:not(.forge-post-page) .forge-switcher {
@@ -1153,7 +1185,7 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-archive-utility-card {
-        padding: 14px;
+        padding: 12px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-archive-utility-topics {
@@ -1168,6 +1200,10 @@
 
       body.forge-page:not(.forge-post-page) .forge-utility-card {
         padding: 8px 10px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-utility-label {
+        font-size: 9px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-utility-card strong {
