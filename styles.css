@@ -7484,6 +7484,76 @@ body.forge-post-page .forge-post-contact-box .btn-row{
   justify-content:center !important;
 }
 
+body.forge-post-page .forge-inline-cta{
+  max-width:760px;
+  margin:34px auto 0;
+  padding:28px 30px;
+  background:#efe8de;
+  border:1px solid rgba(18,20,24,.08);
+  border-top:2px solid rgba(245,146,69,.28);
+  border-radius:18px;
+  text-align:center;
+}
+
+body.forge-post-page .forge-inline-cta .section-kicker{
+  color:#c56a23 !important;
+}
+
+body.forge-post-page .forge-inline-cta h3{
+  margin:0 auto 12px;
+  max-width:14ch;
+  color:#121418;
+  font-family:"Roboto Mono", monospace;
+  font-size:clamp(2rem, 3vw, 3.5rem);
+  line-height:.98;
+}
+
+body.forge-post-page .forge-inline-cta p{
+  max-width:48ch;
+  margin:0 auto;
+  color:rgba(18,20,24,.82);
+}
+
+body.forge-post-page .forge-inline-cta .btn-row{
+  justify-content:center;
+  margin-top:20px;
+}
+
+body.forge-post-page .forge-inline-cta .btn.primary{
+  background:#f59245;
+  color:#121418;
+  border-color:#f59245;
+}
+
+body.forge-post-page .forge-inline-cta .btn.primary:hover{
+  background:#f2a15f;
+  border-color:#f2a15f;
+}
+
+body.forge-post-page .forge-inline-cta .btn.secondary{
+  background:#f7f5f1;
+  color:#121418;
+  border-color:rgba(18,20,24,.12);
+}
+
+body.forge-post-page .forge-inline-cta .btn.secondary:hover{
+  background:#e9e0d3;
+  border-color:rgba(18,20,24,.2);
+}
+
+@media (max-width: 720px){
+  body.forge-post-page .forge-inline-cta{
+    margin-top:26px;
+    padding:22px 18px;
+    border-radius:14px;
+  }
+
+  body.forge-post-page .forge-inline-cta h3{
+    max-width:12ch;
+    font-size:clamp(1.7rem, 8vw, 2.45rem);
+  }
+}
+
 body.forge-post-page .forge-post-contact-box,
 body.forge-post-page .forge-post-contact-box *{
   color:#121418 !important;
