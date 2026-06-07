@@ -8343,6 +8343,7 @@ body.brand-page main > .section .section-lead a {
   font-weight: 700 !important;
   text-decoration: underline !important;
   text-decoration-thickness: 2px !important;
+  text-decoration-color: currentColor !important;
   text-underline-offset: 0.18em !important;
 }
 
@@ -8363,6 +8364,19 @@ body.brand-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero
 }
 
 body.brand-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .btn.primary:hover {
+  background: #181b20 !important;
+  border-color: #181b20 !important;
+  color: #fffdfa !important;
+}
+
+body.brand-page .contact-box .btn.primary {
+  background: #0b0d10 !important;
+  border-color: #0b0d10 !important;
+  color: #fffdfa !important;
+}
+
+body.brand-page .contact-box .btn.primary:hover,
+body.brand-page .contact-box .btn.primary:focus-visible {
   background: #181b20 !important;
   border-color: #181b20 !important;
   color: #fffdfa !important;
