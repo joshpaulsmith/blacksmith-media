@@ -8335,3 +8335,35 @@ body.forge-page:not(.forge-post-page) .forge-topics-mobile-archive{
     grid-template-columns:1fr;
   }
 }
+
+
+/* ===== BRAND PAGE ACCESSIBILITY TUNING ===== */
+body.brand-page main > .section .section-copy a,
+body.brand-page main > .section .section-lead a {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 0.18em !important;
+}
+
+body.brand-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .section-copy a,
+body.brand-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .section-lead a {
+  color: #121418 !important;
+}
+
+body.brand-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .section-copy a,
+body.brand-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .section-lead a {
+  color: #f3e8ff !important;
+}
+
+body.brand-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .btn.primary {
+  background: #0b0d10 !important;
+  border-color: #0b0d10 !important;
+  color: #fffdfa !important;
+}
+
+body.brand-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .btn.primary:hover {
+  background: #181b20 !important;
+  border-color: #181b20 !important;
+  color: #fffdfa !important;
+}
