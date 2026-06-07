@@ -7374,6 +7374,7 @@ body.forge-page:not(.forge-post-page) .forge-contact-box{
   border:1px solid rgba(18,20,24,.08) !important;
   border-top:2px solid rgba(245,146,69,.28) !important;
   box-shadow:none !important;
+  color:#121418 !important;
 }
 
 body.forge-page:not(.forge-post-page) .forge-cta-section{
@@ -7387,6 +7388,10 @@ body.forge-page:not(.forge-post-page) .forge-cta-section .section-kicker{
 
 body.forge-page:not(.forge-post-page) .forge-contact-box h2,
 body.forge-page:not(.forge-post-page) .forge-contact-box .section-copy{
+  color:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) .forge-contact-box :is(.section-kicker, h2, p, strong, a){
   color:#121418 !important;
 }
 
