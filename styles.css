@@ -7693,6 +7693,93 @@ body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .btn.secondary:h
   }
 }
 
+/* Final Forge archive header override */
+body.forge-page:not(.forge-post-page) .nav{
+  background:#fffdf9 !important;
+  border-bottom:1px solid rgba(18,20,24,.08) !important;
+  box-shadow:none !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav::before{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(247,245,241,.98)),
+    linear-gradient(90deg, rgba(245,146,69,.08), rgba(245,146,69,0)) !important;
+  opacity:1 !important;
+  border-bottom:1px solid rgba(18,20,24,.06) !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav::after{
+  background:linear-gradient(90deg, rgba(245,146,69,.22), rgba(245,146,69,.12), rgba(18,20,24,.06)) !important;
+  opacity:1 !important;
+}
+
+body.forge-page:not(.forge-post-page) .brand img{
+  filter:none !important;
+}
+
+body.forge-page:not(.forge-post-page) .brand-title{
+  color:#121418 !important;
+  text-shadow:none !important;
+}
+
+body.forge-page:not(.forge-post-page) .brand-title::before,
+body.forge-page:not(.forge-post-page) .brand-title::after{
+  color:#c56a23 !important;
+}
+
+body.forge-page:not(.forge-post-page) .brand-sub{
+  color:rgba(18,20,24,.64) !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-links a{
+  color:#4f545d !important;
+  background:transparent !important;
+  border:1px solid transparent !important;
+  box-shadow:none !important;
+  text-shadow:none !important;
+  transform:none !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-links a::before,
+body.forge-page:not(.forge-post-page) .nav-links a::after{
+  content:none !important;
+  display:none !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(1){ color:#9c7a15 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(2){ color:#7a47cb !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(3){ color:#1e9f74 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(4){ color:#4d71d8 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(5){ color:#cb5252 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(6){ color:#c56a23 !important; }
+body.forge-page:not(.forge-post-page) .nav-links a:nth-child(7){ color:#4f545d !important; }
+
+body.forge-page:not(.forge-post-page) .nav-links a:hover{
+  color:#121418 !important;
+  background:rgba(18,20,24,.04) !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-links a[aria-current="page"]{
+  color:#c56a23 !important;
+  background:rgba(245,146,69,.12) !important;
+  border-color:rgba(197,106,35,.22) !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-toggle{
+  background:#fffdf9 !important;
+  border-color:rgba(18,20,24,.12) !important;
+  color:#121418 !important;
+  box-shadow:none !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-toggle-line{
+  background:#121418 !important;
+}
+
+body.forge-page:not(.forge-post-page) .nav-toggle-text{
+  color:#121418 !important;
+}
+
 body.forge-post-page .forge-post-contact-box,
 body.forge-post-page .forge-post-contact-box *{
   color:#121418 !important;
