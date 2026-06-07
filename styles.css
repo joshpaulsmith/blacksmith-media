@@ -7797,6 +7797,154 @@ body.forge-post-page .forge-post-contact-box .btn.secondary{
   color:#121418 !important;
 }
 
+body.forge-post-page .nav{
+  background:#fffdfa !important;
+  border-bottom:1px solid rgba(18,20,24,.08) !important;
+  box-shadow:none !important;
+}
+
+body.forge-post-page .nav::before{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(247,245,241,.98)),
+    linear-gradient(90deg, rgba(245,146,69,.08), rgba(245,146,69,0)) !important;
+  opacity:1 !important;
+  border-bottom:1px solid rgba(18,20,24,.06) !important;
+}
+
+body.forge-post-page .nav::after{
+  background:linear-gradient(90deg, rgba(245,146,69,.22), rgba(245,146,69,.12), rgba(18,20,24,.06)) !important;
+  opacity:1 !important;
+}
+
+body.forge-post-page .brand img{
+  filter:none !important;
+}
+
+body.forge-post-page .brand-title{
+  color:#121418 !important;
+  text-shadow:none !important;
+}
+
+body.forge-post-page .brand-title::before,
+body.forge-post-page .brand-title::after{
+  color:#c56a23 !important;
+}
+
+body.forge-post-page .brand-sub{
+  color:rgba(18,20,24,.64) !important;
+}
+
+body.forge-post-page .nav-links a{
+  color:#4f545d !important;
+  background:transparent !important;
+  border:1px solid transparent !important;
+  box-shadow:none !important;
+  text-shadow:none !important;
+  transform:none !important;
+}
+
+body.forge-post-page .nav-links a::before,
+body.forge-post-page .nav-links a::after{
+  content:none !important;
+  display:none !important;
+}
+
+body.forge-post-page .nav-links a:nth-child(1){ color:#9c7a15 !important; }
+body.forge-post-page .nav-links a:nth-child(2){ color:#7a47cb !important; }
+body.forge-post-page .nav-links a:nth-child(3){ color:#1e9f74 !important; }
+body.forge-post-page .nav-links a:nth-child(4){ color:#4d71d8 !important; }
+body.forge-post-page .nav-links a:nth-child(5){ color:#cb5252 !important; }
+body.forge-post-page .nav-links a:nth-child(6){ color:#c56a23 !important; }
+body.forge-post-page .nav-links a:nth-child(7){ color:#4f545d !important; }
+
+body.forge-post-page .nav-links a:hover{
+  color:#121418 !important;
+  background:rgba(18,20,24,.04) !important;
+  border-color:rgba(18,20,24,.08) !important;
+}
+
+body.forge-post-page .nav-links a[aria-current="page"]{
+  color:#c56a23 !important;
+  background:rgba(245,146,69,.12) !important;
+  border-color:rgba(197,106,35,.24) !important;
+}
+
+body.forge-post-page .nav-toggle{
+  background:#fffdfa !important;
+  border-color:rgba(18,20,24,.12) !important;
+  color:#121418 !important;
+}
+
+body.forge-post-page .nav-toggle-line{
+  background:#121418 !important;
+}
+
+body.forge-post-page .nav-toggle-text{
+  color:#121418 !important;
+}
+
+body.forge-post-page .breadcrumbs,
+body.forge-post-page .hero{
+  background:#fffdfa !important;
+}
+
+body.forge-post-page .breadcrumbs{
+  border-bottom:1px solid rgba(18,20,24,.08) !important;
+}
+
+body.forge-post-page .breadcrumbs :is(a, span){
+  color:rgba(18,20,24,.56) !important;
+}
+
+body.forge-post-page .hero{
+  border-bottom:1px solid rgba(18,20,24,.08) !important;
+}
+
+body.forge-post-page main > .hero::before{
+  background:#fffdfa !important;
+}
+
+body.forge-post-page .hero .eyebrow{
+  color:#c56a23 !important;
+}
+
+body.forge-post-page .hero .section-kicker{
+  color:rgba(18,20,24,.54) !important;
+}
+
+body.forge-post-page .hero h1,
+body.forge-post-page .hero .lead{
+  color:#121418 !important;
+}
+
+body.forge-post-page .hero .highlight{
+  background:#f59245 !important;
+  color:#121418 !important;
+}
+
+body.forge-post-page .forge-meta-pill{
+  background:#fffdf9 !important;
+  border-color:rgba(18,20,24,.12) !important;
+  color:#121418 !important;
+}
+
+body.forge-post-page .forge-meta-pill-seo{
+  color:#4d71d8 !important;
+  border-color:rgba(77,113,216,.22) !important;
+  background:rgba(77,113,216,.06) !important;
+}
+
+body.forge-post-page .forge-copy-link{
+  background:#fffdfa !important;
+  color:#c56a23 !important;
+  border-color:rgba(197,106,35,.22) !important;
+}
+
+body.forge-post-page .forge-copy-link:hover{
+  background:rgba(245,146,69,.08) !important;
+  color:#121418 !important;
+}
+
 @media (max-width: 960px){
   body.forge-page:not(.forge-post-page) .nav .nav-links{
     gap:10px !important;
