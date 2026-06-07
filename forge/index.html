@@ -191,17 +191,17 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-editorial-main--full {
-      max-width: 1420px;
-      padding-top: 16px !important;
-      padding-bottom: 26px !important;
+      max-width: 1380px;
+      padding-top: 10px !important;
+      padding-bottom: 20px !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-page-grid {
       display: grid;
-      grid-template-columns: 280px minmax(0, 820px);
+      grid-template-columns: 280px minmax(0, 920px);
       justify-content: center;
       align-items: start;
-      gap: 24px;
+      gap: 20px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-side-rail {
@@ -317,9 +317,9 @@
 
     body.forge-page:not(.forge-post-page) .forge-main-column {
       display: grid;
-      gap: 14px;
+      gap: 8px;
       min-width: 0;
-      max-width: 820px;
+      max-width: 920px;
       align-content: start;
       justify-self: center;
       width: 100%;
@@ -327,38 +327,7 @@
 
     body.forge-page:not(.forge-post-page) .forge-archive-shell {
       display: grid;
-      gap: 14px;
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-feed-head {
-      display: grid;
-      gap: 4px;
-      max-width: none;
-      margin: 0;
-      text-align: left;
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-feed-head .section-kicker {
-      margin: 0;
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-feed-head h2 {
-      margin: 0;
-      color: #121418;
-      font-family: 'Roboto', sans-serif !important;
-      font-size: clamp(1rem, 1.6vw, 1.2rem) !important;
-      font-weight: 700;
-      line-height: 1.15 !important;
-      letter-spacing: -0.01em;
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-feed-head p {
-      margin: 0;
-      color: rgba(18, 20, 24, 0.82);
-      font-family: 'Roboto', sans-serif !important;
-      font-size: 0.95rem !important;
-      line-height: 1.5 !important;
-      max-width: 60ch;
+      gap: 8px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-utility-card {
@@ -569,6 +538,27 @@
       display: none;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-mobile-topbar {
+      display: none;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mobile-mode-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 999px;
+      background: #121418;
+      color: #fffdfa;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0 18px;
+      white-space: nowrap;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-archive-panels {
       display: grid;
     }
@@ -579,6 +569,20 @@
 
     body.forge-page:not(.forge-post-page) .forge-archive-panel.is-active {
       display: block;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-feed-head {
+      display: none;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-feed-kicker {
+      margin: 0 0 4px;
+      color: rgba(18, 20, 24, 0.72);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: left;
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-list {
@@ -594,16 +598,23 @@
 
     body.forge-page:not(.forge-post-page) .forge-story-item {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 148px;
+      grid-template-columns: minmax(0, 1fr) 132px;
       gap: 18px;
       align-items: center;
-      padding: 16px 18px;
+      padding: 18px 22px;
       border-top: 1px solid rgba(18, 20, 24, 0.08);
       color: inherit;
       text-decoration: none;
       text-align: left;
       background: transparent;
       transition: background 140ms ease;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-item.is-featured {
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 28px;
+      padding: 22px 24px;
+      align-items: center;
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-item:first-child {
@@ -615,13 +626,19 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-thumb {
-      width: 148px;
+      width: 132px;
       aspect-ratio: 4 / 3;
       border-radius: 14px;
       overflow: hidden;
       background: #ece6db;
       border: 1px solid rgba(18, 20, 24, 0.08);
       justify-self: end;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-thumb {
+      width: 360px;
+      aspect-ratio: 4 / 3;
+      border-radius: 18px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-thumb img {
@@ -633,27 +650,60 @@
 
     body.forge-page:not(.forge-post-page) .forge-story-body {
       display: grid;
-      gap: 6px;
+      gap: 7px;
       text-align: left;
       align-content: start;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-rail-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(18, 20, 24, 0.72);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-rail-title::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: rgba(18, 20, 24, 0.18);
+      display: inline-block;
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-body h3 {
       margin: 0;
       color: #121418;
       font-family: 'Roboto', sans-serif !important;
-      font-size: 1.3rem;
+      font-size: 1.38rem;
       font-weight: 700;
       line-height: 1.08;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-body h3 {
+      font-size: clamp(2.1rem, 3vw, 2.9rem);
+      line-height: 0.96;
+      letter-spacing: -0.035em;
+      font-family: 'Roboto', sans-serif !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-body p {
       margin: 0;
       color: rgba(18, 20, 24, 0.82);
       font-family: 'Roboto', sans-serif !important;
-      font-size: 0.96rem;
-      line-height: 1.42;
+      font-size: 0.98rem;
+      line-height: 1.45;
       max-width: 56ch;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-body p {
+      font-size: 1.08rem;
+      line-height: 1.5;
+      max-width: 44ch;
     }
 
     body.forge-page:not(.forge-post-page) .forge-list-taxonomy {
@@ -691,10 +741,10 @@
 
     body.forge-page:not(.forge-post-page) .forge-category-toolbar {
       display: grid;
-      gap: 10px;
-      margin-bottom: 18px;
-      justify-items: center;
-      text-align: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      justify-items: start;
+      text-align: left;
     }
 
     body.forge-page:not(.forge-post-page) .forge-topics-mobile-archive--v2 {
@@ -792,9 +842,9 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 14px 16px;
+      max-width: 280px;
+      margin: 0;
+      padding: 10px 12px;
       background: #f1ebdf !important;
       border: 1px solid rgba(18, 20, 24, 0.08) !important;
       border-radius: 14px;
@@ -820,20 +870,20 @@
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive h3 {
       margin: 0;
       font-family: 'Roboto Mono', monospace;
-      font-size: clamp(0.96rem, 1.35vw, 1.1rem);
+      font-size: clamp(0.84rem, 1vw, 0.94rem);
       line-height: 1.1;
-      max-width: 20ch;
+      max-width: 15ch;
       margin-left: auto;
       margin-right: auto;
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive p {
-      max-width: 42ch;
+      max-width: 30ch;
       margin: 0 auto;
       color: rgba(18, 20, 24, 0.82) !important;
       font-family: 'Roboto', sans-serif;
-      font-size: 0.8rem;
-      line-height: 1.38;
+      font-size: 0.72rem;
+      line-height: 1.34;
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .btn-row {
@@ -896,6 +946,10 @@
     }
 
 
+    body.forge-page:not(.forge-post-page) .forge-mobile-list-heading {
+      display: none;
+    }
+
     @media (max-width: 1040px) {
       body.forge-page:not(.forge-post-page) .forge-page-grid {
         grid-template-columns: 220px minmax(0, 1fr);
@@ -922,26 +976,72 @@
 
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools {
         display: grid;
-        gap: 14px;
+        gap: 8px;
         max-width: 760px;
         margin: 0 auto;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-topbar {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 8px;
+        align-items: center;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-topbar .forge-topics-mobile {
+        width: 100%;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-topbar .forge-topics-mobile-archive--v2 label {
+        display: none;
       }
 
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile {
         display: grid;
       }
 
+      body.forge-page:not(.forge-post-page) .forge-mobile-list-heading {
+        display: block;
+        margin: 4px 0 2px;
+        color: rgba(18, 20, 24, 0.72);
+        font-family: 'Roboto Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
       body.forge-page:not(.forge-post-page) .forge-story-item {
-        grid-template-columns: 1fr;
-        gap: 14px;
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 12px;
         text-align: left;
-        padding: 18px 18px;
+        padding: 12px 12px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-story-thumb {
-        width: 100%;
-        justify-self: stretch;
-        aspect-ratio: 16 / 10;
+        width: 88px;
+        justify-self: start;
+        aspect-ratio: 1 / 1;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-item.is-featured {
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px 12px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-thumb {
+        width: 96px;
+        aspect-ratio: 1 / 1;
+        border-radius: 14px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-body h3 {
+        font-size: 1.42rem;
+        line-height: 1.04;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-body p {
+        font-size: 0.95rem;
       }
     }
 
@@ -971,32 +1071,58 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-editorial-main--full {
-        padding-top: 12px !important;
-        padding-bottom: 22px !important;
+        padding-top: 4px !important;
+        padding-bottom: 18px !important;
       }
 
       body.forge-page:not(.forge-post-page) .forge-page-grid,
       body.forge-page:not(.forge-post-page) .forge-main-column,
       body.forge-page:not(.forge-post-page) .forge-archive-shell {
-        gap: 12px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-feed-head {
-        display: none;
+        gap: 8px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools {
-        gap: 10px;
+        gap: 6px;
         margin: 0 auto;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-switcher {
+        display: none;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-topbar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        align-items: stretch;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-mode-pill {
+        min-height: 42px;
+        padding: 0 14px;
+        font-size: 10px;
+        width: 100%;
       }
 
       body.forge-page:not(.forge-post-page) .forge-story-list {
         border-radius: 18px;
       }
 
-      body.forge-page:not(.forge-post-page) .forge-story-item {
-        padding: 14px 14px;
+      body.forge-page:not(.forge-post-page) .forge-story-item,
+      body.forge-page:not(.forge-post-page) .forge-story-item.is-featured {
+        padding: 12px 12px;
         gap: 10px;
+        grid-template-columns: 72px minmax(0, 1fr);
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-thumb,
+      body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-thumb {
+        width: 72px;
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-body h3 {
+        font-size: 1.28rem;
       }
 
       body.forge-page:not(.forge-post-page) .forge-switcher {
@@ -1014,15 +1140,24 @@
 
       body.forge-page:not(.forge-post-page) .forge-utility-grid {
         width: 100%;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-utility-card {
+        padding: 8px 10px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-utility-card strong {
+        font-size: 0.88rem;
       }
 
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
-        max-width: 320px;
-        padding: 12px 12px;
+        max-width: 100%;
+        padding: 10px 10px;
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 8px;
+        gap: 6px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive h3 {
@@ -1140,7 +1275,7 @@
       <div class="wrap hero-inner forge-hero-compact">
         <div class="forge-masthead">
           <div class="forge-masthead-copy">
-            <div class="section-kicker">Blog by Blacksmith Media</div>
+            <div class="section-kicker">Tools provided by Blacksmith Media</div>
             <h1><span>The</span> Forge</h1>
             <p class="lead">
               Notes on branding, website structure, and SEO support for businesses that want a clearer public-facing presence.
@@ -1223,9 +1358,19 @@
           <div class="forge-main-column">
             <div class="forge-archive-shell">
               <div class="forge-mobile-archive-tools">
-                <div class="forge-switcher forge-switcher--v2" role="tablist" aria-label="The Forge views">
-                  <button class="forge-switcher-tab is-active" type="button" data-view="latest" role="tab" aria-selected="true">Latest</button>
-                  <button class="forge-switcher-tab" type="button" data-view="categories" role="tab" aria-selected="false">Categories</button>
+                <div class="forge-mobile-topbar">
+                  <span class="forge-mobile-mode-pill">Latest</span>
+                  <div class="forge-topics-mobile forge-topics-mobile-archive forge-topics-mobile-archive--v2">
+                    <select id="forge-topic-select-mobile" aria-label="Choose a Forge topic">
+                      <option value="all">All Posts</option>
+                      <option value="brand-strategy">Brand Strategy</option>
+                      <option value="website-design">Website Design</option>
+                      <option value="seo-support">SEO Support</option>
+                      <option value="trust">Trust</option>
+                      <option value="conversion">Conversion</option>
+                      <option value="post-launch">Post-Launch</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="forge-utility-grid">
                   <div class="forge-utility-card">
@@ -1245,16 +1390,10 @@
 
               <div class="forge-archive-panels">
                 <section class="forge-archive-panel is-active" data-panel="latest" aria-label="Latest posts">
-                  <div class="forge-feed-head">
-                    <div class="section-kicker">Latest Notes</div>
-                    <p>Recent posts from Blacksmith Media, organized in one running feed.</p>
-                  </div>
                   <div class="forge-story-list">
-                    <a class="forge-story-item" href="/forge/local-seo-after-launch/">
-                      <div class="forge-story-thumb">
-                        <img src="/assets/forge/local-seo-after-launch.webp" alt="Illustration for Local SEO after launch" width="1365" height="768" loading="lazy" decoding="async" />
-                      </div>
+                    <a class="forge-story-item is-featured" href="/forge/local-seo-after-launch/">
                       <div class="forge-story-body">
+                        <div class="forge-story-rail-title">Latest note</div>
                         <div class="forge-list-taxonomy">
                           <span class="forge-list-category">SEO Support</span>
                           <span class="forge-list-category">Post-Launch</span>
@@ -1267,13 +1406,14 @@
                           <span>Blacksmith Media Inc.</span>
                         </div>
                       </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/local-seo-after-launch.webp" alt="Illustration for Local SEO after launch" width="1365" height="768" loading="lazy" decoding="async" />
+                      </div>
                     </a>
 
                     <a class="forge-story-item" href="/forge/websites-that-earn-inquiries/">
-                      <div class="forge-story-thumb">
-                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
-                      </div>
                       <div class="forge-story-body">
+                        <div class="forge-story-rail-title">More notes from The Forge</div>
                         <div class="forge-list-taxonomy">
                           <span class="forge-list-category">Website Design</span>
                           <span class="forge-list-category">Conversion</span>
@@ -1286,12 +1426,12 @@
                           <span>Blacksmith Media Inc.</span>
                         </div>
                       </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
+                      </div>
                     </a>
 
                     <a class="forge-story-item" href="/forge/brand-systems-that-build-trust/">
-                      <div class="forge-story-thumb">
-                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Illustration for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
-                      </div>
                       <div class="forge-story-body">
                         <div class="forge-list-taxonomy">
                           <span class="forge-list-category">Brand Strategy</span>
@@ -1305,15 +1445,14 @@
                           <span>Blacksmith Media Inc.</span>
                         </div>
                       </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Illustration for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
+                      </div>
                     </a>
                   </div>
                 </section>
 
                 <section class="forge-archive-panel" data-panel="categories" aria-label="Posts by category">
-                  <div class="forge-feed-head">
-                    <div class="section-kicker">Categories</div>
-                    <p>Switch topics from the left rail or the mobile selector to reorganize the archive.</p>
-                  </div>
                   <div class="forge-category-toolbar">
                     <div class="forge-topics-mobile forge-topics-mobile-archive forge-topics-mobile-archive--v2">
                       <label for="forge-topic-select">Choose a category</label>
@@ -1331,9 +1470,6 @@
 
                   <div class="forge-story-list" id="forge-category-grid">
                     <a class="forge-story-item forge-archive-item" href="/forge/local-seo-after-launch/" data-categories="seo-support post-launch">
-                      <div class="forge-story-thumb">
-                        <img src="/assets/forge/local-seo-after-launch.webp" alt="Illustration for Local SEO after launch" width="1365" height="768" loading="lazy" decoding="async" />
-                      </div>
                       <div class="forge-story-body">
                         <div class="forge-list-taxonomy">
                           <span class="forge-list-category">SEO Support</span>
@@ -1347,12 +1483,12 @@
                           <span>Blacksmith Media Inc.</span>
                         </div>
                       </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/local-seo-after-launch.webp" alt="Illustration for Local SEO after launch" width="1365" height="768" loading="lazy" decoding="async" />
+                      </div>
                     </a>
 
                     <a class="forge-story-item forge-archive-item" href="/forge/websites-that-earn-inquiries/" data-categories="website-design conversion">
-                      <div class="forge-story-thumb">
-                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
-                      </div>
                       <div class="forge-story-body">
                         <div class="forge-list-taxonomy">
                           <span class="forge-list-category">Website Design</span>
@@ -1366,12 +1502,12 @@
                           <span>Blacksmith Media Inc.</span>
                         </div>
                       </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
+                      </div>
                     </a>
 
                     <a class="forge-story-item forge-archive-item" href="/forge/brand-systems-that-build-trust/" data-categories="brand-strategy trust">
-                      <div class="forge-story-thumb">
-                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Illustration for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
-                      </div>
                       <div class="forge-story-body">
                         <div class="forge-list-taxonomy">
                           <span class="forge-list-category">Brand Strategy</span>
@@ -1384,6 +1520,9 @@
                           <span>4 min read</span>
                           <span>Blacksmith Media Inc.</span>
                         </div>
+                      </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Illustration for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
                       </div>
                     </a>
                   </div>
