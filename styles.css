@@ -8381,3 +8381,26 @@ body.brand-page .contact-box .btn.primary:focus-visible {
   border-color: #181b20 !important;
   color: #fffdfa !important;
 }
+
+/* ===== WEB PAGE ACCESSIBILITY TUNING ===== */
+body.web-page main > .section .section-copy a,
+body.web-page main > .section .section-lead a,
+body.web-page main > .section .card a {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-decoration-color: currentColor !important;
+  text-underline-offset: 0.18em !important;
+}
+
+body.web-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .section-copy a,
+body.web-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .section-lead a,
+body.web-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .card a {
+  color: #121418 !important;
+}
+
+body.web-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .section-copy a,
+body.web-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .section-lead a,
+body.web-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .card a {
+  color: #ecfff4 !important;
+}
