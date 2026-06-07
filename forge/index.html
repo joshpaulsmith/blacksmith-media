@@ -35,7 +35,7 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/styles.css?v=20260606forgeeditorial8" />
+  <link rel="stylesheet" href="/styles.css?v=20260606forgeeditorial9" />
   <link rel="icon" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
 
@@ -121,10 +121,22 @@
       <div class="wrap hero-inner forge-hero-compact">
         <div class="forge-masthead">
           <div class="forge-masthead-copy">
-            <h1>The Forge</h1>
+            <h1>The <span class="highlight">Forge</span></h1>
             <p class="lead">
               Notes on branding, website structure, and SEO support for businesses that want a clearer public-facing presence.
             </p>
+            <div class="forge-topics-mobile">
+              <label for="forge-topic-select">Topics</label>
+              <select id="forge-topic-select" aria-label="Choose a Forge topic">
+                <option value="all">All Posts</option>
+                <option value="brand-strategy">Brand Strategy</option>
+                <option value="website-design">Website Design</option>
+                <option value="seo-support">SEO Support</option>
+                <option value="trust">Trust</option>
+                <option value="conversion">Conversion</option>
+                <option value="post-launch">Post-Launch</option>
+              </select>
+            </div>
           </div>
           <div class="forge-masthead-nav" aria-label="Browse Forge topics">
             <a href="#latest-posts">All Posts</a>
@@ -143,19 +155,6 @@
       <div class="wrap forge-editorial-shell">
         <aside class="forge-editorial-sidebar">
           <div class="section-kicker">Topics</div>
-
-          <div class="forge-sidebar-group">
-            <div class="section-kicker">Browse</div>
-            <div class="forge-category-rail forge-category-rail-sidebar" aria-label="Forge categories">
-              <button class="forge-filter is-active" type="button" data-filter="all">All Posts</button>
-              <button class="forge-filter forge-filter-brand" type="button" data-filter="brand-strategy">Brand Strategy</button>
-              <button class="forge-filter forge-filter-web" type="button" data-filter="website-design">Website Design</button>
-              <button class="forge-filter forge-filter-seo" type="button" data-filter="seo-support">SEO Support</button>
-              <button class="forge-filter" type="button" data-filter="trust">Trust</button>
-              <button class="forge-filter" type="button" data-filter="conversion">Conversion</button>
-              <button class="forge-filter" type="button" data-filter="post-launch">Post-Launch</button>
-            </div>
-          </div>
 
           <div class="forge-sidebar-group">
             <div class="section-kicker">Latest</div>
@@ -416,6 +415,17 @@
           if (archive) archive.scrollIntoView({ behavior: "smooth", block: "start" });
         });
       });
+
+      const topicSelect = document.getElementById("forge-topic-select");
+      if (topicSelect) {
+        topicSelect.addEventListener("change", function () {
+          const target = topicSelect.value || "all";
+          const matching = filters.find((filter) => (filter.dataset.filter || "all") === target);
+          if (matching) matching.click();
+          const archive = document.getElementById("latest-posts");
+          if (archive) archive.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
 
       searchInput.addEventListener("input", filterPosts);
       filterPosts();
