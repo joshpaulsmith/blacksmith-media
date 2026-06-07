@@ -8357,6 +8357,22 @@ body.brand-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero)
   color: #f3e8ff !important;
 }
 
+body.brand-page .hero .btn.primary,
+body.brand-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .btn.primary {
+  background: #6b35d6 !important;
+  border-color: #6b35d6 !important;
+  color: #fffdfa !important;
+}
+
+body.brand-page .hero .btn.primary:hover,
+body.brand-page .hero .btn.primary:focus-visible,
+body.brand-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .btn.primary:hover,
+body.brand-page main > .section:nth-of-type(odd):not(.hero):not(.portfolio-hero) .btn.primary:focus-visible {
+  background: #5a29bc !important;
+  border-color: #5a29bc !important;
+  color: #fffdfa !important;
+}
+
 body.brand-page main > .section:nth-of-type(even):not(.hero):not(.portfolio-hero) .btn.primary {
   background: #0b0d10 !important;
   border-color: #0b0d10 !important;
