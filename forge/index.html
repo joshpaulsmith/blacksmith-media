@@ -178,9 +178,12 @@
     body.forge-page:not(.forge-post-page) .forge-editorial-header.forge-archive-redesign {
       display: grid !important;
       justify-items: center;
-      gap: 16px !important;
+      gap: 14px !important;
       text-align: center;
       margin-bottom: 4px !important;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-copy {
@@ -201,7 +204,7 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-copy .section-lead {
-      max-width: 40ch;
+      max-width: 42ch;
       margin: 0 auto;
       color: rgba(18, 20, 24, 0.82);
       font-family: 'Roboto', sans-serif !important;
@@ -214,6 +217,7 @@
       gap: 12px;
       justify-items: center;
       width: min(560px, 100%);
+      margin: 0 auto;
     }
 
     body.forge-page:not(.forge-post-page) .forge-switcher {
@@ -300,9 +304,11 @@
 
     body.forge-page:not(.forge-post-page) .forge-latest-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: 20px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
       align-items: start;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     body.forge-page:not(.forge-post-page) .forge-lead-story {
@@ -310,6 +316,8 @@
       gap: 14px;
       color: inherit;
       text-decoration: none;
+      justify-items: center;
+      text-align: center;
     }
 
     body.forge-page:not(.forge-post-page) .forge-lead-story-media {
@@ -353,6 +361,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      justify-content: center;
     }
 
     body.forge-page:not(.forge-post-page) .forge-list-category,
@@ -402,11 +411,14 @@
       border: 1px solid rgba(18, 20, 24, 0.08);
       border-radius: 20px;
       align-self: start;
+      width: 100%;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-header {
       display: grid;
       gap: 4px;
+      justify-items: center;
+      text-align: center;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-header p {
@@ -419,7 +431,8 @@
 
     body.forge-page:not(.forge-post-page) .forge-rail-list {
       display: grid;
-      gap: 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-item {
@@ -427,19 +440,20 @@
       grid-template-columns: 88px minmax(0, 1fr);
       align-items: center;
       gap: 12px;
-      padding: 14px 0;
+      padding: 14px;
       color: inherit;
       text-decoration: none;
-      border-top: 1px solid rgba(18, 20, 24, 0.08);
+      border: 1px solid rgba(18, 20, 24, 0.08);
+      border-radius: 16px;
+      background: #fffdfa;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-item:first-child {
-      border-top: 0;
-      padding-top: 0;
+      padding-top: 14px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-item:last-child {
-      padding-bottom: 0;
+      padding-bottom: 14px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-thumb {
@@ -461,6 +475,7 @@
     body.forge-page:not(.forge-post-page) .forge-rail-item-body {
       display: grid;
       gap: 6px;
+      text-align: left;
     }
 
     body.forge-page:not(.forge-post-page) .forge-rail-item h4 {
@@ -583,13 +598,17 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
-      max-width: 420px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 14px 16px;
+      padding: 20px 24px;
       background: #f1ebdf !important;
       border: 1px solid rgba(18, 20, 24, 0.08) !important;
       border-radius: 16px;
-      text-align: center;
+      text-align: left;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) auto;
+      align-items: center;
+      gap: 18px 22px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .section-kicker,
@@ -598,19 +617,25 @@
       color: #121418 !important;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .section-kicker {
+      grid-column: 1 / -1;
+      margin-bottom: -8px;
+      text-align: left;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive h3 {
-      margin: 0 0 8px;
+      margin: 0;
       font-family: 'Roboto Mono', monospace;
-      font-size: clamp(1.25rem, 2.3vw, 1.6rem);
+      font-size: clamp(1.15rem, 2vw, 1.5rem);
       line-height: 1.05;
-      max-width: 11ch;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 14ch;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive p {
-      max-width: 31ch;
-      margin: 0 auto 12px;
+      max-width: 40ch;
+      margin: 8px 0 0;
       color: rgba(18, 20, 24, 0.82) !important;
       font-family: 'Roboto', sans-serif;
       font-size: 0.9rem;
@@ -618,8 +643,11 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .btn-row {
-      justify-content: center;
+      justify-content: flex-end;
       gap: 8px;
+      grid-column: 2;
+      grid-row: 2 / span 2;
+      align-self: center;
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .btn {
@@ -636,12 +664,6 @@
 
 
     @media (min-width: 641px) {
-      body.forge-page:not(.forge-post-page) .forge-latest-layout {
-        grid-template-columns: minmax(0, 1fr);
-        justify-items: center;
-        gap: 18px;
-      }
-
       body.forge-page:not(.forge-post-page) .forge-lead-story {
         max-width: 760px;
         justify-items: center;
@@ -657,26 +679,6 @@
         justify-content: center;
       }
 
-      body.forge-page:not(.forge-post-page) .forge-rail {
-        max-width: 760px;
-        justify-self: center;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-rail-header {
-        text-align: center;
-        justify-items: center;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-rail-item {
-        grid-template-columns: 88px minmax(0, 1fr);
-        text-align: left;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-rail-item-meta {
-        text-align: left;
-        justify-items: start;
-      }
-
       body.forge-page:not(.forge-post-page) .forge-archive-card-main {
         justify-items: center;
         text-align: center;
@@ -688,12 +690,30 @@
     }
 
     @media (max-width: 1040px) {
-      body.forge-page:not(.forge-post-page) .forge-latest-layout {
+      body.forge-page:not(.forge-post-page) .forge-rail-list {
         grid-template-columns: 1fr;
       }
 
-      body.forge-page:not(.forge-post-page) .forge-rail {
-        max-width: 760px;
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
+        max-width: 560px;
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .section-kicker {
+        text-align: center;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive h3,
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .btn-row {
+        grid-column: auto;
+        grid-row: auto;
+        justify-content: center;
       }
     }
 
@@ -764,6 +784,10 @@
         padding: 14px;
       }
 
+      body.forge-page:not(.forge-post-page) .forge-rail-list {
+        grid-template-columns: 1fr;
+      }
+
       body.forge-page:not(.forge-post-page) .forge-category-grid {
         grid-template-columns: 1fr;
       }
@@ -771,10 +795,25 @@
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
         max-width: 360px;
         padding: 14px 14px;
+        grid-template-columns: 1fr;
+        text-align: center;
       }
 
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive h3 {
         font-size: clamp(1.35rem, 8vw, 1.7rem);
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .section-kicker,
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .btn-row {
+        grid-column: auto;
+        grid-row: auto;
+        justify-content: center;
       }
     }
   </style>
