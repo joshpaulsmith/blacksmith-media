@@ -672,6 +672,33 @@
       background: rgba(18, 20, 24, 0.02);
     }
 
+    body.forge-page:not(.forge-post-page) .forge-story-pager {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      width: 100%;
+      padding: 18px 22px;
+      border-top: 1px solid rgba(18, 20, 24, 0.08);
+      background: rgba(248, 245, 239, 0.72);
+      color: #121418;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 140ms ease, color 140ms ease;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-pager:hover {
+      background: rgba(18, 20, 24, 0.04);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-story-pager-arrow {
+      font-size: 1rem;
+      line-height: 1;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-story-thumb {
       width: 132px;
       aspect-ratio: 4 / 3;
@@ -1688,6 +1715,12 @@
         align-items: start;
       }
 
+      body.forge-page:not(.forge-post-page) .forge-story-pager {
+        justify-content: center;
+        padding: 16px 14px;
+        font-size: 0.72rem;
+      }
+
       body.forge-page:not(.forge-post-page) .forge-story-thumb,
       body.forge-page:not(.forge-post-page) .forge-story-item.is-featured .forge-story-thumb {
         width: 74px;
@@ -2142,6 +2175,11 @@
                         <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
                       </div>
                     </a>
+
+                    <button class="forge-story-pager" type="button" data-view-target="categories">
+                      <span>Next page</span>
+                      <span class="forge-story-pager-arrow" aria-hidden="true">→</span>
+                    </button>
                   </div>
                 </section>
 
@@ -2730,6 +2768,7 @@
       const switcherTabs = Array.from(document.querySelectorAll(".forge-switcher-tab"));
       const topicControls = Array.from(document.querySelectorAll(".forge-topic-control"));
       const panels = Array.from(document.querySelectorAll(".forge-archive-panel"));
+      const pagerButtons = Array.from(document.querySelectorAll("[data-view-target]"));
       const topicSelect = document.getElementById("forge-topic-select");
       const categoryGrid = document.getElementById("forge-category-grid");
       const emptyState = document.getElementById("forge-empty-state");
@@ -2822,6 +2861,17 @@
           }, 0);
         });
       }
+
+      pagerButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const target = button.getAttribute("data-view-target") || "categories";
+          if (target === "categories") {
+            if (topicSelect) topicSelect.value = "all";
+            filterByCategory("all");
+          }
+          setActiveView(target);
+        });
+      });
 
       window.addEventListener("load", syncArchivePanelHeight);
       window.addEventListener("resize", syncArchivePanelHeight);
