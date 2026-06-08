@@ -632,7 +632,8 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-list {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 0;
       max-width: none;
       margin: 0;
@@ -673,25 +674,28 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-pager {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       gap: 10px;
-      width: 100%;
-      padding: 18px 22px;
-      border-top: 1px solid rgba(18, 20, 24, 0.08);
-      background: rgba(248, 245, 239, 0.72);
+      align-self: center;
+      margin: auto 0 22px;
+      padding: 12px 18px;
+      border: 1px solid rgba(18, 20, 24, 0.1);
+      border-radius: 999px;
+      background: rgba(248, 245, 239, 0.92);
       color: #121418;
       font-family: 'Roboto Mono', monospace;
       font-size: 0.78rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background 140ms ease, color 140ms ease;
+      transition: background 140ms ease, color 140ms ease, transform 140ms ease;
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-pager:hover {
-      background: rgba(18, 20, 24, 0.04);
+      background: rgba(18, 20, 24, 0.05);
+      transform: translateY(-1px);
     }
 
     body.forge-page:not(.forge-post-page) .forge-story-pager-arrow {
@@ -1716,8 +1720,9 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-story-pager {
-        justify-content: center;
-        padding: 16px 14px;
+        width: calc(100% - 24px);
+        margin: auto 12px 14px;
+        padding: 14px 14px;
         font-size: 0.72rem;
       }
 
@@ -2173,6 +2178,82 @@
                       </div>
                       <div class="forge-story-thumb">
                         <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Websites that earn more inquiries" width="720" height="480" loading="lazy" decoding="async" />
+                      </div>
+                    </a>
+
+                    <a class="forge-story-item" href="/forge/brand-systems-that-build-trust/">
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">Brand Strategy</span>
+                          <span class="forge-list-category">Trust</span>
+                        </div>
+                        <h3 style="color: #121418 !important; opacity: 1 !important; -webkit-text-fill-color: #121418 !important; text-shadow: none !important;">Brand systems that build trust.</h3>
+                        <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
+                        <div class="forge-story-meta">
+                          <span>June 2, 2026</span>
+                          <span>4 min read</span>
+                          <span>Blacksmith Media Inc.</span>
+                        </div>
+                      </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Illustration for Brand systems that build trust" width="1281" height="709" loading="lazy" decoding="async" />
+                      </div>
+                    </a>
+
+                    <a class="forge-story-item" href="/forge/service-pages-that-rank-and-convert/">
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">Website Design</span>
+                          <span class="forge-list-category">SEO Support</span>
+                        </div>
+                        <h3 style="color: #121418 !important; opacity: 1 !important; -webkit-text-fill-color: #121418 !important; text-shadow: none !important;">Service pages that rank and convert.</h3>
+                        <p>Why service pages need clear structure if they are supposed to support both search visibility and inquiries.</p>
+                        <div class="forge-story-meta">
+                          <span>May 20, 2026</span>
+                          <span>2 min read</span>
+                          <span>Blacksmith Media Inc.</span>
+                        </div>
+                      </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for Service pages that rank and convert" width="720" height="480" loading="lazy" decoding="async" />
+                      </div>
+                    </a>
+
+                    <a class="forge-story-item" href="/forge/trust-starts-before-the-contact-form/">
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">Trust</span>
+                          <span class="forge-list-category">Conversion</span>
+                        </div>
+                        <h3 style="color: #121418 !important; opacity: 1 !important; -webkit-text-fill-color: #121418 !important; text-shadow: none !important;">Trust starts before the contact form.</h3>
+                        <p>Why businesses earn better inquiries when trust is supported before the form ever appears.</p>
+                        <div class="forge-story-meta">
+                          <span>May 15, 2026</span>
+                          <span>2 min read</span>
+                          <span>Blacksmith Media Inc.</span>
+                        </div>
+                      </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/brand-systems-that-build-trust.png" alt="Illustration for Trust starts before the contact form" width="1281" height="709" loading="lazy" decoding="async" />
+                      </div>
+                    </a>
+
+                    <a class="forge-story-item" href="/forge/what-a-homepage-should-clarify-first/">
+                      <div class="forge-story-body">
+                        <div class="forge-list-taxonomy">
+                          <span class="forge-list-category">Website Design</span>
+                          <span class="forge-list-category">Conversion</span>
+                        </div>
+                        <h3 style="color: #121418 !important; opacity: 1 !important; -webkit-text-fill-color: #121418 !important; text-shadow: none !important;">What a homepage should clarify first.</h3>
+                        <p>The first homepage questions a business website should answer before asking for action.</p>
+                        <div class="forge-story-meta">
+                          <span>May 10, 2026</span>
+                          <span>2 min read</span>
+                          <span>Blacksmith Media Inc.</span>
+                        </div>
+                      </div>
+                      <div class="forge-story-thumb">
+                        <img src="/assets/forge/websites-that-earn-more-inquiries.png" alt="Illustration for What a homepage should clarify first" width="720" height="480" loading="lazy" decoding="async" />
                       </div>
                     </a>
 
@@ -2773,6 +2854,11 @@
       const categoryGrid = document.getElementById("forge-category-grid");
       const emptyState = document.getElementById("forge-empty-state");
       const sideRail = document.querySelector(".forge-side-rail--left");
+      const latestPanel = panels.find((panel) => panel.dataset.panel === "latest");
+      const latestStoryList = latestPanel ? latestPanel.querySelector(".forge-story-list") : null;
+      const latestPosts = latestStoryList ? Array.from(latestStoryList.querySelectorAll(".forge-story-item")) : [];
+      const latestPagerButton = latestStoryList ? latestStoryList.querySelector(".forge-story-pager") : null;
+      let latestVisibleCount = 3;
 
       if (!switcherTabs.length || !panels.length) return;
 
@@ -2795,6 +2881,21 @@
 
         activePanel.style.minHeight = `${targetHeight}px`;
         storyList.style.minHeight = `${targetHeight}px`;
+      }
+
+      function updateLatestPagination() {
+        if (!latestPosts.length) return;
+
+        latestPosts.forEach((post, index) => {
+          post.style.display = index < latestVisibleCount ? "" : "none";
+        });
+
+        if (latestPagerButton) {
+          const hasMore = latestVisibleCount < latestPosts.length;
+          latestPagerButton.style.display = hasMore ? "inline-flex" : "none";
+        }
+
+        syncArchivePanelHeight();
       }
 
       function setActiveView(view) {
@@ -2864,6 +2965,12 @@
 
       pagerButtons.forEach((button) => {
         button.addEventListener("click", function () {
+          if (button === latestPagerButton) {
+            latestVisibleCount = Math.min(latestVisibleCount + 3, latestPosts.length);
+            updateLatestPagination();
+            return;
+          }
+
           const target = button.getAttribute("data-view-target") || "categories";
           if (target === "categories") {
             if (topicSelect) topicSelect.value = "all";
@@ -2876,6 +2983,7 @@
       window.addEventListener("load", syncArchivePanelHeight);
       window.addEventListener("resize", syncArchivePanelHeight);
 
+      updateLatestPagination();
       setActiveView("latest");
       filterByCategory("all");
     })();
