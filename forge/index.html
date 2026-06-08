@@ -1495,6 +1495,24 @@
         padding: 8px 0 12px;
       }
 
+      body.forge-page:not(.forge-post-page) .forge-main-column .forge-score-section {
+        padding: 8px 0 12px !important;
+        margin-top: 0 !important;
+        background: #f8f5ef !important;
+        border: 0 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-main-column .forge-score-shell {
+        max-width: 1240px !important;
+        padding: 0 16px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-main-column .forge-score-card {
+        grid-template-columns: 1fr !important;
+        padding: 18px !important;
+        border-radius: 20px !important;
+      }
+
       body.forge-page:not(.forge-post-page) .forge-score-shell {
         padding: 0 16px;
       }
@@ -2865,10 +2883,28 @@
     (function () {
       const scoreSection = document.querySelector(".forge-score-section");
       const mainColumn = document.querySelector(".forge-main-column");
+      const mainContent = document.getElementById("main-content");
+      const latestPostsSection = document.getElementById("latest-posts");
 
-      if (scoreSection && mainColumn && !mainColumn.contains(scoreSection)) {
-        mainColumn.appendChild(scoreSection);
+      function relocateScoreSection() {
+        if (!scoreSection || !mainColumn || !mainContent || !latestPostsSection) return;
+
+        const desktop = window.matchMedia("(min-width: 901px)").matches;
+
+        if (desktop) {
+          if (!mainColumn.contains(scoreSection)) {
+            mainColumn.appendChild(scoreSection);
+          }
+          return;
+        }
+
+        if (latestPostsSection.nextElementSibling !== scoreSection) {
+          latestPostsSection.insertAdjacentElement("afterend", scoreSection);
+        }
       }
+
+      relocateScoreSection();
+      window.addEventListener("resize", relocateScoreSection);
 
       const switcherTabs = Array.from(document.querySelectorAll(".forge-switcher-tab"));
       const topicControls = Array.from(document.querySelectorAll(".forge-topic-control"));
