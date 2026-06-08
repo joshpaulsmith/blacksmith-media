@@ -637,7 +637,6 @@
       gap: 0;
       max-width: none;
       margin: 0;
-      min-height: clamp(680px, calc(100vh - 340px), 900px);
       background: #fffdfa;
       border: 1px solid rgba(18, 20, 24, 0.08);
       border-radius: 18px;
@@ -679,7 +678,7 @@
       justify-content: center;
       gap: 10px;
       align-self: center;
-      margin: auto 0 22px;
+      margin: 14px 0 22px;
       padding: 12px 18px;
       border: 1px solid rgba(18, 20, 24, 0.1);
       border-radius: 999px;
@@ -2258,7 +2257,7 @@
                     </a>
 
                     <button class="forge-story-pager" type="button" data-view-target="categories">
-                      <span>Next page</span>
+                      <span>Show more</span>
                       <span class="forge-story-pager-arrow" aria-hidden="true">→</span>
                     </button>
                   </div>
@@ -2853,7 +2852,6 @@
       const topicSelect = document.getElementById("forge-topic-select");
       const categoryGrid = document.getElementById("forge-category-grid");
       const emptyState = document.getElementById("forge-empty-state");
-      const sideRail = document.querySelector(".forge-side-rail--left");
       const latestPanel = panels.find((panel) => panel.dataset.panel === "latest");
       const latestStoryList = latestPanel ? latestPanel.querySelector(".forge-story-list") : null;
       const latestPosts = latestStoryList ? Array.from(latestStoryList.querySelectorAll(".forge-story-item")) : [];
@@ -2861,27 +2859,6 @@
       let latestVisibleCount = 3;
 
       if (!switcherTabs.length || !panels.length) return;
-
-      function syncArchivePanelHeight() {
-        const desktop = window.matchMedia("(min-width: 901px)").matches;
-        const activePanel = panels.find((panel) => panel.classList.contains("is-active"));
-        const storyList = activePanel ? activePanel.querySelector(".forge-story-list") : null;
-
-        panels.forEach((panel) => {
-          panel.style.minHeight = "";
-          const list = panel.querySelector(".forge-story-list");
-          if (list) list.style.minHeight = "";
-        });
-
-        if (!desktop || !sideRail || !activePanel || !storyList) return;
-
-        const railHeight = sideRail.offsetHeight;
-        const panelContentHeight = storyList.scrollHeight;
-        const targetHeight = Math.max(railHeight, panelContentHeight);
-
-        activePanel.style.minHeight = `${targetHeight}px`;
-        storyList.style.minHeight = `${targetHeight}px`;
-      }
 
       function updateLatestPagination() {
         if (!latestPosts.length) return;
@@ -2894,8 +2871,6 @@
           const hasMore = latestVisibleCount < latestPosts.length;
           latestPagerButton.style.display = hasMore ? "inline-flex" : "none";
         }
-
-        syncArchivePanelHeight();
       }
 
       function setActiveView(view) {
@@ -2909,7 +2884,6 @@
           panel.classList.toggle("is-active", panel.dataset.panel === view);
         });
 
-        syncArchivePanelHeight();
       }
 
       function filterByCategory(category) {
@@ -2929,7 +2903,6 @@
         });
 
         emptyState.classList.toggle("is-visible", visibleCount === 0);
-        syncArchivePanelHeight();
       }
 
       switcherTabs.forEach((tab) => {
@@ -2979,9 +2952,6 @@
           setActiveView(target);
         });
       });
-
-      window.addEventListener("load", syncArchivePanelHeight);
-      window.addEventListener("resize", syncArchivePanelHeight);
 
       updateLatestPagination();
       setActiveView("latest");
