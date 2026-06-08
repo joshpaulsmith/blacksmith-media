@@ -200,7 +200,7 @@
       display: grid;
       grid-template-columns: 280px minmax(0, 920px);
       justify-content: center;
-      align-items: start;
+      align-items: stretch;
       gap: 20px;
       position: relative;
     }
@@ -1429,6 +1429,7 @@
 
       body.forge-page:not(.forge-post-page) .forge-page-grid {
         grid-template-columns: 220px minmax(0, 1fr);
+        align-items: stretch;
       }
 
       body.forge-page:not(.forge-post-page) .forge-side-rail--right {
@@ -1473,6 +1474,7 @@
 
       body.forge-page:not(.forge-post-page) .forge-page-grid {
         grid-template-columns: 1fr;
+        align-items: start;
       }
 
       body.forge-page:not(.forge-post-page) .forge-archive-shell,
