@@ -1330,6 +1330,11 @@ h2{
   max-width:11ch;
 }
 
+.forge-home-tool-mark{
+  color:#d37b2b;
+  font-weight:700;
+}
+
 .forge-home-tool-panel{
   display:grid;
   gap:14px;
