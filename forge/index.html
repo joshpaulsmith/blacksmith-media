@@ -1167,9 +1167,9 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-form-row {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: 1fr;
       gap: 10px;
-      align-items: center;
+      align-items: stretch;
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-input {
@@ -1197,7 +1197,7 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-submit {
-      min-width: 152px;
+      width: 100%;
       min-height: 56px;
       padding: 0 18px;
       border: 0;
@@ -2009,7 +2009,7 @@
                   spellcheck="false"
                   required
                 />
-                <button class="forge-score-submit" id="forge-score-submit" type="submit">The Anvil</button>
+                <button class="forge-score-submit" id="forge-score-submit" type="submit">Test Your Site</button>
               </div>
             </form>
             <p class="forge-score-helper">
@@ -3336,7 +3336,7 @@
         } finally {
           setLoadingState(false);
           submitButton.disabled = false;
-          submitButton.textContent = "The Anvil";
+          submitButton.textContent = "Test Your Site";
         }
       });
 
