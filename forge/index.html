@@ -190,19 +190,6 @@
       border-top: 0 !important;
     }
 
-    body.forge-page:not(.forge-post-page) #main-content {
-      display: flex;
-      flex-direction: column;
-    }
-
-    body.forge-page:not(.forge-post-page) #latest-posts {
-      order: 2;
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-score-section {
-      order: 3;
-    }
-
     body.forge-page:not(.forge-post-page) .forge-editorial-main--full {
       max-width: 1380px;
       padding-top: 10px !important;
@@ -369,6 +356,24 @@
       width: 100%;
       position: relative;
       z-index: 1;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-main-column .forge-score-section {
+      padding: 0 !important;
+      margin-top: 8px;
+      background: transparent;
+      border: 0 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-main-column .forge-score-shell {
+      max-width: none;
+      padding: 0;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-main-column .forge-score-card {
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.95fr);
+      padding: 16px;
+      border-radius: 20px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-archive-shell {
@@ -2858,6 +2863,13 @@
   </style>
   <script>
     (function () {
+      const scoreSection = document.querySelector(".forge-score-section");
+      const mainColumn = document.querySelector(".forge-main-column");
+
+      if (scoreSection && mainColumn && !mainColumn.contains(scoreSection)) {
+        mainColumn.appendChild(scoreSection);
+      }
+
       const switcherTabs = Array.from(document.querySelectorAll(".forge-switcher-tab"));
       const topicControls = Array.from(document.querySelectorAll(".forge-topic-control"));
       const panels = Array.from(document.querySelectorAll(".forge-archive-panel"));
