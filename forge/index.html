@@ -3270,6 +3270,11 @@
 
       updateForgeReadTotals();
 
+      const incomingDomain = new URLSearchParams(window.location.search).get("domain");
+      if (incomingDomain) {
+        urlInput.value = incomingDomain;
+      }
+
       async function fetchPageSpeed(url, strategy) {
         const endpoint = new URL("https://www.googleapis.com/pagespeedonline/v5/runPagespeed");
         endpoint.searchParams.set("url", url);
@@ -3334,6 +3339,12 @@
           submitButton.textContent = "Forge Score";
         }
       });
+
+      if (incomingDomain) {
+        window.setTimeout(function () {
+          form.requestSubmit();
+        }, 120);
+      }
     })();
   </script>
 </body>

@@ -333,7 +333,7 @@
               trust markers, and presentation. It is a simple way to see where a site feels strong and where it needs work first.
             </p>
             <div class="btn-row">
-              <a class="btn primary" href="/forge/#forge-score-heading">Test Your Website</a>
+              <a class="btn primary" href="/forge/#forge-score-heading" id="forge-home-primary-link">Test Your Website</a>
               <a class="btn secondary" href="/forge/">Explore The Forge</a>
             </div>
           </div>
@@ -351,10 +351,22 @@
 
             <div class="forge-home-tool-preview">
               <div class="forge-home-preview-label">Score A Website</div>
-              <div class="forge-home-preview-shell">
-                <div class="forge-home-preview-input">Enter a domain like example.com</div>
-                <div class="forge-home-preview-button">Forge Score</div>
-              </div>
+              <form class="forge-home-preview-shell" id="forge-home-preview-form">
+                <label class="sr-only" for="forge-home-domain">Website URL</label>
+                <input
+                  class="forge-home-preview-input"
+                  id="forge-home-domain"
+                  name="domain"
+                  type="text"
+                  inputmode="url"
+                  placeholder="Enter a domain like example.com"
+                  autocomplete="url"
+                  autocapitalize="none"
+                  spellcheck="false"
+                  required
+                />
+                <button class="forge-home-preview-button" type="submit">Forge Score</button>
+              </form>
               <p>Built for businesses that want a quick read before deciding what to improve next.</p>
             </div>
           </div>
@@ -845,6 +857,45 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      const form = document.getElementById("forge-home-preview-form");
+      const input = document.getElementById("forge-home-domain");
+      const primaryLink = document.getElementById("forge-home-primary-link");
+
+      function buildForgeUrl(rawValue) {
+        const trimmed = (rawValue || "").trim();
+        const target = new URL("/forge/", window.location.origin);
+
+        if (trimmed) {
+          target.searchParams.set("domain", trimmed);
+        }
+
+        target.hash = "forge-score-heading";
+        return target.toString();
+      }
+
+      if (primaryLink && input) {
+        primaryLink.addEventListener("click", function (event) {
+          const trimmed = input.value.trim();
+          if (!trimmed) return;
+          event.preventDefault();
+          window.location.href = buildForgeUrl(trimmed);
+        });
+      }
+
+      if (!form || !input) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!input.value.trim()) {
+          input.focus();
+          return;
+        }
+        window.location.href = buildForgeUrl(input.value);
+      });
+    })();
+  </script>
   <script src="/script.js?v=20260606f"></script>
 </body>
 </html>

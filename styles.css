@@ -1398,16 +1398,22 @@ h2{
 }
 
 .forge-home-preview-input{
+  width:100%;
+  border:1px solid rgba(255,255,255,.08);
   background:rgba(255,255,255,.12);
   color:rgba(255,248,238,.84);
+  outline:none;
 }
 
 .forge-home-preview-button{
+  width:100%;
+  border:1px solid rgba(211,123,43,.4);
   justify-content:center;
   background:linear-gradient(180deg, #d37b2b 0%, #a95815 100%);
   color:#fff8ee;
   text-transform:uppercase;
   box-shadow:0 14px 28px rgba(0,0,0,.26);
+  cursor:pointer;
 }
 
 .forge-home-tool-preview p{
