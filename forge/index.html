@@ -278,11 +278,25 @@
       padding: 16px;
       gap: 10px;
       background: #f1ebdf;
+      color: #121418 !important;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta,
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta * {
+      opacity: 1 !important;
+      filter: none !important;
+      mix-blend-mode: normal !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta :is(.section-kicker, h3, p, span, strong, a) {
+      color: #121418 !important;
+      opacity: 1 !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-side-card--cta h3 {
       margin: 0;
-      color: #121418;
       font-family: 'Roboto Mono', monospace !important;
       font-size: 1.1rem;
       line-height: 1.14;
@@ -303,6 +317,11 @@
       justify-content: center;
       padding: 10px 12px;
       font-size: 0.72rem;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta .btn.primary,
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta .btn.primary * {
+      color: #121418 !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-side-card--cta .btn.secondary {
@@ -1892,12 +1911,12 @@
               </div>
             </div>
 
-            <div class="forge-side-card forge-side-card--cta" style="background: #f1ebdf; border-color: rgba(18, 20, 24, 0.08); margin-top: 8px; margin-bottom: 0; padding: 16px;">
+            <div class="forge-side-card forge-side-card--cta" style="background: #f1ebdf; border-color: rgba(18, 20, 24, 0.08); margin-top: 8px; margin-bottom: 0; padding: 16px; color: #121418 !important; opacity: 1 !important; filter: none !important;">
               <div class="section-kicker" style="color: #121418; opacity: 1;">Contact</div>
               <h3 style="color: #121418; opacity: 1;">Need help shaping the next version?</h3>
               <p style="color: #121418; opacity: 1;">We can help with clearer structure, stronger messaging, and follow-through after launch.</p>
               <div class="btn-row" style="justify-content: center; gap: 10px;">
-                <a class="btn primary" href="/contact/">Start a Project</a>
+                <a class="btn primary" href="/contact/" style="color: #121418 !important; opacity: 1 !important; filter: none !important;">Start a Project</a>
                 <a class="btn secondary" href="/portfolio/" style="color: #121418; opacity: 1; border-color: rgba(18, 20, 24, 0.16); background: rgba(255, 253, 250, 0.78);">View Portfolio</a>
               </div>
             </div>
@@ -2080,15 +2099,15 @@
                 </section>
               </div>
 
-              <div class="forge-inline-cta forge-inline-cta-archive forge-inline-cta-archive--mobile" style="background: #121418; border-color: #121418; margin-top: 8px; margin-bottom: 0; padding: 18px 16px;">
-                <div class="section-kicker" style="color: rgba(255, 248, 238, 0.78); opacity: 1;">Contact</div>
-                <h3 style="color: #fff8ee; opacity: 1;">Need help shaping the next version?</h3>
-                <p style="color: #fff8ee; opacity: 1;">
+              <div class="forge-inline-cta forge-inline-cta-archive forge-inline-cta-archive--mobile" style="background: #f1ebdf; border-color: rgba(18, 20, 24, 0.08); margin-top: 8px; margin-bottom: 0; padding: 18px 16px;">
+                <div class="section-kicker" style="color: #121418; opacity: 1;">Contact</div>
+                <h3 style="color: #121418; opacity: 1;">Need help shaping the next version?</h3>
+                <p style="color: #121418; opacity: 1;">
                   We can help with clearer structure, stronger messaging, and follow-through after launch.
                 </p>
                 <div class="btn-row" style="justify-content: center; gap: 10px;">
-                  <a class="btn primary" href="/contact/" style="width: 100%; max-width: none; color: #fff8ee;">Start a Project</a>
-                  <a class="btn secondary" href="/portfolio/" style="width: 100%; max-width: none; color: #fff8ee; opacity: 1; border-color: rgba(255, 248, 238, 0.18); background: rgba(255, 255, 255, 0.04);">View Portfolio</a>
+                  <a class="btn primary" href="/contact/" style="width: 100%; max-width: none; color: #121418;">Start a Project</a>
+                  <a class="btn secondary" href="/portfolio/" style="width: 100%; max-width: none; color: #121418; opacity: 1; border-color: rgba(18, 20, 24, 0.16); background: rgba(255, 253, 250, 0.78);">View Portfolio</a>
                 </div>
               </div>
             </div>
@@ -2206,11 +2225,19 @@
       border-color: rgba(18, 20, 24, 0.08) !important;
       padding: 18px !important;
       margin-top: 10px !important;
+      color: #121418 !important;
+      opacity: 1 !important;
+      filter: none !important;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-side-card--cta .section-kicker,
-    body.forge-page:not(.forge-post-page) .forge-side-card--cta h3,
-    body.forge-page:not(.forge-post-page) .forge-side-card--cta p {
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta,
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta * {
+      opacity: 1 !important;
+      filter: none !important;
+      mix-blend-mode: normal !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta :is(.section-kicker, h3, p, span, strong, a) {
       color: #121418 !important;
       opacity: 1 !important;
       text-align: center;
@@ -2225,6 +2252,11 @@
       color: #121418 !important;
       border-color: rgba(18, 20, 24, 0.16) !important;
       background: rgba(255, 253, 250, 0.78) !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta .btn.primary,
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta .btn.primary * {
+      color: #121418 !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
@@ -2372,15 +2404,15 @@
         margin-bottom: 2px !important;
         padding: 16px !important;
         border-radius: 20px !important;
-        background: #121418 !important;
-        border-color: #121418 !important;
+        background: #f1ebdf !important;
+        border-color: rgba(18, 20, 24, 0.08) !important;
       }
 
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .section-kicker,
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile h3,
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile p,
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn.secondary {
-        color: #fff8ee !important;
+        color: #121418 !important;
         opacity: 1 !important;
       }
 
@@ -2398,12 +2430,12 @@
 
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn.primary,
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn.primary * {
-        color: #fff8ee !important;
+        color: #121418 !important;
       }
 
       body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn.secondary {
-        border-color: rgba(255, 248, 238, 0.22) !important;
-        background: rgba(255, 255, 255, 0.04) !important;
+        border-color: rgba(18, 20, 24, 0.16) !important;
+        background: rgba(255, 253, 250, 0.78) !important;
       }
     }
   </style>
