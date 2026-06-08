@@ -38,11 +38,89 @@
   <link rel="stylesheet" href="/styles.css?v=20260608forgereads1" />
   <style>
     body.forge-page:not(.forge-post-page) {
+      position: relative;
       background:
         radial-gradient(circle at 10% 8%, rgba(255, 153, 52, 0.34), transparent 24%),
         radial-gradient(circle at 88% 16%, rgba(255, 126, 36, 0.24), transparent 22%),
         linear-gradient(180deg, #ffefdc 0%, #ffd3a0 34%, #ffb25a 100%);
       color: #16171a;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-fire-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-fire-core {
+      position: absolute;
+      inset: auto -10% -16% -10%;
+      height: 54vh;
+      background:
+        radial-gradient(circle at 50% 100%, rgba(255, 95, 20, 0.32), transparent 34%),
+        radial-gradient(circle at 24% 100%, rgba(255, 151, 52, 0.18), transparent 28%),
+        radial-gradient(circle at 78% 100%, rgba(255, 118, 28, 0.18), transparent 28%);
+      filter: blur(18px);
+      opacity: 0.9;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-fire-haze {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255, 248, 238, 0.12) 0%, rgba(255, 209, 140, 0.06) 28%, rgba(255, 141, 36, 0.08) 100%),
+        radial-gradient(circle at 50% 120%, rgba(98, 20, 0, 0.18), transparent 36%);
+      opacity: 0.78;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-embers {
+      position: absolute;
+      inset: 0;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-ember {
+      position: absolute;
+      left: var(--left);
+      bottom: -12vh;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255, 243, 215, 0.95), rgba(255, 174, 83, 0.92) 38%, rgba(227, 91, 18, 0.78) 70%, rgba(227, 91, 18, 0) 100%);
+      opacity: 0;
+      filter: blur(var(--blur));
+      transform: translate3d(0, 0, 0);
+      animation: forgeEmberRise var(--duration) linear infinite;
+      animation-delay: var(--delay);
+    }
+
+    @keyframes forgeEmberRise {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0.72);
+      }
+
+      12% {
+        opacity: 0.88;
+      }
+
+      72% {
+        opacity: 0.62;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate3d(var(--drift), -108vh, 0) scale(1.22);
+      }
+    }
+
+    body.forge-page:not(.forge-post-page) .nav,
+    body.forge-page:not(.forge-post-page) .breadcrumbs,
+    body.forge-page:not(.forge-post-page) main {
+      position: relative;
+      z-index: 1;
     }
 
     body.forge-page:not(.forge-post-page) .nav {
@@ -1513,6 +1591,19 @@
           linear-gradient(180deg, #ffedd4 0%, #ffc97e 44%, #ff9d3a 100%);
       }
 
+      body.forge-page:not(.forge-post-page) .forge-fire-core {
+        inset: auto -20% -18% -20%;
+        height: 48vh;
+        filter: blur(14px);
+        opacity: 0.92;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-fire-haze {
+        background:
+          linear-gradient(180deg, rgba(255, 244, 226, 0.12) 0%, rgba(255, 196, 113, 0.08) 42%, rgba(255, 122, 24, 0.12) 100%),
+          radial-gradient(circle at 50% 118%, rgba(98, 20, 0, 0.2), transparent 38%);
+      }
+
       body.forge-page:not(.forge-post-page) .forge-score-section {
         padding: 8px 0 12px;
       }
@@ -1932,6 +2023,11 @@
 
 <body class="forge-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="forge-fire-bg" aria-hidden="true">
+    <div class="forge-fire-core"></div>
+    <div class="forge-fire-haze"></div>
+    <div class="forge-embers" id="forge-embers"></div>
+  </div>
 
   <nav class="nav">
     <div class="wrap nav-inner">
@@ -2911,6 +3007,53 @@
     }
   </style>
   <script>
+    (function () {
+      const emberField = document.getElementById("forge-embers");
+      if (emberField) {
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        function renderEmbers() {
+          emberField.innerHTML = "";
+          if (reducedMotion.matches) return;
+
+          const mobile = window.matchMedia("(max-width: 900px)").matches;
+          const count = mobile ? 10 : 18;
+          const fragment = document.createDocumentFragment();
+
+          for (let index = 0; index < count; index += 1) {
+            const ember = document.createElement("span");
+            const size = mobile ? 10 + Math.random() * 18 : 12 + Math.random() * 24;
+            const left = `${Math.random() * 100}%`;
+            const duration = `${8 + Math.random() * 7}s`;
+            const delay = `${Math.random() * -12}s`;
+            const drift = `${(Math.random() * 18) - 9}vw`;
+            const blur = `${1 + Math.random() * 3}px`;
+
+            ember.className = "forge-ember";
+            ember.style.setProperty("--left", left);
+            ember.style.setProperty("--size", `${size}px`);
+            ember.style.setProperty("--duration", duration);
+            ember.style.setProperty("--delay", delay);
+            ember.style.setProperty("--drift", drift);
+            ember.style.setProperty("--blur", blur);
+            fragment.appendChild(ember);
+          }
+
+          emberField.appendChild(fragment);
+        }
+
+        let emberResizeTimer = null;
+        renderEmbers();
+        window.addEventListener("resize", function () {
+          window.clearTimeout(emberResizeTimer);
+          emberResizeTimer = window.setTimeout(renderEmbers, 140);
+        });
+        if (typeof reducedMotion.addEventListener === "function") {
+          reducedMotion.addEventListener("change", renderEmbers);
+        }
+      }
+    })();
+
     (function () {
       const scoreSection = document.querySelector(".forge-score-section");
       const mainColumn = document.querySelector(".forge-main-column");
