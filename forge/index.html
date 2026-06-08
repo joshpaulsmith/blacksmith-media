@@ -2657,8 +2657,30 @@
       const topicSelect = document.getElementById("forge-topic-select");
       const categoryGrid = document.getElementById("forge-category-grid");
       const emptyState = document.getElementById("forge-empty-state");
+      const sideRail = document.querySelector(".forge-side-rail--left");
 
       if (!switcherTabs.length || !panels.length) return;
+
+      function syncArchivePanelHeight() {
+        const desktop = window.matchMedia("(min-width: 901px)").matches;
+        const activePanel = panels.find((panel) => panel.classList.contains("is-active"));
+        const storyList = activePanel ? activePanel.querySelector(".forge-story-list") : null;
+
+        panels.forEach((panel) => {
+          panel.style.minHeight = "";
+          const list = panel.querySelector(".forge-story-list");
+          if (list) list.style.minHeight = "";
+        });
+
+        if (!desktop || !sideRail || !activePanel || !storyList) return;
+
+        const railHeight = sideRail.offsetHeight;
+        const panelContentHeight = storyList.scrollHeight;
+        const targetHeight = Math.max(railHeight, panelContentHeight);
+
+        activePanel.style.minHeight = `${targetHeight}px`;
+        storyList.style.minHeight = `${targetHeight}px`;
+      }
 
       function setActiveView(view) {
         switcherTabs.forEach((tab) => {
@@ -2670,6 +2692,8 @@
         panels.forEach((panel) => {
           panel.classList.toggle("is-active", panel.dataset.panel === view);
         });
+
+        syncArchivePanelHeight();
       }
 
       function filterByCategory(category) {
@@ -2689,6 +2713,7 @@
         });
 
         emptyState.classList.toggle("is-visible", visibleCount === 0);
+        syncArchivePanelHeight();
       }
 
       switcherTabs.forEach((tab) => {
@@ -2721,6 +2746,9 @@
           }, 0);
         });
       }
+
+      window.addEventListener("load", syncArchivePanelHeight);
+      window.addEventListener("resize", syncArchivePanelHeight);
 
       setActiveView("latest");
       filterByCategory("all");
