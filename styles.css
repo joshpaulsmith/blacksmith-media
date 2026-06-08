@@ -7078,7 +7078,10 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
 
 /* Final Forge archive reset */
 body.forge-page:not(.forge-post-page){
-  background:#f7f5f1 !important;
+  background:
+    radial-gradient(circle at top left, rgba(255, 193, 118, 0.72), transparent 34%),
+    radial-gradient(circle at 82% 18%, rgba(255, 152, 73, 0.3), transparent 28%),
+    linear-gradient(180deg, #fff4e6 0%, #ffe4c4 32%, #ffc88d 100%) !important;
   color:#121418 !important;
 }
 
