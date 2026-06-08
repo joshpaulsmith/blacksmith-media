@@ -1976,11 +1976,11 @@
         <div class="forge-score-card">
           <div class="forge-score-copy">
             <div class="section-kicker">Interactive audit</div>
-            <h2 id="forge-score-heading"><span>The Forge</span> Score</h2>
+            <h2 id="forge-score-heading"><span>The</span> Anvil</h2>
             <p class="forge-score-intro">
               Enter a domain and get a fast first-pass reading on speed, mobile performance, SEO, trust, and design clarity. It is a quick way to see how sharp your current website really is.
             </p>
-            <div class="forge-score-notes" aria-label="Forge Score notes">
+            <div class="forge-score-notes" aria-label="The Anvil notes">
               <div class="forge-score-note">
                 <strong>What it checks</strong>
                 <span>PageSpeed performance, mobile readiness, SEO signals, trust markers, and design-related stability.</span>
@@ -2009,18 +2009,18 @@
                   spellcheck="false"
                   required
                 />
-                <button class="forge-score-submit" id="forge-score-submit" type="submit">Forge Score</button>
+                <button class="forge-score-submit" id="forge-score-submit" type="submit">The Anvil</button>
               </div>
             </form>
             <p class="forge-score-helper">
-              Speed and mobile scores come from Google PageSpeed Insights. The Forge blends those results with our own scoring rules for design, trust, and SEO.
+              Speed and mobile scores come from Google PageSpeed Insights. The Anvil blends those results with our own scoring rules for design, trust, and SEO.
             </p>
             <p class="forge-score-status" id="forge-score-status" aria-live="polite"></p>
 
             <div class="forge-score-results" id="forge-score-results">
               <div class="forge-score-summary">
                 <div class="forge-score-headline">
-                  <strong id="forge-score-summary">Run a score to see how your website is forging.</strong>
+                  <strong id="forge-score-summary">Run The Anvil to see how your website is holding up.</strong>
                   <div class="forge-score-badge" id="forge-score-total">--</div>
                 </div>
                 <p id="forge-score-subcopy">We will translate the results into one overall blade rating and point to the quickest ways to sharpen it.</p>
@@ -3297,7 +3297,7 @@
         const normalizedUrl = normalizeUrl(urlInput.value);
 
         if (!normalizedUrl) {
-          setStatus("Enter a website URL first so we can forge a score.", "error");
+          setStatus("Enter a website URL first so we can run The Anvil.", "error");
           return;
         }
 
@@ -3316,7 +3316,7 @@
           const blade = getBladeLabel(metrics.overall);
           const tips = buildRecommendations(metrics, { desktop: desktopReport, mobile: mobileReport });
 
-          summary.textContent = `Your website forged a ${metrics.overall}/100 ${blade} blade. Here's how to sharpen it.`;
+          summary.textContent = `Your website scored ${metrics.overall}/100 on The Anvil. Here's how to sharpen it.`;
           subcopy.textContent = `${new URL(normalizedUrl).hostname.replace(/^www\./, "")} has a strong starting read in some areas and a few places that want focused work next.`;
           total.textContent = `${metrics.overall}/100`;
 
@@ -3328,15 +3328,15 @@
 
           recommendationsList.innerHTML = tips.map((item) => `<li>${item}</li>`).join("");
           results.classList.add("is-visible");
-          setStatus("Forge Score complete. Use the weakest numbers as the first sharpening pass.", "success");
+          setStatus("The Anvil is complete. Use the weakest numbers as the first sharpening pass.", "success");
         } catch (error) {
           console.error(error);
           results.classList.remove("is-visible");
-          setStatus("We couldn't forge a score from that URL just yet. Try a live public domain with https enabled.", "error");
+          setStatus("We couldn't run The Anvil for that URL just yet. Try a live public domain with https enabled.", "error");
         } finally {
           setLoadingState(false);
           submitButton.disabled = false;
-          submitButton.textContent = "Forge Score";
+          submitButton.textContent = "The Anvil";
         }
       });
 
