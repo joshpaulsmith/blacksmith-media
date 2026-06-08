@@ -1846,16 +1846,16 @@
                 </div>
                 <div class="forge-utility-grid">
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label">Published</span>
-                    <strong>03 posts</strong>
+                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Published</span>
+                    <strong style="color: #121418; opacity: 1; font-weight: 700;">03 posts</strong>
                   </div>
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label">Latest update</span>
-                    <strong>June 6, 2026</strong>
+                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Latest update</span>
+                    <strong style="color: #121418; opacity: 1; font-weight: 700;">June 6, 2026</strong>
                   </div>
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label">Total Reads</span>
-                    <strong id="forge-total-reads">0 reads</strong>
+                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Total Reads</span>
+                    <strong id="forge-total-reads" style="color: #121418; opacity: 1; font-weight: 700;">0 reads</strong>
                   </div>
                 </div>
               </div>
@@ -1892,13 +1892,13 @@
               </div>
             </div>
 
-            <div class="forge-side-card forge-side-card--cta">
-              <div class="section-kicker">Contact</div>
-              <h3>Need help shaping the next version?</h3>
-              <p>We can help with clearer structure, stronger messaging, and follow-through after launch.</p>
-              <div class="btn-row">
+            <div class="forge-side-card forge-side-card--cta" style="background: #f1ebdf; border-color: rgba(18, 20, 24, 0.08); margin-top: 8px; margin-bottom: 0; padding: 16px;">
+              <div class="section-kicker" style="color: #121418; opacity: 1;">Contact</div>
+              <h3 style="color: #121418; opacity: 1;">Need help shaping the next version?</h3>
+              <p style="color: #121418; opacity: 1;">We can help with clearer structure, stronger messaging, and follow-through after launch.</p>
+              <div class="btn-row" style="justify-content: center; gap: 10px;">
                 <a class="btn primary" href="/contact/">Start a Project</a>
-                <a class="btn secondary" href="/portfolio/">View Portfolio</a>
+                <a class="btn secondary" href="/portfolio/" style="color: #121418; opacity: 1; border-color: rgba(18, 20, 24, 0.16); background: rgba(255, 253, 250, 0.78);">View Portfolio</a>
               </div>
             </div>
 
@@ -1913,16 +1913,16 @@
                 </div>
                 <div class="forge-utility-grid">
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label">Published</span>
-                    <strong>03 posts</strong>
+                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Published</span>
+                    <strong style="color: #121418; opacity: 1; font-weight: 700;">03 posts</strong>
                   </div>
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label">Latest update</span>
-                    <strong>June 6, 2026</strong>
+                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Latest update</span>
+                    <strong style="color: #121418; opacity: 1; font-weight: 700;">June 6, 2026</strong>
                   </div>
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label">Total Reads</span>
-                    <strong id="forge-total-reads-mobile">0 reads</strong>
+                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Total Reads</span>
+                    <strong id="forge-total-reads-mobile" style="color: #121418; opacity: 1; font-weight: 700;">0 reads</strong>
                   </div>
                 </div>
               </div>
@@ -2079,15 +2079,15 @@
                 </section>
               </div>
 
-              <div class="forge-inline-cta forge-inline-cta-archive forge-inline-cta-archive--mobile">
-                <div class="section-kicker">Contact</div>
-                <h3>Need help shaping the next version?</h3>
-                <p>
+              <div class="forge-inline-cta forge-inline-cta-archive forge-inline-cta-archive--mobile" style="background: #f1ebdf; border-color: rgba(18, 20, 24, 0.08); margin-top: 10px; margin-bottom: 0; padding: 16px;">
+                <div class="section-kicker" style="color: #121418; opacity: 1;">Contact</div>
+                <h3 style="color: #121418; opacity: 1;">Need help shaping the next version?</h3>
+                <p style="color: #121418; opacity: 1;">
                   We can help with clearer structure, stronger messaging, and follow-through after launch.
                 </p>
-                <div class="btn-row">
+                <div class="btn-row" style="justify-content: center; gap: 10px;">
                   <a class="btn primary" href="/contact/">Start a Project</a>
-                  <a class="btn secondary" href="/portfolio/">View Portfolio</a>
+                  <a class="btn secondary" href="/portfolio/" style="color: #121418; opacity: 1; border-color: rgba(18, 20, 24, 0.16); background: rgba(255, 253, 250, 0.78);">View Portfolio</a>
                 </div>
               </div>
             </div>
@@ -2117,6 +2117,44 @@
 
   <script src="/script.js?v=20260606f"></script>
   <style>
+    body.forge-page:not(.forge-post-page) .forge-score-section {
+      padding-top: 10px !important;
+      padding-bottom: 8px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-shell {
+      max-width: 980px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-card {
+      padding: 16px !important;
+      gap: 14px !important;
+      border-radius: 22px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-copy {
+      gap: 10px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-copy h2 {
+      margin-bottom: 0 !important;
+      font-size: clamp(1.95rem, 3.2vw, 3rem) !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-panel {
+      padding: 14px !important;
+      gap: 10px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-panel label,
+    body.forge-page:not(.forge-post-page) .forge-score-panel .section-kicker,
+    body.forge-page:not(.forge-post-page) .forge-score-metric-label,
+    body.forge-page:not(.forge-post-page) .forge-score-metric-value,
+    body.forge-page:not(.forge-post-page) .forge-score-summary p {
+      color: #fff8ee !important;
+      opacity: 1 !important;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-utility-card strong,
     body.forge-page:not(.forge-post-page) .forge-rail-stat-value,
     body.forge-page:not(.forge-post-page) #forge-total-reads,
@@ -2143,16 +2181,30 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-helper {
-      color: rgba(255, 248, 238, 0.88) !important;
+      color: rgba(255, 248, 238, 0.94) !important;
+      opacity: 1 !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-status {
       color: #fff8ee !important;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-score-panel .section-kicker {
+      color: rgba(255, 248, 238, 0.74) !important;
+      opacity: 1 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-panel input,
+    body.forge-page:not(.forge-post-page) .forge-score-panel input::placeholder {
+      color: #fff8ee !important;
+      opacity: 1 !important;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-side-card--cta {
       background: #f1ebdf !important;
       border-color: rgba(18, 20, 24, 0.08) !important;
+      padding: 18px !important;
+      margin-top: 10px !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-side-card--cta .section-kicker,
@@ -2165,12 +2217,41 @@
 
     body.forge-page:not(.forge-post-page) .forge-side-card--cta .btn-row {
       justify-content: center;
+      gap: 10px !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-side-card--cta .btn.secondary {
       color: #121418 !important;
       border-color: rgba(18, 20, 24, 0.16) !important;
       background: rgba(255, 253, 250, 0.78) !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-inline-cta-archive {
+      margin-top: 10px !important;
+      margin-bottom: 0 !important;
+      padding: 16px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .section-kicker,
+    body.forge-page:not(.forge-post-page) .forge-inline-cta-archive h3,
+    body.forge-page:not(.forge-post-page) .forge-inline-cta-archive p {
+      color: #121418 !important;
+      opacity: 1 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-inline-cta-archive .btn.secondary {
+      color: #121418 !important;
+      border-color: rgba(18, 20, 24, 0.16) !important;
+      background: rgba(255, 253, 250, 0.78) !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-editorial-main--full.forge-editorial-main--v2 {
+      padding-bottom: 8px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-archive-shell {
+      gap: 10px !important;
+      padding-bottom: 0 !important;
     }
   </style>
   <script>
