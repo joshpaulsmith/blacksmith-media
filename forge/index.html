@@ -35,7 +35,7 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/styles.css?v=20260607forgeeditorial18" />
+  <link rel="stylesheet" href="/styles.css?v=20260608forgereads1" />
   <style>
     body.forge-page:not(.forge-post-page) {
       background: #f8f5ef;
@@ -955,7 +955,7 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-section {
-      padding: 10px 0 16px;
+      padding: 6px 0 10px;
       background: #f8f5ef;
       border-top: 0 !important;
       border-bottom: 0 !important;
@@ -970,18 +970,18 @@
     body.forge-page:not(.forge-post-page) .forge-score-card {
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-      gap: 20px;
+      gap: 16px;
       align-items: start;
       background: #fffdfa;
       border: 1px solid rgba(18, 20, 24, 0.08);
-      border-radius: 28px;
-      padding: 24px;
-      box-shadow: 0 22px 48px rgba(18, 20, 24, 0.06);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 16px 36px rgba(18, 20, 24, 0.06);
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-copy {
       display: grid;
-      gap: 14px;
+      gap: 10px;
       align-content: start;
     }
 
@@ -1009,14 +1009,14 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-notes {
       display: grid;
-      gap: 10px;
-      margin-top: 2px;
+      gap: 8px;
+      margin-top: 0;
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-note {
       display: grid;
       gap: 2px;
-      padding: 12px 14px;
+      padding: 10px 12px;
       border-radius: 16px;
       background: #f5efe5;
       border: 1px solid rgba(18, 20, 24, 0.08);
@@ -1038,10 +1038,10 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-panel {
       display: grid;
-      gap: 14px;
+      gap: 12px;
       align-content: start;
-      padding: 18px;
-      border-radius: 24px;
+      padding: 16px;
+      border-radius: 20px;
       background:
         radial-gradient(circle at top left, rgba(197, 106, 35, 0.16), transparent 36%),
         linear-gradient(180deg, #121418 0%, #17191d 100%);
@@ -1051,7 +1051,7 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-panel .section-kicker {
       margin: 0;
-      color: rgba(255, 248, 238, 0.74) !important;
+      color: rgba(255, 248, 238, 0.88) !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-form {
@@ -1092,7 +1092,7 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-submit {
       min-width: 152px;
-      min-height: 52px;
+      min-height: 48px;
       padding: 0 18px;
       border: 0;
       border-radius: 16px;
@@ -1121,14 +1121,14 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-helper {
       margin: 0;
-      color: rgba(255, 248, 238, 0.68);
+      color: rgba(255, 248, 238, 0.84);
       font-size: 0.84rem;
       line-height: 1.45;
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-status {
       margin: 0;
-      color: rgba(255, 248, 238, 0.84);
+      color: rgba(255, 248, 238, 0.94);
       font-size: 0.9rem;
       line-height: 1.45;
       min-height: 1.4em;
@@ -1193,7 +1193,7 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-summary p {
       margin: 0;
-      color: rgba(255, 248, 238, 0.76);
+      color: rgba(255, 248, 238, 0.9);
       font-size: 0.94rem;
       line-height: 1.55;
     }
@@ -1221,7 +1221,7 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-metric-label {
-      color: rgba(255, 248, 238, 0.74);
+      color: rgba(255, 248, 238, 0.9);
       font-family: 'Roboto Mono', monospace;
       font-size: 0.72rem;
       letter-spacing: 0.1em;
@@ -1271,7 +1271,7 @@
     body.forge-page:not(.forge-post-page) .forge-score-recommendations ul {
       margin: 0;
       padding-left: 18px;
-      color: rgba(255, 248, 238, 0.8);
+      color: rgba(255, 248, 238, 0.92);
       font-size: 0.92rem;
       line-height: 1.5;
     }
@@ -1854,8 +1854,8 @@
                     <strong>June 6, 2026</strong>
                   </div>
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label">Coverage</span>
-                    <strong>Brand, Web, SEO</strong>
+                    <span class="forge-utility-label">Total Reads</span>
+                    <strong id="forge-total-reads">0 reads</strong>
                   </div>
                 </div>
               </div>
@@ -1921,8 +1921,8 @@
                     <strong>June 6, 2026</strong>
                   </div>
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label">Coverage</span>
-                    <strong>Brand, Web, SEO</strong>
+                    <span class="forge-utility-label">Total Reads</span>
+                    <strong id="forge-total-reads-mobile">0 reads</strong>
                   </div>
                 </div>
               </div>
@@ -2116,6 +2116,63 @@
   </footer>
 
   <script src="/script.js?v=20260606f"></script>
+  <style>
+    body.forge-page:not(.forge-post-page) .forge-utility-card strong,
+    body.forge-page:not(.forge-post-page) .forge-rail-stat-value,
+    body.forge-page:not(.forge-post-page) #forge-total-reads,
+    body.forge-page:not(.forge-post-page) #forge-total-reads-mobile {
+      color: #121418 !important;
+      opacity: 1 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-utility-label,
+    body.forge-page:not(.forge-post-page) .forge-rail-stat-label {
+      color: rgba(18, 20, 24, 0.76) !important;
+      opacity: 1 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-copy .section-kicker,
+    body.forge-page:not(.forge-post-page) .forge-score-intro,
+    body.forge-page:not(.forge-post-page) .forge-score-note span {
+      color: rgba(18, 20, 24, 0.82) !important;
+      opacity: 1 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-note strong {
+      color: #121418 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-helper {
+      color: rgba(255, 248, 238, 0.88) !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-status {
+      color: #fff8ee !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta {
+      background: #f1ebdf !important;
+      border-color: rgba(18, 20, 24, 0.08) !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta .section-kicker,
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta h3,
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta p {
+      color: #121418 !important;
+      opacity: 1 !important;
+      text-align: center;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta .btn-row {
+      justify-content: center;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-side-card--cta .btn.secondary {
+      color: #121418 !important;
+      border-color: rgba(18, 20, 24, 0.16) !important;
+      background: rgba(255, 253, 250, 0.78) !important;
+    }
+  </style>
   <script>
     (function () {
       const switcherTabs = Array.from(document.querySelectorAll(".forge-switcher-tab"));
@@ -2203,6 +2260,8 @@
       const summary = document.getElementById("forge-score-summary");
       const subcopy = document.getElementById("forge-score-subcopy");
       const total = document.getElementById("forge-score-total");
+      const totalReadsDisplay = document.getElementById("forge-total-reads");
+      const totalReadsMobileDisplay = document.getElementById("forge-total-reads-mobile");
       const recommendationsList = document.getElementById("forge-score-recommendations");
       const metricCards = Array.from(document.querySelectorAll(".forge-score-metric"));
 
@@ -2228,6 +2287,23 @@
         const trimmed = rawValue.trim();
         if (!trimmed) return "";
         return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+      }
+
+      function updateForgeReadTotals() {
+        const fallback = "0 reads";
+        try {
+          const prefix = "forgeRead:";
+          const totalReads = Object.keys(window.localStorage)
+            .filter((key) => key.indexOf(prefix) === 0)
+            .reduce((sum, key) => sum + (parseInt(window.localStorage.getItem(key) || "0", 10) || 0), 0);
+
+          const label = `${totalReads} ${totalReads === 1 ? "read" : "reads"}`;
+          if (totalReadsDisplay) totalReadsDisplay.textContent = label;
+          if (totalReadsMobileDisplay) totalReadsMobileDisplay.textContent = label;
+        } catch (error) {
+          if (totalReadsDisplay) totalReadsDisplay.textContent = fallback;
+          if (totalReadsMobileDisplay) totalReadsMobileDisplay.textContent = fallback;
+        }
       }
 
       function getScoreValue(report, categoryKey) {
@@ -2362,6 +2438,8 @@
 
         return { design, speed, seo, trust, mobile: mobileScore, overall };
       }
+
+      updateForgeReadTotals();
 
       async function fetchPageSpeed(url, strategy) {
         const endpoint = new URL("https://www.googleapis.com/pagespeedonline/v5/runPagespeed");
