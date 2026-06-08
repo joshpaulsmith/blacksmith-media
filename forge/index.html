@@ -190,6 +190,19 @@
       border-top: 0 !important;
     }
 
+    body.forge-page:not(.forge-post-page) #main-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    body.forge-page:not(.forge-post-page) #latest-posts {
+      order: 2;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-section {
+      order: 3;
+    }
+
     body.forge-page:not(.forge-post-page) .forge-editorial-main--full {
       max-width: 1380px;
       padding-top: 10px !important;
@@ -1169,8 +1182,8 @@
       padding: 0 18px;
       border: 0;
       border-radius: 16px;
-      background: #c56a23;
-      color: #121418;
+      background: #8f4712;
+      color: #fffdfa;
       font-family: 'Roboto Mono', monospace;
       font-size: 0.78rem;
       font-weight: 700;
@@ -1178,7 +1191,7 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
-      box-shadow: 0 10px 24px rgba(197, 106, 35, 0.24);
+      box-shadow: 0 10px 24px rgba(143, 71, 18, 0.28);
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-submit:hover {
