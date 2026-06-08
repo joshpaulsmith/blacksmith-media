@@ -1314,6 +1314,106 @@ h2{
   border-color:rgba(122,162,255,.95) !important;
 }
 
+.forge-home-tool-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1.08fr) minmax(320px, .92fr);
+  gap:24px;
+  align-items:stretch;
+}
+
+.forge-home-tool-copy{
+  display:grid;
+  align-content:start;
+}
+
+.forge-home-tool-copy h2{
+  max-width:11ch;
+}
+
+.forge-home-tool-panel{
+  display:grid;
+  gap:14px;
+}
+
+.forge-home-tool-card,
+.forge-home-tool-preview{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:24px;
+  background:rgba(255,255,255,.04);
+}
+
+.forge-home-tool-kicker,
+.forge-home-preview-label{
+  margin-bottom:12px;
+  font-family:'Roboto Mono', monospace;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.forge-home-tool-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:10px;
+}
+
+.forge-home-tool-list li{
+  position:relative;
+  padding-left:18px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.6;
+}
+
+.forge-home-tool-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.72em;
+  width:7px;
+  height:7px;
+  border-radius:999px;
+  background:var(--forge);
+  box-shadow:0 0 0 4px rgba(197,106,35,.14);
+}
+
+.forge-home-preview-shell{
+  display:grid;
+  gap:12px;
+}
+
+.forge-home-preview-input,
+.forge-home-preview-button{
+  min-height:60px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  padding:0 18px;
+  font-family:'Roboto Mono', monospace;
+  font-size:14px;
+  letter-spacing:.05em;
+}
+
+.forge-home-preview-input{
+  background:rgba(255,255,255,.12);
+  color:rgba(255,248,238,.84);
+}
+
+.forge-home-preview-button{
+  justify-content:center;
+  background:linear-gradient(180deg, #d37b2b 0%, #a95815 100%);
+  color:#fff8ee;
+  text-transform:uppercase;
+  box-shadow:0 14px 28px rgba(0,0,0,.26);
+}
+
+.forge-home-tool-preview p{
+  margin:14px 0 0;
+}
+
 /* ===== PROCESS ===== */
 .process{
   margin-top:30px;
@@ -4700,6 +4800,7 @@ body.home-page main > .section .map-wrap iframe{
 }
 
 body.home-page #services,
+body.home-page #forge-score-home,
 body.home-page #studio-approach,
 body.home-page #who-we-work-with,
 body.home-page #local-seo,
@@ -4723,6 +4824,19 @@ body.home-page #services .faq-item p,
 body.home-page #services .studio-point p,
 body.home-page #services .contact-points,
 body.home-page #services .legal-copy,
+body.home-page #forge-score-home .section-kicker,
+body.home-page #forge-score-home .section-copy,
+body.home-page #forge-score-home .section-lead,
+body.home-page #forge-score-home p,
+body.home-page #forge-score-home .portfolio-lead,
+body.home-page #forge-score-home .featured-work-tag,
+body.home-page #forge-score-home .featured-work-link,
+body.home-page #forge-score-home .contact-email,
+body.home-page #forge-score-home .why-item,
+body.home-page #forge-score-home .faq-item p,
+body.home-page #forge-score-home .studio-point p,
+body.home-page #forge-score-home .contact-points,
+body.home-page #forge-score-home .legal-copy,
 body.home-page #studio-approach .section-kicker,
 body.home-page #studio-approach .section-copy,
 body.home-page #studio-approach .section-lead,
@@ -4802,6 +4916,17 @@ body.home-page #services .why-item span,
 body.home-page #services .deliverable-item span,
 body.home-page #services .featured-work-tag,
 body.home-page #services .featured-work-link,
+body.home-page #forge-score-home h2,
+body.home-page #forge-score-home h3,
+body.home-page #forge-score-home strong,
+body.home-page #forge-score-home .step-no,
+body.home-page #forge-score-home .overview-no,
+body.home-page #forge-score-home .studio-panel-intro,
+body.home-page #forge-score-home .who-item span,
+body.home-page #forge-score-home .why-item span,
+body.home-page #forge-score-home .deliverable-item span,
+body.home-page #forge-score-home .featured-work-tag,
+body.home-page #forge-score-home .featured-work-link,
 body.home-page #studio-approach h2,
 body.home-page #studio-approach h3,
 body.home-page #studio-approach strong,
@@ -4861,6 +4986,7 @@ body.home-page #faq .featured-work-link{
 }
 
 body.home-page #services a,
+body.home-page #forge-score-home a,
 body.home-page #studio-approach a,
 body.home-page #who-we-work-with a,
 body.home-page #local-seo a,
@@ -4874,6 +5000,7 @@ body.home-page #faq a{
 }
 
 body.home-page #services .section-lead a,
+body.home-page #forge-score-home .section-lead a,
 body.home-page #studio-approach .section-lead a,
 body.home-page #who-we-work-with .section-lead a,
 body.home-page #local-seo .section-lead a,
@@ -4891,6 +5018,15 @@ body.home-page #services .contact-box,
 body.home-page #services .overview-node,
 body.home-page #services .process-card,
 body.home-page #services .studio-split-panel,
+body.home-page #forge-score-home .card,
+body.home-page #forge-score-home .deliverable-item,
+body.home-page #forge-score-home .featured-work-card,
+body.home-page #forge-score-home .faq-item,
+body.home-page #forge-score-home .why-item,
+body.home-page #forge-score-home .contact-box,
+body.home-page #forge-score-home .overview-node,
+body.home-page #forge-score-home .process-card,
+body.home-page #forge-score-home .studio-split-panel,
 body.home-page #studio-approach .card,
 body.home-page #studio-approach .deliverable-item,
 body.home-page #studio-approach .featured-work-card,
@@ -4961,6 +5097,7 @@ body.home-page #studio-approach .studio-point p{
 }
 
 body.home-page #services .btn.primary,
+body.home-page #forge-score-home .btn.primary,
 body.home-page #studio-approach .btn.primary,
 body.home-page #who-we-work-with .btn.primary,
 body.home-page #local-seo .btn.primary,
@@ -4972,6 +5109,7 @@ body.home-page #faq .btn.primary{
 }
 
 body.home-page #services .btn.secondary,
+body.home-page #forge-score-home .btn.secondary,
 body.home-page #studio-approach .btn.secondary,
 body.home-page #who-we-work-with .btn.secondary,
 body.home-page #local-seo .btn.secondary,
@@ -4992,6 +5130,29 @@ body.home-page #services .cards .card.card-web h3{
 
 body.home-page #services .cards .card.card-seo h3{
   color:#7aa2ff !important;
+}
+
+body.home-page #forge-score-home .forge-home-tool-card,
+body.home-page #forge-score-home .forge-home-tool-preview{
+  background:rgba(255,255,255,.03) !important;
+  border-color:rgba(255,255,255,.08) !important;
+}
+
+body.home-page #forge-score-home .forge-home-tool-kicker,
+body.home-page #forge-score-home .forge-home-preview-label{
+  color:rgba(255,248,238,.66) !important;
+}
+
+body.home-page #forge-score-home .forge-home-tool-list li{
+  color:rgba(255,248,238,.82) !important;
+}
+
+body.home-page #forge-score-home .forge-home-preview-input{
+  color:rgba(255,248,238,.8) !important;
+}
+
+body.home-page #forge-score-home .btn{
+  text-decoration:none !important;
 }
 
 body.home-page #local-seo .map-wrap{
@@ -6841,6 +7002,27 @@ body.portfolio-page main > section:nth-of-type(even):not(.hero):not(.portfolio-h
     display:flex;
     justify-content:center;
     text-align:center;
+  }
+
+  .forge-home-tool-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .forge-home-tool-copy h2{
+    max-width:12ch;
+  }
+
+  .forge-home-tool-card,
+  .forge-home-tool-preview{
+    padding:18px;
+    border-radius:22px;
+  }
+
+  .forge-home-preview-input,
+  .forge-home-preview-button{
+    min-height:54px;
+    font-size:13px;
   }
 
   body.home-page main > .section > .wrap{
