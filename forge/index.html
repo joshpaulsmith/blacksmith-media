@@ -1076,9 +1076,9 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-panel {
       display: grid;
-      gap: 12px;
+      gap: 14px;
       align-content: start;
-      padding: 16px;
+      padding: 18px;
       border-radius: 20px;
       background:
         radial-gradient(circle at top left, rgba(197, 106, 35, 0.16), transparent 36%),
@@ -1094,7 +1094,7 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-form {
       display: grid;
-      gap: 10px;
+      gap: 12px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-form-row {
@@ -1106,7 +1106,7 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-input {
       width: 100%;
-      min-height: 52px;
+      min-height: 56px;
       padding: 0 16px;
       border-radius: 16px;
       border: 1px solid rgba(255, 248, 238, 0.18);
@@ -1130,7 +1130,7 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-submit {
       min-width: 152px;
-      min-height: 48px;
+      min-height: 56px;
       padding: 0 18px;
       border: 0;
       border-radius: 16px;
@@ -1178,6 +1178,44 @@
 
     body.forge-page:not(.forge-post-page) .forge-score-status.is-success {
       color: #f5c699;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-panel,
+    body.forge-page:not(.forge-post-page) .forge-score-panel *:not(.forge-score-submit):not(.forge-score-submit *) {
+      color: #fff8ee;
+      -webkit-text-fill-color: #fff8ee;
+      text-shadow: none;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-panel .section-kicker,
+    body.forge-page:not(.forge-post-page) .forge-score-helper,
+    body.forge-page:not(.forge-post-page) .forge-score-status,
+    body.forge-page:not(.forge-post-page) .forge-score-summary p,
+    body.forge-page:not(.forge-post-page) .forge-score-metric-label,
+    body.forge-page:not(.forge-post-page) .forge-score-recommendations ul,
+    body.forge-page:not(.forge-post-page) .forge-score-recommendations li {
+      color: rgba(255, 248, 238, 0.92) !important;
+      -webkit-text-fill-color: rgba(255, 248, 238, 0.92) !important;
+      text-shadow: none !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-headline strong,
+    body.forge-page:not(.forge-post-page) .forge-score-metric-value,
+    body.forge-page:not(.forge-post-page) .forge-score-recommendations strong {
+      color: #fffdfa !important;
+      -webkit-text-fill-color: #fffdfa !important;
+      text-shadow: none !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-badge {
+      color: #121418 !important;
+      -webkit-text-fill-color: #121418 !important;
+      text-shadow: none !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-score-input,
+    body.forge-page:not(.forge-post-page) .forge-score-input::placeholder {
+      -webkit-text-fill-color: #fffdfa !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-score-results {
@@ -1799,10 +1837,12 @@
                   class="forge-score-input"
                   id="forge-score-url"
                   name="url"
-                  type="url"
+                  type="text"
                   inputmode="url"
                   placeholder="Enter a domain like example.com"
                   autocomplete="url"
+                  autocapitalize="none"
+                  spellcheck="false"
                   required
                 />
                 <button class="forge-score-submit" id="forge-score-submit" type="submit">Forge Score</button>
@@ -1892,7 +1932,7 @@
                     <strong style="color: #121418 !important; opacity: 1 !important; font-weight: 700; -webkit-text-fill-color: #121418 !important; text-shadow: none !important;">June 6, 2026</strong>
                   </div>
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Total Reads</span>
+                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Session Reads</span>
                     <strong id="forge-total-reads" style="color: #121418; opacity: 1; font-weight: 700;">0 reads</strong>
                   </div>
                 </div>
@@ -1960,7 +2000,7 @@
                     <strong style="color: #121418; opacity: 1; font-weight: 700;">June 6, 2026</strong>
                   </div>
                   <div class="forge-utility-card">
-                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Total Reads</span>
+                    <span class="forge-utility-label" style="color: rgba(18, 20, 24, 0.84); opacity: 1;">Session Reads</span>
                     <strong id="forge-total-reads-mobile" style="color: #121418; opacity: 1; font-weight: 700;">0 reads</strong>
                   </div>
                 </div>
