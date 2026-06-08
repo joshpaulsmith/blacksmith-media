@@ -2906,6 +2906,7 @@
       const mainColumn = document.querySelector(".forge-main-column");
       const mainContent = document.getElementById("main-content");
       const latestPostsSection = document.getElementById("latest-posts");
+      const mobileArchiveCta = document.querySelector(".forge-inline-cta-archive--mobile");
 
       function relocateScoreSection() {
         if (!scoreSection || !mainColumn || !mainContent || !latestPostsSection) return;
@@ -2915,6 +2916,13 @@
         if (desktop) {
           if (!mainColumn.contains(scoreSection)) {
             mainColumn.appendChild(scoreSection);
+          }
+          return;
+        }
+
+        if (mobileArchiveCta && mobileArchiveCta.parentElement) {
+          if (mobileArchiveCta.previousElementSibling !== scoreSection) {
+            mobileArchiveCta.insertAdjacentElement("beforebegin", scoreSection);
           }
           return;
         }
