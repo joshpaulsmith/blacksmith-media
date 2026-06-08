@@ -1907,6 +1907,7 @@
           <div class="forge-main-column">
             <div class="forge-archive-shell">
               <div class="forge-mobile-archive-tools">
+                <div class="forge-mobile-tools-title">Notes from Blacksmith Media</div>
                 <div class="forge-switcher forge-switcher--v2" role="tablist" aria-label="The Forge mobile views">
                   <button class="forge-switcher-tab is-active" type="button" data-view="latest" role="tab" aria-selected="true">Latest</button>
                   <button class="forge-switcher-tab" type="button" data-view="categories" role="tab" aria-selected="false">Categories</button>
@@ -1937,7 +1938,7 @@
                           <span class="forge-list-category">SEO Support</span>
                           <span class="forge-list-category">Post-Launch</span>
                         </div>
-                        <h3>Local SEO after launch.</h3>
+                        <h3 style="color: #121418; opacity: 1;">Local SEO after launch.</h3>
                         <p>What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.</p>
                         <div class="forge-story-meta">
                           <span>June 6, 2026</span>
@@ -1957,7 +1958,7 @@
                           <span class="forge-list-category">Website Design</span>
                           <span class="forge-list-category">Conversion</span>
                         </div>
-                        <h3>Websites that earn more inquiries.</h3>
+                        <h3 style="color: #121418; opacity: 1;">Websites that earn more inquiries.</h3>
                         <p>What small businesses and service companies need from their site if it is going to support real conversations instead of just sitting online.</p>
                         <div class="forge-story-meta">
                           <span>June 4, 2026</span>
@@ -1976,7 +1977,7 @@
                           <span class="forge-list-category">Brand Strategy</span>
                           <span class="forge-list-category">Trust</span>
                         </div>
-                        <h3>Brand systems that build trust.</h3>
+                        <h3 style="color: #121418; opacity: 1;">Brand systems that build trust.</h3>
                         <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
                         <div class="forge-story-meta">
                           <span>June 2, 2026</span>
@@ -2023,7 +2024,7 @@
                           <span class="forge-list-category">SEO Support</span>
                           <span class="forge-list-category">Post-Launch</span>
                         </div>
-                        <h3>Local SEO after launch.</h3>
+                        <h3 style="color: #121418; opacity: 1;">Local SEO after launch.</h3>
                         <p>What should happen once the site is live so the structure, copy, and visibility keep getting stronger instead of fading out.</p>
                         <div class="forge-story-meta">
                           <span>June 6, 2026</span>
@@ -2042,7 +2043,7 @@
                           <span class="forge-list-category">Website Design</span>
                           <span class="forge-list-category">Conversion</span>
                         </div>
-                        <h3>Websites that earn more inquiries.</h3>
+                        <h3 style="color: #121418; opacity: 1;">Websites that earn more inquiries.</h3>
                         <p>What small businesses and service companies need from their site if it is going to support real conversations instead of just sitting online.</p>
                         <div class="forge-story-meta">
                           <span>June 4, 2026</span>
@@ -2061,7 +2062,7 @@
                           <span class="forge-list-category">Brand Strategy</span>
                           <span class="forge-list-category">Trust</span>
                         </div>
-                        <h3>Brand systems that build trust.</h3>
+                        <h3 style="color: #121418; opacity: 1;">Brand systems that build trust.</h3>
                         <p>How stronger visual direction, cleaner messaging, and consistency across touchpoints make a business feel more established.</p>
                         <div class="forge-story-meta">
                           <span>June 2, 2026</span>
@@ -2079,15 +2080,15 @@
                 </section>
               </div>
 
-              <div class="forge-inline-cta forge-inline-cta-archive forge-inline-cta-archive--mobile" style="background: #f1ebdf; border-color: rgba(18, 20, 24, 0.08); margin-top: 10px; margin-bottom: 0; padding: 16px;">
-                <div class="section-kicker" style="color: #121418; opacity: 1;">Contact</div>
-                <h3 style="color: #121418; opacity: 1;">Need help shaping the next version?</h3>
-                <p style="color: #121418; opacity: 1;">
+              <div class="forge-inline-cta forge-inline-cta-archive forge-inline-cta-archive--mobile" style="background: #121418; border-color: #121418; margin-top: 8px; margin-bottom: 0; padding: 18px 16px;">
+                <div class="section-kicker" style="color: rgba(255, 248, 238, 0.78); opacity: 1;">Contact</div>
+                <h3 style="color: #fff8ee; opacity: 1;">Need help shaping the next version?</h3>
+                <p style="color: #fff8ee; opacity: 1;">
                   We can help with clearer structure, stronger messaging, and follow-through after launch.
                 </p>
                 <div class="btn-row" style="justify-content: center; gap: 10px;">
-                  <a class="btn primary" href="/contact/">Start a Project</a>
-                  <a class="btn secondary" href="/portfolio/" style="color: #121418; opacity: 1; border-color: rgba(18, 20, 24, 0.16); background: rgba(255, 253, 250, 0.78);">View Portfolio</a>
+                  <a class="btn primary" href="/contact/" style="width: 100%; max-width: none; color: #fff8ee;">Start a Project</a>
+                  <a class="btn secondary" href="/portfolio/" style="width: 100%; max-width: none; color: #fff8ee; opacity: 1; border-color: rgba(255, 248, 238, 0.18); background: rgba(255, 255, 255, 0.04);">View Portfolio</a>
                 </div>
               </div>
             </div>
@@ -2252,6 +2253,158 @@
     body.forge-page:not(.forge-post-page) .forge-archive-shell {
       gap: 10px !important;
       padding-bottom: 0 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mobile-tools-title {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools {
+        gap: 8px !important;
+        margin-top: 0 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-tools-title {
+        display: block;
+        margin: 0 0 8px;
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #121418 !important;
+        opacity: 1 !important;
+        text-align: left;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-switcher {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        width: 100% !important;
+        max-width: none !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-switcher-tab {
+        flex: 1 1 50% !important;
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-utility-grid {
+        gap: 8px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-utility-card {
+        min-height: 0 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-utility-card,
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-utility-card *,
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-utility-label,
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-utility-card strong,
+      body.forge-page:not(.forge-post-page) #forge-total-reads-mobile {
+        color: #121418 !important;
+        opacity: 1 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-item h3,
+      body.forge-page:not(.forge-post-page) .forge-story-item h3 *,
+      body.forge-page:not(.forge-post-page) .forge-archive-item h3,
+      body.forge-page:not(.forge-post-page) .forge-archive-item h3 *,
+      body.forge-page:not(.forge-post-page) .forge-story-item p,
+      body.forge-page:not(.forge-post-page) .forge-archive-item p,
+      body.forge-page:not(.forge-post-page) .forge-story-meta,
+      body.forge-page:not(.forge-post-page) .forge-story-meta * {
+        color: #121418 !important;
+        opacity: 1 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-section {
+        margin-bottom: 10px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-shell {
+        gap: 12px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-card {
+        padding: 14px !important;
+        border-radius: 20px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-copy {
+        gap: 10px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-copy h2 {
+        font-size: clamp(2rem, 9vw, 2.55rem) !important;
+        line-height: 1 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-note {
+        padding: 10px 12px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-panel {
+        padding: 12px !important;
+        gap: 10px !important;
+        border-radius: 18px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-score-panel .section-kicker,
+      body.forge-page:not(.forge-post-page) .forge-score-panel label,
+      body.forge-page:not(.forge-post-page) .forge-score-helper,
+      body.forge-page:not(.forge-post-page) .forge-score-status,
+      body.forge-page:not(.forge-post-page) .forge-score-results,
+      body.forge-page:not(.forge-post-page) .forge-score-summary,
+      body.forge-page:not(.forge-post-page) .forge-score-summary p,
+      body.forge-page:not(.forge-post-page) .forge-score-metric-label,
+      body.forge-page:not(.forge-post-page) .forge-score-metric-value {
+        color: #fff8ee !important;
+        opacity: 1 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile {
+        width: 100% !important;
+        max-width: none !important;
+        margin-top: 8px !important;
+        margin-bottom: 2px !important;
+        padding: 16px !important;
+        border-radius: 20px !important;
+        background: #121418 !important;
+        border-color: #121418 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .section-kicker,
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile h3,
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile p,
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn.secondary {
+        color: #fff8ee !important;
+        opacity: 1 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn-row {
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn {
+        width: 100% !important;
+        max-width: none !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn.primary,
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn.primary * {
+        color: #fff8ee !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn.secondary {
+        border-color: rgba(255, 248, 238, 0.22) !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+      }
     }
   </style>
   <script>
