@@ -1082,8 +1082,8 @@
       width: 106px;
       height: 112px;
       justify-self: center;
-      transform-origin: 78% 72%;
-      transition: transform 110ms ease;
+      transform-origin: 84% 82%;
+      will-change: transform;
       cursor: pointer;
       border: 0;
       background: transparent;
@@ -1132,7 +1132,7 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-hammer.is-striking {
-      transform: rotate(24deg) translateY(6px);
+      animation: forgeMiniHammerStrike 180ms cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-wrap {
@@ -1149,6 +1149,21 @@
       height: 88px;
       filter: drop-shadow(0 14px 22px rgba(8, 9, 12, 0.28));
       transition: transform 110ms ease;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil::after {
+      content: "";
+      position: absolute;
+      left: 46%;
+      top: 6px;
+      width: 46px;
+      height: 20px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 235, 177, 0.88) 0%, rgba(255, 176, 84, 0.65) 42%, rgba(255, 176, 84, 0) 76%);
+      opacity: 0;
+      transform: translateX(-50%) scale(0.6);
+      transition: opacity 90ms ease, transform 90ms ease;
+      pointer-events: none;
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-top {
@@ -1194,7 +1209,12 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-anvil.is-hit {
-      transform: translateY(2px) scale(0.985);
+      transform: translateY(4px) scale(0.97);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil.is-hit::after {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.15);
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-sparks {
@@ -1281,6 +1301,24 @@
       100% {
         opacity: 0;
         transform: translate3d(var(--x), var(--y), 0) scale(1.15);
+      }
+    }
+
+    @keyframes forgeMiniHammerStrike {
+      0% {
+        transform: translate3d(-8px, -2px, 0) rotate(-18deg);
+      }
+
+      52% {
+        transform: translate3d(24px, 24px, 0) rotate(46deg);
+      }
+
+      72% {
+        transform: translate3d(18px, 20px, 0) rotate(36deg);
+      }
+
+      100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
       }
     }
 
@@ -3092,13 +3130,13 @@
     </div>
   </footer>
 
-  <aside class="forge-mini-game" id="forge-mini-game" aria-label="Anvil Rush mini game">
+  <aside class="forge-mini-game" id="forge-mini-game" aria-label="Forge Frenzy mini game">
     <div class="forge-mini-game-header">
       <div>
         <p class="forge-mini-game-kicker">Forge Corner</p>
-        <h2 class="forge-mini-game-title">Anvil Rush</h2>
+        <h2 class="forge-mini-game-title">Forge Frenzy</h2>
       </div>
-      <button class="forge-mini-game-toggle" id="forge-mini-game-toggle" type="button" aria-expanded="true" aria-label="Minimize Anvil Rush">−</button>
+      <button class="forge-mini-game-toggle" id="forge-mini-game-toggle" type="button" aria-expanded="true" aria-label="Minimize Forge Frenzy">−</button>
     </div>
     <div class="forge-mini-game-body" id="forge-mini-game-body">
       <div class="forge-mini-game-stats" aria-live="polite">
@@ -3821,8 +3859,10 @@
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
       if (game && gameToggle && gameAction && hammer && anvil && scoreDisplay && bestDisplay && timeDisplay && statusDisplay) {
-        const bestKey = "forgeAnvilRushBest";
-        const collapsedKey = "forgeAnvilRushCollapsed";
+        const bestKey = "forgeFrenzyBest";
+        const legacyBestKey = "forgeAnvilRushBest";
+        const collapsedKey = "forgeFrenzyCollapsed";
+        const legacyCollapsedKey = "forgeAnvilRushCollapsed";
         let score = 0;
         let timeLeft = 10;
         let timerId = null;
@@ -3849,7 +3889,7 @@
         function setCollapsed(collapsed) {
           game.classList.toggle("is-collapsed", collapsed);
           gameToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
-          gameToggle.setAttribute("aria-label", collapsed ? "Expand Anvil Rush" : "Minimize Anvil Rush");
+          gameToggle.setAttribute("aria-label", collapsed ? "Expand Forge Frenzy" : "Minimize Forge Frenzy");
           gameToggle.textContent = collapsed ? "+" : "−";
           safeSet(collapsedKey, collapsed ? "1" : "0");
         }
@@ -3938,9 +3978,9 @@
           }
         }
 
-        const storedBest = parseInt(safeGet(bestKey) || "0", 10) || 0;
+        const storedBest = parseInt(safeGet(bestKey) || safeGet(legacyBestKey) || "0", 10) || 0;
         bestDisplay.textContent = String(storedBest);
-        const storedCollapsed = safeGet(collapsedKey);
+        const storedCollapsed = safeGet(collapsedKey) ?? safeGet(legacyCollapsedKey);
         setCollapsed(storedCollapsed == null ? mobileGame.matches : storedCollapsed === "1");
 
         gameToggle.addEventListener("click", function () {
