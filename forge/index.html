@@ -1075,11 +1075,11 @@
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-hammer {
       position: absolute;
-      left: 34px;
-      top: 24px;
-      width: 126px;
-      height: 124px;
-      transform-origin: 82% 78%;
+      left: 28px;
+      top: 18px;
+      width: 148px;
+      height: 136px;
+      transform-origin: 78% 80%;
       will-change: transform;
       cursor: pointer;
       border: 0;
@@ -1090,68 +1090,21 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::before {
-      content: "";
-      position: absolute;
-      left: 60px;
-      top: 40px;
-      width: 14px;
-      height: 76px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #c88743 0%, #8d5521 100%);
-      box-shadow: inset 0 -6px 12px rgba(78, 37, 10, 0.28);
-      transform: rotate(26deg);
+      content: none;
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::after {
-      content: "";
-      position: absolute;
-      left: 22px;
-      top: 12px;
-      width: 18px;
-      height: 26px;
-      border-radius: 8px 0 0 8px;
-      background: linear-gradient(180deg, #f2f5fb 0%, #aeb6c1 100%);
-      box-shadow:
-        inset 0 -4px 8px rgba(17, 22, 31, 0.18),
-        0 6px 12px rgba(0, 0, 0, 0.12);
-      transform: rotate(12deg);
+      content: none;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-head-core {
-      position: absolute;
-      top: 10px;
-      left: 34px;
-      width: 54px;
-      height: 30px;
-      border-radius: 12px;
-      background: linear-gradient(180deg, #eef2f8 0%, #a4adb9 100%);
-      box-shadow:
-        inset 0 -7px 10px rgba(33, 38, 48, 0.16),
-        0 8px 16px rgba(0, 0, 0, 0.14);
-      transform: rotate(12deg);
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-claw {
-      position: absolute;
-      top: 14px;
-      left: 82px;
-      width: 26px;
-      height: 18px;
-      border-radius: 0 10px 10px 0;
-      background: linear-gradient(180deg, #dce1e8 0%, #7e8792 100%);
-      clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 84%, 38% 50%);
-      transform: rotate(12deg);
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-neck {
-      position: absolute;
-      top: 30px;
-      left: 52px;
-      width: 18px;
-      height: 14px;
-      border-radius: 4px;
-      background: linear-gradient(180deg, #bec6d0 0%, #7d8792 100%);
-      transform: rotate(18deg);
+    body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      shape-rendering: crispEdges;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.18));
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-hammer.is-striking {
@@ -1161,30 +1114,28 @@
     body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-wrap {
       position: absolute;
       left: 50%;
-      bottom: 20px;
-      width: 170px;
-      height: 128px;
+      bottom: 16px;
+      width: 186px;
+      height: 140px;
       transform: translateX(-50%);
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-anvil {
       position: relative;
-      width: 138px;
-      height: 88px;
+      width: 154px;
+      height: 104px;
       margin-left: auto;
       margin-top: 12px;
-      filter: drop-shadow(0 14px 22px rgba(8, 9, 12, 0.28));
       transition: transform 110ms ease;
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-anvil::after {
       content: "";
       position: absolute;
-      left: 46%;
-      top: 6px;
+      left: 50%;
+      top: 16px;
       width: 46px;
       height: 20px;
-      border-radius: 999px;
       background: radial-gradient(circle, rgba(255, 235, 177, 0.88) 0%, rgba(255, 176, 84, 0.65) 42%, rgba(255, 176, 84, 0) 76%);
       opacity: 0;
       transform: translateX(-50%) scale(0.6);
@@ -1192,46 +1143,14 @@
       pointer-events: none;
     }
 
-    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-top {
-      position: absolute;
-      top: 0;
-      left: 8px;
-      width: 122px;
-      height: 24px;
-      border-radius: 18px 22px 12px 12px;
-      background: linear-gradient(180deg, #d9dde4 0%, #8e96a1 100%);
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-body {
-      position: absolute;
-      top: 18px;
-      left: 34px;
-      width: 74px;
-      height: 48px;
-      background: linear-gradient(180deg, #8d949f 0%, #525963 100%);
-      clip-path: polygon(18% 0%, 82% 0%, 100% 100%, 0% 100%);
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-base {
-      position: absolute;
-      bottom: 0;
-      left: 24px;
-      width: 92px;
-      height: 18px;
-      border-radius: 999px 999px 12px 12px;
-      background: linear-gradient(180deg, #c7ccd5 0%, #6f7681 100%);
-    }
-
-    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-tail {
-      position: absolute;
-      top: 18px;
-      left: 92px;
-      width: 42px;
-      height: 18px;
-      border-radius: 0 16px 10px 0;
-      background: linear-gradient(180deg, #d7dbe2 0%, #7b8591 100%);
-      transform: skewX(18deg);
-      transform-origin: left center;
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      shape-rendering: crispEdges;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 12px 18px rgba(8, 9, 12, 0.28));
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-anvil.is-hit {
@@ -1336,11 +1255,11 @@
       }
 
       52% {
-        transform: translate3d(150px, 92px, 0) rotate(58deg);
+        transform: translate3d(132px, 110px, 0) rotate(66deg);
       }
 
       72% {
-        transform: translate3d(128px, 74px, 0) rotate(42deg);
+        transform: translate3d(112px, 86px, 0) rotate(46deg);
       }
 
       100% {
@@ -3182,16 +3101,38 @@
       <p class="forge-mini-game-status" id="forge-mini-game-status">Click the hammer and see how many clean strikes you can land in 10 seconds.</p>
       <div class="forge-mini-game-arena">
         <button class="forge-mini-game-hammer" id="forge-mini-game-hammer" type="button" aria-label="Strike the anvil">
-          <span class="forge-mini-game-hammer-head-core"></span>
-          <span class="forge-mini-game-hammer-claw"></span>
-          <span class="forge-mini-game-hammer-neck"></span>
+          <svg class="forge-mini-game-hammer-svg" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="14" y="10" width="28" height="4" fill="#eef2f8" />
+            <rect x="10" y="14" width="36" height="4" fill="#dfe4ec" />
+            <rect x="8" y="18" width="38" height="8" fill="#b0b8c4" />
+            <rect x="12" y="26" width="26" height="4" fill="#7e8895" />
+            <rect x="46" y="16" width="8" height="4" fill="#eef2f8" />
+            <rect x="50" y="20" width="8" height="4" fill="#c6cdd8" />
+            <rect x="54" y="24" width="6" height="4" fill="#8e99a7" />
+            <rect x="28" y="30" width="10" height="4" fill="#8f99a6" />
+            <rect x="30" y="34" width="8" height="4" fill="#d0d6df" />
+            <rect x="30" y="38" width="8" height="6" fill="#d29049" />
+            <rect x="28" y="44" width="8" height="6" fill="#b87430" />
+            <rect x="26" y="50" width="8" height="6" fill="#9a5d23" />
+            <rect x="24" y="56" width="8" height="6" fill="#7f4516" />
+          </svg>
         </button>
         <div class="forge-mini-game-anvil-wrap">
           <div class="forge-mini-game-anvil" id="forge-mini-game-anvil">
-            <span class="forge-mini-game-anvil-top"></span>
-            <span class="forge-mini-game-anvil-body"></span>
-            <span class="forge-mini-game-anvil-base"></span>
-            <span class="forge-mini-game-anvil-tail"></span>
+            <svg class="forge-mini-game-anvil-svg" viewBox="0 0 72 56" aria-hidden="true">
+              <rect x="14" y="4" width="34" height="4" fill="#eef2f8" />
+              <rect x="10" y="8" width="42" height="4" fill="#d9dee6" />
+              <rect x="8" y="12" width="44" height="6" fill="#acb5c1" />
+              <rect x="44" y="18" width="14" height="4" fill="#d9dee6" />
+              <rect x="50" y="22" width="12" height="4" fill="#acb5c1" />
+              <rect x="30" y="18" width="16" height="6" fill="#98a2af" />
+              <rect x="28" y="24" width="18" height="6" fill="#8a94a1" />
+              <rect x="26" y="30" width="20" height="6" fill="#7c8795" />
+              <rect x="24" y="36" width="22" height="6" fill="#6e7988" />
+              <rect x="14" y="42" width="38" height="4" fill="#d9dee6" />
+              <rect x="10" y="46" width="42" height="4" fill="#acb5c1" />
+              <rect x="8" y="50" width="46" height="4" fill="#7c8795" />
+            </svg>
           </div>
           <div class="forge-mini-game-sparks" id="forge-mini-game-sparks">
             <span class="forge-mini-game-spark" data-spark="1"></span>
@@ -3428,43 +3369,16 @@
       body.forge-page:not(.forge-post-page) .forge-mini-game-hammer {
         left: 14px;
         top: 16px;
-        width: 80px;
-        height: 86px;
+        width: 92px;
+        height: 94px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::before {
-        left: 45px;
-        top: 30px;
-        width: 10px;
-        height: 58px;
+        content: none;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::after {
-        left: 14px;
-        top: 10px;
-        width: 14px;
-        height: 24px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-head-core {
-        top: 8px;
-        left: 24px;
-        width: 42px;
-        height: 24px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-claw {
-        top: 11px;
-        left: 61px;
-        width: 21px;
-        height: 14px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-neck {
-        top: 23px;
-        left: 38px;
-        width: 14px;
-        height: 11px;
+        content: none;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-wrap {
@@ -3478,32 +3392,6 @@
       body.forge-page:not(.forge-post-page) .forge-mini-game-anvil {
         width: 112px;
         height: 72px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-top {
-        left: 7px;
-        width: 98px;
-        height: 20px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-body {
-        top: 16px;
-        left: 28px;
-        width: 58px;
-        height: 38px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-base {
-        left: 18px;
-        width: 74px;
-        height: 15px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-tail {
-        top: 16px;
-        left: 74px;
-        width: 33px;
-        height: 15px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-status {
@@ -3758,38 +3646,11 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::before {
-        left: 37px;
-        top: 25px;
-        width: 9px;
-        height: 49px;
+        content: none;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::after {
-        left: 9px;
-        top: 9px;
-        width: 12px;
-        height: 21px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-head-core {
-        top: 8px;
-        left: 19px;
-        width: 34px;
-        height: 20px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-claw {
-        top: 10px;
-        left: 50px;
-        width: 18px;
-        height: 12px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-neck {
-        top: 20px;
-        left: 31px;
-        width: 12px;
-        height: 9px;
+        content: none;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-anvil {
@@ -3803,32 +3664,6 @@
         width: 104px;
         height: 82px;
         transform: translateX(-50%);
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-top {
-        left: 6px;
-        width: 84px;
-        height: 18px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-body {
-        top: 14px;
-        left: 24px;
-        width: 50px;
-        height: 33px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-base {
-        left: 15px;
-        width: 66px;
-        height: 13px;
-      }
-
-      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-tail {
-        top: 14px;
-        left: 64px;
-        width: 28px;
-        height: 13px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-footnote {
