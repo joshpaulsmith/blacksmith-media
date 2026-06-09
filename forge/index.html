@@ -65,6 +65,7 @@
         radial-gradient(circle at 78% 100%, rgba(255, 118, 28, 0.24), transparent 28%);
       filter: blur(20px);
       opacity: 0.96;
+      transition: opacity 180ms ease, filter 180ms ease;
     }
 
     body.forge-page:not(.forge-post-page) .forge-fire-haze {
@@ -88,6 +89,7 @@
       gap: 1.2vw;
       filter: blur(3px);
       opacity: 0.92;
+      transition: opacity 180ms ease, filter 180ms ease;
     }
 
     body.forge-page:not(.forge-post-page) .forge-flame {
@@ -134,6 +136,22 @@
     body.forge-page:not(.forge-post-page) .forge-sparks {
       position: absolute;
       inset: 0;
+      transition: opacity 180ms ease, filter 180ms ease;
+    }
+
+    body.forge-page:not(.forge-post-page).forge-anvil-busy .forge-fire-core {
+      opacity: 0.68;
+      filter: blur(24px);
+    }
+
+    body.forge-page:not(.forge-post-page).forge-anvil-busy .forge-flames {
+      opacity: 0.46;
+      filter: blur(4px);
+    }
+
+    body.forge-page:not(.forge-post-page).forge-anvil-busy .forge-sparks {
+      opacity: 0.18;
+      filter: blur(1px);
     }
 
     body.forge-page:not(.forge-post-page) .forge-spark {
@@ -3359,6 +3377,13 @@
         };
         return acc;
       }, {});
+      let loadingMessageTimer = null;
+      const loadingMessages = [
+        "Checking speed and first-load friction...",
+        "Reviewing mobile readiness and layout stability...",
+        "Reading trust, SEO, and technical signals...",
+        "Waiting for Google PageSpeed to finish the audit..."
+      ];
       const blacksmithDomains = new Set([
         "blacksmithmedia.ca",
         "stellarhvac.ca",
@@ -3382,21 +3407,34 @@
       function setLoadingState(isLoading, normalizedUrl) {
         if (!scorePanel) return;
 
+        if (loadingMessageTimer) {
+          window.clearInterval(loadingMessageTimer);
+          loadingMessageTimer = null;
+        }
+
         scorePanel.classList.toggle("is-loading", isLoading);
         scorePanel.setAttribute("aria-busy", isLoading ? "true" : "false");
         submitButton.classList.toggle("is-loading", isLoading);
+        document.body.classList.toggle("forge-anvil-busy", isLoading);
 
         if (isLoading) {
           const hostname = normalizedUrl ? new URL(normalizedUrl).hostname.replace(/^www\./, "") : "your website";
           results.classList.add("is-visible");
           summary.textContent = `Waiting for results from ${hostname}.`;
-          subcopy.textContent = "We are checking desktop, mobile, trust, design, and SEO signals now. The full score will appear once the audit finishes.";
+          subcopy.textContent = "We are checking desktop, mobile, trust, design, and SEO signals now. Scores will appear once the live audit finishes.";
           total.textContent = "--";
           recommendationsList.innerHTML = [
-            "<li>Checking speed and first-load friction.</li>",
-            "<li>Reviewing mobile readiness and layout stability.</li>",
-            "<li>Waiting for the final audit response before showing scores.</li>"
+            "<li>Waiting for the live audit response before showing scores.</li>",
+            "<li>Desktop and mobile checks will populate together once Google finishes.</li>",
+            "<li>Recommendations appear after the real numbers come back.</li>"
           ].join("");
+          setStatus(loadingMessages[0], "");
+
+          let loadingIndex = 0;
+          loadingMessageTimer = window.setInterval(function () {
+            loadingIndex = (loadingIndex + 1) % loadingMessages.length;
+            setStatus(loadingMessages[loadingIndex], "");
+          }, 1200);
 
           setMetric("design", null);
           setMetric("speed", null);
@@ -3623,7 +3661,6 @@
         }
 
         setLoadingState(true, normalizedUrl);
-        setStatus("Heating the metal and checking the site now...", "");
         submitButton.disabled = true;
         submitButton.textContent = "Scoring...";
 
