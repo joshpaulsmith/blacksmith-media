@@ -927,6 +927,357 @@
       display: block;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-mini-game {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      width: min(320px, calc(100vw - 32px));
+      display: grid;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 245, 231, 0.26);
+      background:
+        linear-gradient(180deg, rgba(15, 16, 20, 0.96), rgba(26, 27, 33, 0.94)),
+        radial-gradient(circle at 50% 0%, rgba(255, 147, 52, 0.18), transparent 48%);
+      box-shadow:
+        0 20px 44px rgba(20, 8, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      color: #fff7ee;
+      backdrop-filter: blur(14px);
+      transition: transform 180ms ease, opacity 180ms ease, box-shadow 180ms ease;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game.is-collapsed {
+      width: auto;
+      padding: 10px 12px;
+      gap: 0;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game.is-collapsed .forge-mini-game-body {
+      display: none;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game.is-collapsed .forge-mini-game-header {
+      grid-template-columns: auto auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game.is-collapsed .forge-mini-game-kicker {
+      margin-bottom: 0;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: start;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-kicker {
+      margin: 0 0 4px;
+      color: rgba(255, 236, 214, 0.7);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-title {
+      margin: 0;
+      color: #fff7ee;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.16rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-toggle {
+      appearance: none;
+      border: 1px solid rgba(255, 244, 230, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff7ee;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 140ms ease, transform 140ms ease;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-toggle:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-body {
+      display: grid;
+      gap: 12px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-stat {
+      padding: 10px 10px 9px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 244, 230, 0.08);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-stat-label {
+      display: block;
+      margin-bottom: 5px;
+      color: rgba(255, 236, 214, 0.62);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-stat-value {
+      color: #fff7ee;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-status {
+      min-height: 2.4em;
+      margin: 0;
+      color: rgba(255, 241, 226, 0.82);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-arena {
+      position: relative;
+      display: grid;
+      grid-template-columns: 116px 1fr;
+      gap: 12px;
+      align-items: end;
+      min-height: 140px;
+      padding: 14px;
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.025)),
+        radial-gradient(circle at 78% 8%, rgba(255, 158, 58, 0.08), transparent 34%);
+      border: 1px solid rgba(255, 244, 230, 0.08);
+      overflow: hidden;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-hammer {
+      position: relative;
+      width: 106px;
+      height: 112px;
+      justify-self: center;
+      transform-origin: 78% 72%;
+      transition: transform 110ms ease;
+      cursor: pointer;
+      border: 0;
+      background: transparent;
+      padding: 0;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::before {
+      content: "";
+      position: absolute;
+      left: 49px;
+      top: 22px;
+      width: 12px;
+      height: 76px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #c88743 0%, #8d5521 100%);
+      box-shadow: inset 0 -6px 12px rgba(78, 37, 10, 0.28);
+      transform: rotate(24deg);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 0;
+      width: 54px;
+      height: 28px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #dfe3ea 0%, #88909c 100%);
+      box-shadow:
+        inset 0 -6px 10px rgba(17, 22, 31, 0.22),
+        0 8px 16px rgba(0, 0, 0, 0.14);
+      transform: rotate(10deg);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-hammer-head-back {
+      position: absolute;
+      top: 6px;
+      left: 62px;
+      width: 22px;
+      height: 14px;
+      border-radius: 0 8px 8px 0;
+      background: linear-gradient(180deg, #c8ced9 0%, #7d8794 100%);
+      transform: rotate(10deg);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-hammer.is-striking {
+      transform: rotate(24deg) translateY(6px);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-wrap {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      align-items: end;
+      min-height: 110px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil {
+      position: relative;
+      width: 138px;
+      height: 88px;
+      filter: drop-shadow(0 14px 22px rgba(8, 9, 12, 0.28));
+      transition: transform 110ms ease;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-top {
+      position: absolute;
+      top: 0;
+      left: 8px;
+      width: 122px;
+      height: 24px;
+      border-radius: 18px 22px 12px 12px;
+      background: linear-gradient(180deg, #d9dde4 0%, #8e96a1 100%);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-body {
+      position: absolute;
+      top: 18px;
+      left: 34px;
+      width: 74px;
+      height: 48px;
+      background: linear-gradient(180deg, #8d949f 0%, #525963 100%);
+      clip-path: polygon(18% 0%, 82% 0%, 100% 100%, 0% 100%);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-base {
+      position: absolute;
+      bottom: 0;
+      left: 24px;
+      width: 92px;
+      height: 18px;
+      border-radius: 999px 999px 12px 12px;
+      background: linear-gradient(180deg, #c7ccd5 0%, #6f7681 100%);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-tail {
+      position: absolute;
+      top: 18px;
+      left: 92px;
+      width: 42px;
+      height: 18px;
+      border-radius: 0 16px 10px 0;
+      background: linear-gradient(180deg, #d7dbe2 0%, #7b8591 100%);
+      transform: skewX(18deg);
+      transform-origin: left center;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-anvil.is-hit {
+      transform: translateY(2px) scale(0.985);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-sparks {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-spark {
+      position: absolute;
+      left: 52%;
+      top: 32%;
+      width: 9px;
+      height: 9px;
+      margin-left: -4.5px;
+      margin-top: -4.5px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #fff7d3 0%, #ffb054 42%, rgba(255, 176, 84, 0) 76%);
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale(0.4);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-spark.is-live {
+      animation: forgeMiniSpark 460ms ease-out forwards;
+      animation-delay: var(--delay);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-spark[data-spark="1"] { --x: -32px; --y: -20px; --delay: 0ms; }
+    body.forge-page:not(.forge-post-page) .forge-mini-game-spark[data-spark="2"] { --x: -10px; --y: -34px; --delay: 36ms; }
+    body.forge-page:not(.forge-post-page) .forge-mini-game-spark[data-spark="3"] { --x: 16px; --y: -28px; --delay: 18ms; }
+    body.forge-page:not(.forge-post-page) .forge-mini-game-spark[data-spark="4"] { --x: 34px; --y: -12px; --delay: 52ms; }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 50px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 185, 114, 0.24);
+      background: linear-gradient(180deg, #d97a26 0%, #a95410 100%);
+      color: #fff7ee;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+      box-shadow: 0 14px 22px rgba(120, 53, 6, 0.24);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-action:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 26px rgba(120, 53, 6, 0.3);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-action:active {
+      transform: translateY(1px);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-footnote {
+      margin: 0;
+      color: rgba(255, 237, 219, 0.66);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @keyframes forgeMiniSpark {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0.35);
+      }
+
+      18% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate3d(var(--x), var(--y), 0) scale(1.15);
+      }
+    }
+
     body.forge-page:not(.forge-post-page) .forge-story-body {
       display: grid;
       gap: 7px;
@@ -2735,6 +3086,54 @@
     </div>
   </footer>
 
+  <aside class="forge-mini-game" id="forge-mini-game" aria-label="Anvil Rush mini game">
+    <div class="forge-mini-game-header">
+      <div>
+        <p class="forge-mini-game-kicker">Forge Corner</p>
+        <h2 class="forge-mini-game-title">Anvil Rush</h2>
+      </div>
+      <button class="forge-mini-game-toggle" id="forge-mini-game-toggle" type="button" aria-expanded="true" aria-label="Minimize Anvil Rush">−</button>
+    </div>
+    <div class="forge-mini-game-body" id="forge-mini-game-body">
+      <div class="forge-mini-game-stats" aria-live="polite">
+        <div class="forge-mini-game-stat">
+          <span class="forge-mini-game-stat-label">Score</span>
+          <strong class="forge-mini-game-stat-value" id="forge-mini-game-score">0</strong>
+        </div>
+        <div class="forge-mini-game-stat">
+          <span class="forge-mini-game-stat-label">Best</span>
+          <strong class="forge-mini-game-stat-value" id="forge-mini-game-best">0</strong>
+        </div>
+        <div class="forge-mini-game-stat">
+          <span class="forge-mini-game-stat-label">Time</span>
+          <strong class="forge-mini-game-stat-value" id="forge-mini-game-time">10s</strong>
+        </div>
+      </div>
+      <p class="forge-mini-game-status" id="forge-mini-game-status">Click the hammer and see how many clean strikes you can land in 10 seconds.</p>
+      <div class="forge-mini-game-arena">
+        <button class="forge-mini-game-hammer" id="forge-mini-game-hammer" type="button" aria-label="Strike the anvil">
+          <span class="forge-mini-game-hammer-head-back"></span>
+        </button>
+        <div class="forge-mini-game-anvil-wrap">
+          <div class="forge-mini-game-anvil" id="forge-mini-game-anvil">
+            <span class="forge-mini-game-anvil-top"></span>
+            <span class="forge-mini-game-anvil-body"></span>
+            <span class="forge-mini-game-anvil-base"></span>
+            <span class="forge-mini-game-anvil-tail"></span>
+          </div>
+          <div class="forge-mini-game-sparks" id="forge-mini-game-sparks">
+            <span class="forge-mini-game-spark" data-spark="1"></span>
+            <span class="forge-mini-game-spark" data-spark="2"></span>
+            <span class="forge-mini-game-spark" data-spark="3"></span>
+            <span class="forge-mini-game-spark" data-spark="4"></span>
+          </div>
+        </div>
+      </div>
+      <button class="forge-mini-game-action" id="forge-mini-game-action" type="button">Start Round</button>
+      <p class="forge-mini-game-footnote">Desktop-only forge distraction. Best score stays on this device.</p>
+    </div>
+  </aside>
+
   <script src="/script.js?v=20260606f"></script>
   <style>
     body.forge-page:not(.forge-post-page) .forge-score-section {
@@ -2918,6 +3317,12 @@
 
     body.forge-page:not(.forge-post-page) .forge-mobile-tools-title {
       display: none;
+    }
+
+    @media (max-width: 1024px) {
+      body.forge-page:not(.forge-post-page) .forge-mini-game {
+        display: none;
+      }
     }
 
     @media (max-width: 768px) {
@@ -3121,6 +3526,7 @@
         border-color: rgba(18, 20, 24, 0.16) !important;
         background: rgba(255, 253, 250, 0.78) !important;
       }
+
     }
   </style>
   <script>
@@ -3197,6 +3603,174 @@
         });
         if (typeof reducedMotion.addEventListener === "function") {
           reducedMotion.addEventListener("change", renderFire);
+        }
+      }
+    })();
+
+    (function () {
+      const game = document.getElementById("forge-mini-game");
+      const gameToggle = document.getElementById("forge-mini-game-toggle");
+      const gameAction = document.getElementById("forge-mini-game-action");
+      const hammer = document.getElementById("forge-mini-game-hammer");
+      const anvil = document.getElementById("forge-mini-game-anvil");
+      const sparks = Array.from(document.querySelectorAll(".forge-mini-game-spark"));
+      const scoreDisplay = document.getElementById("forge-mini-game-score");
+      const bestDisplay = document.getElementById("forge-mini-game-best");
+      const timeDisplay = document.getElementById("forge-mini-game-time");
+      const statusDisplay = document.getElementById("forge-mini-game-status");
+      const desktopGame = window.matchMedia("(min-width: 1025px)");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      if (game && gameToggle && gameAction && hammer && anvil && scoreDisplay && bestDisplay && timeDisplay && statusDisplay) {
+        const bestKey = "forgeAnvilRushBest";
+        const collapsedKey = "forgeAnvilRushCollapsed";
+        let score = 0;
+        let timeLeft = 10;
+        let timerId = null;
+        let active = false;
+        let hammerResetTimer = null;
+        let anvilResetTimer = null;
+
+        function safeGet(key) {
+          try {
+            return window.localStorage.getItem(key);
+          } catch (error) {
+            return null;
+          }
+        }
+
+        function safeSet(key, value) {
+          try {
+            window.localStorage.setItem(key, value);
+          } catch (error) {
+            return;
+          }
+        }
+
+        function setCollapsed(collapsed) {
+          game.classList.toggle("is-collapsed", collapsed);
+          gameToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+          gameToggle.setAttribute("aria-label", collapsed ? "Expand Anvil Rush" : "Minimize Anvil Rush");
+          gameToggle.textContent = collapsed ? "+" : "−";
+          safeSet(collapsedKey, collapsed ? "1" : "0");
+        }
+
+        function updateBest(value) {
+          bestDisplay.textContent = String(value);
+          safeSet(bestKey, String(value));
+        }
+
+        function stopRound(finished) {
+          if (timerId) {
+            window.clearInterval(timerId);
+            timerId = null;
+          }
+          active = false;
+          timeLeft = 10;
+          timeDisplay.textContent = "10s";
+          gameAction.textContent = "Start Round";
+          if (finished) {
+            const best = Math.max(parseInt(bestDisplay.textContent || "0", 10) || 0, score);
+            if (best > (parseInt(bestDisplay.textContent || "0", 10) || 0)) {
+              updateBest(best);
+            }
+            statusDisplay.textContent = score > 0
+              ? `Round complete. You landed ${score} strike${score === 1 ? "" : "s"}.`
+              : "Round complete. No sparks this time. Try again.";
+          }
+        }
+
+        function startRound() {
+          if (!desktopGame.matches) return;
+          score = 0;
+          timeLeft = 10;
+          active = true;
+          scoreDisplay.textContent = "0";
+          timeDisplay.textContent = "10s";
+          statusDisplay.textContent = "Strike fast. Every hammer hit before the timer runs out counts.";
+          gameAction.textContent = "Strike";
+          if (timerId) window.clearInterval(timerId);
+          timerId = window.setInterval(function () {
+            timeLeft -= 1;
+            timeDisplay.textContent = `${Math.max(timeLeft, 0)}s`;
+            if (timeLeft <= 0) {
+              stopRound(true);
+            }
+          }, 1000);
+        }
+
+        function triggerStrike() {
+          if (!desktopGame.matches) return;
+          if (!active) {
+            startRound();
+          }
+          if (!active) return;
+
+          score += 1;
+          scoreDisplay.textContent = String(score);
+          statusDisplay.textContent = score < 6
+            ? "Good. Keep the rhythm going."
+            : score < 14
+              ? "The forge is heating up."
+              : "Now you are really swinging.";
+
+          hammer.classList.remove("is-striking");
+          anvil.classList.remove("is-hit");
+          window.clearTimeout(hammerResetTimer);
+          window.clearTimeout(anvilResetTimer);
+          void hammer.offsetWidth;
+          hammer.classList.add("is-striking");
+          anvil.classList.add("is-hit");
+          hammerResetTimer = window.setTimeout(function () {
+            hammer.classList.remove("is-striking");
+          }, reducedMotion.matches ? 60 : 130);
+          anvilResetTimer = window.setTimeout(function () {
+            anvil.classList.remove("is-hit");
+          }, reducedMotion.matches ? 60 : 130);
+
+          if (!reducedMotion.matches) {
+            sparks.forEach(function (spark) {
+              spark.classList.remove("is-live");
+              void spark.offsetWidth;
+              spark.classList.add("is-live");
+            });
+          }
+
+          if (score > (parseInt(bestDisplay.textContent || "0", 10) || 0)) {
+            updateBest(score);
+          }
+        }
+
+        const storedBest = parseInt(safeGet(bestKey) || "0", 10) || 0;
+        bestDisplay.textContent = String(storedBest);
+        setCollapsed(safeGet(collapsedKey) === "1");
+
+        gameToggle.addEventListener("click", function () {
+          setCollapsed(!game.classList.contains("is-collapsed"));
+        });
+
+        gameAction.addEventListener("click", function () {
+          if (active) {
+            triggerStrike();
+            return;
+          }
+          startRound();
+        });
+
+        hammer.addEventListener("click", function () {
+          triggerStrike();
+        });
+
+        const handleDesktopChange = function () {
+          if (!desktopGame.matches) {
+            stopRound(false);
+          }
+        };
+
+        if (typeof desktopGame.addEventListener === "function") {
+          desktopGame.addEventListener("change", handleDesktopChange);
+        } else if (typeof desktopGame.addListener === "function") {
+          desktopGame.addListener(handleDesktopChange);
         }
       }
     })();
