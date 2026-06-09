@@ -3339,6 +3339,15 @@
         };
         return acc;
       }, {});
+      const blacksmithDomains = new Set([
+        "blacksmithmedia.ca",
+        "stellarhvac.ca",
+        "capcoconstruction.com",
+        "veteranelectric.ca",
+        "quickthrills.com",
+        "buildwithcollins.com",
+        "seabrookplumbing.ca"
+      ]);
 
       function clampScore(value) {
         return Math.max(0, Math.min(100, Math.round(value)));
@@ -3430,6 +3439,33 @@
         const safeValue = value == null ? "--" : `${clampScore(value)}/100`;
         metric.value.textContent = safeValue;
         metric.bar.style.width = value == null ? "0%" : `${clampScore(value)}%`;
+      }
+
+      function showBlacksmithEasterEgg(hostname) {
+        const lines = [
+          "A magician never reveals his secrets.",
+          "Do you dare try to test Blacksmith's smithing skills?",
+          `Some blades are best admired, not measured. ${hostname} stays in the forge.`
+        ];
+        const opener = lines[Math.floor(Math.random() * lines.length)];
+
+        results.classList.add("is-visible");
+        summary.textContent = opener;
+        subcopy.textContent = "You found the Blacksmith easter egg. This one gets a wink instead of a score.";
+        total.textContent = "N/A";
+
+        setMetric("design", null);
+        setMetric("speed", null);
+        setMetric("seo", null);
+        setMetric("trust", null);
+        setMetric("mobile", null);
+
+        recommendationsList.innerHTML = [
+          "<li>The shop keeps a few secrets behind the anvil.</li>",
+          "<li>Try another public site if you want a full score readout.</li>"
+        ].join("");
+
+        setStatus("Blacksmith site detected. Secrets withheld.", "success");
       }
 
       function getBladeLabel(score) {
@@ -3557,6 +3593,12 @@
 
         if (!normalizedUrl) {
           setStatus("Enter a website URL first so we can run The Anvil.", "error");
+          return;
+        }
+
+        const hostname = new URL(normalizedUrl).hostname.replace(/^www\./i, "").toLowerCase();
+        if (blacksmithDomains.has(hostname)) {
+          showBlacksmithEasterEgg(hostname);
           return;
         }
 
