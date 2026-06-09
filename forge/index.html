@@ -3369,20 +3369,20 @@
         if (isLoading) {
           const hostname = normalizedUrl ? new URL(normalizedUrl).hostname.replace(/^www\./, "") : "your website";
           results.classList.add("is-visible");
-          summary.textContent = `Forging a first-pass score for ${hostname}.`;
-          subcopy.textContent = "We are checking desktop, mobile, trust, design, and SEO signals now so visitors can see progress while the audit runs.";
-          total.textContent = "...";
+          summary.textContent = `Waiting for results from ${hostname}.`;
+          subcopy.textContent = "We are checking desktop, mobile, trust, design, and SEO signals now. The full score will appear once the audit finishes.";
+          total.textContent = "--";
           recommendationsList.innerHTML = [
             "<li>Checking speed and first-load friction.</li>",
             "<li>Reviewing mobile readiness and layout stability.</li>",
-            "<li>Scanning trust, SEO, and technical best-practice signals.</li>"
+            "<li>Waiting for the final audit response before showing scores.</li>"
           ].join("");
 
-          setMetric("design", 62);
-          setMetric("speed", 54);
-          setMetric("seo", 68);
-          setMetric("trust", 58);
-          setMetric("mobile", 60);
+          setMetric("design", null);
+          setMetric("speed", null);
+          setMetric("seo", null);
+          setMetric("trust", null);
+          setMetric("mobile", null);
         }
       }
 
