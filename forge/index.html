@@ -934,6 +934,10 @@
       --forge-frenzy-spark-size: 9px;
       --forge-frenzy-hammer-idle: none;
       --forge-frenzy-hammer-glow: rgba(255, 168, 83, 0);
+      --forge-frenzy-hit-x: 162px;
+      --forge-frenzy-hit-y: 122px;
+      --forge-frenzy-rebound-x: 136px;
+      --forge-frenzy-rebound-y: 94px;
       position: fixed;
       right: 18px;
       bottom: 18px;
@@ -1311,11 +1315,11 @@
       }
 
       52% {
-        transform: translate3d(168px, 126px, 0) rotate(66deg);
+        transform: translate3d(var(--forge-frenzy-hit-x), var(--forge-frenzy-hit-y), 0) rotate(66deg);
       }
 
       72% {
-        transform: translate3d(144px, 96px, 0) rotate(46deg);
+        transform: translate3d(var(--forge-frenzy-rebound-x), var(--forge-frenzy-rebound-y), 0) rotate(46deg);
       }
 
       100% {
@@ -3206,13 +3210,13 @@
     </div>
   </footer>
 
-  <aside class="forge-mini-game" id="forge-mini-game" aria-label="Forge Frenzy mini game">
+  <aside class="forge-mini-game" id="forge-mini-game" aria-label="Hammer Time mini game">
     <div class="forge-mini-game-header">
       <div>
         <p class="forge-mini-game-kicker">Forge Corner</p>
-        <h2 class="forge-mini-game-title">Forge Frenzy</h2>
+        <h2 class="forge-mini-game-title">Hammer Time</h2>
       </div>
-      <button class="forge-mini-game-toggle" id="forge-mini-game-toggle" type="button" aria-expanded="true" aria-label="Minimize Forge Frenzy">−</button>
+      <button class="forge-mini-game-toggle" id="forge-mini-game-toggle" type="button" aria-expanded="true" aria-label="Minimize Hammer Time">−</button>
     </div>
     <div class="forge-mini-game-body" id="forge-mini-game-body">
       <div class="forge-mini-game-stats" aria-live="polite">
@@ -3438,6 +3442,10 @@
 
     @media (max-width: 1024px) {
       body.forge-page:not(.forge-post-page) .forge-mini-game {
+        --forge-frenzy-hit-x: 132px;
+        --forge-frenzy-hit-y: 94px;
+        --forge-frenzy-rebound-x: 106px;
+        --forge-frenzy-rebound-y: 70px;
         right: 12px;
         left: 12px;
         bottom: calc(12px + env(safe-area-inset-bottom, 0px));
@@ -3471,10 +3479,10 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-hammer {
-        left: 18px;
+        left: 20px;
         top: 18px;
-        width: 116px;
-        height: 120px;
+        width: 124px;
+        height: 126px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::before {
@@ -3486,16 +3494,16 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-wrap {
-        left: 54%;
-        bottom: 18px;
-        width: 154px;
-        height: 118px;
+        left: 50%;
+        bottom: 20px;
+        width: 164px;
+        height: 122px;
         transform: translateX(-50%);
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-anvil {
-        width: 136px;
-        height: 88px;
+        width: 144px;
+        height: 94px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-status {
@@ -3712,6 +3720,10 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game {
+        --forge-frenzy-hit-x: 122px;
+        --forge-frenzy-hit-y: 96px;
+        --forge-frenzy-rebound-x: 96px;
+        --forge-frenzy-rebound-y: 72px;
         padding: 11px;
         border-radius: 16px;
       }
@@ -3745,8 +3757,8 @@
       body.forge-page:not(.forge-post-page) .forge-mini-game-hammer {
         left: 16px;
         top: 18px;
-        width: 112px;
-        height: 118px;
+        width: 122px;
+        height: 126px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-hammer::before {
@@ -3758,15 +3770,15 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-anvil {
-        width: 132px;
-        height: 86px;
+        width: 140px;
+        height: 92px;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-wrap {
-        left: 56%;
-        bottom: 18px;
-        width: 150px;
-        height: 114px;
+        left: 50%;
+        bottom: 20px;
+        width: 160px;
+        height: 120px;
         transform: translateX(-50%);
       }
 
@@ -3774,6 +3786,54 @@
         font-size: 0.6rem;
       }
 
+    }
+
+    @media (max-width: 1024px) and (orientation: landscape) and (max-height: 560px) {
+      body.forge-page:not(.forge-post-page) .forge-mini-game {
+        --forge-frenzy-hit-x: 144px;
+        --forge-frenzy-hit-y: 96px;
+        --forge-frenzy-rebound-x: 116px;
+        --forge-frenzy-rebound-y: 70px;
+        left: 50%;
+        right: auto;
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+        width: min(700px, calc(100vw - 24px));
+        transform: translateX(-50%);
+        padding: 12px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mini-game.is-collapsed {
+        left: auto;
+        right: 12px;
+        transform: none;
+        width: auto;
+        max-width: calc(100vw - 24px);
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mini-game-arena {
+        min-height: 210px;
+        padding: 14px 16px 18px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mini-game-hammer {
+        left: 30px;
+        top: 12px;
+        width: 126px;
+        height: 126px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil-wrap {
+        left: 50%;
+        bottom: 18px;
+        width: 172px;
+        height: 122px;
+        transform: translateX(-50%);
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mini-game-anvil {
+        width: 146px;
+        height: 94px;
+      }
     }
   </style>
   <script>
@@ -3912,7 +3972,7 @@
         function setCollapsed(collapsed) {
           game.classList.toggle("is-collapsed", collapsed);
           gameToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
-          gameToggle.setAttribute("aria-label", collapsed ? "Expand Forge Frenzy" : "Minimize Forge Frenzy");
+          gameToggle.setAttribute("aria-label", collapsed ? "Expand Hammer Time" : "Minimize Hammer Time");
           gameToggle.textContent = collapsed ? "+" : "−";
           safeSet(collapsedKey, collapsed ? "1" : "0");
         }
