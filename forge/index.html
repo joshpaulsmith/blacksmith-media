@@ -928,6 +928,10 @@
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game {
+      --forge-frenzy-heat: 0;
+      --forge-frenzy-glow: rgba(255, 158, 58, 0.08);
+      --forge-frenzy-flash: rgba(255, 176, 84, 0.65);
+      --forge-frenzy-spark-size: 9px;
       position: fixed;
       right: 18px;
       bottom: 18px;
@@ -1068,9 +1072,12 @@
       border-radius: 18px;
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.025)),
-        radial-gradient(circle at 78% 8%, rgba(255, 158, 58, 0.08), transparent 34%);
+        radial-gradient(circle at 78% 8%, var(--forge-frenzy-glow), transparent 34%),
+        radial-gradient(circle at 50% 100%, rgba(255, 124, 35, calc(0.12 + (var(--forge-frenzy-heat) * 0.08))), transparent 48%);
       border: 1px solid rgba(255, 244, 230, 0.08);
       overflow: hidden;
+      transition: background 180ms ease, box-shadow 180ms ease;
+      box-shadow: inset 0 -22px 40px rgba(255, 122, 26, calc(var(--forge-frenzy-heat) * 0.12));
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-hammer {
@@ -1135,7 +1142,7 @@
       top: 16px;
       width: 46px;
       height: 20px;
-      background: radial-gradient(circle, rgba(255, 235, 177, 0.88) 0%, rgba(255, 176, 84, 0.65) 42%, rgba(255, 176, 84, 0) 76%);
+      background: radial-gradient(circle, rgba(255, 235, 177, 0.92) 0%, var(--forge-frenzy-flash) 42%, rgba(255, 176, 84, 0) 76%);
       opacity: 0;
       transform: translateX(-50%) scale(0.6);
       transition: opacity 90ms ease, transform 90ms ease;
@@ -1170,14 +1177,42 @@
       position: absolute;
       left: 52%;
       top: 32%;
-      width: 9px;
-      height: 9px;
-      margin-left: -4.5px;
-      margin-top: -4.5px;
+      width: var(--forge-frenzy-spark-size);
+      height: var(--forge-frenzy-spark-size);
+      margin-left: calc(var(--forge-frenzy-spark-size) * -0.5);
+      margin-top: calc(var(--forge-frenzy-spark-size) * -0.5);
       border-radius: 999px;
       background: radial-gradient(circle, #fff7d3 0%, #ffb054 42%, rgba(255, 176, 84, 0) 76%);
       opacity: 0;
       transform: translate3d(0, 0, 0) scale(0.4);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game[data-heat-level="1"] {
+      --forge-frenzy-heat: 0.35;
+      --forge-frenzy-glow: rgba(255, 162, 66, 0.14);
+      --forge-frenzy-flash: rgba(255, 177, 86, 0.74);
+      --forge-frenzy-spark-size: 10px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game[data-heat-level="2"] {
+      --forge-frenzy-heat: 0.62;
+      --forge-frenzy-glow: rgba(255, 142, 44, 0.2);
+      --forge-frenzy-flash: rgba(255, 162, 63, 0.82);
+      --forge-frenzy-spark-size: 11px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game[data-heat-level="3"] {
+      --forge-frenzy-heat: 0.9;
+      --forge-frenzy-glow: rgba(255, 124, 28, 0.28);
+      --forge-frenzy-flash: rgba(255, 145, 46, 0.94);
+      --forge-frenzy-spark-size: 12px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game[data-heat-level="4"] {
+      --forge-frenzy-heat: 1.15;
+      --forge-frenzy-glow: rgba(255, 108, 18, 0.34);
+      --forge-frenzy-flash: rgba(255, 132, 31, 1);
+      --forge-frenzy-spark-size: 13px;
     }
 
     body.forge-page:not(.forge-post-page) .forge-mini-game-spark.is-live {
@@ -3747,6 +3782,18 @@
         let hammerResetTimer = null;
         let anvilResetTimer = null;
 
+        function getHeatLevel(value) {
+          if (value >= 40) return 4;
+          if (value >= 30) return 3;
+          if (value >= 20) return 2;
+          if (value >= 10) return 1;
+          return 0;
+        }
+
+        function applyHeatLevel(value) {
+          game.setAttribute("data-heat-level", String(getHeatLevel(value)));
+        }
+
         function safeGet(key) {
           try {
             return window.localStorage.getItem(key);
@@ -3804,6 +3851,7 @@
           timeDisplay.textContent = "10s";
           statusDisplay.textContent = "Strike fast. Every hammer hit before the timer runs out counts.";
           gameAction.textContent = "Strike";
+          applyHeatLevel(0);
           if (timerId) window.clearInterval(timerId);
           timerId = window.setInterval(function () {
             timeLeft -= 1;
@@ -3822,6 +3870,7 @@
 
           score += 1;
           scoreDisplay.textContent = String(score);
+          applyHeatLevel(score);
           statusDisplay.textContent = score < 6
             ? "Good. Keep the rhythm going."
             : score < 14
@@ -3857,6 +3906,7 @@
 
         const storedBest = parseInt(safeGet(bestKey) || safeGet(legacyBestKey) || "0", 10) || 0;
         bestDisplay.textContent = String(storedBest);
+        applyHeatLevel(0);
         const storedCollapsed = safeGet(collapsedKey) ?? safeGet(legacyCollapsedKey);
         setCollapsed(storedCollapsed == null ? mobileGame.matches : storedCollapsed === "1");
 
