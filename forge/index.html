@@ -3210,50 +3210,48 @@
     </div>
   </footer>
 
-  <aside class="forge-mini-game" id="forge-mini-game" aria-label="Hammer Time mini game">
+  <aside class="forge-mini-game" id="forge-mini-game" aria-label="Blacksmith Arcade launcher">
     <div class="forge-mini-game-header">
       <div>
         <p class="forge-mini-game-kicker">Blacksmith Arcade</p>
-        <h2 class="forge-mini-game-title">Hammer Time</h2>
+        <h2 class="forge-mini-game-title">Try out new game - Forging</h2>
       </div>
-      <button class="forge-mini-game-toggle" id="forge-mini-game-toggle" type="button" aria-expanded="true" aria-label="Minimize Hammer Time">−</button>
     </div>
-    <div class="forge-mini-game-body" id="forge-mini-game-body">
-      <div class="forge-mini-game-stats" aria-live="polite">
-        <div class="forge-mini-game-stat">
-          <span class="forge-mini-game-stat-label">Score</span>
-          <strong class="forge-mini-game-stat-value" id="forge-mini-game-score">0</strong>
-        </div>
-        <div class="forge-mini-game-stat">
-          <span class="forge-mini-game-stat-label">Best</span>
-          <strong class="forge-mini-game-stat-value" id="forge-mini-game-best">0</strong>
-        </div>
-        <div class="forge-mini-game-stat">
-          <span class="forge-mini-game-stat-label">Time</span>
-          <strong class="forge-mini-game-stat-value" id="forge-mini-game-time">10s</strong>
+    <div class="forge-mini-game-body">
+      <p class="forge-mini-game-status">Open the new Blacksmith arcade build in a lightbox and play without leaving The Forge.</p>
+      <div class="forge-mini-game-arena forge-mini-game-arena--launcher">
+        <div class="forge-mini-game-preview">
+          <span class="forge-mini-game-preview-kicker">Now live</span>
+          <strong class="forge-mini-game-preview-title">Forging</strong>
+          <p class="forge-mini-game-preview-copy">A fresh arcade-style build you can launch right from this page.</p>
         </div>
       </div>
-      <p class="forge-mini-game-status" id="forge-mini-game-status">Click the hammer and see how many clean strikes you can land in 10 seconds.</p>
-      <div class="forge-mini-game-arena">
-        <button class="forge-mini-game-hammer" id="forge-mini-game-hammer" type="button" aria-label="Strike the anvil">
-          <img class="forge-mini-game-hammer-svg" src="../assets/forge-game/hammer.svg" alt="" aria-hidden="true" draggable="false" />
-        </button>
-        <div class="forge-mini-game-anvil-wrap">
-          <div class="forge-mini-game-anvil" id="forge-mini-game-anvil">
-            <img class="forge-mini-game-anvil-svg" src="../assets/forge-game/anvil.svg" alt="" aria-hidden="true" draggable="false" />
-          </div>
-          <div class="forge-mini-game-sparks" id="forge-mini-game-sparks">
-            <span class="forge-mini-game-spark" data-spark="1"></span>
-            <span class="forge-mini-game-spark" data-spark="2"></span>
-            <span class="forge-mini-game-spark" data-spark="3"></span>
-            <span class="forge-mini-game-spark" data-spark="4"></span>
-          </div>
-        </div>
-      </div>
-      <button class="forge-mini-game-action" id="forge-mini-game-action" type="button">Start Round</button>
-      <p class="forge-mini-game-footnote">Best score stays on this device.</p>
+      <button class="forge-mini-game-action" id="forge-game-launch" type="button">Launch Forging</button>
+      <p class="forge-mini-game-footnote">Opens <a class="forge-mini-game-link" href="https://forging.netlify.app/" target="_blank" rel="noopener noreferrer">forging.netlify.app</a> in a lightbox.</p>
     </div>
   </aside>
+
+  <div class="forge-game-lightbox" id="forge-game-lightbox" hidden>
+    <button class="forge-game-lightbox-backdrop" type="button" data-forge-close aria-label="Close Forging lightbox"></button>
+    <div class="forge-game-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="forge-game-lightbox-title">
+      <div class="forge-game-lightbox-bar">
+        <div>
+          <p class="forge-game-lightbox-kicker">Blacksmith Arcade</p>
+          <h2 class="forge-game-lightbox-title" id="forge-game-lightbox-title">Forging</h2>
+        </div>
+        <button class="forge-game-lightbox-close" id="forge-game-lightbox-close" type="button" aria-label="Close Forging lightbox">Close</button>
+      </div>
+      <iframe
+        class="forge-game-lightbox-frame"
+        id="forge-game-lightbox-frame"
+        title="Forging game"
+        loading="lazy"
+        allow="fullscreen"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+      <p class="forge-game-lightbox-note">If the game does not load here, <a href="https://forging.netlify.app/" target="_blank" rel="noopener noreferrer">open Forging in a new tab</a>.</p>
+    </div>
+  </div>
 
   <script src="/script.js?v=20260606f"></script>
   <style>
@@ -3835,6 +3833,190 @@
         height: 94px;
       }
     }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-header {
+      align-items: end;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-title {
+      line-height: 1.14;
+      max-width: 16ch;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-arena--launcher {
+      min-height: 0;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-preview {
+      display: grid;
+      gap: 8px;
+      max-width: 28ch;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-preview-kicker {
+      color: rgba(255, 236, 214, 0.68);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-preview-title {
+      color: #fff7ee;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.12rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-preview-copy {
+      margin: 0;
+      color: rgba(255, 241, 226, 0.82);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-mini-game-link {
+      color: #ffd39b;
+      text-decoration-color: rgba(255, 211, 155, 0.4);
+    }
+
+    body.forge-page:not(.forge-post-page).forge-game-open {
+      overflow: hidden;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox[hidden] {
+      display: none;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      background: rgba(5, 7, 11, 0.72);
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox-dialog {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, 100%);
+      height: min(82vh, 760px);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 12px;
+      padding: 16px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 244, 230, 0.16);
+      background:
+        linear-gradient(180deg, rgba(15, 16, 20, 0.98), rgba(26, 27, 33, 0.96)),
+        radial-gradient(circle at 50% 0%, rgba(255, 147, 52, 0.14), transparent 48%);
+      box-shadow: 0 32px 60px rgba(0, 0, 0, 0.42);
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox-bar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox-kicker {
+      margin: 0 0 4px;
+      color: rgba(255, 236, 214, 0.68);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox-title {
+      margin: 0;
+      color: #fff7ee;
+      font-family: 'Roboto Mono', monospace;
+      font-size: clamp(1.18rem, 2vw, 1.46rem);
+      line-height: 1;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox-close {
+      appearance: none;
+      border: 1px solid rgba(255, 244, 230, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff7ee;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox-frame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 18px;
+      background: #0f1014;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox-note {
+      margin: 0;
+      color: rgba(255, 237, 219, 0.72);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-game-lightbox-note a {
+      color: #ffd39b;
+      text-decoration-color: rgba(255, 211, 155, 0.42);
+    }
+
+    @media (max-width: 768px) {
+      body.forge-page:not(.forge-post-page) .forge-mini-game-title {
+        max-width: none;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-mini-game-arena--launcher {
+        padding: 16px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-game-lightbox {
+        padding: 12px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-game-lightbox-dialog {
+        height: min(84vh, 680px);
+        padding: 12px;
+        gap: 10px;
+        border-radius: 20px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-game-lightbox-bar {
+        grid-template-columns: 1fr;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-game-lightbox-close {
+        width: 100%;
+        justify-self: stretch;
+      }
+    }
   </style>
   <script>
     (function () {
@@ -3915,188 +4097,43 @@
     })();
 
     (function () {
-      const game = document.getElementById("forge-mini-game");
-      const gameToggle = document.getElementById("forge-mini-game-toggle");
-      const gameAction = document.getElementById("forge-mini-game-action");
-      const hammer = document.getElementById("forge-mini-game-hammer");
-      const anvil = document.getElementById("forge-mini-game-anvil");
-      const sparks = Array.from(document.querySelectorAll(".forge-mini-game-spark"));
-      const scoreDisplay = document.getElementById("forge-mini-game-score");
-      const bestDisplay = document.getElementById("forge-mini-game-best");
-      const timeDisplay = document.getElementById("forge-mini-game-time");
-      const statusDisplay = document.getElementById("forge-mini-game-status");
-      const mobileGame = window.matchMedia("(max-width: 1024px)");
-      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const launchButton = document.getElementById("forge-game-launch");
+      const lightbox = document.getElementById("forge-game-lightbox");
+      const frame = document.getElementById("forge-game-lightbox-frame");
+      const closeButton = document.getElementById("forge-game-lightbox-close");
+      const closeTriggers = Array.from(document.querySelectorAll("[data-forge-close]"));
+      const sourceUrl = "https://forging.netlify.app/";
 
-      if (game && gameToggle && gameAction && hammer && anvil && scoreDisplay && bestDisplay && timeDisplay && statusDisplay) {
-        const bestKey = "forgeFrenzyBest";
-        const legacyBestKey = "forgeAnvilRushBest";
-        const collapsedKey = "forgeFrenzyCollapsed";
-        const legacyCollapsedKey = "forgeAnvilRushCollapsed";
-        let score = 0;
-        let timeLeft = 10;
-        let timerId = null;
-        let active = false;
-        let hammerResetTimer = null;
-        let anvilResetTimer = null;
-
-        function getHeatLevel(value) {
-          if (value >= 60) return 5;
-          if (value >= 40) return 4;
-          if (value >= 30) return 3;
-          if (value >= 20) return 2;
-          if (value >= 10) return 1;
-          return 0;
-        }
-
-        function applyHeatLevel(value) {
-          game.setAttribute("data-heat-level", String(getHeatLevel(value)));
-        }
-
-        function safeGet(key) {
-          try {
-            return window.localStorage.getItem(key);
-          } catch (error) {
-            return null;
-          }
-        }
-
-        function safeSet(key, value) {
-          try {
-            window.localStorage.setItem(key, value);
-          } catch (error) {
-            return;
-          }
-        }
-
-        function setCollapsed(collapsed) {
-          game.classList.toggle("is-collapsed", collapsed);
-          gameToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
-          gameToggle.setAttribute("aria-label", collapsed ? "Expand Hammer Time" : "Minimize Hammer Time");
-          gameToggle.textContent = collapsed ? "+" : "−";
-          safeSet(collapsedKey, collapsed ? "1" : "0");
-        }
-
-        function updateBest(value) {
-          bestDisplay.textContent = String(value);
-          safeSet(bestKey, String(value));
-        }
-
-        function stopRound(finished) {
-          if (timerId) {
-            window.clearInterval(timerId);
-            timerId = null;
-          }
-          active = false;
-          timeLeft = 10;
-          timeDisplay.textContent = "10s";
-          gameAction.textContent = "Start Round";
-          if (finished) {
-            const best = Math.max(parseInt(bestDisplay.textContent || "0", 10) || 0, score);
-            if (best > (parseInt(bestDisplay.textContent || "0", 10) || 0)) {
-              updateBest(best);
-            }
-            statusDisplay.textContent = score > 0
-              ? `Round complete. You landed ${score} strike${score === 1 ? "" : "s"}.`
-              : "Round complete. No sparks this time. Try again.";
-          }
-        }
-
-        function startRound() {
-          score = 0;
-          timeLeft = 10;
-          active = true;
-          scoreDisplay.textContent = "0";
-          timeDisplay.textContent = "10s";
-          statusDisplay.textContent = "Strike fast. Every hammer hit before the timer runs out counts.";
-          gameAction.textContent = "Strike";
-          applyHeatLevel(0);
-          if (timerId) window.clearInterval(timerId);
-          timerId = window.setInterval(function () {
-            timeLeft -= 1;
-            timeDisplay.textContent = `${Math.max(timeLeft, 0)}s`;
-            if (timeLeft <= 0) {
-              stopRound(true);
-            }
-          }, 1000);
-        }
-
-        function triggerStrike() {
-          if (!active) {
-            startRound();
-          }
-          if (!active) return;
-
-          score += 1;
-          scoreDisplay.textContent = String(score);
-          applyHeatLevel(score);
-          statusDisplay.textContent = score < 6
-            ? "Good. Keep the rhythm going."
-            : score < 14
-              ? "The forge is heating up."
-              : "Now you are really swinging.";
-
-          hammer.classList.remove("is-striking");
-          anvil.classList.remove("is-hit");
-          window.clearTimeout(hammerResetTimer);
-          window.clearTimeout(anvilResetTimer);
-          void hammer.offsetWidth;
-          hammer.classList.add("is-striking");
-          anvil.classList.add("is-hit");
-          hammerResetTimer = window.setTimeout(function () {
-            hammer.classList.remove("is-striking");
-          }, reducedMotion.matches ? 60 : 130);
-          anvilResetTimer = window.setTimeout(function () {
-            anvil.classList.remove("is-hit");
-          }, reducedMotion.matches ? 60 : 130);
-
-          if (!reducedMotion.matches) {
-            sparks.forEach(function (spark) {
-              spark.classList.remove("is-live");
-              void spark.offsetWidth;
-              spark.classList.add("is-live");
-            });
-          }
-
-          if (score > (parseInt(bestDisplay.textContent || "0", 10) || 0)) {
-            updateBest(score);
-          }
-        }
-
-        const storedBest = parseInt(safeGet(bestKey) || safeGet(legacyBestKey) || "0", 10) || 0;
-        bestDisplay.textContent = String(storedBest);
-        applyHeatLevel(0);
-        const storedCollapsed = safeGet(collapsedKey) ?? safeGet(legacyCollapsedKey);
-        setCollapsed(storedCollapsed == null ? mobileGame.matches : storedCollapsed === "1");
-
-        gameToggle.addEventListener("click", function () {
-          setCollapsed(!game.classList.contains("is-collapsed"));
-        });
-
-        gameAction.addEventListener("click", function () {
-          if (active) {
-            triggerStrike();
-            return;
-          }
-          startRound();
-        });
-
-        hammer.addEventListener("click", function () {
-          triggerStrike();
-        });
-
-        const handleViewportChange = function () {
-          if (mobileGame.matches) {
-            stopRound(false);
-          }
-        };
-
-        if (typeof mobileGame.addEventListener === "function") {
-          mobileGame.addEventListener("change", handleViewportChange);
-        } else if (typeof mobileGame.addListener === "function") {
-          mobileGame.addListener(handleViewportChange);
-        }
+      if (!launchButton || !lightbox || !frame || !closeButton) {
+        return;
       }
+
+      function openLightbox() {
+        if (!frame.getAttribute("src")) {
+          frame.setAttribute("src", sourceUrl);
+        }
+        lightbox.hidden = false;
+        document.body.classList.add("forge-game-open");
+        closeButton.focus();
+      }
+
+      function closeLightbox() {
+        lightbox.hidden = true;
+        document.body.classList.remove("forge-game-open");
+        launchButton.focus();
+      }
+
+      launchButton.addEventListener("click", openLightbox);
+      closeButton.addEventListener("click", closeLightbox);
+      closeTriggers.forEach(function (trigger) {
+        trigger.addEventListener("click", closeLightbox);
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !lightbox.hidden) {
+          closeLightbox();
+        }
+      });
     })();
 
     (function () {
