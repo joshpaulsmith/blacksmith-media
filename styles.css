@@ -5440,6 +5440,44 @@ body.portfolio-page .portfolio-hero{
   color:var(--text) !important;
 }
 
+body.seo-page main > section:not(.hero):not(.portfolio-hero){
+  background:var(--page-solid) !important;
+  color:var(--page-solid-text) !important;
+  border-bottom-color:rgba(0,0,0,.12) !important;
+}
+
+body.seo-page main > section:not(.hero):not(.portfolio-hero) :is(.section-kicker, .section-copy, .section-lead, .contact-email, .card p){
+  color:rgba(11,18,35,.82) !important;
+}
+
+body.seo-page main > section:not(.hero):not(.portfolio-hero) :is(h2, h3, strong, .card h3){
+  color:var(--page-solid-text) !important;
+  font-weight:700;
+}
+
+body.seo-page main > section:not(.hero):not(.portfolio-hero) a{
+  color:var(--page-solid-text) !important;
+}
+
+body.seo-page main > section:not(.hero):not(.portfolio-hero) :is(.card, .contact-box){
+  background:rgba(255,255,255,.16) !important;
+  border-color:rgba(0,0,0,.14) !important;
+  box-shadow:none !important;
+}
+
+body.seo-page main > section:not(.hero):not(.portfolio-hero) .btn.primary{
+  background:#0b0d10 !important;
+  border-color:#0b0d10 !important;
+  color:var(--page-solid) !important;
+  box-shadow:none !important;
+}
+
+body.seo-page main > section:not(.hero):not(.portfolio-hero) .btn.secondary{
+  background:rgba(11,13,16,.08) !important;
+  border-color:rgba(11,13,16,.18) !important;
+  color:var(--page-solid-text) !important;
+}
+
 :is(body.brand-page, body.web-page, body.seo-page, body.portfolio-page, body.forge-page, body.forge-post-page, body.contact-page, body.privacy-page) .footer{
   background:#0b0d10 !important;
   color:var(--muted) !important;
