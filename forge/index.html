@@ -218,6 +218,13 @@
       z-index: 1;
     }
 
+    body.forge-page:not(.forge-post-page) main {
+      background:
+        radial-gradient(circle at 50% -6%, rgba(255, 218, 176, 0.22), transparent 24%),
+        radial-gradient(circle at 84% 12%, rgba(255, 123, 43, 0.18), transparent 20%),
+        linear-gradient(180deg, #ff7a1f 0%, #ff6420 26%, #ff8b34 62%, #ffc46f 100%) !important;
+    }
+
     body.forge-page:not(.forge-post-page) .nav {
       background: #fffdfa !important;
       border-bottom: 1px solid rgba(18, 20, 24, 0.1) !important;
@@ -300,10 +307,22 @@
       padding-right: 24px !important;
     }
 
+    body.forge-page:not(.forge-post-page) .hero.forge-hero-archive,
     body.forge-page:not(.forge-post-page) .forge-hero-archive {
       background: transparent !important;
-      border-bottom: 1px solid rgba(122, 30, 0, 0.1) !important;
+      border-bottom: none !important;
       padding: 18px 0 14px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .breadcrumbs,
+    body.forge-page:not(.forge-post-page) main > section:nth-of-type(even):not(.hero):not(.portfolio-hero):not(.forge-cta-section),
+    body.forge-page:not(.forge-post-page) main > section:nth-of-type(odd):not(.hero):not(.portfolio-hero):not(.forge-cta-section),
+    body.forge-page:not(.forge-post-page) main > section.section:not(.hero):not(.forge-cta-section),
+    body.forge-page:not(.forge-post-page) .forge-editorial-main--full,
+    body.forge-page:not(.forge-post-page) .forge-editorial-main--full.forge-editorial-main--v2 {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
     }
 
     body.forge-page:not(.forge-post-page) .forge-hero-compact {
