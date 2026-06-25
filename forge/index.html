@@ -2614,12 +2614,6 @@
 
 <body class="forge-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="forge-fire-bg" aria-hidden="true">
-    <div class="forge-fire-core"></div>
-    <div class="forge-fire-haze"></div>
-    <div class="forge-flames" id="forge-flames"></div>
-    <div class="forge-sparks" id="forge-sparks"></div>
-  </div>
 
   <nav class="nav">
     <div class="wrap nav-inner">
@@ -3209,49 +3203,6 @@
       <a class="footer-email" href="mailto:blacksmithmedia@protonmail.com">blacksmithmedia@protonmail.com</a>
     </div>
   </footer>
-
-  <aside class="forge-mini-game" id="forge-mini-game" aria-label="Blacksmith Arcade launcher">
-    <div class="forge-mini-game-header">
-      <div>
-        <p class="forge-mini-game-kicker">Blacksmith Arcade</p>
-        <h2 class="forge-mini-game-title">Try out new game - Forging</h2>
-      </div>
-    </div>
-    <div class="forge-mini-game-body">
-      <p class="forge-mini-game-status">Open the new Blacksmith arcade build in a lightbox and play without leaving The Forge.</p>
-      <div class="forge-mini-game-arena forge-mini-game-arena--launcher">
-        <div class="forge-mini-game-preview">
-          <span class="forge-mini-game-preview-kicker">Now live</span>
-          <strong class="forge-mini-game-preview-title">Forging</strong>
-          <p class="forge-mini-game-preview-copy">A fresh arcade-style build you can launch right from this page.</p>
-        </div>
-      </div>
-      <button class="forge-mini-game-action" id="forge-game-launch" type="button">Launch Forging</button>
-      <p class="forge-mini-game-footnote">Opens <a class="forge-mini-game-link" href="https://forging.netlify.app/" target="_blank" rel="noopener noreferrer">forging.netlify.app</a> in a lightbox.</p>
-    </div>
-  </aside>
-
-  <div class="forge-game-lightbox" id="forge-game-lightbox" hidden>
-    <button class="forge-game-lightbox-backdrop" type="button" data-forge-close aria-label="Close Forging lightbox"></button>
-    <div class="forge-game-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="forge-game-lightbox-title">
-      <div class="forge-game-lightbox-bar">
-        <div>
-          <p class="forge-game-lightbox-kicker">Blacksmith Arcade</p>
-          <h2 class="forge-game-lightbox-title" id="forge-game-lightbox-title">Forging</h2>
-        </div>
-        <button class="forge-game-lightbox-close" id="forge-game-lightbox-close" type="button" aria-label="Close Forging lightbox">Close</button>
-      </div>
-      <iframe
-        class="forge-game-lightbox-frame"
-        id="forge-game-lightbox-frame"
-        title="Forging game"
-        loading="lazy"
-        allow="fullscreen"
-        referrerpolicy="strict-origin-when-cross-origin"
-      ></iframe>
-      <p class="forge-game-lightbox-note">If the game does not load here, <a href="https://forging.netlify.app/" target="_blank" rel="noopener noreferrer">open Forging in a new tab</a>.</p>
-    </div>
-  </div>
 
   <script src="/script.js?v=20260606f"></script>
   <style>
@@ -4019,123 +3970,6 @@
     }
   </style>
   <script>
-    (function () {
-      const flameField = document.getElementById("forge-flames");
-      const sparkField = document.getElementById("forge-sparks");
-      if (flameField && sparkField) {
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-        function renderFire() {
-          flameField.innerHTML = "";
-          sparkField.innerHTML = "";
-          if (reducedMotion.matches) return;
-
-          const mobile = window.matchMedia("(max-width: 900px)").matches;
-          const flameCount = mobile ? 10 : 16;
-          const sparkCount = mobile ? 8 : 14;
-          const flameFragment = document.createDocumentFragment();
-          const sparkFragment = document.createDocumentFragment();
-
-          for (let index = 0; index < flameCount; index += 1) {
-            const flame = document.createElement("span");
-            const width = mobile ? 48 + Math.random() * 42 : 62 + Math.random() * 52;
-            const height = width * (mobile ? (1.9 + Math.random() * 0.8) : (2.15 + Math.random() * 0.9));
-            const duration = `${2.2 + Math.random() * 1.6}s`;
-            const delay = `${Math.random() * -3.2}s`;
-            const tilt = `${(Math.random() * 8) - 4}deg`;
-            const sway = `${(Math.random() * 14) - 7}deg`;
-
-            flame.className = "forge-flame";
-            flame.style.setProperty("--width", `${width}px`);
-            flame.style.setProperty("--height", `${height}px`);
-            flame.style.setProperty("--duration", duration);
-            flame.style.setProperty("--delay", delay);
-            flame.style.setProperty("--tilt", tilt);
-            flame.style.setProperty("--sway", sway);
-            flameFragment.appendChild(flame);
-          }
-
-          for (let index = 0; index < sparkCount; index += 1) {
-            const spark = document.createElement("span");
-            const size = mobile ? 8 + Math.random() * 8 : 10 + Math.random() * 10;
-            const left = `${Math.random() * 100}%`;
-            const duration = `${4.8 + Math.random() * 3.8}s`;
-            const delay = `${Math.random() * -12}s`;
-            const drift = `${(Math.random() * 10) - 5}vw`;
-            const blur = `${0.6 + Math.random() * 1.8}px`;
-            const tilt = `${(Math.random() * 12) - 6}deg`;
-            const sway = `${(Math.random() * 18) - 9}deg`;
-            const scaleEnd = `${1.02 + Math.random() * 0.24}`;
-
-            spark.className = "forge-spark";
-            spark.style.setProperty("--left", left);
-            spark.style.setProperty("--size", `${size}px`);
-            spark.style.setProperty("--duration", duration);
-            spark.style.setProperty("--delay", delay);
-            spark.style.setProperty("--drift", drift);
-            spark.style.setProperty("--blur", blur);
-            spark.style.setProperty("--tilt", tilt);
-            spark.style.setProperty("--sway", sway);
-            spark.style.setProperty("--scale-end", scaleEnd);
-            sparkFragment.appendChild(spark);
-          }
-
-          flameField.appendChild(flameFragment);
-          sparkField.appendChild(sparkFragment);
-        }
-
-        let emberResizeTimer = null;
-        renderFire();
-        window.addEventListener("resize", function () {
-          window.clearTimeout(emberResizeTimer);
-          emberResizeTimer = window.setTimeout(renderFire, 140);
-        });
-        if (typeof reducedMotion.addEventListener === "function") {
-          reducedMotion.addEventListener("change", renderFire);
-        }
-      }
-    })();
-
-    (function () {
-      const launchButton = document.getElementById("forge-game-launch");
-      const lightbox = document.getElementById("forge-game-lightbox");
-      const frame = document.getElementById("forge-game-lightbox-frame");
-      const closeButton = document.getElementById("forge-game-lightbox-close");
-      const closeTriggers = Array.from(document.querySelectorAll("[data-forge-close]"));
-      const sourceUrl = "https://forging.netlify.app/";
-
-      if (!launchButton || !lightbox || !frame || !closeButton) {
-        return;
-      }
-
-      function openLightbox() {
-        if (!frame.getAttribute("src")) {
-          frame.setAttribute("src", sourceUrl);
-        }
-        lightbox.hidden = false;
-        document.body.classList.add("forge-game-open");
-        closeButton.focus();
-      }
-
-      function closeLightbox() {
-        lightbox.hidden = true;
-        document.body.classList.remove("forge-game-open");
-        launchButton.focus();
-      }
-
-      launchButton.addEventListener("click", openLightbox);
-      closeButton.addEventListener("click", closeLightbox);
-      closeTriggers.forEach(function (trigger) {
-        trigger.addEventListener("click", closeLightbox);
-      });
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && !lightbox.hidden) {
-          closeLightbox();
-        }
-      });
-    })();
-
     (function () {
       const scoreSection = document.querySelector(".forge-score-section");
       const mainColumn = document.querySelector(".forge-main-column");
