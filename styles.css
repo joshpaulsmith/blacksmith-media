@@ -27,8 +27,8 @@
 
 /* Final Forge archive white editorial pass */
 body.forge-page:not(.forge-post-page) .breadcrumbs{
-  background:#ffffff !important;
-  border-bottom:1px solid rgba(0,0,0,.08) !important;
+  background:transparent !important;
+  border-bottom:1px solid rgba(122,30,0,.12) !important;
 }
 
 body.forge-page:not(.forge-post-page) .breadcrumbs :is(a, span){
@@ -36,9 +36,9 @@ body.forge-page:not(.forge-post-page) .breadcrumbs :is(a, span){
 }
 
 body.forge-page:not(.forge-post-page) .hero{
-  background:#ffffff !important;
+  background:transparent !important;
   color:#121418 !important;
-  border-bottom:1px solid rgba(0,0,0,.08) !important;
+  border-bottom:1px solid rgba(122,30,0,.1) !important;
   padding:.1rem 0 .18rem !important;
 }
 
@@ -5278,9 +5278,10 @@ body.forge-post-page main > section:not(.hero):not(.forge-post-cta-section){
 }
 
 body.forge-page:not(.forge-post-page) main > section:not(.hero):not(.forge-cta-section){
-  background:#ffffff !important;
+  background:transparent !important;
   color:#121418 !important;
-  border-bottom-color:rgba(0,0,0,.08) !important;
+  border:none !important;
+  box-shadow:none !important;
 }
 
 body.forge-page:not(.forge-post-page) main > section:not(.hero):not(.forge-cta-section) :is(.section-kicker, .section-lead, .section-copy, h2, h3, strong, p, a){
