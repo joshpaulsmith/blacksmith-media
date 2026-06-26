@@ -2453,6 +2453,14 @@
 
       body.forge-page:not(.forge-post-page) .forge-page-grid,
       body.forge-page:not(.forge-post-page) .forge-main-column,
+      body.forge-page:not(.forge-post-page) .forge-archive-shell,
+      body.forge-page:not(.forge-post-page) .forge-archive-panels {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-page-grid,
+      body.forge-page:not(.forge-post-page) .forge-main-column,
       body.forge-page:not(.forge-post-page) .forge-archive-shell {
         gap: 8px;
       }
@@ -2463,6 +2471,7 @@
         max-width: none;
         margin: 0 auto;
         align-self: stretch;
+        padding-top: 0 !important;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-switcher {
@@ -3688,7 +3697,7 @@
       }
 
       body.forge-page:not(.forge-post-page) #latest-posts {
-        margin-top: -2px !important;
+        margin-top: -14px !important;
       }
 
       body.forge-page:not(.forge-post-page) .forge-score-note {
