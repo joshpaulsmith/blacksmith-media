@@ -3553,6 +3553,42 @@
     }
 
     @media (max-width: 768px) {
+      body.forge-page:not(.forge-post-page) {
+        overflow-x: hidden;
+      }
+
+      body.forge-page:not(.forge-post-page) .wrap,
+      body.forge-page:not(.forge-post-page) .forge-editorial-main--full,
+      body.forge-page:not(.forge-post-page) .forge-page-grid,
+      body.forge-page:not(.forge-post-page) .forge-main-column,
+      body.forge-page:not(.forge-post-page) .forge-archive-shell,
+      body.forge-page:not(.forge-post-page) .forge-archive-panels,
+      body.forge-page:not(.forge-post-page) .forge-archive-panel,
+      body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools,
+      body.forge-page:not(.forge-post-page) .forge-story-list,
+      body.forge-page:not(.forge-post-page) .forge-score-shell,
+      body.forge-page:not(.forge-post-page) .forge-score-card,
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-story-item,
+      body.forge-page:not(.forge-post-page) .forge-story-body,
+      body.forge-page:not(.forge-post-page) .forge-app-note-card,
+      body.forge-page:not(.forge-post-page) .forge-score-copy,
+      body.forge-page:not(.forge-post-page) .forge-score-panel,
+      body.forge-page:not(.forge-post-page) .forge-score-form,
+      body.forge-page:not(.forge-post-page) .forge-score-form-row,
+      body.forge-page:not(.forge-post-page) .forge-score-panel input,
+      body.forge-page:not(.forge-post-page) .forge-inline-cta-archive--mobile .btn-row {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+      }
+
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools {
         gap: 8px !important;
         margin-top: 0 !important;
@@ -3588,6 +3624,7 @@
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-utility-grid {
         gap: 8px !important;
         width: 100% !important;
+        grid-template-columns: 1fr !important;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-utility-card {
@@ -3619,11 +3656,12 @@
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools {
-        width: calc(100vw - 32px) !important;
-        max-width: calc(100vw - 32px) !important;
-        margin-left: 50% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
         margin-right: 0 !important;
-        transform: translateX(-50%);
+        justify-self: stretch !important;
+        transform: none !important;
       }
 
       body.forge-page:not(.forge-post-page) .forge-story-item h3,
