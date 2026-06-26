@@ -384,6 +384,45 @@
       line-height: 1.55 !important;
     }
 
+    body.forge-page:not(.forge-post-page) .forge-app-note-section {
+      background: #fffdfa !important;
+      border-bottom: 1px solid rgba(18, 20, 24, 0.06) !important;
+      padding: 0 0 20px !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-app-note-card {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 18px 22px;
+      border-radius: 22px;
+      border: 1px solid rgba(18, 20, 24, 0.08);
+      background: linear-gradient(180deg, rgba(255, 253, 250, 0.98), rgba(248, 240, 228, 0.94));
+      box-shadow: 0 14px 32px rgba(18, 20, 24, 0.06);
+      display: grid;
+      gap: 10px;
+      text-align: center;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-app-note-card .section-kicker {
+      margin: 0;
+      color: #c56a23 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-app-note-card h2 {
+      margin: 0;
+      color: #121418 !important;
+      font-family: 'Roboto Mono', monospace !important;
+      font-size: clamp(1.4rem, 3vw, 2rem) !important;
+      line-height: 1.04 !important;
+    }
+
+    body.forge-page:not(.forge-post-page) .forge-app-note-card p {
+      margin: 0;
+      color: rgba(18, 20, 24, 0.82) !important;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     body.forge-page:not(.forge-post-page) #latest-posts {
       background: transparent !important;
       border-top: 0 !important;
@@ -2683,6 +2722,18 @@
       </div>
     </section>
 
+    <section class="section forge-app-note-section" aria-labelledby="forge-app-note-heading">
+      <div class="wrap">
+        <div class="forge-app-note-card">
+          <div class="section-kicker">Application development</div>
+          <h2 id="forge-app-note-heading">We also design, improve, and develop applications when the scope fits.</h2>
+          <p>
+            Depending on the scale of the product, Blacksmith Media can help shape dashboards, customer-facing tools, internal workflows, and application updates by request. If you are building beyond a standard website, we can scope the right next step with you.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="section forge-score-section" aria-labelledby="forge-score-heading">
       <div class="forge-score-shell">
         <div class="forge-score-card">
@@ -3499,13 +3550,14 @@
         display: block;
         margin: 0 0 8px;
         font-family: "Roboto Mono", monospace;
-        font-size: 0.76rem;
+        font-size: 0.67rem;
         font-weight: 700;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         color: #121418 !important;
         opacity: 1 !important;
-        text-align: left;
+        text-align: center;
+        line-height: 1.35;
       }
 
       body.forge-page:not(.forge-post-page) .forge-mobile-archive-tools .forge-switcher {
@@ -3604,6 +3656,25 @@
       body.forge-page:not(.forge-post-page) .forge-score-copy h2 {
         font-size: clamp(2rem, 9vw, 2.55rem) !important;
         line-height: 1 !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-app-note-section {
+        padding: 0 0 16px !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-app-note-card {
+        padding: 14px 14px 15px;
+        border-radius: 18px;
+        gap: 8px;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-app-note-card h2 {
+        font-size: clamp(1.2rem, 6vw, 1.5rem) !important;
+      }
+
+      body.forge-page:not(.forge-post-page) .forge-app-note-card p {
+        font-size: 0.92rem;
+        line-height: 1.5;
       }
 
       body.forge-page:not(.forge-post-page) .forge-score-note {
