@@ -3557,7 +3557,8 @@
         overflow-x: hidden;
       }
 
-      body.forge-page:not(.forge-post-page) .wrap,
+      body.forge-page:not(.forge-post-page) main .wrap,
+      body.forge-page:not(.forge-post-page) .breadcrumbs .wrap,
       body.forge-page:not(.forge-post-page) .forge-editorial-main--full,
       body.forge-page:not(.forge-post-page) .forge-page-grid,
       body.forge-page:not(.forge-post-page) .forge-main-column,
@@ -3572,6 +3573,14 @@
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
+        box-sizing: border-box;
+      }
+
+      body.forge-page:not(.forge-post-page) .nav-inner {
+        width: calc(100% - 20px) !important;
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         box-sizing: border-box;
       }
 
